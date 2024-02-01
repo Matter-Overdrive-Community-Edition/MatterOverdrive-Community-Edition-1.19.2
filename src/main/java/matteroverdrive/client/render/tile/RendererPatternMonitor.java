@@ -4,13 +4,11 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Matrix3f;
 import com.mojang.math.Matrix4f;
-
 import com.mojang.math.Vector3f;
-import matteroverdrive.client.ClientReferences;
 import matteroverdrive.client.ClientReferences.AtlasTextures;
 import matteroverdrive.client.ClientReferences.Colors;
-import matteroverdrive.client.render.tile.utils.AbstractTileRenderer;
 import matteroverdrive.client.ClientRegister;
+import matteroverdrive.client.render.tile.utils.AbstractTileRenderer;
 import matteroverdrive.common.block.OverdriveBlockStates;
 import matteroverdrive.common.block.OverdriveBlockStates.VerticalFacing;
 import matteroverdrive.common.tile.matter_network.TilePatternMonitor;
@@ -26,6 +24,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.phys.AABB;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -61,8 +60,8 @@ public class RendererPatternMonitor extends AbstractTileRenderer<TilePatternMoni
 	}
 
 	@Override
-	public void render(TilePatternMonitor tile, float ticks, PoseStack matrix, MultiBufferSource buffer, int light,
-			int overlay) {
+	public void render(TilePatternMonitor tile, float ticks, @NotNull PoseStack matrix,
+										 @NotNull MultiBufferSource buffer, int light, int overlay) {
 		BlockState state = tile.getBlockState();
 		if (state.hasProperty(BlockStateProperties.LIT) && state.getValue(BlockStateProperties.LIT)) {
 			matrix.pushPose();
@@ -173,40 +172,42 @@ public class RendererPatternMonitor extends AbstractTileRenderer<TilePatternMoni
 
 			List<QueuedReplication> globalOrders = tile.getGlobalOrders(false, false);
 
-			String orderString = String.format("%d", globalOrders.size());
+			if (!globalOrders.isEmpty()) {
+				String orderString = String.format("%d", globalOrders.size());
 
-			Minecraft instance = Minecraft.getInstance();
+				Minecraft instance = Minecraft.getInstance();
 
-			matrix.pushPose();
+				matrix.pushPose();
 
-			matrix.scale(0.075f, 0.075f, 0.075f);
+				matrix.scale(0.075f, 0.075f, 0.075f);
 
-			matrix.mulPose(Vector3f.ZP.rotationDegrees(180));
+				matrix.mulPose(Vector3f.ZP.rotationDegrees(180));
 
-			switch (facing) {
-				case NORTH:
-					matrix.translate(-9.0f, -10.5f, 6.5f);
-					break;
-				case SOUTH:
-					matrix.translate(-4.0f, -10.0f, 6.5f);
+				switch (facing) {
+					case NORTH:
+						matrix.translate(-9.0f, -10.5f, 6.5f);
+						break;
+					case SOUTH:
+						matrix.translate(-4.0f, -10.0f, 6.5f);
 
-					matrix.mulPose(Vector3f.YP.rotationDegrees(180));
-					break;
-				case EAST:
-					matrix.translate(-6.5f, -10.0f, 9.0f);
+						matrix.mulPose(Vector3f.YP.rotationDegrees(180));
+						break;
+					case EAST:
+						matrix.translate(-6.5f, -10.0f, 9.0f);
 
-					matrix.mulPose(Vector3f.YP.rotationDegrees(90));
-					break;
-				case WEST:
-					matrix.translate(-6.5f, -10.0f, 4.0f);
+						matrix.mulPose(Vector3f.YP.rotationDegrees(90));
+						break;
+					case WEST:
+						matrix.translate(-6.5f, -10.0f, 4.0f);
 
-					matrix.mulPose(Vector3f.YP.rotationDegrees(270));
-					break;
+						matrix.mulPose(Vector3f.YP.rotationDegrees(270));
+						break;
+				}
+
+				instance.font.draw(matrix, orderString, 0f, 0f, Colors.HOLO.getColor());
+
+				matrix.popPose();
 			}
-
-			instance.font.draw(matrix, orderString, 0f, 0f, Colors.HOLO.getColor());
-
-			matrix.popPose();
 
 			matrix.popPose();
 		}
