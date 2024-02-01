@@ -179,45 +179,32 @@ public class RendererPatternMonitor extends AbstractTileRenderer<TilePatternMoni
 
 			matrix.pushPose();
 
-			matrix.scale(0.025f, 0.075f, 0.075f);
-
-			int width = instance.font.width(orderString);
+			matrix.scale(0.075f, 0.075f, 0.075f);
 
 			matrix.mulPose(Vector3f.ZP.rotationDegrees(180));
 
-			double translateX;
-			double translateZ;
-
 			switch (facing) {
 				case NORTH:
-					translateX = -80.0f + (width / 2.0f);
-
-					matrix.translate(translateX, -5.0f, 15.0f);
+					matrix.translate(-9.0f, -10.5f, 6.5f);
 					break;
 				case SOUTH:
-					translateX = -55.0f + (width / 2.0f);
-
-					matrix.translate(translateX, -5.0f, 25.0f);
+					matrix.translate(-4.0f, -10.0f, 6.5f);
 
 					matrix.mulPose(Vector3f.YP.rotationDegrees(180));
 					break;
 				case EAST:
-					translateZ = 80.0f - (width / 2.0f);
-
-					matrix.translate(-20.0f, -5.0f, translateZ);
+					matrix.translate(-6.5f, -10.0f, 9.0f);
 
 					matrix.mulPose(Vector3f.YP.rotationDegrees(90));
-				break;
+					break;
 				case WEST:
-//					translateZ = -40.0f + (width / 2.0f);
-
-					matrix.translate(-20.5f, -10.5f, 4.3f);
+					matrix.translate(-6.5f, -10.0f, 4.0f);
 
 					matrix.mulPose(Vector3f.YP.rotationDegrees(270));
-				break;
+					break;
 			}
 
-			instance.font.draw(matrix, orderString, 0f, 0f, Colors.HOLO_GREEN.getColor());
+			instance.font.draw(matrix, orderString, 0f, 0f, Colors.HOLO.getColor());
 
 			matrix.popPose();
 
