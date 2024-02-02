@@ -1,12 +1,7 @@
 package matteroverdrive.common.tile.matter_network;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map.Entry;
-
-import javax.annotation.Nullable;
-
+import matteroverdrive.client.ClientRegister;
+import matteroverdrive.client.render.tile.RendererPatternMonitor;
 import matteroverdrive.common.block.OverdriveBlockStates;
 import matteroverdrive.common.block.OverdriveBlockStates.VerticalFacing;
 import matteroverdrive.common.block.type.TypeMachine;
@@ -20,6 +15,8 @@ import matteroverdrive.core.capability.types.item.CapabilityInventory;
 import matteroverdrive.core.capability.types.item_pattern.ItemPatternWrapper;
 import matteroverdrive.core.network.utils.IMatterNetworkMember;
 import matteroverdrive.core.packet.NetworkHandler;
+import matteroverdrive.core.packet.type.clientbound.misc.PacketClientMNData;
+import matteroverdrive.core.packet.type.clientbound.misc.PacketClientUpdateMNScreen;
 import matteroverdrive.core.packet.type.serverbound.misc.PacketQueueReplication;
 import matteroverdrive.core.tile.types.GenericTickingTile;
 import matteroverdrive.core.utils.UtilsDirection;
@@ -34,6 +31,12 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+
+import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map.Entry;
 
 public class TilePatternMonitor extends GenericTickingTile implements IMatterNetworkMember {
 
@@ -150,6 +153,9 @@ public class TilePatternMonitor extends GenericTickingTile implements IMatterNet
 						val = entry;
 						if (queueSize == 0) {
 							NetworkHandler.sendToServer(new PacketQueueReplication(entry.getKey(), pattern, count));
+
+//							NetworkHandler.sendToClientEntity(TileRegistry.TILE_PATTERN_MONITOR.get().getBlockEntity(level, pos), new PacketClientUpdateMNScreen());
+
 							return true;
 						}
 					}
@@ -169,8 +175,7 @@ public class TilePatternMonitor extends GenericTickingTile implements IMatterNet
 		for (Entry<BlockPos, MatterReplicatorDataWrapper> entry : clientMatterReplicatorData.entrySet()) {
 			if (entry != null) {
 				wrapper = entry.getValue();
-				if (entry != null && checkPowered ? wrapper.isPowered()
-						: true && checkFused ? !wrapper.isFused() : true) {
+				if ((!checkPowered || wrapper.isPowered()) && (!checkFused || !wrapper.isFused())) {
 					orders.addAll(wrapper.getOrders());
 				}
 			}

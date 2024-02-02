@@ -63,6 +63,7 @@ public class RendererPatternMonitor extends AbstractTileRenderer<TilePatternMoni
 	public void render(TilePatternMonitor tile, float ticks, @NotNull PoseStack matrix,
 										 @NotNull MultiBufferSource buffer, int light, int overlay) {
 		BlockState state = tile.getBlockState();
+
 		if (state.hasProperty(BlockStateProperties.LIT) && state.getValue(BlockStateProperties.LIT)) {
 			matrix.pushPose();
 
@@ -112,7 +113,6 @@ public class RendererPatternMonitor extends AbstractTileRenderer<TilePatternMoni
 						holoBars = ClientRegister.CACHED_TEXTUREATLASSPRITES.get(AtlasTextures.HOLO_PATTERN_MONITOR_270);
 					}
 				}
-
 			}
 
 			float[] bars_uv = { holoBars.getU0(), holoBars.getU1(), holoBars.getV0(), holoBars.getV1() };
@@ -172,7 +172,7 @@ public class RendererPatternMonitor extends AbstractTileRenderer<TilePatternMoni
 
 			List<QueuedReplication> globalOrders = tile.getGlobalOrders(false, false);
 
-			if (!globalOrders.isEmpty()) {
+//			if (!globalOrders.isEmpty()) {
 				String orderString = String.format("%d", globalOrders.size());
 
 				Minecraft instance = Minecraft.getInstance();
@@ -207,7 +207,7 @@ public class RendererPatternMonitor extends AbstractTileRenderer<TilePatternMoni
 				instance.font.draw(matrix, orderString, 0f, 0f, Colors.HOLO.getColor());
 
 				matrix.popPose();
-			}
+//			}
 
 			matrix.popPose();
 		}

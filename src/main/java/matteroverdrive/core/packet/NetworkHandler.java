@@ -101,7 +101,6 @@ public class NetworkHandler {
 		
 		clientMessage(PacketAndroidTurningTimeSync.class, PacketAndroidTurningTimeSync::encode, PacketAndroidTurningTimeSync::decode,
 				PacketAndroidTurningTimeSync::handle);
-		
 	}
 	
 	public static void sendToClientPlayer(ServerPlayer player, AbstractOverdrivePacket<?> packet) {

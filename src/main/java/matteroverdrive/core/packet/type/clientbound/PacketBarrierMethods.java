@@ -1,6 +1,7 @@
 package matteroverdrive.core.packet.type.clientbound;
 
 import matteroverdrive.MatterOverdrive;
+import matteroverdrive.client.ClientRegister;
 import matteroverdrive.common.item.tools.electric.ItemMatterScanner;
 import matteroverdrive.common.tile.matter_network.TilePatternMonitor;
 import matteroverdrive.core.capability.MatterOverdriveCapabilities;
@@ -141,4 +142,7 @@ public class PacketBarrierMethods {
 		}
 	}
 
+	public static void handlePacketUpdateMNScreen() {
+
+	}
 }
