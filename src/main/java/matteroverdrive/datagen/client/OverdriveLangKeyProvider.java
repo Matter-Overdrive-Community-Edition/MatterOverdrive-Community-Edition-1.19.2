@@ -149,6 +149,17 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			addItem(ItemRegistry.ITEM_TRITANIUM_AXE, "Тритановый топор");
 			addItem(ItemRegistry.ITEM_TRITANIUM_SHOVEL, "Тритановая лопата");
 
+			addItem(ItemRegistry.ITEM_WEAPON_HANDLE, "Рукоятка оружия");
+			addItem(ItemRegistry.ITEM_WEAPON_RECEIVER, "Приёмник оружия");
+			addItem(ItemRegistry.ITEM_PLASMA_CORE, "Плазменное ядро");
+			addItem(ItemRegistry.ITEM_ROGUE_ANDROID_ARMS, "Руки бунтарского андроида");
+			addItem(ItemRegistry.ITEM_ROGUE_ANDROID_CHEST, "Грудь бунтарского андроида");
+			addItem(ItemRegistry.ITEM_ROGUE_ANDROID_HEAD, "Голова бунтарского андроида");
+			addItem(ItemRegistry.ITEM_ROGUE_ANDROID_LEGS, "Ноги бунтарского андроида");
+			addItem(ItemRegistry.ITEM_TRITANIUM_SPINE, "Тританиевая позвоночник");
+
+			addItem(ItemRegistry.ITEM_TRILITHIUM_CRYSTAL, "Трилитиевый кристалл");
+
 			// Not implemented.
 //			item.matteroverdrive.contract.name=Контракт
 
@@ -241,6 +252,26 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			addItem(ItemRegistry.ITEM_DATAPAD, "Datapad");
 
 			addItem(ItemRegistry.ITEM_DILITHIUM_CRYSTAL, "Dilithium Crystal");
+
+			addItem(ItemRegistry.ITEM_WEAPON_HANDLE, "Weapon Handle");
+			addItem(ItemRegistry.ITEM_WEAPON_RECEIVER, "Weapon Reciver");
+			addItem(ItemRegistry.ITEM_PLASMA_CORE, "Plasma Core");
+			addItem(ItemRegistry.ITEM_TRITANIUM_AXE, "Tritanium Axe");
+			addItem(ItemRegistry.ITEM_TRITANIUM_PICKAXE, "Tritanium Pickaxe");
+			addItem(ItemRegistry.ITEM_TRITANIUM_SWORD, "Tritanium Sword");
+			addItem(ItemRegistry.ITEM_TRITANIUM_HOE, "Tritanium Hoe");
+			addItem(ItemRegistry.ITEM_TRITANIUM_SHOVEL, "Tritanium Shovel");
+			addItem(ItemRegistry.ITEM_TRITANIUM_HELMET, "Tritanium Helmet");
+			addItem(ItemRegistry.ITEM_TRITANIUM_CHESTPLATE, "Tritanium Chestplate");
+			addItem(ItemRegistry.ITEM_TRITANIUM_LEGGINGS, "Tritanium Leggings");
+			addItem(ItemRegistry.ITEM_TRITANIUM_BOOTS, "Tritanium Boots");
+			addItem(ItemRegistry.ITEM_ROGUE_ANDROID_ARMS, "Rogue Android Arms");
+			addItem(ItemRegistry.ITEM_ROGUE_ANDROID_CHEST, "Rogue Android Chest");
+			addItem(ItemRegistry.ITEM_ROGUE_ANDROID_HEAD, "Rogue Android Head");
+			addItem(ItemRegistry.ITEM_ROGUE_ANDROID_LEGS, "Rogue Android Legs");
+			addItem(ItemRegistry.ITEM_TRITANIUM_SPINE, "Tritanium Spine");
+
+			addItem(ItemRegistry.ITEM_TRILITHIUM_CRYSTAL, "Trilithium Crystal");
 
 			for (OverdriveBlockColors color : OverdriveBlockColors.values()) {
 				String name = getNameFromEnum(color.toString());
