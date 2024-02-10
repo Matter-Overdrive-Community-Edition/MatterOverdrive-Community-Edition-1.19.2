@@ -70,14 +70,14 @@ public class BlockRegistry {
 			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
 			false);
 	public static final BulkRegister<Block> BLOCK_COLORED_TRITANIUM_PLATING = bulkBlock(
-			color -> registerColoredBlock(((OverdriveBlockColors) color).id("tritanium_plating_"),
+			color -> registerColoredBlock(color.id("tritanium_plating_"),
 					() -> new BlockColored(
 							Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F),
 							((OverdriveBlockColors) color).color),
 					false, ((OverdriveBlockColors) color).color),
 			OverdriveBlockColors.values());
 	public static final BulkRegister<Block> BLOCK_FLOOR_TILE = bulkBlock(
-			color -> registerColoredBlock(((OverdriveBlockColors) color).id("floor_tile_"),
+			color -> registerColoredBlock((color).id("floor_tile_"),
 					() -> new BlockColored(
 							Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F),
 							((OverdriveBlockColors) color).color),
@@ -116,17 +116,17 @@ public class BlockRegistry {
 	// Machines
 
 	public static final RegistryObject<Block> BLOCK_SOLAR_PANEL = registerBlock(TypeMachine.SOLAR_PANEL.id(),
-			() -> new BlockMachine<TileSolarPanel>(TileSolarPanel::new, TypeMachine.SOLAR_PANEL,
+			() -> new BlockMachine<>(TileSolarPanel::new, TypeMachine.SOLAR_PANEL,
 					TileRegistry.TILE_SOLAR_PANEL),
 			true);
 
 	public static final RegistryObject<Block> BLOCK_MATTER_DECOMPOSER = registerBlock(
-			TypeMachine.MATTER_DECOMPOSER.id(), () -> new BlockMachine<TileMatterDecomposer>(TileMatterDecomposer::new,
+			TypeMachine.MATTER_DECOMPOSER.id(), () -> new BlockMachine<>(TileMatterDecomposer::new,
 					TypeMachine.MATTER_DECOMPOSER, TileRegistry.TILE_MATTER_DECOMPOSER),
 			true);
 
 	public static final RegistryObject<Block> BLOCK_MATTER_RECYCLER = registerBlock(TypeMachine.MATTER_RECYCLER.id(),
-			() -> new BlockMachine<TileMatterRecycler>(TileMatterRecycler::new, TypeMachine.MATTER_RECYCLER,
+			() -> new BlockMachine<>(TileMatterRecycler::new, TypeMachine.MATTER_RECYCLER,
 					TileRegistry.TILE_MATTER_RECYCLER),
 			true);
 
@@ -134,17 +134,17 @@ public class BlockRegistry {
 			() -> new BlockAndroidChargerChild(), true);
 
 	public static final RegistryObject<Block> BLOCK_CHARGER = registerBlock(TypeMachine.CHARGER.id(),
-			() -> new BlockAndroidChargerParent<TileCharger>(TileCharger::new, TypeMachine.CHARGER,
+			() -> new BlockAndroidChargerParent<>(TileCharger::new, TypeMachine.CHARGER,
 					TileRegistry.TILE_CHARGER),
 			true);
 
 	public static final RegistryObject<Block> BLOCK_MICROWAVE = registerBlock(TypeMachine.MICROWAVE.id(),
-			() -> new BlockMachine<TileMicrowave>(TileMicrowave::new, TypeMachine.MICROWAVE,
+			() -> new BlockMachine<>(TileMicrowave::new, TypeMachine.MICROWAVE,
 					TileRegistry.TILE_MICROWAVE),
 			true);
 
 	public static final RegistryObject<Block> BLOCK_INSCRIBER = registerBlock(TypeMachine.INSCRIBER.id(),
-			() -> new BlockMachine<TileInscriber>(TileInscriber::new, TypeMachine.INSCRIBER,
+			() -> new BlockMachine<>(TileInscriber::new, TypeMachine.INSCRIBER,
 					TileRegistry.TILE_INSCRIBER),
 			true);
 
@@ -154,13 +154,13 @@ public class BlockRegistry {
 			TypeMatterConduit.values());
 
 	public static final RegistryObject<Block> BLOCK_TRANSPORTER = registerBlock(TypeMachine.TRANSPORTER.id(),
-			() -> new BlockMachine<TileTransporter>(TileTransporter::new, TypeMachine.TRANSPORTER,
+			() -> new BlockMachine<>(TileTransporter::new, TypeMachine.TRANSPORTER,
 					TileRegistry.TILE_TRANSPORTER),
 			true);
 
 	public static final RegistryObject<Block> BLOCK_SPACETIME_ACCELERATOR = registerBlock(
 			TypeMachine.SPACETIME_ACCELERATOR.id(),
-			() -> new BlockMachine<TileSpacetimeAccelerator>(TileSpacetimeAccelerator::new,
+			() -> new BlockMachine<>(TileSpacetimeAccelerator::new,
 					TypeMachine.SPACETIME_ACCELERATOR, TileRegistry.TILE_SPACETIME_ACCELERATOR),
 			true);
 
@@ -169,43 +169,47 @@ public class BlockRegistry {
 			TypeMatterNetworkCable.values());
 
 	public static final RegistryObject<Block> BLOCK_CHUNKLOADER = registerBlock(TypeMachine.CHUNKLOADER.id(),
-			() -> new BlockMachine<TileChunkloader>(TileChunkloader::new, TypeMachine.CHUNKLOADER,
+			() -> new BlockMachine<>(TileChunkloader::new, TypeMachine.CHUNKLOADER,
 					TileRegistry.TILE_CHUNKLOADER),
 			true);
 
 	public static final RegistryObject<Block> BLOCK_MATTER_ANALYZER = registerBlock(TypeMachine.MATTER_ANALYZER.id(),
-			() -> new BlockMachine<TileMatterAnalyzer>(TileMatterAnalyzer::new, TypeMachine.MATTER_ANALYZER,
+			() -> new BlockMachine<>(TileMatterAnalyzer::new, TypeMachine.MATTER_ANALYZER,
 					TileRegistry.TILE_MATTER_ANALYZER),
 			true);
 
 	public static final RegistryObject<Block> BLOCK_PATTERN_STORAGE = registerBlock(TypeMachine.PATTERN_STORAGE.id(),
-			() -> new BlockMachine<TilePatternStorage>(TilePatternStorage::new, TypeMachine.PATTERN_STORAGE,
+			() -> new BlockMachine<>(TilePatternStorage::new, TypeMachine.PATTERN_STORAGE,
 					TileRegistry.TILE_PATTERN_STORAGE),
 			true);
 
 	public static final RegistryObject<Block> BLOCK_PATTERN_MONITOR = registerBlock(TypeMachine.PATTERN_MONITOR.id(),
-			() -> new BlockMachine<TilePatternMonitor>(TilePatternMonitor::new, TypeMachine.PATTERN_MONITOR,
+			() -> new BlockMachine<>(TilePatternMonitor::new, TypeMachine.PATTERN_MONITOR,
 					TileRegistry.TILE_PATTERN_MONITOR),
 			true);
 
 	public static final RegistryObject<Block> BLOCK_MATTER_REPLICATOR = registerBlock(
-			TypeMachine.MATTER_REPLICATOR.id(), () -> new BlockMachine<TileMatterReplicator>(TileMatterReplicator::new,
+			TypeMachine.MATTER_REPLICATOR.id(), () -> new BlockMachine<>(TileMatterReplicator::new,
 					TypeMachine.MATTER_REPLICATOR, TileRegistry.TILE_MATTER_REPLICATOR),
 			true);
 
 	public static final RegistryObject<Block> BLOCK_ANDROID_STATION = registerBlock("android_station",
-			() -> new BlockMachine<TileAndroidStation>(TileAndroidStation::new, TypeMachine.ANDROID_STATION,
+			() -> new BlockMachine<>(TileAndroidStation::new, TypeMachine.ANDROID_STATION,
 					TileRegistry.TILE_ANDROID_STATION),
 			false);
 	
-	public static final RegistryObject<Block> BLOCK_DISC_MANIPULATOR = registerBlock(TypeMachine.DISC_MANIPULATOR.id(),
-			() -> new BlockMachine<TileDiscManipulator>(TileDiscManipulator::new, TypeMachine.DISC_MANIPULATOR, TileRegistry.TILE_DISC_MANIPULATOR),
+	public static final RegistryObject<Block> BLOCK_DISC_MANIPULATOR = registerBlockNoItem(TypeMachine.DISC_MANIPULATOR.id(),
+			() -> new BlockMachine<>(TileDiscManipulator::new, TypeMachine.DISC_MANIPULATOR, TileRegistry.TILE_DISC_MANIPULATOR),
 			true);
 
 	// Functional Methods
 
 	private static RegistryObject<Block> registerBlock(String name, Supplier<Block> supplier, boolean shiftTip) {
 		return registerBlock(name, supplier, new Item.Properties().tab(References.MAIN), shiftTip);
+	}
+
+	private static RegistryObject<Block> registerBlockNoItem(String name, Supplier<Block> supplier, boolean shiftTip) {
+		return registerBlock(name, supplier, new Item.Properties(), shiftTip);
 	}
 
 	private static RegistryObject<Block> registerBlock(String name, Supplier<Block> supplier,

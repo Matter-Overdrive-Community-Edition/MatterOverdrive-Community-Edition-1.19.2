@@ -67,6 +67,7 @@ public class OverdriveBlockStateProvider extends BlockStateProvider {
 		redstoneToggleBlock(BlockRegistry.BLOCK_VENT_CLOSED, ventOn, ventOff, true);
 
 		redstoneToggleBlock(BlockRegistry.BLOCK_CHUNKLOADER, getChunkloaderBase("off"), getChunkloaderBase("on"), true);
+		simpleBlock(BlockRegistry.BLOCK_TRITANIUM, true);
 		simpleBlock(BlockRegistry.BLOCK_CHARGER_CHILD, true);
 		simpleBlock(BlockRegistry.BLOCK_TRANSPORTER,
 				blockTopBottom(BlockRegistry.BLOCK_TRANSPORTER, "block/transporter/transporter_top",
@@ -94,6 +95,10 @@ public class OverdriveBlockStateProvider extends BlockStateProvider {
 		// charger TileRenderer JSON
 		getObjModel("charger_renderer", "block/charger", "block/charger");
 		horrRotatedBlock(BlockRegistry.BLOCK_ANDROID_STATION, existingBlock(BlockRegistry.BLOCK_ANDROID_STATION), true);
+
+		simpleBlock(BlockRegistry.BLOCK_MACHINE_HULL,
+			models().cubeAll("machine_hull", blockLoc("base")),
+			true);
 
 		genMatterConduits();
 		genNetworkCables();
