@@ -24,8 +24,10 @@ public class OverdriveTags {
 		public static final TagKey<Item> GOLD_INGOT = forgeTag("ingots/gold");
 		public static final TagKey<Item> DIAMOND_GEM = forgeTag("gems/diamond");
 		public static final TagKey<Item> EMERALD_GEM = forgeTag("gems/emerald");
-		
-		
+		public static final TagKey<Item> INGOT_TRITANIUM = forgeTag("ingots/tritanium");
+		public static final TagKey<Item> GEM_DILITHIUM = forgeTag("gems/dilithium");
+		public static final TagKey<Item> NUGGET_TRITANIUM = forgeTag("nuggets/tritanium");
+
 		private static void init() {}
 		
 		private static TagKey<Item> forgeTag(String name) {

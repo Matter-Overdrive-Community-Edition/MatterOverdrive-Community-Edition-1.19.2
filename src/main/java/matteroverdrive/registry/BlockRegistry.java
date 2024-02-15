@@ -202,6 +202,22 @@ public class BlockRegistry {
 			() -> new BlockMachine<>(TileDiscManipulator::new, TypeMachine.DISC_MANIPULATOR, TileRegistry.TILE_DISC_MANIPULATOR),
 			true);
 
+	public static final RegistryObject<Block> BLOCK_DECORATIVE_BEAMS = registerBlock("decorative.beams",
+		() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
+		false);
+
+	public static final RegistryObject<Block> BLOCK_DECORATIVE_CARBON_FIBER_PLATE = registerBlock("decorative.carbon_fiber_plate",
+		() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
+		false);
+
+	public static final RegistryObject<Block> BLOCK_DECORATIVE_CLEAN = registerBlock("decorative.clean",
+		() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
+		false);
+
+	public static final RegistryObject<Block> BLOCK_DECORATIVE_COILS = registerBlock("decorative.coils",
+		() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
+		false);
+
 	// Functional Methods
 
 	private static RegistryObject<Block> registerBlock(String name, Supplier<Block> supplier, boolean shiftTip) {

@@ -100,6 +100,22 @@ public class OverdriveBlockStateProvider extends BlockStateProvider {
 			models().cubeAll("machine_hull", blockLoc("base")),
 			true);
 
+		simpleBlock(BlockRegistry.BLOCK_DECORATIVE_CLEAN,
+			models().cubeAll("decorative.clean", blockLoc("transporter_side")),
+			true);
+
+		simpleBlock(BlockRegistry.BLOCK_DECORATIVE_CARBON_FIBER_PLATE,
+			models().cubeAll("decorative.carbon_fiber_plate", blockLoc("carbon_fiber_plate")),
+			true);
+
+		simpleBlock(BlockRegistry.BLOCK_DECORATIVE_COILS,
+			models().cubeAll("decorative.coils", blockLoc("base_coil")),
+			true);
+
+		simpleBlock(BlockRegistry.BLOCK_DECORATIVE_BEAMS,
+			models().cubeAll("decorative.beams", blockLoc("beams")),
+			true);
+
 		genMatterConduits();
 		genNetworkCables();
 

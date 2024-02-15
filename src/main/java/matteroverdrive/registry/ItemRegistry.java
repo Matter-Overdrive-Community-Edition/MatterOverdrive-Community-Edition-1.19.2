@@ -1,6 +1,5 @@
 package matteroverdrive.registry;
 
-import java.sql.Ref;
 import java.util.function.Function;
 
 import matteroverdrive.References;
@@ -181,7 +180,7 @@ public class ItemRegistry {
 	// Not sure where the following fit. They are new items compared to the 1.12.2 version.
 	public static final RegistryObject<Item> ITEM_SUPERCONDUCTOR_MAGNET = ITEMS.register("s_magnet",
 		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
-	public static final RegistryObject<Item> ITEM_BASE_UPGRADE = ITEMS.register("upgrade_base",
+	public static final RegistryObject<Item> ITEM_UPGRADE_BASE = ITEMS.register("upgrade_base",
 		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN).stacksTo(16), false));
 	public static final BulkRegister<Item> ITEM_UPGRADES = bulkItem(
 			upgrade -> ITEMS.register(((UpgradeType) upgrade).id(), () -> new ItemUpgrade((UpgradeType) upgrade)),

@@ -34,7 +34,10 @@ public class OverdriveItemTagsProvider extends ItemTagsProvider {
 				Items.DEAD_BRAIN_CORAL, Items.DEAD_BRAIN_CORAL_BLOCK, Items.DEAD_BRAIN_CORAL_FAN, Items.DEAD_TUBE_CORAL, Items.DEAD_TUBE_CORAL_BLOCK, Items.DEAD_TUBE_CORAL_FAN,
 				Items.DEAD_BUBBLE_CORAL, Items.DEAD_BUBBLE_CORAL_BLOCK, Items.DEAD_BUBBLE_CORAL_FAN, Items.DEAD_FIRE_CORAL, Items.DEAD_FIRE_CORAL_BLOCK, Items.DEAD_FIRE_CORAL_FAN, 
 				Items.DEAD_HORN_CORAL, Items.DEAD_HORN_CORAL_BLOCK, Items.DEAD_HORN_CORAL_FAN).replace(false);
-	
+		tag(OverdriveTags.Items.INGOT_TRITANIUM).add(ItemRegistry.ITEM_TRITANIUM_INGOT.get()).replace(false);
+		tag(OverdriveTags.Items.GEM_DILITHIUM).add(ItemRegistry.ITEM_DILITHIUM_CRYSTAL.get()).replace(false);
+		tag(OverdriveTags.Items.NUGGET_TRITANIUM).add(ItemRegistry.ITEM_TRITANIUM_NUGGET.get()).replace(false);
+
 	}
 
 }

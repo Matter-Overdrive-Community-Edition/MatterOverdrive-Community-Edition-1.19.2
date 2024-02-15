@@ -48,7 +48,7 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			addItem(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER2), "Изолинейная схема MK2");
 			addItem(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER3), "Изолинейная схема MK3");
 			addItem(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER4), "Изолинейная схема MK4");
-			addItem(ItemRegistry.ITEM_BASE_UPGRADE, "Оболочка улучшений");
+			addItem(ItemRegistry.ITEM_UPGRADE_BASE, "Оболочка улучшений");
 			addItem(ItemRegistry.ITEM_H_COMPENSATOR, "Гейзенберговский компенсатор");
 			addItem(ItemRegistry.ITEM_INTEGRATION_MATRIX, "Матрица интеграции");
 			addItem(ItemRegistry.ITEM_SUPERCONDUCTOR_MAGNET, "Сверхпроводящий магнит");
@@ -193,7 +193,7 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 
 			addItem(ItemRegistry.ITEM_RAW_MATTER_DUST, "Raw Matter Dust");
 			addItem(ItemRegistry.ITEM_MATTER_DUST, "Matter Dust");
-			addItem(ItemRegistry.ITEM_BASE_UPGRADE, "Upgrade Shell");
+			addItem(ItemRegistry.ITEM_UPGRADE_BASE, "Upgrade Shell");
 			addItem(ItemRegistry.ITEM_UPGRADES.get(UpgradeType.SPEED), "Speed Upgrade");
 			addItem(ItemRegistry.ITEM_UPGRADES.get(UpgradeType.MATTER_STORAGE), "Matter Storage Upgrade");
 			addItem(ItemRegistry.ITEM_UPGRADES.get(UpgradeType.POWER), "Power Upgrade");
@@ -316,6 +316,11 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 
 			addBlock(BlockRegistry.BLOCK_ANDROID_STATION, "Android Station");
 //			addBlock(BlockRegistry.BLOCK_DISC_MANIPULATOR, "Disc Manipulator");
+
+			addBlock(BlockRegistry.BLOCK_DECORATIVE_BEAMS, "Decorative Beams");
+			addBlock(BlockRegistry.BLOCK_DECORATIVE_CARBON_FIBER_PLATE, "Carbon Fiber Plate");
+			addBlock(BlockRegistry.BLOCK_DECORATIVE_CLEAN, "Tritanium Smooth Plate");
+			addBlock(BlockRegistry.BLOCK_DECORATIVE_COILS, "Decorative Coils");
 
 			addTooltip("energystored", "%1$s / %2$s %3$sFE");
 			addTooltip("creativeenergystored", "INFINITE");
