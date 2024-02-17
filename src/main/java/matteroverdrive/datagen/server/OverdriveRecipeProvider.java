@@ -775,6 +775,38 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.BASE).get()))
 			.addKey('W', Ingredient.of(ItemTags.WOOL))
 			.complete(References.ID, "upgrade_8", consumer);
+
+		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.MUFFLER).get(), 1)
+			.addPattern(" T ")
+			.addPattern("I I")
+			.addPattern("I I")
+			.addKey('T', Ingredient.of(OverdriveTags.Items.INGOT_TRITANIUM))
+			.addKey('W', Ingredient.of(ItemTags.WOOL))
+			.addKey('I', Ingredient.of(Tags.Items.INGOTS_IRON))
+			.complete(References.ID, "weapon_handle", consumer);
+
+		// On hold until the Weapon Modules are worked out.
+//		OverdriveShapedCraftingRecipe.start(ItemRegistry.WEAPON_MODULE_BARREL, 1)
+//			.addPattern(" G ")
+//			.addPattern("RDR")
+//			.addPattern(" T ")
+//			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
+//			.addKey('T', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_PLATE.get()))
+//			.addKey('D', Ingredient.of(OverdriveTags.Items.GEM_DILITHIUM))
+//			.addKey('G', Ingredient.of(Tags.Items.GLASS))
+//			.complete(References.ID, "weapon_module_barrel", consumer);
+
+		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_WEAPON_STATION.get().asItem(), 1)
+			.addPattern("   ")
+			.addPattern("GFR")
+			.addPattern("CMB")
+			.addKey('B', Ingredient.of(ItemRegistry.ITEM_BATTERIES.get(ItemBattery.BatteryType.REGULAR).get()))
+			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
+			.addKey('C', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER3).get()))
+			.addKey('F', Ingredient.of(ItemRegistry.ITEM_FORCEFIELD_EMITTER.get()))
+			.addKey('G', Ingredient.of(Tags.Items.DUSTS_GLOWSTONE))
+			.addKey('M', Ingredient.of(ItemRegistry.ITEM_MACHINE_CASING.get()))
+			.complete(References.ID, "weapon_station", consumer);
 	}
 
 	private void addInscriberRecipes(Consumer<FinishedRecipe> consumer) {
