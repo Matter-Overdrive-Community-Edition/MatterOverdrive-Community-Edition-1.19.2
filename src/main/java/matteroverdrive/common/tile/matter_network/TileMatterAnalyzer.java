@@ -165,7 +165,6 @@ public class TileMatterAnalyzer extends GenericMachineTile implements IMatterNet
 		}
 
 		setProgress(0);
-		shouldAnalyze = false;
 		setScannedItem(ItemStack.EMPTY);
 		setRunning(false);
 		setShouldSaveData(true);
