@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "matteroverdrive:item/upgrade/upgrade_base"
+    "layer0": "matteroverdrive:item/tritanium_boots"
   }
 }

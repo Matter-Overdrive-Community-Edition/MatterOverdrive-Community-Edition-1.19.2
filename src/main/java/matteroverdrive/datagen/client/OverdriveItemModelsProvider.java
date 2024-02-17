@@ -31,38 +31,99 @@ public class OverdriveItemModelsProvider extends ItemModelProvider {
 
 	@Override
 	protected void registerModels() {
-		
-		layeredItem(ItemRegistry.ITEM_MATTER_DUST, Parent.GENERATED, itemLoc("matter_dust"));
+	//    Materials
+		layeredItem(ItemRegistry.ITEM_DILITHIUM_CRYSTAL, Parent.GENERATED, itemLoc("dilithium_crystal"));
+		layeredItem(ItemRegistry.ITEM_TRITANIUM_INGOT, Parent.GENERATED, itemLoc("tritanium_ingot"));
+		layeredItem(ItemRegistry.ITEM_TRITANIUM_NUGGET, Parent.GENERATED, itemLoc("tritanium_nugget"));
+		layeredItem(ItemRegistry.ITEM_TRITANIUM_DUST, Parent.GENERATED, itemLoc("tritanium_dust"));
 		layeredItem(ItemRegistry.ITEM_RAW_MATTER_DUST, Parent.GENERATED, itemLoc("raw_matter_dust"));
-		layeredItem(ItemRegistry.ITEM_TRITANIUM_PLATE, Parent.GENERATED, itemLoc("tritanium_plate"));
-		layeredItem(ItemRegistry.ITEM_BASE_UPGRADE, Parent.GENERATED, itemLoc("upgrade/upgrade_base"));
+		layeredItem(ItemRegistry.ITEM_MATTER_DUST, Parent.GENERATED, itemLoc("matter_dust"));
+//		layeredItem(ItemRegistry.ITEM_MATTER_DUST_REFINED, Parent.GENERATED, itemLoc("matter_dust_refined"));
+
+	//   Food
+		layeredItem(ItemRegistry.ITEM_ANDROID_PILL_BLUE, Parent.GENERATED, itemLoc("pill/pill_bottom"), itemLoc("pill/pill_top"));
+		layeredItem(ItemRegistry.ITEM_ANDROID_PILL_RED, Parent.GENERATED, itemLoc("pill/pill_bottom"), itemLoc("pill/pill_top"));
+		layeredItem(ItemRegistry.ITEM_ANDROID_PILL_YELLOW, Parent.GENERATED, itemLoc("pill/pill_bottom"), itemLoc("pill/pill_top"));
+		layeredItem(ItemRegistry.ITEM_EARL_GRAY_TEA, Parent.GENERATED, itemLoc("earl_gray_tea"));
+		layeredItem(ItemRegistry.ITEM_ROMULAN_ALE, Parent.GENERATED, itemLoc("romulan_ale"));
+		layeredItem(ItemRegistry.ITEM_EMERGENCY_RATION, Parent.GENERATED, itemLoc("emergency_ration"));
+
+//    Storage
+		// Battries handled below.
+		// Matter containers handled below.
+
+//   Crafting
+		layeredItem(ItemRegistry.ITEM_ME_CONVERSION_MATRIX, Parent.GENERATED, itemLoc("me_conversion_matrix"));
+		layeredItem(ItemRegistry.ITEM_H_COMPENSATOR, Parent.GENERATED, itemLoc("h_compensator"));
+		layeredItem(ItemRegistry.ITEM_INTEGRATION_MATRIX, Parent.GENERATED, itemLoc("integration_matrix"));
+		layeredItem(ItemRegistry.ITEM_MACHINE_CASING, Parent.GENERATED, itemLoc("machine_casing"));
+		// Isolinear circuits handled below.
+		layeredItem(ItemRegistry.ITEM_FORCEFIELD_EMITTER, Parent.GENERATED, itemLoc("forcefield_emitter"));
+		layeredItem(ItemRegistry.ITEM_WEAPON_HANDLE, Parent.GENERATED, itemLoc("weapon_handle"));
+		layeredItem(ItemRegistry.ITEM_WEAPON_RECEIVER, Parent.GENERATED, itemLoc("weapon_receiver"));
+		layeredItem(ItemRegistry.ITEM_PLASMA_CORE, Parent.GENERATED, itemLoc("plasma_core"));
+		layeredItem(ItemRegistry.ITEM_SUPERCONDUCTOR_MAGNET, Parent.GENERATED, itemLoc("s_magnet"));
+
+//   Weapons
+		// Weapons registered below.
+
+//   Tools
+		layeredItem(ItemRegistry.ITEM_TRITANIUM_WRENCH, Parent.GENERATED, itemLoc("tritanium_wrench"));
+		layeredItem(ItemRegistry.ITEM_TRITANIUM_AXE, Parent.GENERATED, itemLoc("tritanium_axe"));
+		layeredItem(ItemRegistry.ITEM_TRITANIUM_PICKAXE, Parent.GENERATED, itemLoc("tritanium_pickaxe"));
+		layeredItem(ItemRegistry.ITEM_TRITANIUM_SWORD, Parent.GENERATED, itemLoc("tritanium_sword"));
+		layeredItem(ItemRegistry.ITEM_TRITANIUM_HOE, Parent.GENERATED, itemLoc("tritanium_hoe"));
+		layeredItem(ItemRegistry.ITEM_TRITANIUM_SHOVEL, Parent.GENERATED, itemLoc("tritanium_shovel"));
+		layeredItem(ItemRegistry.ITEM_TRITANIUM_HELMET, Parent.GENERATED, itemLoc("tritanium_helmet"));
+		layeredItem(ItemRegistry.ITEM_TRITANIUM_CHESTPLATE, Parent.GENERATED, itemLoc("tritanium_chestplate"));
+		layeredItem(ItemRegistry.ITEM_TRITANIUM_LEGGINGS, Parent.GENERATED, itemLoc("tritanium_leggings"));
+		layeredItem(ItemRegistry.ITEM_TRITANIUM_BOOTS, Parent.GENERATED, itemLoc("tritanium_boots"));
+
+//   Android
+		layeredItem(ItemRegistry.ITEM_ROGUE_ANDROID_ARMS, Parent.GENERATED, itemLoc("rogue_android_arms"));
+		layeredItem(ItemRegistry.ITEM_ROGUE_ANDROID_CHEST, Parent.GENERATED, itemLoc("rogue_android_chest"));
+		layeredItem(ItemRegistry.ITEM_ROGUE_ANDROID_HEAD, Parent.GENERATED, itemLoc("rogue_android_head"));
+		layeredItem(ItemRegistry.ITEM_ROGUE_ANDROID_LEGS, Parent.GENERATED, itemLoc("rogue_android_legs"));
+		layeredItem(ItemRegistry.ITEM_TRITANIUM_SPINE, Parent.GENERATED, itemLoc("tritanium_spine"));
+
+//   Misc
+		toggleableItem(ItemRegistry.ITEM_MATTER_SCANNER, "_on", Parent.GENERATED, Parent.GENERATED, new ResourceLocation[] {
+			itemLoc("matter_scanner/matter_scanner_off")
+		}, new ResourceLocation[] {
+			itemLoc("matter_scanner/matter_scanner_on")
+		});
+		layeredItem(ItemRegistry.ITEM_PATTERN_DRIVE, Parent.GENERATED, itemLoc("pattern_drive/pattern_drive_base"),
+			itemLoc("pattern_drive/bottom_light"), itemLoc("pattern_drive/middle_light"), itemLoc("pattern_drive/left_light"));
+		layeredItem(ItemRegistry.ITEM_TRANSPORTER_FLASHDRIVE, Parent.GENERATED, itemLoc("transporter_flash_drive"));
+		// energy_pack
+		layeredItem(ItemRegistry.ITEM_DATAPAD, Parent.GENERATED, itemLoc("data_pad"));
+		// contract
+		// portable_decomposer
+		// security_protocol
+		// spacetime_equalizer
+		// record_transformation
+		// artifact
+		layeredItem(ItemRegistry.ITEM_TRILITHIUM_CRYSTAL, Parent.GENERATED, itemLoc("trilithium_crystal"));
+		// quantum_fold_manipulator
+
+		layeredItem(ItemRegistry.ITEM_UPGRADE_BASE, Parent.GENERATED, itemLoc("upgrade_base"));
+
 		for (UpgradeType type : UpgradeType.values()) {
 			layeredItem(ItemRegistry.ITEM_UPGRADES.get(type), Parent.GENERATED, itemLoc("upgrade/upgrade_" + type.toString().toLowerCase()));
 		}
 		for (TypeIsolinearCircuit circuit : TypeIsolinearCircuit.values()) {
 			layeredItem(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(circuit), Parent.GENERATED, itemLoc("isolinear_circuit/" + circuit.id()));
 		}
+		layeredItem(ItemRegistry.ITEM_TRITANIUM_PLATE, Parent.GENERATED, itemLoc("tritanium_plate"));
 		layeredItem(ItemRegistry.ITEM_LEAD_PLATE, Parent.GENERATED, itemLoc("lead_plate"));
-		layeredItem(ItemRegistry.ITEM_PATTERN_DRIVE, Parent.GENERATED, itemLoc("pattern_drive/pattern_drive_base"),
-				itemLoc("pattern_drive/bottom_light"), itemLoc("pattern_drive/middle_light"), itemLoc("pattern_drive/left_light"));
-		
-		toggleableItem(ItemRegistry.ITEM_MATTER_SCANNER, "_on", Parent.GENERATED, Parent.GENERATED, new ResourceLocation[] {
-				itemLoc("matter_scanner/matter_scanner_off")
-		}, new ResourceLocation[] {
-				itemLoc("matter_scanner/matter_scanner_on")
-				});
-		
+
 		toggleableItem(ItemRegistry.ITEM_TRANSPORTER_FLASHDRIVE, "_stored", Parent.GENERATED, Parent.GENERATED, new ResourceLocation[] {
 				itemLoc("flashdrive/flashdrive_transporter_empty")
 		}, new ResourceLocation[] {
 				itemLoc("flashdrive/flashdrive_transporter_stored")
 				});
-		layeredItem(ItemRegistry.ITEM_ANDROID_PILL_BLUE, Parent.GENERATED, itemLoc("pill/pill_bottom"), itemLoc("pill/pill_top"));
-		layeredItem(ItemRegistry.ITEM_ANDROID_PILL_RED, Parent.GENERATED, itemLoc("pill/pill_bottom"), itemLoc("pill/pill_top"));
-		layeredItem(ItemRegistry.ITEM_ANDROID_PILL_YELLOW, Parent.GENERATED, itemLoc("pill/pill_bottom"), itemLoc("pill/pill_top"));
-		
 		layeredItem(ItemRegistry.ITEM_COMMUNICATOR, Parent.GENERATED, itemLoc("communicator"));
-		
+
 		generateBatteries();
 		generateMatterContainers();
 		generateGuns();

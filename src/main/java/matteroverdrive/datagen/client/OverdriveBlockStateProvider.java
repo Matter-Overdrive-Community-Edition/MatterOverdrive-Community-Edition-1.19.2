@@ -67,6 +67,7 @@ public class OverdriveBlockStateProvider extends BlockStateProvider {
 		redstoneToggleBlock(BlockRegistry.BLOCK_VENT_CLOSED, ventOn, ventOff, true);
 
 		redstoneToggleBlock(BlockRegistry.BLOCK_CHUNKLOADER, getChunkloaderBase("off"), getChunkloaderBase("on"), true);
+		simpleBlock(BlockRegistry.BLOCK_TRITANIUM, true);
 		simpleBlock(BlockRegistry.BLOCK_CHARGER_CHILD, true);
 		simpleBlock(BlockRegistry.BLOCK_TRANSPORTER,
 				blockTopBottom(BlockRegistry.BLOCK_TRANSPORTER, "block/transporter/transporter_top",
@@ -94,6 +95,26 @@ public class OverdriveBlockStateProvider extends BlockStateProvider {
 		// charger TileRenderer JSON
 		getObjModel("charger_renderer", "block/charger", "block/charger");
 		horrRotatedBlock(BlockRegistry.BLOCK_ANDROID_STATION, existingBlock(BlockRegistry.BLOCK_ANDROID_STATION), true);
+
+		simpleBlock(BlockRegistry.BLOCK_MACHINE_HULL,
+			models().cubeAll("machine_hull", blockLoc("base")),
+			true);
+
+		simpleBlock(BlockRegistry.BLOCK_DECORATIVE_CLEAN,
+			models().cubeAll("decorative.clean", blockLoc("transporter_side")),
+			true);
+
+		simpleBlock(BlockRegistry.BLOCK_DECORATIVE_CARBON_FIBER_PLATE,
+			models().cubeAll("decorative.carbon_fiber_plate", blockLoc("carbon_fiber_plate")),
+			true);
+
+		simpleBlock(BlockRegistry.BLOCK_DECORATIVE_COILS,
+			models().cubeAll("decorative.coils", blockLoc("base_coil")),
+			true);
+
+		simpleBlock(BlockRegistry.BLOCK_DECORATIVE_BEAMS,
+			models().cubeAll("decorative.beams", blockLoc("beams")),
+			true);
 
 		genMatterConduits();
 		genNetworkCables();

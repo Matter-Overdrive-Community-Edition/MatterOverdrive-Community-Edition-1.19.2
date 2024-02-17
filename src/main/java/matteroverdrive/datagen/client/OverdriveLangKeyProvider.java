@@ -48,7 +48,7 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			addItem(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER2), "Изолинейная схема MK2");
 			addItem(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER3), "Изолинейная схема MK3");
 			addItem(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER4), "Изолинейная схема MK4");
-			addItem(ItemRegistry.ITEM_BASE_UPGRADE, "Оболочка улучшений");
+			addItem(ItemRegistry.ITEM_UPGRADE_BASE, "Оболочка улучшений");
 			addItem(ItemRegistry.ITEM_H_COMPENSATOR, "Гейзенберговский компенсатор");
 			addItem(ItemRegistry.ITEM_INTEGRATION_MATRIX, "Матрица интеграции");
 			addItem(ItemRegistry.ITEM_SUPERCONDUCTOR_MAGNET, "Сверхпроводящий магнит");
@@ -66,6 +66,7 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			addItem(ItemRegistry.ITEM_EARL_GRAY_TEA, "Чай. Эрл Грей. Горячий.");
 			addItem(ItemRegistry.ITEM_ROMULAN_ALE, "Ромуланский эль");
 			addItemDescTooltip(ItemRegistry.ITEM_ROMULAN_ALE, "Высоко опьяняющий алкогольный напиток ромуланского происхождения");
+			addItem(ItemRegistry.ITEM_SUPERCONDUCTOR_MAGNET, "Сверхпроводящий магнит");
 
 			// Not implemented yet.
 
@@ -78,20 +79,21 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 //			item.matteroverdrive.security_protocol.remove.details=Убирает защиту у машин
 //			item.matteroverdrive.security_protocol.invalid=Неверный протокол безопасности
 
-
 			addItem(ItemRegistry.ITEM_TRITANIUM_WRENCH, "Тритановый ключ");
 			addItemDescTooltip(ItemRegistry.ITEM_TRITANIUM_WRENCH, "Безопасно демонтирует и вращает машины");
 
 			// Not implemented yet.
 //			item.matteroverdrive.spacetime_equalizer.name=Пространственно-временной эквалайзер
-
 //			item.matteroverdrive.spacetime_equalizer.details=Может быть одет в слот нагрудника, чтобы предотвратить влияние гравитационных сил
-//			item.matteroverdrive.rogue_android_part.head.name=Андроид-голова
-//			item.matteroverdrive.rogue_android_part.arms.name=Андроид-рука
-//			item.matteroverdrive.rogue_android_part.legs.name=Андроид-нога
-//			item.matteroverdrive.rogue_android_part.chest.name=Андроид-торс
 //			item.matteroverdrive.rogue_android_part.melee=Рукопашный Андроид
 //			item.matteroverdrive.rogue_android_part.range=Дальнобойный Андроид
+
+			addItem(ItemRegistry.ITEM_ROGUE_ANDROID_HEAD, "Андроид-голова");
+			addItem(ItemRegistry.ITEM_ROGUE_ANDROID_ARMS, "Андроид-рука");
+			addItem(ItemRegistry.ITEM_ROGUE_ANDROID_LEGS, "Андроид-нога");
+			addItem(ItemRegistry.ITEM_ROGUE_ANDROID_CHEST, "Андроид-торс");
+//			addItem(ItemRegistry.ITEM_ROGUE_ANDROID_MELEE, "Рукопашный Андроид");
+//			addItem(ItemRegistry.ITEM_ROGUE_ANDROID_RANGE, "Дальнобойный Андроид")
 
 			addItem(ItemRegistry.ITEM_FORCEFIELD_EMITTER, "Излучатель силового поля");
 			addItem(ItemRegistry.ITEM_BATTERIES.get(BatteryType.HIGHCAPACITY), "Высокоёмкостная батарейка");
@@ -102,6 +104,8 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			addItemDescTooltip(ItemRegistry.ITEM_ANDROID_PILL_BLUE, "Примите синюю пилюлю /n и вы проснетесь в постели более мудрым");
 
 			// Not implemented yet.
+//			addItem(ItemRegistry.ITEM_CREATIVE_PATTERN_DRIVE, "Творческий шаблон привода");
+//			addItem(ItemRegistry.ITEM_NETWORK_FLASH_DRIVE, "Сетевой флэш-накопитель");
 //			item.matteroverdrive.creative_pattern_drive.name=Творческий шаблон привода
 //			item.matteroverdrive.creative_pattern_drive.details=Содержит наиболее воспроизводимые элементы /n ПКМ во время приседа, чтобы перезагрузить
 //			item.matteroverdrive.network_flash_drive.name=Сетевой флэш-накопитель
@@ -135,16 +139,26 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			addItem(ItemRegistry.ITEM_ANDROID_PILL_YELLOW, "Жёлтая пилюля");
 			addItemDescTooltip(ItemRegistry.ITEM_ANDROID_PILL_YELLOW, "Используется для сброса всех разблокированных способностей Андроида");
 
-			// Not Implemented
-//			item.matteroverdrive.tritanium_helmet.name=Тритановый шлем
-//			item.matteroverdrive.tritanium_chestplate.name=Тритановый нагрудник
-//			item.matteroverdrive.tritanium_leggings.name=Тритановые поножи
-//			item.matteroverdrive.tritanium_boots.name=Тритановые ботинки
-//			item.matteroverdrive.tritanium_hoe.name=Тритановая мотыга
-//			item.matteroverdrive.tritanium_sword.name=Тритановый меч
-//			item.matteroverdrive.tritanium_pickaxe.name=Тритановая кирка
-//			item.matteroverdrive.tritanium_axe.name=Тритановый топор
-//			item.matteroverdrive.tritanium_shovel.name=Тритановая лопата
+			addItem(ItemRegistry.ITEM_TRITANIUM_HELMET, "Тритановый шлем");
+			addItem(ItemRegistry.ITEM_TRITANIUM_CHESTPLATE, "Тритановый нагрудник");
+			addItem(ItemRegistry.ITEM_TRITANIUM_LEGGINGS, "Тритановые поножи");
+			addItem(ItemRegistry.ITEM_TRITANIUM_BOOTS, "Тритановые ботинки");
+			addItem(ItemRegistry.ITEM_TRITANIUM_HOE, "Тритановая мотыга");
+			addItem(ItemRegistry.ITEM_TRITANIUM_SWORD, "Тритановый меч");
+			addItem(ItemRegistry.ITEM_TRITANIUM_PICKAXE, "Тритановая кирка");
+			addItem(ItemRegistry.ITEM_TRITANIUM_AXE, "Тритановый топор");
+			addItem(ItemRegistry.ITEM_TRITANIUM_SHOVEL, "Тритановая лопата");
+
+			addItem(ItemRegistry.ITEM_WEAPON_HANDLE, "Рукоятка оружия");
+			addItem(ItemRegistry.ITEM_WEAPON_RECEIVER, "Приёмник оружия");
+			addItem(ItemRegistry.ITEM_PLASMA_CORE, "Плазменное ядро");
+			addItem(ItemRegistry.ITEM_ROGUE_ANDROID_ARMS, "Руки бунтарского андроида");
+			addItem(ItemRegistry.ITEM_ROGUE_ANDROID_CHEST, "Грудь бунтарского андроида");
+			addItem(ItemRegistry.ITEM_ROGUE_ANDROID_HEAD, "Голова бунтарского андроида");
+			addItem(ItemRegistry.ITEM_ROGUE_ANDROID_LEGS, "Ноги бунтарского андроида");
+			addItem(ItemRegistry.ITEM_TRITANIUM_SPINE, "Тританиевая позвоночник");
+
+			addItem(ItemRegistry.ITEM_TRILITHIUM_CRYSTAL, "Трилитиевый кристалл");
 
 			// Not implemented.
 //			item.matteroverdrive.contract.name=Контракт
@@ -170,6 +184,8 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 
 //			item.matteroverdrive.matter.name=Материя
 
+			addBlock(BlockRegistry.BLOCK_MACHINE_HULL, "Корпус машины");
+
 			case "en_us":
 			default:
 
@@ -177,7 +193,7 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 
 			addItem(ItemRegistry.ITEM_RAW_MATTER_DUST, "Raw Matter Dust");
 			addItem(ItemRegistry.ITEM_MATTER_DUST, "Matter Dust");
-			addItem(ItemRegistry.ITEM_BASE_UPGRADE, "Upgrade Shell");
+			addItem(ItemRegistry.ITEM_UPGRADE_BASE, "Upgrade Shell");
 			addItem(ItemRegistry.ITEM_UPGRADES.get(UpgradeType.SPEED), "Speed Upgrade");
 			addItem(ItemRegistry.ITEM_UPGRADES.get(UpgradeType.MATTER_STORAGE), "Matter Storage Upgrade");
 			addItem(ItemRegistry.ITEM_UPGRADES.get(UpgradeType.POWER), "Power Upgrade");
@@ -200,6 +216,8 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			addItem(ItemRegistry.ITEM_MATTER_CONTAINERS.get(ContainerType.REGULAR), "Matter Container");
 			addItem(ItemRegistry.ITEM_MATTER_CONTAINERS.get(ContainerType.CREATIVE), "Creative Matter Container");
 
+			addItem(ItemRegistry.ITEM_MACHINE_CASING, "Machine Casing");
+
 			addItem(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER1), "Isolinear Circuit Mk1");
 			addItem(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER2), "Isolinear Circuit Mk2");
 			addItem(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER3), "Isolinear Circuit Mk3");
@@ -210,6 +228,9 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			addItem(ItemRegistry.ITEM_MATTER_SCANNER, "Matter Scanner");
 
 			addItem(ItemRegistry.ITEM_TRITANIUM_PLATE, "Tritanium Plate");
+			addItem(ItemRegistry.ITEM_TRITANIUM_INGOT, "Tritanium Ingot");
+			addItem(ItemRegistry.ITEM_TRITANIUM_NUGGET, "Tritanium Nugget");
+			addItem(ItemRegistry.ITEM_TRITANIUM_DUST, "Tritanium Dust");
 			addItem(ItemRegistry.ITEM_LEAD_PLATE, "Lead Plating");
 			
 			addItem(ItemRegistry.ITEM_ANDROID_PILL_BLUE, "Blue Pill");
@@ -217,7 +238,40 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			addItem(ItemRegistry.ITEM_ANDROID_PILL_YELLOW, "Yellow Pill");
 			
 			addItem(ItemRegistry.ITEM_COMMUNICATOR, "Communicator");
-			
+
+			addItem(ItemRegistry.ITEM_ROMULAN_ALE, "Romulan Ale");
+			addItemDescTooltip(ItemRegistry.ITEM_ROMULAN_ALE, "Highly intoxicating alcoholic beverage of Romulan origin");
+
+			addItem(ItemRegistry.ITEM_EMERGENCY_RATION, "Emergency Ration");
+			addItemDescTooltip(ItemRegistry.ITEM_EMERGENCY_RATION, "Emergency Rations.");
+
+			addItem(ItemRegistry.ITEM_ME_CONVERSION_MATRIX, "ME Conversion Matrix");
+			addItem(ItemRegistry.ITEM_H_COMPENSATOR, "H Compensator");
+			addItem(ItemRegistry.ITEM_SUPERCONDUCTOR_MAGNET, "Superconductor Magnet");
+
+			addItem(ItemRegistry.ITEM_DATAPAD, "Datapad");
+
+			addItem(ItemRegistry.ITEM_DILITHIUM_CRYSTAL, "Dilithium Crystal");
+
+			addItem(ItemRegistry.ITEM_WEAPON_HANDLE, "Weapon Handle");
+			addItem(ItemRegistry.ITEM_WEAPON_RECEIVER, "Weapon Reciver");
+			addItem(ItemRegistry.ITEM_PLASMA_CORE, "Plasma Core");
+			addItem(ItemRegistry.ITEM_TRITANIUM_AXE, "Tritanium Axe");
+			addItem(ItemRegistry.ITEM_TRITANIUM_PICKAXE, "Tritanium Pickaxe");
+			addItem(ItemRegistry.ITEM_TRITANIUM_SWORD, "Tritanium Sword");
+			addItem(ItemRegistry.ITEM_TRITANIUM_HOE, "Tritanium Hoe");
+			addItem(ItemRegistry.ITEM_TRITANIUM_SHOVEL, "Tritanium Shovel");
+			addItem(ItemRegistry.ITEM_TRITANIUM_HELMET, "Tritanium Helmet");
+			addItem(ItemRegistry.ITEM_TRITANIUM_CHESTPLATE, "Tritanium Chestplate");
+			addItem(ItemRegistry.ITEM_TRITANIUM_LEGGINGS, "Tritanium Leggings");
+			addItem(ItemRegistry.ITEM_TRITANIUM_BOOTS, "Tritanium Boots");
+			addItem(ItemRegistry.ITEM_ROGUE_ANDROID_ARMS, "Rogue Android Arms");
+			addItem(ItemRegistry.ITEM_ROGUE_ANDROID_CHEST, "Rogue Android Chest");
+			addItem(ItemRegistry.ITEM_ROGUE_ANDROID_HEAD, "Rogue Android Head");
+			addItem(ItemRegistry.ITEM_ROGUE_ANDROID_LEGS, "Rogue Android Legs");
+			addItem(ItemRegistry.ITEM_TRITANIUM_SPINE, "Tritanium Spine");
+
+			addItem(ItemRegistry.ITEM_TRILITHIUM_CRYSTAL, "Trilithium Crystal");
 
 			for (OverdriveBlockColors color : OverdriveBlockColors.values()) {
 				String name = getNameFromEnum(color.toString());
@@ -252,13 +306,21 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			addBlock(BlockRegistry.BLOCK_PATTERN_STORAGE, "Pattern Storage");
 			addBlock(BlockRegistry.BLOCK_PATTERN_MONITOR, "Pattern Monitor");
 			addBlock(BlockRegistry.BLOCK_MATTER_REPLICATOR, "Matter Replicator");
+			addBlock(BlockRegistry.BLOCK_MACHINE_HULL, "Machine Hull");
 
 			addBlock(BlockRegistry.BLOCK_MATTER_CONDUITS.get(TypeMatterConduit.REGULAR), "Matter Conduit");
 			addBlock(BlockRegistry.BLOCK_MATTER_CONDUITS.get(TypeMatterConduit.HEAVY), "Heavy Matter Conduit");
 			addBlock(BlockRegistry.BLOCK_MATTER_NETWORK_CABLES.get(TypeMatterNetworkCable.REGULAR), "Network Cable");
-			
+
+			addBlock(BlockRegistry.BLOCK_TRITANIUM, "Tritanium Block");
+
 			addBlock(BlockRegistry.BLOCK_ANDROID_STATION, "Android Station");
-			addBlock(BlockRegistry.BLOCK_DISC_MANIPULATOR, "Disc Manipulator");
+//			addBlock(BlockRegistry.BLOCK_DISC_MANIPULATOR, "Disc Manipulator");
+
+			addBlock(BlockRegistry.BLOCK_DECORATIVE_BEAMS, "Decorative Beams");
+			addBlock(BlockRegistry.BLOCK_DECORATIVE_CARBON_FIBER_PLATE, "Carbon Fiber Plate");
+			addBlock(BlockRegistry.BLOCK_DECORATIVE_CLEAN, "Tritanium Smooth Plate");
+			addBlock(BlockRegistry.BLOCK_DECORATIVE_COILS, "Decorative Coils");
 
 			addTooltip("energystored", "%1$s / %2$s %3$sFE");
 			addTooltip("creativeenergystored", "INFINITE");
