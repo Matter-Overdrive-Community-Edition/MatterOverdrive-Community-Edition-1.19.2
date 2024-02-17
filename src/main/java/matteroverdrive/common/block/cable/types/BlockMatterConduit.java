@@ -13,6 +13,7 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.energy.IEnergyStorage;
 
 public class BlockMatterConduit extends AbstractCableBlock {
 
@@ -25,7 +26,7 @@ public class BlockMatterConduit extends AbstractCableBlock {
 
 	@Override
 	protected void sortDirections(HashSet<Direction> usedDirs, HashSet<Direction> inventory, HashSet<Direction> cable,
-			LevelAccessor world, BlockPos pos) {
+			HashSet<Direction> energy, LevelAccessor world, BlockPos pos) {
 		BlockEntity entity;
 		for (Direction dir : Direction.values()) {
 			entity = world.getBlockEntity(pos.relative(dir));
@@ -35,6 +36,9 @@ public class BlockMatterConduit extends AbstractCableBlock {
 			} else if (UtilsMatter.isMatterReceiver(entity, dir.getOpposite())) {
 				usedDirs.add(dir);
 				inventory.add(dir);
+			} else if (entity instanceof IEnergyStorage) {
+				usedDirs.add(dir);
+				energy.add(dir);
 			}
 		}
 	}

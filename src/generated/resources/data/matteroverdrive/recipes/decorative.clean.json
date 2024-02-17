@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "tag": "forge:ingots/tritanium"
+    }
+  },
+  "pattern": [
+    "SS ",
+    "SS ",
+    "   "
+  ],
+  "result": {
+    "count": 8,
+    "item": "matteroverdrive:decorative.clean"
+  }
+}

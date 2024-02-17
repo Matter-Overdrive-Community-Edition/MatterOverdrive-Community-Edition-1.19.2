@@ -41,7 +41,7 @@ public class OverdriveBlockStates {
 
 	public enum CableConnectionType implements StringRepresentable {
 
-		NONE, NONE_SEAMLESS, CABLE, INVENTORY, IGNORED;
+		NONE, NONE_SEAMLESS, CABLE, INVENTORY, ENERGY, IGNORED;
 
 		@Override
 		public String getSerializedName() {

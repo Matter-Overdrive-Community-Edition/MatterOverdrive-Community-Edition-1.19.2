@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "D": {
+      "tag": "forge:gems/dilithium"
+    },
+    "G": {
+      "tag": "forge:ingots/gold"
+    },
+    "R": {
+      "tag": "forge:dusts/redstone"
+    },
+    "T": {
+      "tag": "forge:ingots/tritanium"
+    }
+  },
+  "pattern": [
+    " R ",
+    "TGT",
+    "TDT"
+  ],
+  "result": {
+    "item": "matteroverdrive:battery_regular"
+  }
+}

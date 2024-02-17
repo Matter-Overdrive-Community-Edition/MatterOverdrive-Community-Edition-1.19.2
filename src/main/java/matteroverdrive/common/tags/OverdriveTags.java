@@ -1,14 +1,18 @@
 package matteroverdrive.common.tags;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 
 public class OverdriveTags {
 	
 	public static void init() {
 		Items.init();
+
+		Blocks.init();
 	}
 	
 	public static class Items {
@@ -27,13 +31,22 @@ public class OverdriveTags {
 		public static final TagKey<Item> INGOT_TRITANIUM = forgeTag("ingots/tritanium");
 		public static final TagKey<Item> GEM_DILITHIUM = forgeTag("gems/dilithium");
 		public static final TagKey<Item> NUGGET_TRITANIUM = forgeTag("nuggets/tritanium");
+		public static final TagKey<Item> BLOCK_TRITANIUM = forgeTag("blocks/tritanium");
 
 		private static void init() {}
 		
 		private static TagKey<Item> forgeTag(String name) {
 			return ItemTags.create(new ResourceLocation("forge", name));
 		}
-		
 	}
 
+	public static class Blocks {
+//		public static final TagKey<Block> BLOCK_TRITANIUM = forgeTag("blocks/tritanium");
+
+		private static void init() {}
+
+		private static TagKey<Block> forgeTag(String name) {
+			return BlockTags.create(new ResourceLocation("forge", name));
+		}
+	}
 }

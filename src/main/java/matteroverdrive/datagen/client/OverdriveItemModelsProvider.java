@@ -95,10 +95,11 @@ public class OverdriveItemModelsProvider extends ItemModelProvider {
 		layeredItem(ItemRegistry.ITEM_PATTERN_DRIVE, Parent.GENERATED, itemLoc("pattern_drive/pattern_drive_base"),
 			itemLoc("pattern_drive/bottom_light"), itemLoc("pattern_drive/middle_light"), itemLoc("pattern_drive/left_light"));
 		layeredItem(ItemRegistry.ITEM_TRANSPORTER_FLASHDRIVE, Parent.GENERATED, itemLoc("transporter_flash_drive"));
+		layeredItem(ItemRegistry.ITEM_NETWORK_FLASH_DRIVE, Parent.GENERATED, itemLoc("network_flash_drive"));
 		// energy_pack
 		layeredItem(ItemRegistry.ITEM_DATAPAD, Parent.GENERATED, itemLoc("data_pad"));
 		// contract
-		// portable_decomposer
+		layeredItem(ItemRegistry.ITEM_PORTABLE_DECOMPOSER, Parent.GENERATED, itemLoc("portable_decomposer"));
 		// security_protocol
 		// spacetime_equalizer
 		// record_transformation

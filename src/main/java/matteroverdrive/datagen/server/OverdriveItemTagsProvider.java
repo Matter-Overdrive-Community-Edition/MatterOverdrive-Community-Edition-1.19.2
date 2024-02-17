@@ -3,6 +3,7 @@ package matteroverdrive.datagen.server;
 import matteroverdrive.References;
 import matteroverdrive.common.item.type.TypeIsolinearCircuit;
 import matteroverdrive.common.tags.OverdriveTags;
+import matteroverdrive.registry.BlockRegistry;
 import matteroverdrive.registry.ItemRegistry;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
@@ -37,7 +38,7 @@ public class OverdriveItemTagsProvider extends ItemTagsProvider {
 		tag(OverdriveTags.Items.INGOT_TRITANIUM).add(ItemRegistry.ITEM_TRITANIUM_INGOT.get()).replace(false);
 		tag(OverdriveTags.Items.GEM_DILITHIUM).add(ItemRegistry.ITEM_DILITHIUM_CRYSTAL.get()).replace(false);
 		tag(OverdriveTags.Items.NUGGET_TRITANIUM).add(ItemRegistry.ITEM_TRITANIUM_NUGGET.get()).replace(false);
-
+		tag(OverdriveTags.Items.BLOCK_TRITANIUM).add(BlockRegistry.BLOCK_TRITANIUM.get().asItem()).replace(false);
 	}
 
 }

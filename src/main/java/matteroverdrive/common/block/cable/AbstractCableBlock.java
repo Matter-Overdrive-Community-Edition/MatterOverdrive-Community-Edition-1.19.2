@@ -183,17 +183,30 @@ public abstract class AbstractCableBlock extends GenericEntityBlock {
 		}
 	}
 
+	private boolean isDebugBlock(BlockPos pos) {
+		return pos.getX() == -4 && pos.getY() == -60 && pos.getZ() == 2;
+	}
+
 	public BlockState handleConnectionUpdate(BlockState startingState, BlockPos pos, LevelAccessor world) {
+		if (isDebugBlock(pos)) {
+			System.out.println("Looking at block pos: " + pos);
+		}
 
 		HashSet<Direction> dirsUsed = new HashSet<>();
 		HashSet<Direction> inventory = new HashSet<>();
 		HashSet<Direction> cable = new HashSet<>();
+		HashSet<Direction> energy = new HashSet<>();
 
 		for (EnumProperty<CableConnectionType> checkState : OverdriveBlockStates.CABLE_DIRECTIONS) {
 			startingState = startingState.setValue(checkState, CableConnectionType.IGNORED);
 		}
 
-		sortDirections(dirsUsed, inventory, cable, world, pos);
+		sortDirections(dirsUsed, inventory, cable, energy, world, pos);
+
+		if (isDebugBlock(pos)) {
+			System.out.println("Energy used: " + energy);
+			System.out.println("DirsUsed: " + dirsUsed);
+		}
 
 		boolean shouldntSkip = true;
 
@@ -246,6 +259,14 @@ public abstract class AbstractCableBlock extends GenericEntityBlock {
 			startingState = startingState.setValue(DIRECTION_TO_PROPERTY_MAP.get(dir), CableConnectionType.CABLE);
 		}
 
+		for (Direction dir : energy) {
+			startingState = startingState.setValue(DIRECTION_TO_PROPERTY_MAP.get(dir), CableConnectionType.ENERGY);
+		}
+
+		if (isDebugBlock(pos)) {
+			System.out.println("Starting state is: " + startingState);
+		}
+
 		return startingState;
 	}
 
@@ -254,6 +275,6 @@ public abstract class AbstractCableBlock extends GenericEntityBlock {
 	}
 
 	protected abstract void sortDirections(HashSet<Direction> usedDirs, HashSet<Direction> inventory,
-			HashSet<Direction> cable, LevelAccessor world, BlockPos pos);
+			HashSet<Direction> cable, HashSet<Direction> energy, LevelAccessor world, BlockPos pos);
 
 }

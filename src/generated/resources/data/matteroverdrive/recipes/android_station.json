@@ -1,0 +1,40 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "2": {
+      "item": "matteroverdrive:isolinear_circuit_tier1"
+    },
+    "3": {
+      "item": "matteroverdrive:isolinear_circuit_tier2"
+    },
+    "A": {
+      "item": "matteroverdrive:rogue_android_arms"
+    },
+    "F": {
+      "item": "matteroverdrive:forcefield_emitter"
+    },
+    "G": {
+      "item": "minecraft:glowstone"
+    },
+    "H": {
+      "item": "matteroverdrive:rogue_android_head"
+    },
+    "M": {
+      "item": "matteroverdrive:machine_casing"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "T": {
+      "item": "matteroverdrive:rogue_android_chest"
+    }
+  },
+  "pattern": [
+    "THA",
+    "2F3",
+    "GMR"
+  ],
+  "result": {
+    "item": "matteroverdrive:android_station"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "matteroverdrive:isolinear_circuit_tier1"
+    },
+    {
+      "item": "minecraft:book"
+    }
+  ],
+  "result": {
+    "item": "matteroverdrive:data_pad"
+  }
+}

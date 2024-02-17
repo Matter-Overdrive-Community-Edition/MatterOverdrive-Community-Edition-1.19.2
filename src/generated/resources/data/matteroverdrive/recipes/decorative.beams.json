@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "matteroverdrive:tritanium_plate"
+    },
+    "T": {
+      "tag": "forge:nuggets/tritanium"
+    }
+  },
+  "pattern": [
+    "#T#",
+    "#T#",
+    "#T#"
+  ],
+  "result": {
+    "count": 6,
+    "item": "matteroverdrive:decorative.beams"
+  }
+}

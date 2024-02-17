@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "matteroverdrive:tritanium_plate"
+    },
+    "C": {
+      "item": "matteroverdrive:s_magnet"
+    }
+  },
+  "pattern": [
+    "###",
+    "#C#",
+    "###"
+  ],
+  "result": {
+    "count": 12,
+    "item": "matteroverdrive:decorative.coils"
+  }
+}

@@ -1,6 +1,7 @@
 package matteroverdrive.datagen.server;
 
 import matteroverdrive.References;
+import matteroverdrive.common.tags.OverdriveTags;
 import matteroverdrive.registry.BlockRegistry;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
@@ -47,6 +48,9 @@ public class OverdriveBlockTagsProvider extends BlockTagsProvider {
 				.add(BlockRegistry.BLOCK_CHUNKLOADER.get()).add(BlockRegistry.BLOCK_MATTER_ANALYZER.get())
 				.add(BlockRegistry.BLOCK_PATTERN_STORAGE.get()).add(BlockRegistry.BLOCK_PATTERN_MONITOR.get())
 				.add(BlockRegistry.BLOCK_MATTER_REPLICATOR.get());
+
+//			tag(OverdriveTags.Blocks.BLOCK_TRITANIUM).add(BlockRegistry.BLOCK_TRITANIUM.get()).replace(false);
+
 	}
 	
 	private static TagKey<Block> forgeTag(String name){

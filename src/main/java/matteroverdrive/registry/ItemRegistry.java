@@ -1,5 +1,6 @@
 package matteroverdrive.registry;
 
+import java.sql.Ref;
 import java.util.function.Function;
 
 import matteroverdrive.References;
@@ -89,6 +90,7 @@ public class ItemRegistry {
 		circuit -> ITEMS.register(((TypeIsolinearCircuit) circuit).id(),
 			() -> new Item(new Item.Properties().tab(References.MAIN))),
 		TypeIsolinearCircuit.values());
+
 	// Matter. <-- Is this fluid matter plasma?
 	public static final RegistryObject<Item> ITEM_FORCEFIELD_EMITTER = ITEMS.register("forcefield_emitter",
 		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
@@ -193,6 +195,18 @@ public class ItemRegistry {
 			() -> new ItemCommunicator(new Item.Properties().tab(References.MAIN).stacksTo(1)));
 //	public static final RegistryObject<Item> ITEM_S_MAGNET = ITEMS.register("s_magnet",
 //		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN).stacksTo(16), false));
+
+	public static final RegistryObject<Item> ITEM_NETWORK_FLASH_DRIVE = ITEMS.register("network_flash_drive",
+		() -> new Item(new Item.Properties().tab(References.MAIN).stacksTo(4)));
+
+	public static final RegistryObject<Item> ITEM_PORTABLE_DECOMPOSER = ITEMS.register("portable_decomposer",
+		() -> new Item(new Item.Properties().tab(References.MAIN).stacksTo(1)));
+
+	public static final RegistryObject<Item> ITEM_SECURITY_PROTOCOL = ITEMS.register("security_protocol",
+		() -> new Item(new Item.Properties().tab(References.MAIN).stacksTo(1)));
+
+	public static final RegistryObject<Item> ITEM_SNIPER_SCOPE = ITEMS.register("sniper_scope",
+		() -> new Item(new Item.Properties().tab(References.MAIN).stacksTo(1)));
 
 	private static BulkRegister<Item> bulkItem(Function<IBulkRegistryObject, RegistryObject<Item>> factory,
 			IBulkRegistryObject[] bulkValues) {

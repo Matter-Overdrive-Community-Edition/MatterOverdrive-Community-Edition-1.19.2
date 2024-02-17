@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "matteroverdrive:battery_highcapacity"
+    },
+    "D": {
+      "tag": "forge:gems/dilithium"
+    },
+    "E": {
+      "item": "minecraft:ender_eye"
+    },
+    "F": {
+      "item": "matteroverdrive:forcefield_emitter"
+    },
+    "M": {
+      "item": "matteroverdrive:machine_casing"
+    },
+    "R": {
+      "item": "minecraft:repeater"
+    }
+  },
+  "pattern": [
+    " F ",
+    "EDR",
+    "BMB"
+  ],
+  "result": {
+    "item": "matteroverdrive:charger"
+  }
+}
