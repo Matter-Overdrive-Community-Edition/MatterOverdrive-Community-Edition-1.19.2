@@ -47,8 +47,23 @@ public class BlockRegistry {
 	/**
 	 * REGISTRY ORDER NOTES:
 	 * 
-	 * Register decoration blocks, then crates, then machines
+	 * Register ore blocks, decoration blocks, then crates, then machines
 	 */
+
+	// Ore Blocks
+
+	public static final RegistryObject<Block> DILITHIUM_ORE = registerBlock("dilithium_ore",
+			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
+			false);
+	public static final RegistryObject<Block> TRITANIUM_ORE = registerBlock("tritanium_ore",
+    		() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
+			false);
+	public static final RegistryObject<Block> DEEPSLATE_DILITHIUM_ORE = registerBlock("deepslate_dilithium_ore",
+			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
+			false);
+	public static final RegistryObject<Block> DEEPSLATE_TRITANIUM_ORE = registerBlock("deepslate_tritanium_ore",
+    		() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
+			false);
 
 	// Decoration Blocks
 

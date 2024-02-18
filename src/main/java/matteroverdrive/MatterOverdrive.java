@@ -11,6 +11,8 @@ import matteroverdrive.client.ClientRegister;
 import matteroverdrive.common.event.ServerEventHandler;
 import matteroverdrive.common.recipe.RecipeInit;
 import matteroverdrive.common.tags.OverdriveTags;
+import matteroverdrive.core.world.ConfiguredFeatureInit;
+import matteroverdrive.core.world.PlacedFeatureInit;
 import matteroverdrive.core.block.OverdriveBlockProperties;
 import matteroverdrive.core.capability.MatterOverdriveCapabilities;
 import matteroverdrive.core.config.MatterOverdriveConfig;
@@ -54,6 +56,8 @@ public class MatterOverdrive {
 		BlockRegistry.BLOCKS.register(bus);
 		ItemRegistry.ITEMS.register(bus);
 		TileRegistry.TILES.register(bus);
+		ConfiguredFeatureInit.CONFIGURED_FEATURES.register(bus);
+		PlacedFeatureInit.PLACED_FEATURES.register(bus);
 		MenuRegistry.MENUS.register(bus);
 		FluidRegistry.FLUIDS.register(bus);
 		EntityRegistry.ENTITIES.register(bus);

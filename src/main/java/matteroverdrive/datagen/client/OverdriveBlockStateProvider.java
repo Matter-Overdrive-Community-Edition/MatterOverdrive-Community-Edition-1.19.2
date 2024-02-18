@@ -45,7 +45,10 @@ public class OverdriveBlockStateProvider extends BlockStateProvider {
 				.texture("all", blockLoc("decorative/floor_tiles_colorless"));
 		BlockModelBuilder tritaniumPlatingColorless = models().getBuilder("tritanium_plating_colorless")
 				.parent(cubeColoredAll).texture("all", blockLoc("decorative/tritanium_plating_colorless"));
-
+		simpleBlock(BlockRegistry.DILITHIUM_ORE, true);
+		simpleBlock(BlockRegistry.TRITANIUM_ORE, true);
+		simpleBlock(BlockRegistry.DEEPSLATE_DILITHIUM_ORE, true);
+		simpleBlock(BlockRegistry.DEEPSLATE_TRITANIUM_ORE, true);
 		simpleBlock(BlockRegistry.BLOCK_REGULAR_TRITANIUM_PLATING,
 				models().cubeAll("tritanium_plating", blockLoc("decorative/tritanium_plating")), true);
 		for (OverdriveBlockColors color : OverdriveBlockColors.values()) {
