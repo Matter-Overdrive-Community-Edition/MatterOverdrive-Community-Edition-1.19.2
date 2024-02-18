@@ -1,20 +1,11 @@
 package matteroverdrive.registry;
 
+import matteroverdrive.common.tile.*;
 import matteroverdrive.common.tile.station.TileAndroidStation;
 import org.apache.commons.compress.utils.Sets;
 
 import matteroverdrive.References;
 import matteroverdrive.common.block.type.TypeMachine;
-import matteroverdrive.common.tile.TileCharger;
-import matteroverdrive.common.tile.TileChunkloader;
-import matteroverdrive.common.tile.TileInscriber;
-import matteroverdrive.common.tile.TileMatterConduit;
-import matteroverdrive.common.tile.TileMatterDecomposer;
-import matteroverdrive.common.tile.TileMatterRecycler;
-import matteroverdrive.common.tile.TileMicrowave;
-import matteroverdrive.common.tile.TileSolarPanel;
-import matteroverdrive.common.tile.TileSpacetimeAccelerator;
-import matteroverdrive.common.tile.TileTritaniumCrate;
 import matteroverdrive.common.tile.matter_network.TileDiscManipulator;
 import matteroverdrive.common.tile.matter_network.TileMatterAnalyzer;
 import matteroverdrive.common.tile.matter_network.TileMatterNetworkCable;
@@ -88,5 +79,8 @@ public class TileRegistry {
 									Sets.newHashSet(BlockRegistry.BLOCK_ANDROID_STATION.get()), null));
 	public static final RegistryObject<BlockEntityType<TileDiscManipulator>> TILE_DISC_MANIPULATOR = TILES
 			.register(TypeMachine.DISC_MANIPULATOR.id(), () -> new BlockEntityType<>(TileDiscManipulator::new, Sets.newHashSet(BlockRegistry.BLOCK_DISC_MANIPULATOR.get()), null));
-
+	public static final RegistryObject<BlockEntityType<TileDiscManipulator>> TILE_STAR_MAP = TILES
+		.register(TypeMachine.STAR_MAP.id(), () -> new BlockEntityType<>(TileDiscManipulator::new, Sets.newHashSet(BlockRegistry.BLOCK_STAR_MAP.get()), null));
+//	public static final RegistryObject<BlockEntityType<TileSpacetimeEqualizer>> TILE_SPACETIME_EQUALIZER = TILES
+//		.register(TypeMachine.SPACETIME_EQUALIZER.id(), () -> new ItemEntityType<>(TileSpacetimeEqualizer::new, Sets.newHashSet(ItemRegistry.ITEM_SPACETIME_EQUALIZER.get()), null));
 }

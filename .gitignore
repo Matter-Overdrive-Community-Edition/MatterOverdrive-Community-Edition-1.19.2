@@ -85,3 +85,6 @@ runData.launch
 runServer.launch
 
 gradle logs/
+
+# Don't commit generated changes.
+src/generated/resources/

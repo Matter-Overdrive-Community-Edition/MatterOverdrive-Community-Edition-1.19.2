@@ -62,14 +62,17 @@ public class ItemUpgrade extends OverdriveItem {
 					UtilsText.tooltip("upgradeinfo", UtilsText.tooltip("controlkey").withStyle(ChatFormatting.YELLOW))
 							.withStyle(ChatFormatting.GRAY));
 		}
-
 	}
 
 	public enum UpgradeType implements IBulkRegistryObject {
-
-		SPEED(1.25, 1, 1.25, 1.25, 1, 1.25, 1), POWER(0.5, 1, 1, 1.25, 1, 0.75, 1),
-		FAIL_SAFE(0.75, 1, 1.25, 0.5, 1, 1.25, 1), RANGE(1, 1, 1.5, 1, 1, 1.5, 4), POWER_STORAGE(1, 1, 1, 1, 2, 1, 1),
-		HYPER_SPEED(1.85, 1, 2, 1.25, 1, 2, 1), MATTER_STORAGE(1, 2, 1, 1, 1, 1, 1), MUFFLER(1, 1, 1, 1, 1, 1, 1);
+		SPEED(1.25, 1, 1.25, 1.25, 1, 1.25, 1),
+		POWER(0.5, 1, 1, 1.25, 1, 0.75, 1),
+		FAIL_SAFE(0.75, 1, 1.25, 0.5, 1, 1.25, 1),
+		RANGE(1, 1, 1.5, 1, 1, 1.5, 4),
+		POWER_STORAGE(1, 1, 1, 1, 2, 1, 1),
+		HYPER_SPEED(1.85, 1, 2, 1.25, 1, 2, 1),
+		MATTER_STORAGE(1, 2, 1, 1, 1, 1, 1),
+		MUFFLER(1, 1, 1, 1, 1, 1, 1);
 
 		public final double speedBonus;
 		public final double matterStorageBonus;

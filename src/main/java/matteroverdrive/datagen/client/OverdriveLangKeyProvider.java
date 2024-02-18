@@ -270,8 +270,12 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			addItem(ItemRegistry.ITEM_ROGUE_ANDROID_HEAD, "Rogue Android Head");
 			addItem(ItemRegistry.ITEM_ROGUE_ANDROID_LEGS, "Rogue Android Legs");
 			addItem(ItemRegistry.ITEM_TRITANIUM_SPINE, "Tritanium Spine");
-
 			addItem(ItemRegistry.ITEM_TRILITHIUM_CRYSTAL, "Trilithium Crystal");
+			addItem(ItemRegistry.ITEM_SNIPER_SCOPE, "Snipe Scope");
+			addItem(ItemRegistry.ITEM_SECURITY_PROTOCOL, "Security Protocol");
+			addItem(ItemRegistry.ITEM_PORTABLE_DECOMPOSER, "Portable Decomposer");
+			addItem(ItemRegistry.ITEM_NETWORK_FLASH_DRIVE, "Network Flash Drive");
+//			addItem(ItemRegistry.ITEM_SPACETIME_EQUALIZER, "Spacetime Equalizer.");
 
 			for (OverdriveBlockColors color : OverdriveBlockColors.values()) {
 				String name = getNameFromEnum(color.toString());
@@ -316,11 +320,14 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 
 			addBlock(BlockRegistry.BLOCK_ANDROID_STATION, "Android Station");
 //			addBlock(BlockRegistry.BLOCK_DISC_MANIPULATOR, "Disc Manipulator");
-
 			addBlock(BlockRegistry.BLOCK_DECORATIVE_BEAMS, "Decorative Beams");
 			addBlock(BlockRegistry.BLOCK_DECORATIVE_CARBON_FIBER_PLATE, "Carbon Fiber Plate");
 			addBlock(BlockRegistry.BLOCK_DECORATIVE_CLEAN, "Tritanium Smooth Plate");
 			addBlock(BlockRegistry.BLOCK_DECORATIVE_COILS, "Decorative Coils");
+			addBlock(BlockRegistry.BLOCK_STAR_MAP, "Star Map");
+			addBlock(BlockRegistry.BLOCK_WEAPON_STATION, "Weapon Station");
+			addBlock(BlockRegistry.BLOCK_NETWORK_SWITCH, "Network Switch");
+//			addBlock(BlockRegistry.BLOCK_HOLO_SIGN, "Holo Sign");
 
 			addTooltip("energystored", "%1$s / %2$s %3$sFE");
 			addTooltip("creativeenergystored", "INFINITE");
