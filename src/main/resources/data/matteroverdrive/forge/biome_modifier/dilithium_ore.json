@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": "matteroverdrive:dilithium_ore",
+  "step": "underground_ores"
+}
