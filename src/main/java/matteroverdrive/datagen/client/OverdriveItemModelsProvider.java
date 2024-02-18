@@ -24,7 +24,8 @@ public class OverdriveItemModelsProvider extends ItemModelProvider {
 
 	public static final int BATTERY_MODEL_COUNT = 6;
 	public static final int MATTER_CONTAINER_MODEL_COUNT = 9;
-	
+	public static final int SECURITY_PROTOCOL_COUNT = 4;
+
 	public OverdriveItemModelsProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
 		super(generator, References.ID, existingFileHelper);
 	}
@@ -64,7 +65,8 @@ public class OverdriveItemModelsProvider extends ItemModelProvider {
 		layeredItem(ItemRegistry.ITEM_PLASMA_CORE, Parent.GENERATED, itemLoc("plasma_core"));
 		layeredItem(ItemRegistry.ITEM_SUPERCONDUCTOR_MAGNET, Parent.GENERATED, itemLoc("s_magnet"));
 		layeredItem(ItemRegistry.ITEM_SNIPER_SCOPE, Parent.GENERATED, itemLoc("sniper_scope"));
-		layeredItem(ItemRegistry.ITEM_SECURITY_PROTOCOL, Parent.GENERATED, itemLoc("security_protocol"));
+//		layeredItem(ItemRegistry.ITEM_SECURITY_PROTOCOL, Parent.GENERATED, itemLoc("security_protocol"));
+		generateSecurityProtocols();
 		layeredItem(ItemRegistry.ITEM_PORTABLE_DECOMPOSER, Parent.GENERATED, itemLoc("portable_decomposer"));
 		layeredItem(ItemRegistry.ITEM_NETWORK_FLASH_DRIVE, Parent.GENERATED, itemLoc("flash_drive"));
 
@@ -409,7 +411,26 @@ public class OverdriveItemModelsProvider extends ItemModelProvider {
 			}
 		}
 	}
-	
+
+	private void generateSecurityProtocols() {
+		ResourceLocation security_protocol = itemLoc("security_protocol");
+
+		ResourceLocation[] other_protocols = new ResourceLocation[] {
+			itemLoc("security_protocol_access"),
+			itemLoc("security_protocol_claim"),
+			itemLoc("security_protocol_empty"),
+			itemLoc("security_protocol_remove")
+		};
+
+		ItemModelBuilder[] protocols = new ItemModelBuilder[SECURITY_PROTOCOL_COUNT];
+
+		protocols[0] = layeredBuilder("item/security_protocol", Parent.GENERATED, security_protocol);
+
+		for(int i = 1; i < SECURITY_PROTOCOL_COUNT; i++) {
+			protocols[i] = layeredBuilder("item/security_protocol" + i, Parent.GENERATED, other_protocols[i]);
+		}
+	}
+
 	private void layeredItem(RegistryObject<Item> item, Parent parent, ResourceLocation...textures) {
 		layeredItem(name(item), parent, textures);
 	}

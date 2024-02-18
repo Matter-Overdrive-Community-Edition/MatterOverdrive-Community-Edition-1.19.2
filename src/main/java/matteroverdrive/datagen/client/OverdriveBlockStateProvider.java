@@ -39,8 +39,6 @@ public class OverdriveBlockStateProvider extends BlockStateProvider {
 				.texture("down", "#all").texture("up", "#all").texture("north", "#all").texture("east", "#all")
 				.texture("south", "#all").texture("west", "#all");
 
-		BlockModelBuilder floorTileColorless = models().getBuilder("floor_tile_colorless").parent(cubeColoredAll)
-				.texture("all", blockLoc("decorative/floor_tile_colorless"));
 		BlockModelBuilder floorTilesColorless = models().getBuilder("floor_tiles_colorless").parent(cubeColoredAll)
 				.texture("all", blockLoc("decorative/floor_tiles_colorless"));
 		BlockModelBuilder tritaniumPlatingColorless = models().getBuilder("tritanium_plating_colorless")
@@ -53,7 +51,6 @@ public class OverdriveBlockStateProvider extends BlockStateProvider {
 				models().cubeAll("tritanium_plating", blockLoc("decorative/tritanium_plating")), true);
 		for (OverdriveBlockColors color : OverdriveBlockColors.values()) {
 			simpleBlock(BlockRegistry.BLOCK_COLORED_TRITANIUM_PLATING.get(color), tritaniumPlatingColorless, true);
-			simpleBlock(BlockRegistry.BLOCK_FLOOR_TILE.get(color), floorTileColorless, true);
 			simpleBlock(BlockRegistry.BLOCK_FLOOR_TILES.get(color), floorTilesColorless, true);
 		}
 		for (CrateColors color : CrateColors.values()) {

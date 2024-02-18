@@ -281,7 +281,6 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			for (OverdriveBlockColors color : OverdriveBlockColors.values()) {
 				String name = getNameFromEnum(color.toString());
 				addBlock(BlockRegistry.BLOCK_COLORED_TRITANIUM_PLATING.get(color), name + " Tritanium Plating");
-				addBlock(BlockRegistry.BLOCK_FLOOR_TILE.get(color), name + " Floor Tile");
 				addBlock(BlockRegistry.BLOCK_FLOOR_TILES.get(color), name + " Floor Tiles");
 			}
 			addBlock(BlockRegistry.BLOCK_REGULAR_TRITANIUM_PLATING, "Tritanium Plating");
@@ -299,8 +298,6 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			addBlock(BlockRegistry.TRITANIUM_ORE, "Tritanium Ore");
 			addBlock(BlockRegistry.DILITHIUM_ORE, "Dilithium Ore");
 			addBlock(BlockRegistry.BLOCK_INDUSTRIAL_GLASS, "Industrial Glass");
-			addBlock(BlockRegistry.BLOCK_VENT_OPEN, "Vent");
-			addBlock(BlockRegistry.BLOCK_VENT_CLOSED, "Vent");
 			addBlock(BlockRegistry.BLOCK_SOLAR_PANEL, "Solar Panel");
 			addBlock(BlockRegistry.BLOCK_MATTER_DECOMPOSER, "Matter Decomposer");
 			addBlock(BlockRegistry.BLOCK_MATTER_RECYCLER, "Matter Recycler");
@@ -333,6 +330,8 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			addBlock(BlockRegistry.BLOCK_WEAPON_STATION, "Weapon Station");
 			addBlock(BlockRegistry.BLOCK_NETWORK_SWITCH, "Network Switch");
 //			addBlock(BlockRegistry.BLOCK_HOLO_SIGN, "Holo Sign");
+			addBlock(BlockRegistry.BLOCK_VENT_CLOSED, "Closed Vents");
+			addBlock(BlockRegistry.BLOCK_VENT_OPEN, "Open Vents");
 
 			addTooltip("energystored", "%1$s / %2$s %3$sFE");
 			addTooltip("creativeenergystored", "INFINITE");

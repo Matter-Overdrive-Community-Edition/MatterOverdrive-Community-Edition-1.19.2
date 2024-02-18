@@ -92,13 +92,6 @@ public class BlockRegistry {
 							((OverdriveBlockColors) color).color),
 					false, ((OverdriveBlockColors) color).color),
 			OverdriveBlockColors.values());
-	public static final BulkRegister<Block> BLOCK_FLOOR_TILE = bulkBlock(
-			color -> registerColoredBlock((color).id("floor_tile_"),
-					() -> new BlockColored(
-							Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F),
-							((OverdriveBlockColors) color).color),
-					false, ((OverdriveBlockColors) color).color),
-			OverdriveBlockColors.values());
 	public static final BulkRegister<Block> BLOCK_FLOOR_TILES = bulkBlock(
 			color -> registerColoredBlock(((OverdriveBlockColors) color).id("floor_tiles_"),
 					() -> new BlockColored(

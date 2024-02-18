@@ -50,7 +50,6 @@ public class OverdriveLootTablesProvider extends AbstractLootTableProvider {
 		
 		for (OverdriveBlockColors color : OverdriveBlockColors.values()) {
 			addSimpleBlock(BlockRegistry.BLOCK_COLORED_TRITANIUM_PLATING.get(color));
-			addSimpleBlock(BlockRegistry.BLOCK_FLOOR_TILE.get(color));
 			addSimpleBlock(BlockRegistry.BLOCK_FLOOR_TILES.get(color));
 		}
 		
