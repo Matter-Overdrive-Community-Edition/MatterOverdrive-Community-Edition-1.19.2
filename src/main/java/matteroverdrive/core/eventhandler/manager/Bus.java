@@ -1,10 +1,10 @@
 package matteroverdrive.core.eventhandler.manager;
 
+import java.util.function.Supplier;
+
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-
-import java.util.function.Supplier;
 
 public enum Bus {
   FORGE(() -> MinecraftForge.EVENT_BUS),

@@ -1,5 +1,9 @@
 package matteroverdrive.datagen.server;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Consumer;
+
 import matteroverdrive.References;
 import matteroverdrive.common.block.type.TypeMatterConduit;
 import matteroverdrive.common.block.type.TypeMatterNetworkCable;
@@ -27,10 +31,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.Tags;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.function.Consumer;
 
 public class OverdriveRecipeProvider extends RecipeProvider {
 

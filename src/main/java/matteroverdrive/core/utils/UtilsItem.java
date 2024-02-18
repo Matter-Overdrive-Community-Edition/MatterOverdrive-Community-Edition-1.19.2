@@ -1,5 +1,7 @@
 package matteroverdrive.core.utils;
 
+import javax.annotation.Nullable;
+
 import matteroverdrive.core.capability.MatterOverdriveCapabilities;
 import matteroverdrive.core.capability.types.energy.CapabilityEnergyStorage;
 import matteroverdrive.core.capability.types.item_pattern.CapabilityItemPatternStorage;
@@ -11,8 +13,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.energy.IEnergyStorage;
-
-import javax.annotation.Nullable;
 
 public class UtilsItem {
 

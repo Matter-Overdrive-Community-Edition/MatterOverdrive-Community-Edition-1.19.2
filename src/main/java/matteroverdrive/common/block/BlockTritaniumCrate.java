@@ -1,5 +1,8 @@
 package matteroverdrive.common.block;
 
+import java.util.Arrays;
+import java.util.List;
+
 import matteroverdrive.common.tile.TileTritaniumCrate;
 import matteroverdrive.core.block.GenericEntityBlock;
 import matteroverdrive.core.block.OverdriveBlockProperties;
@@ -27,9 +30,6 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
-
-import java.util.Arrays;
-import java.util.List;
 
 public class BlockTritaniumCrate extends GenericEntityBlock {
 

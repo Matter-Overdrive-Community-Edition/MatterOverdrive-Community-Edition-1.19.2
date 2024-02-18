@@ -1,5 +1,7 @@
 package matteroverdrive.common.block.cable.types;
 
+import java.util.HashSet;
+
 import matteroverdrive.common.block.cable.AbstractCableBlock;
 import matteroverdrive.common.block.type.TypeMatterNetworkCable;
 import matteroverdrive.common.tile.matter_network.TileMatterNetworkCable;
@@ -10,8 +12,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-
-import java.util.HashSet;
 
 public class BlockMatterNetworkCable extends AbstractCableBlock {
 

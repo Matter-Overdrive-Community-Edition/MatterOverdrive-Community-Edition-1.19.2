@@ -1,7 +1,6 @@
 package matteroverdrive.datagen.client;
 
 import matteroverdrive.References;
-import matteroverdrive.registry.BlockRegistry;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;

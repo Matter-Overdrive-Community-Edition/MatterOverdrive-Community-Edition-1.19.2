@@ -1,16 +1,18 @@
 package matteroverdrive.core.packet.type.clientbound.property;
 
+import java.util.List;
+import java.util.function.Supplier;
+
+import org.apache.commons.lang3.tuple.Triple;
+
 import com.google.common.collect.Lists;
+
 import matteroverdrive.core.packet.type.AbstractOverdrivePacket;
 import matteroverdrive.core.packet.type.clientbound.PacketBarrierMethods;
 import matteroverdrive.core.property.PropertyType;
 import matteroverdrive.core.property.PropertyTypes;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraftforge.network.NetworkEvent;
-import org.apache.commons.lang3.tuple.Triple;
-
-import java.util.List;
-import java.util.function.Supplier;
 
 public class PacketUpdateClientEntityProperty extends AbstractOverdrivePacket<PacketUpdateClientEntityProperty> {
 

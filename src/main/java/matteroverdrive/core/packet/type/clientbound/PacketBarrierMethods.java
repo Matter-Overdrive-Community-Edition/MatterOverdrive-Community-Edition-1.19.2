@@ -1,5 +1,11 @@
 package matteroverdrive.core.packet.type.clientbound;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.UUID;
+
+import org.apache.commons.lang3.tuple.Triple;
+
 import matteroverdrive.MatterOverdrive;
 import matteroverdrive.common.item.tools.electric.ItemMatterScanner;
 import matteroverdrive.common.tile.matter_network.TilePatternMonitor;
@@ -25,11 +31,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
-import org.apache.commons.lang3.tuple.Triple;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.UUID;
 
 public class PacketBarrierMethods {
 

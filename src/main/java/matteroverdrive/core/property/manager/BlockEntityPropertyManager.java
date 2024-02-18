@@ -1,6 +1,11 @@
 package matteroverdrive.core.property.manager;
 
+import java.util.List;
+
+import org.apache.commons.lang3.tuple.Triple;
+
 import com.google.common.collect.Lists;
+
 import matteroverdrive.core.packet.NetworkHandler;
 import matteroverdrive.core.packet.type.clientbound.property.PacketUpdateClientTileProperty;
 import matteroverdrive.core.packet.type.serverbound.property.PacketUpdateServerTileProperty;
@@ -9,9 +14,6 @@ import matteroverdrive.core.property.PropertyManager;
 import matteroverdrive.core.property.PropertyType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import org.apache.commons.lang3.tuple.Triple;
-
-import java.util.List;
 
 public class BlockEntityPropertyManager extends PropertyManager {
 

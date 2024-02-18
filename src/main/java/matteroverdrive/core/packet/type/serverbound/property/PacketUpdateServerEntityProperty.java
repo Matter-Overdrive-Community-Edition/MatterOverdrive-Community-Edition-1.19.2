@@ -1,5 +1,7 @@
 package matteroverdrive.core.packet.type.serverbound.property;
 
+import java.util.function.Supplier;
+
 import matteroverdrive.core.packet.type.AbstractOverdrivePacket;
 import matteroverdrive.core.property.IPropertyManaged;
 import matteroverdrive.core.property.PropertyType;
@@ -8,8 +10,6 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.network.NetworkEvent;
-
-import java.util.function.Supplier;
 
 public class PacketUpdateServerEntityProperty extends AbstractOverdrivePacket<PacketUpdateServerEntityProperty> {
 	private final int entityId;

@@ -1,17 +1,26 @@
 package matteroverdrive.registry;
 
-import matteroverdrive.common.tile.*;
-import matteroverdrive.common.tile.station.TileAndroidStation;
 import org.apache.commons.compress.utils.Sets;
 
 import matteroverdrive.References;
 import matteroverdrive.common.block.type.TypeMachine;
+import matteroverdrive.common.tile.TileCharger;
+import matteroverdrive.common.tile.TileChunkloader;
+import matteroverdrive.common.tile.TileInscriber;
+import matteroverdrive.common.tile.TileMatterConduit;
+import matteroverdrive.common.tile.TileMatterDecomposer;
+import matteroverdrive.common.tile.TileMatterRecycler;
+import matteroverdrive.common.tile.TileMicrowave;
+import matteroverdrive.common.tile.TileSolarPanel;
+import matteroverdrive.common.tile.TileSpacetimeAccelerator;
+import matteroverdrive.common.tile.TileTritaniumCrate;
 import matteroverdrive.common.tile.matter_network.TileDiscManipulator;
 import matteroverdrive.common.tile.matter_network.TileMatterAnalyzer;
 import matteroverdrive.common.tile.matter_network.TileMatterNetworkCable;
 import matteroverdrive.common.tile.matter_network.TilePatternMonitor;
 import matteroverdrive.common.tile.matter_network.TilePatternStorage;
 import matteroverdrive.common.tile.matter_network.matter_replicator.TileMatterReplicator;
+import matteroverdrive.common.tile.station.TileAndroidStation;
 import matteroverdrive.common.tile.transporter.TileTransporter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;

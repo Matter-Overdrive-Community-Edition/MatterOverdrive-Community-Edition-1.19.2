@@ -1,5 +1,9 @@
 package matteroverdrive.core.capability.types.android;
 
+import javax.annotation.Nullable;
+
+import org.jetbrains.annotations.NotNull;
+
 import matteroverdrive.core.packet.NetworkHandler;
 import matteroverdrive.core.packet.type.clientbound.android.PacketAndroidEnergySync;
 import net.minecraft.core.Direction;
@@ -9,9 +13,6 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.energy.IEnergyStorage;
-import org.jetbrains.annotations.NotNull;
-
-import javax.annotation.Nullable;
 
 public class AndroidEnergy implements IEnergyStorage, ICapabilityProvider {
 

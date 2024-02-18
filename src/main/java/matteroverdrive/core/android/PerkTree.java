@@ -1,6 +1,11 @@
 package matteroverdrive.core.android;
 
+import java.awt.Point;
+import java.util.Collections;
+import java.util.UUID;
+
 import com.google.common.collect.ImmutableMultimap;
+
 import matteroverdrive.common.item.pill.ItemAndroidPill;
 import matteroverdrive.core.capability.MatterOverdriveCapabilities;
 import matteroverdrive.core.capability.types.android.AndroidEnergy;
@@ -15,10 +20,6 @@ import net.minecraft.world.item.Items;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
 import net.minecraftforge.event.entity.living.LivingHealEvent;
-
-import java.awt.*;
-import java.util.Collections;
-import java.util.UUID;
 
 public class PerkTree {
 

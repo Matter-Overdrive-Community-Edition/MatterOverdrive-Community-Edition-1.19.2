@@ -1,5 +1,8 @@
 package matteroverdrive.core.capability.types.android;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
 import matteroverdrive.core.android.api.ICapabilityAndroid;
 import matteroverdrive.core.android.api.perk.AndroidPerkManager;
 import matteroverdrive.core.android.api.perk.IAndroidPerk;
@@ -25,9 +28,6 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.common.util.LazyOptional;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 public class AndroidData implements ICapabilityAndroid, ICapabilityProvider {
   private final LazyOptional<ICapabilityAndroid> holder = LazyOptional.of(() -> this);

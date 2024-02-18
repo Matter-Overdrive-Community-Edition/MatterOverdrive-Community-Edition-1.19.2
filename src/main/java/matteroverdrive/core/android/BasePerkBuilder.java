@@ -1,17 +1,18 @@
 package matteroverdrive.core.android;
 
+import java.awt.Point;
+import java.util.List;
+import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
+import java.util.function.BiPredicate;
+
 import com.google.common.collect.Multimap;
+
 import matteroverdrive.core.android.api.ICapabilityAndroid;
 import matteroverdrive.core.android.api.perk.IAndroidPerk;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.ItemStack;
-
-import java.awt.*;
-import java.util.List;
-import java.util.function.BiConsumer;
-import java.util.function.BiFunction;
-import java.util.function.BiPredicate;
 
 public class BasePerkBuilder extends BaseAndroidPerk {
 

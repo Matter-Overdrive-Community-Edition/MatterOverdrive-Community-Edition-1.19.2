@@ -1,5 +1,9 @@
 package matteroverdrive.common.item.tools.electric;
 
+import java.util.List;
+
+import javax.annotation.Nullable;
+
 import matteroverdrive.common.item.utils.OverdriveItem;
 import matteroverdrive.core.capability.types.energy.CapabilityEnergyStorage;
 import matteroverdrive.core.utils.UtilsText;
@@ -15,9 +19,6 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.energy.IEnergyStorage;
-
-import javax.annotation.Nullable;
-import java.util.List;
 
 public class ItemElectric extends OverdriveItem {
 

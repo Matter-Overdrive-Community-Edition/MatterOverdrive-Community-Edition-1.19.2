@@ -1,5 +1,9 @@
 package matteroverdrive.core.screen.component.wrappers;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Consumer;
+
 import matteroverdrive.MatterOverdrive;
 import matteroverdrive.client.ClientReferences.Colors;
 import matteroverdrive.client.screen.ScreenPatternMonitor;
@@ -27,10 +31,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemStack;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
 
 public class WrapperPatternMonitorScreen {
 

@@ -15,12 +15,12 @@ import matteroverdrive.core.screen.component.button.ButtonEditTransporterLocatio
 import matteroverdrive.core.screen.component.button.ButtonGeneric;
 import matteroverdrive.core.screen.component.button.ButtonIO;
 import matteroverdrive.core.screen.component.button.ButtonIOConfig;
+import matteroverdrive.core.screen.component.button.ButtonIOConfig.IOConfigButtonType;
 import matteroverdrive.core.screen.component.button.ButtonMenuBar;
 import matteroverdrive.core.screen.component.button.ButtonMenuOption;
-import matteroverdrive.core.screen.component.button.ButtonTransporterLocation;
-import matteroverdrive.core.screen.component.button.ButtonIOConfig.IOConfigButtonType;
 import matteroverdrive.core.screen.component.button.ButtonMenuOption.MenuButtonType;
 import matteroverdrive.core.screen.component.button.ButtonOverdrive;
+import matteroverdrive.core.screen.component.button.ButtonTransporterLocation;
 import matteroverdrive.core.screen.component.wrappers.WrapperIOConfig;
 import matteroverdrive.core.screen.component.wrappers.WrapperTransporterLocationEditer;
 import matteroverdrive.core.screen.types.GenericMachineScreen;

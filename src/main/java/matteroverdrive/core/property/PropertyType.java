@@ -1,10 +1,14 @@
 package matteroverdrive.core.property;
 
+import java.util.Objects;
+import java.util.function.BiConsumer;
+import java.util.function.BiPredicate;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Supplier;
+
 import matteroverdrive.MatterOverdrive;
 import net.minecraft.network.FriendlyByteBuf;
-
-import java.util.Objects;
-import java.util.function.*;
 
 public class PropertyType<T> implements Comparable<PropertyType<?>> {
 

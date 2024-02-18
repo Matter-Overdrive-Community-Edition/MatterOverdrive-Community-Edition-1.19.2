@@ -5,6 +5,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Matrix3f;
 import com.mojang.math.Matrix4f;
 import com.mojang.math.Vector3f;
+
 import matteroverdrive.client.ClientReferences.AtlasTextures;
 import matteroverdrive.client.ClientReferences.Colors;
 import matteroverdrive.client.ClientRegister;

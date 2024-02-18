@@ -1,8 +1,13 @@
 package matteroverdrive.core.android.api.module;
 
+import java.util.List;
+
+import javax.annotation.Nonnull;
+
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
+
 import matteroverdrive.core.capability.types.android.AndroidData;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -10,9 +15,6 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraftforge.common.util.INBTSerializable;
-
-import javax.annotation.Nonnull;
-import java.util.List;
 
 public abstract class AndroidModule implements INBTSerializable<CompoundTag> {
 

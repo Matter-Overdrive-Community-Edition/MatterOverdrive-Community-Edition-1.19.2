@@ -1,11 +1,11 @@
 package matteroverdrive.core.packet.type.serverbound.android;
 
+import java.util.function.Supplier;
+
 import matteroverdrive.core.capability.MatterOverdriveCapabilities;
 import matteroverdrive.core.packet.type.AbstractOverdrivePacket;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraftforge.network.NetworkEvent;
-
-import java.util.function.Supplier;
 
 public class PacketAndroidPerkToggle extends AbstractOverdrivePacket<PacketAndroidPerkToggle> {
 

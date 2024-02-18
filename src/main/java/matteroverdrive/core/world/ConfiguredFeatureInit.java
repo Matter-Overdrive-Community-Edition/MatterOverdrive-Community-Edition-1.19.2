@@ -1,6 +1,10 @@
 package matteroverdrive.core.world;
 
+import java.util.List;
+import java.util.function.Supplier;
+
 import com.google.common.base.Suppliers;
+
 import matteroverdrive.References;
 import matteroverdrive.registry.BlockRegistry;
 import net.minecraft.core.Registry;
@@ -10,9 +14,6 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
-
-import java.util.List;
-import java.util.function.Supplier;
 
 public class ConfiguredFeatureInit {
     public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURES =

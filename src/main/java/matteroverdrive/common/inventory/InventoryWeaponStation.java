@@ -1,6 +1,5 @@
 package matteroverdrive.common.inventory;
 
-import matteroverdrive.common.tile.TileCharger;
 import matteroverdrive.common.tile.TileWeaponStation;
 import matteroverdrive.core.capability.types.item.CapabilityInventory;
 import matteroverdrive.core.capability.types.item.PlayerSlotDataWrapper;

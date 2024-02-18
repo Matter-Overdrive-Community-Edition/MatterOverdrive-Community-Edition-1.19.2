@@ -1,7 +1,10 @@
 package matteroverdrive.client.render.tile;
 
+import org.jetbrains.annotations.NotNull;
+
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Vector3f;
+
 import matteroverdrive.client.render.item.VariableAlphaItemRenderer;
 import matteroverdrive.client.render.tile.utils.AbstractTileRenderer;
 import matteroverdrive.common.tile.matter_network.matter_replicator.TileMatterReplicator;
@@ -13,7 +16,6 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import org.jetbrains.annotations.NotNull;
 
 public class RendererMatterReplicator extends AbstractTileRenderer<TileMatterReplicator> {
 

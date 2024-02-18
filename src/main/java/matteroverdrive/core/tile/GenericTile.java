@@ -1,5 +1,10 @@
 package matteroverdrive.core.tile;
 
+import java.util.HashMap;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
 import matteroverdrive.References;
 import matteroverdrive.core.block.GenericEntityBlock;
 import matteroverdrive.core.capability.IOverdriveCapability;
@@ -28,10 +33,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import java.util.HashMap;
 
 public abstract class GenericTile extends BlockEntity implements Nameable, IPropertyManaged {
 

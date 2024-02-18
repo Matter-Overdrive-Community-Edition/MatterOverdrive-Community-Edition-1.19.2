@@ -1,5 +1,7 @@
 package matteroverdrive.core.packet.type.serverbound.android;
 
+import java.util.function.Supplier;
+
 import matteroverdrive.core.android.api.perk.AndroidPerkManager;
 import matteroverdrive.core.android.api.perk.IAndroidPerk;
 import matteroverdrive.core.capability.MatterOverdriveCapabilities;
@@ -9,8 +11,6 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraftforge.network.NetworkEvent;
-
-import java.util.function.Supplier;
 
 public class PacketAndroidPerkAttemptBuy extends AbstractOverdrivePacket<PacketAndroidPerkAttemptBuy> {
 

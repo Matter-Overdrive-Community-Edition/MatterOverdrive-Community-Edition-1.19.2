@@ -54,7 +54,15 @@ public class OverdriveBlockTagsProvider extends BlockTagsProvider {
 				.add(BlockRegistry.BLOCK_CHUNKLOADER.get()).add(BlockRegistry.BLOCK_MATTER_ANALYZER.get())
 				.add(BlockRegistry.BLOCK_PATTERN_STORAGE.get()).add(BlockRegistry.BLOCK_PATTERN_MONITOR.get())
 				.add(BlockRegistry.BLOCK_MATTER_REPLICATOR.get());
+
+		tag(BlockTags.NEEDS_IRON_TOOL).add(BlockRegistry.BLOCK_REGULAR_TRITANIUM_PLATING.get())
+				.add(BlockRegistry.TRITANIUM_ORE.get()).add(BlockRegistry.DEEPSLATE_TRITANIUM_ORE.get());
+		
+		tag(BlockTags.NEEDS_DIAMOND_TOOL).add(BlockRegistry.BLOCK_REGULAR_TRITANIUM_PLATING.get())
+				.add(BlockRegistry.DILITHIUM_ORE.get()).add(BlockRegistry.DEEPSLATE_DILITHIUM_ORE.get());
+
 	}
+	
 	
 	private static TagKey<Block> forgeTag(String name){
 		return BlockTags.create(new ResourceLocation("forge", name));

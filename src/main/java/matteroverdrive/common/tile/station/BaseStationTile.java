@@ -1,7 +1,6 @@
 package matteroverdrive.common.tile.station;
 
 import matteroverdrive.core.tile.types.GenericMachineTile;
-import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.block.entity.BlockEntityType;

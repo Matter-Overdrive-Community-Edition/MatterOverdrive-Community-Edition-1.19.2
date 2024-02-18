@@ -6,7 +6,6 @@ import matteroverdrive.core.android.api.ICapabilityAndroid;
 import matteroverdrive.core.capability.MatterOverdriveCapabilities;
 import matteroverdrive.core.capability.types.item.CapabilityInventory;
 import matteroverdrive.registry.TileRegistry;
-import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;

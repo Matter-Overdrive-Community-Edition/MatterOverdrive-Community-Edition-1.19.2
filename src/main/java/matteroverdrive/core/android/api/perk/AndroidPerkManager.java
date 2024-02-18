@@ -1,12 +1,12 @@
 package matteroverdrive.core.android.api.perk;
 
-import net.minecraft.nbt.CompoundTag;
-import net.minecraftforge.common.util.INBTSerializable;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import net.minecraft.nbt.CompoundTag;
+import net.minecraftforge.common.util.INBTSerializable;
 
 public class AndroidPerkManager implements INBTSerializable<CompoundTag> {
 

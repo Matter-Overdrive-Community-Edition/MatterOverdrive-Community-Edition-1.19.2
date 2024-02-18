@@ -1,11 +1,11 @@
 package matteroverdrive.core.eventhandler.manager;
 
 
-import net.minecraftforge.eventbus.api.EventPriority;
-import net.minecraftforge.eventbus.api.GenericEvent;
-
 import java.util.function.Consumer;
 import java.util.function.Predicate;
+
+import net.minecraftforge.eventbus.api.EventPriority;
+import net.minecraftforge.eventbus.api.GenericEvent;
 
 public class GenericEventManager<T extends GenericEvent<? extends F>, F> implements ISubscribe {
   private Predicate<T> filter;

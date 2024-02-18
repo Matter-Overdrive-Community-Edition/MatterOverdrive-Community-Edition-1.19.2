@@ -1,5 +1,10 @@
 package matteroverdrive.core.property.manager;
 
+import java.util.List;
+
+import org.apache.commons.compress.utils.Lists;
+import org.apache.commons.lang3.tuple.Triple;
+
 import matteroverdrive.core.packet.NetworkHandler;
 import matteroverdrive.core.packet.type.clientbound.property.PacketUpdateClientEntityProperty;
 import matteroverdrive.core.packet.type.serverbound.property.PacketUpdateServerEntityProperty;
@@ -7,10 +12,6 @@ import matteroverdrive.core.property.Property;
 import matteroverdrive.core.property.PropertyManager;
 import matteroverdrive.core.property.PropertyType;
 import net.minecraft.world.entity.Entity;
-import org.apache.commons.compress.utils.Lists;
-import org.apache.commons.lang3.tuple.Triple;
-
-import java.util.List;
 
 public class EntityPropertyManager extends PropertyManager {
 

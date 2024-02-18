@@ -11,9 +11,9 @@ import matteroverdrive.datagen.server.OverdriveLootTablesProvider;
 import matteroverdrive.datagen.server.OverdriveMatterValueGenerator;
 import matteroverdrive.datagen.server.OverdriveRecipeProvider;
 import net.minecraft.data.DataGenerator;
+import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.data.event.GatherDataEvent;
 
 @Mod.EventBusSubscriber(modid = References.ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DataGenerators {

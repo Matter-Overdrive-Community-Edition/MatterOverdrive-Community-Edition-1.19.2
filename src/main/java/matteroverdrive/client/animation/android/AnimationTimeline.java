@@ -1,9 +1,9 @@
 package matteroverdrive.client.animation.android;
 
-import matteroverdrive.client.animation.android.segment.AnimationSegment;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import matteroverdrive.client.animation.android.segment.AnimationSegment;
 
 public class AnimationTimeline<T extends AnimationSegment> {
 

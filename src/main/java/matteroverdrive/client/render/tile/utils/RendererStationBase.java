@@ -1,5 +1,7 @@
 package matteroverdrive.client.render.tile.utils;
 
+import static org.lwjgl.opengl.GL11.GL_ONE;
+
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -14,8 +16,6 @@ import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider.Context;
 import net.minecraft.util.Mth;
-
-import static org.lwjgl.opengl.GL11.GL_ONE;
 
 public class RendererStationBase<T extends BaseStationTile> extends AbstractTileRenderer<T> {
 	public RendererStationBase(Context context) {

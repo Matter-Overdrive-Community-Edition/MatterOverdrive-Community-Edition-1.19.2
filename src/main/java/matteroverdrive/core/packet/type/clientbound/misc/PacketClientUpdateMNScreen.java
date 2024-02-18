@@ -1,12 +1,12 @@
 package matteroverdrive.core.packet.type.clientbound.misc;
 
+import java.util.function.Supplier;
+
 import matteroverdrive.core.packet.type.AbstractOverdrivePacket;
 import matteroverdrive.core.packet.type.clientbound.PacketBarrierMethods;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraftforge.network.NetworkEvent;
-
-import java.util.function.Supplier;
 
 public class PacketClientUpdateMNScreen extends AbstractOverdrivePacket<PacketClientUpdateMNScreen> {
 	BlockPos pos;

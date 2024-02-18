@@ -1,5 +1,7 @@
 package matteroverdrive.common.inventory;
 
+import matteroverdrive.common.item.ItemUpgrade.UpgradeType;
+import matteroverdrive.common.tile.TileCharger;
 import matteroverdrive.core.capability.types.item.CapabilityInventory;
 import matteroverdrive.core.capability.types.item.PlayerSlotDataWrapper;
 import matteroverdrive.core.inventory.GenericInventoryTile;
@@ -9,8 +11,6 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.SimpleContainerData;
-import matteroverdrive.common.item.ItemUpgrade.UpgradeType;
-import matteroverdrive.common.tile.TileCharger;
 
 public class InventoryCharger extends GenericInventoryTile<TileCharger> {
 
