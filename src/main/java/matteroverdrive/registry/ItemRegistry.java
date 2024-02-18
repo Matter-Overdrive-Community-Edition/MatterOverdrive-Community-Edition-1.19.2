@@ -211,6 +211,9 @@ public class ItemRegistry {
 	public static final RegistryObject<Item> ITEM_SNIPER_SCOPE = ITEMS.register("sniper_scope",
 		() -> new Item(new Item.Properties().tab(References.MAIN).stacksTo(1)));
 
+//	public static final RegistryObject<Item> ITEM_SPACETIME_EQUALIZER = ITEMS.register("spacetime_equalizer",
+//		() -> new Item(new Item.Properties().tab(References.MAIN).stacksTo(1)));
+
 	private static BulkRegister<Item> bulkItem(Function<IBulkRegistryObject, RegistryObject<Item>> factory,
 			IBulkRegistryObject[] bulkValues) {
 		return new BulkRegister<>(factory, bulkValues);

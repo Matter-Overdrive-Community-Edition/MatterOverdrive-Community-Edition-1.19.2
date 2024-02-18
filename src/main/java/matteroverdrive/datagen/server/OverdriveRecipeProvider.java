@@ -194,15 +194,15 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 //			.addKey('T', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_PLATE.get()))
 //			.complete(References.ID, "heavy_matter_pipe", consumer);
 
-		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_HOLO_SIGN.get().asItem(), 1)
-			.addPattern("GGG")
-			.addPattern("g0g")
-			.addPattern(" T ")
-			.addKey('0', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER1).get()))
-			.addKey('T', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_PLATE.get()))
-			.addKey('G', Ingredient.of(Tags.Items.GLASS_COLORLESS)) // Assuming BLOCKGLASS refers to colorless glass
-			.addKey('g', Ingredient.of(Tags.Items.DUSTS_GLOWSTONE)) // Assuming DUSTGLOWSTONE refers to glowstone dust
-			.complete(References.ID, "holo_sign", consumer);
+//		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_HOLO_SIGN.get().asItem(), 1)
+//			.addPattern("GGG")
+//			.addPattern("g0g")
+//			.addPattern(" T ")
+//			.addKey('0', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER1).get()))
+//			.addKey('T', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_PLATE.get()))
+//			.addKey('G', Ingredient.of(Tags.Items.GLASS_COLORLESS)) // Assuming BLOCKGLASS refers to colorless glass
+//			.addKey('g', Ingredient.of(Tags.Items.DUSTS_GLOWSTONE)) // Assuming DUSTGLOWSTONE refers to glowstone dust
+//			.complete(References.ID, "holo_sign", consumer);
 
 		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_INDUSTRIAL_GLASS.get().asItem(), 4)
 			.addPattern(" T ")
@@ -364,22 +364,22 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('M', Ingredient.of(ItemRegistry.ITEM_MACHINE_CASING.get()))
 			.complete(References.ID, "pattern_drive", consumer);
 
-		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_PATTERN_MONITOR.get().asItem(), 1)
-			.addPattern(" H ")
-			.addPattern("1N1")
-			.addPattern(" F ")
-			.addKey('1', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER1).get()))
-			.addKey('F', Ingredient.of(ItemRegistry.ITEM_NETWORK_FLASH_DRIVE.get()))
-			.addKey('H', Ingredient.of(BlockRegistry.BLOCK_HOLO_SIGN.get()))
-			.addKey('N', Ingredient.of(BlockRegistry.BLOCK_NETWORK_SWITCH.get()))
-			.complete(References.ID, "pattern_monitor", consumer);
+//		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_PATTERN_MONITOR.get().asItem(), 1)
+//			.addPattern(" H ")
+//			.addPattern("1N1")
+//			.addPattern(" F ")
+//			.addKey('1', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER1).get()))
+//			.addKey('F', Ingredient.of(ItemRegistry.ITEM_NETWORK_FLASH_DRIVE.get()))
+//			.addKey('H', Ingredient.of(BlockRegistry.BLOCK_HOLO_SIGN.get()))
+//			.addKey('N', Ingredient.of(BlockRegistry.BLOCK_NETWORK_SWITCH.get()))
+//			.complete(References.ID, "pattern_monitor", consumer);
 
 		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_PATTERN_STORAGE.get().asItem(), 1)
 			.addPattern("B3B")
 			.addPattern("TCT")
 			.addPattern("2M1")
 			.addKey('1', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER1).get()))
-			.addKey('B', Ingredient.of(ItemTags.WOOL)) // This is supposed to be a tag key.
+			.addKey('B', Ingredient.of(ItemTags.WOOL))
 			.addKey('2', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER2).get()))
 			.addKey('3', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER3).get()))
 			.addKey('C', Ingredient.of(Items.CHEST))
@@ -504,14 +504,14 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('H', Ingredient.of(ItemRegistry.ITEM_H_COMPENSATOR.get()))
 			.complete(References.ID, "spacetime_accelerator", consumer);
 
-		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_SPACETIME_EQUALIZER.get().asItem(), 1)
-			.addPattern(" M ")
-			.addPattern("EHE")
-			.addPattern(" M ")
-			.addKey('E', Ingredient.of(Tags.Items.ENDER_PEARLS))
-			.addKey('H', Ingredient.of(ItemRegistry.ITEM_H_COMPENSATOR.get()))
-			.addKey('M', Ingredient.of(ItemRegistry.ITEM_SUPERCONDUCTOR_MAGNET.get()))
-			.complete(References.ID, "spacetime_equalizer", consumer);
+//		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_SPACETIME_EQUALIZER.get().asItem(), 1)
+//			.addPattern(" M ")
+//			.addPattern("EHE")
+//			.addPattern(" M ")
+//			.addKey('E', Ingredient.of(Tags.Items.ENDER_PEARLS))
+//			.addKey('H', Ingredient.of(ItemRegistry.ITEM_H_COMPENSATOR.get()))
+//			.addKey('M', Ingredient.of(ItemRegistry.ITEM_SUPERCONDUCTOR_MAGNET.get()))
+//			.complete(References.ID, "spacetime_equalizer", consumer);
 
 		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_STAR_MAP.get().asItem(), 1)
 			.addPattern(" S ")
@@ -622,7 +622,7 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 //			OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_TRITANIUM_HELMET.get(), 1)
 //				.addPattern("XCX")
 //				.addPattern("X X")
-//				.addPattern("   ")
+//				.addPattern("   ")uuuuuuuuuuuuuuuuuhhu
 //				.addKey('C', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER2).get()))
 //				.addKey('X', Ingredient.of(OverdriveTags.Items.INGOT_TRITANIUM))
 //				.complete(References.ID, "tritanium_helmet", consumer);

@@ -63,6 +63,10 @@ public class OverdriveItemModelsProvider extends ItemModelProvider {
 		layeredItem(ItemRegistry.ITEM_WEAPON_RECEIVER, Parent.GENERATED, itemLoc("weapon_receiver"));
 		layeredItem(ItemRegistry.ITEM_PLASMA_CORE, Parent.GENERATED, itemLoc("plasma_core"));
 		layeredItem(ItemRegistry.ITEM_SUPERCONDUCTOR_MAGNET, Parent.GENERATED, itemLoc("s_magnet"));
+		layeredItem(ItemRegistry.ITEM_SNIPER_SCOPE, Parent.GENERATED, itemLoc("sniper_scope"));
+		layeredItem(ItemRegistry.ITEM_SECURITY_PROTOCOL, Parent.GENERATED, itemLoc("security_protocol"));
+		layeredItem(ItemRegistry.ITEM_PORTABLE_DECOMPOSER, Parent.GENERATED, itemLoc("portable_decomposer"));
+		layeredItem(ItemRegistry.ITEM_NETWORK_FLASH_DRIVE, Parent.GENERATED, itemLoc("flash_drive"));
 
 //   Weapons
 		// Weapons registered below.

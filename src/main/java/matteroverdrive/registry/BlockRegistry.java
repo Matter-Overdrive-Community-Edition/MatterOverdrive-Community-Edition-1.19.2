@@ -210,20 +210,14 @@ public class BlockRegistry {
 		() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
 		false);
 
-	public static final RegistryObject<Block> BLOCK_HOLO_SIGN = registerBlock("holo_sign",
-		() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
-		false);
+//	public static final RegistryObject<Block> BLOCK_HOLO_SIGN = registerBlock("holo_sign",
+//		() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
+//		false);
 
 	// For crafting only now.
 	public static final RegistryObject<Block> BLOCK_NETWORK_SWITCH = registerBlock("network_switch",
 		() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
 		false);
-
-	public static final RegistryObject<Block> BLOCK_SPACETIME_EQUALIZER = registerBlock(
-		TypeMachine.SPACETIME_EQUALIZER.id(),
-		() -> new BlockMachine<>(TileSpacetimeAccelerator::new,
-			TypeMachine.SPACETIME_ACCELERATOR, TileRegistry.TILE_SPACETIME_ACCELERATOR),
-		true);
 
 	public static final RegistryObject<Block> BLOCK_STAR_MAP = registerBlock(
 		TypeMachine.STAR_MAP.id(),
