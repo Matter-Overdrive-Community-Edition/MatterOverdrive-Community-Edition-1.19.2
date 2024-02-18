@@ -65,7 +65,6 @@ public class ItemUpgrade extends OverdriveItem {
 	}
 
 	public enum UpgradeType implements IBulkRegistryObject {
-		BASE(0,0,0,0,0,0,0),
 		SPEED(1.25, 1, 1.25, 1.25, 1, 1.25, 1),
 		POWER(0.5, 1, 1, 1.25, 1, 0.75, 1),
 		FAIL_SAFE(0.75, 1, 1.25, 0.5, 1, 1.25, 1),

@@ -1,7 +1,11 @@
 package matteroverdrive.registry;
 
 import java.sql.Ref;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import matteroverdrive.References;
 import matteroverdrive.client.ClientReferences.Colors;
@@ -30,6 +34,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraft.world.item.Rarity;
+import org.apache.commons.lang3.ArrayUtils;
 
 public class ItemRegistry {
 
@@ -193,8 +198,6 @@ public class ItemRegistry {
 			() -> new Item(new Item.Properties().tab(References.MAIN).stacksTo(TileMatterReplicator.NEEDED_PLATES)));
 	public static final RegistryObject<Item> ITEM_COMMUNICATOR = ITEMS.register("communicator",
 			() -> new ItemCommunicator(new Item.Properties().tab(References.MAIN).stacksTo(1)));
-//	public static final RegistryObject<Item> ITEM_S_MAGNET = ITEMS.register("s_magnet",
-//		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN).stacksTo(16), false));
 
 	public static final RegistryObject<Item> ITEM_NETWORK_FLASH_DRIVE = ITEMS.register("network_flash_drive",
 		() -> new Item(new Item.Properties().tab(References.MAIN).stacksTo(4)));
@@ -212,5 +215,4 @@ public class ItemRegistry {
 			IBulkRegistryObject[] bulkValues) {
 		return new BulkRegister<>(factory, bulkValues);
 	}
-
 }

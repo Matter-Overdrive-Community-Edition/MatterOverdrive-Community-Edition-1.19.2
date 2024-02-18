@@ -619,13 +619,13 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 				.addKey('D', Ingredient.of(entry.getKey().getTag()))
 				.complete(References.ID, "tritanium_crate_" + entry.getKey().getName(), consumer);
 
-			OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_TRITANIUM_HELMET.get(), 1)
-				.addPattern("XCX")
-				.addPattern("X X")
-				.addPattern("   ")
-				.addKey('C', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER2).get()))
-				.addKey('X', Ingredient.of(OverdriveTags.Items.INGOT_TRITANIUM))
-				.complete(References.ID, "tritanium_helmet", consumer);
+//			OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_TRITANIUM_HELMET.get(), 1)
+//				.addPattern("XCX")
+//				.addPattern("X X")
+//				.addPattern("   ")
+//				.addKey('C', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER2).get()))
+//				.addKey('X', Ingredient.of(OverdriveTags.Items.INGOT_TRITANIUM))
+//				.complete(References.ID, "tritanium_helmet", consumer);
 		}
 
 		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_TRITANIUM_HOE.get(), 1)
@@ -643,10 +643,15 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('#', Ingredient.of(OverdriveTags.Items.NUGGET_TRITANIUM))
 			.complete(References.ID, "tritanium_ingot", consumer);
 
-		ShapelessRecipeBuilder.shapeless(ItemRegistry.ITEM_TRITANIUM_INGOT.get(), 9)
-			.requires(OverdriveTags.Items.BLOCK_TRITANIUM)
-//			.unlockedBy("has_item", InventoryTrigger.Instance.hasItems(OverdriveTags.Items.BLOCK_TRITANIUM))
-			.save(consumer);
+//		ShapelessRecipeBuilder.shapeless(ItemRegistry.ITEM_TRITANIUM_INGOT.get(), 9)
+//			.requires(OverdriveTags.Items.BLOCK_TRITANIUM)
+////			.unlockedBy("has_item", InventoryTrigger.Instance.hasItems(OverdriveTags.Items.BLOCK_TRITANIUM))
+//			.save(consumer);
+
+//		ShapelessRecipeBuilder.shapeless(ItemRegistry.ITEM_TRITANIUM_NUGGET.get(), 9)
+//			.requires(OverdriveTags.Items.INGOT_TRITANIUM)
+////			.unlockedBy("has_item", InventoryTrigger.Instance.hasItems(OverdriveTags.Items.BLOCK_TRITANIUM))
+//			.save(consumer);
 
 		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_TRITANIUM_LEGGINGS.get(), 1)
 			.addPattern("XCX")
@@ -656,10 +661,10 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('X', Ingredient.of(OverdriveTags.Items.INGOT_TRITANIUM))
 			.complete(References.ID, "tritanium_leggings", consumer);
 
-		ShapelessRecipeBuilder.shapeless(ItemRegistry.ITEM_TRITANIUM_NUGGET.get(), 9)
-			.requires(OverdriveTags.Items.INGOT_TRITANIUM)
-//			.unlockedBy("has_item", InventoryTrigger.Instance.hasItems(OverdriveTags.Items.INGOT_TRITANIUM))
-			.save(consumer);
+//		ShapelessRecipeBuilder.shapeless(ItemRegistry.ITEM_TRITANIUM_NUGGET.get(), 9)
+//			.requires(OverdriveTags.Items.INGOT_TRITANIUM)
+////			.unlockedBy("has_item", InventoryTrigger.Instance.hasItems(OverdriveTags.Items.INGOT_TRITANIUM))
+//			.save(consumer);
 
 		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_TRITANIUM_PICKAXE.get(), 1)
 			.addPattern("XXX")
@@ -693,21 +698,21 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('Y', Ingredient.of(ItemTags.WOOL))
 			.complete(References.ID, "tritanium_wrench", consumer);
 
-		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.BASE).get(), 1)
+		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADE_BASE.get(), 1)
 			.addPattern(" R ")
 			.addPattern(" C ")
 			.addPattern(" T ")
 			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
 			.addKey('C', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER1).get()))
 			.addKey('T', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_PLATE.get()))
-			.complete(References.ID, "upgrade_0", consumer);
+			.complete(References.ID, "upgrade_base", consumer);
 
 		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.POWER).get(), 1)
 			.addPattern(" R ")
 			.addPattern("GUG")
 			.addPattern(" E ")
 			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
-			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.BASE).get()))
+			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADE_BASE.get()))
 			.addKey('E', Ingredient.of(Items.EMERALD))
 			.addKey('G', Ingredient.of(Tags.Items.DUSTS_GLOWSTONE))
 			.complete(References.ID, "upgrade_1", consumer);
@@ -719,7 +724,7 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('B', Ingredient.of(ItemRegistry.ITEM_BATTERIES.get(ItemBattery.BatteryType.REGULAR).get()))
 			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
 			.addKey('C', Ingredient.of(Items.QUARTZ))
-			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.BASE).get()))
+			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADE_BASE.get()))
 			.complete(References.ID, "upgrade_2", consumer);
 
 		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.RANGE).get(), 1)
@@ -729,7 +734,7 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('B', Ingredient.of(ItemRegistry.ITEM_BATTERIES.get(ItemBattery.BatteryType.REGULAR).get()))
 			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
 			.addKey('C', Ingredient.of(Tags.Items.GEMS_QUARTZ))
-			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.BASE).get()))
+			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADE_BASE.get()))
 			.complete(References.ID, "upgrade_3", consumer);
 
 		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.POWER_STORAGE).get(), 1)
@@ -738,7 +743,7 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addPattern(" G ")
 			.addKey('E', Ingredient.of(Items.ENDER_PEARL))
 			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
-			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.BASE).get()))
+			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADE_BASE.get()))
 			.addKey('G', Ingredient.of(Items.GOLD_INGOT))
 			.complete(References.ID, "upgrade_4", consumer);
 
@@ -748,14 +753,14 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addPattern(" B ")
 			.addKey('G', Ingredient.of(Items.GOLD_INGOT))
 			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
-			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.BASE).get()))
+			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADE_BASE.get()))
 			.addKey('B', Ingredient.of(ItemRegistry.ITEM_BATTERIES.get(ItemBattery.BatteryType.HIGHCAPACITY).get()))
 			.complete(References.ID, "upgrade_5", consumer);
 
 		OverdriveShapelessCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.HYPER_SPEED).get(), 1)
 			.addIngredient(Ingredient.of(OverdriveTags.Items.GEM_DILITHIUM))
 			.addIngredient(Ingredient.of(Items.NETHER_STAR))
-			.addIngredient(Ingredient.of(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.BASE).get()))
+			.addIngredient(Ingredient.of(ItemRegistry.ITEM_UPGRADE_BASE.get()))
 			.complete(References.ID, "upgrade_6", consumer);
 
 		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.MATTER_STORAGE).get(), 1)
@@ -763,7 +768,7 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addPattern("MUM")
 			.addPattern(" R ")
 			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
-			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.BASE).get()))
+			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADE_BASE.get()))
 			.addKey('M', Ingredient.of(ItemRegistry.ITEM_SUPERCONDUCTOR_MAGNET.get()))
 			.complete(References.ID, "upgrade_7", consumer);
 
@@ -772,7 +777,7 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addPattern("WUW")
 			.addPattern(" R ")
 			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
-			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.BASE).get()))
+			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADE_BASE.get()))
 			.addKey('W', Ingredient.of(ItemTags.WOOL))
 			.complete(References.ID, "upgrade_8", consumer);
 

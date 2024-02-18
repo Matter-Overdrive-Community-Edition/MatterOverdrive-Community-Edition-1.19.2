@@ -106,11 +106,12 @@ public class OverdriveItemModelsProvider extends ItemModelProvider {
 		layeredItem(ItemRegistry.ITEM_TRILITHIUM_CRYSTAL, Parent.GENERATED, itemLoc("trilithium_crystal"));
 		// quantum_fold_manipulator
 
-		layeredItem(ItemRegistry.ITEM_UPGRADE_BASE, Parent.GENERATED, itemLoc("upgrade_base"));
+		layeredItem(ItemRegistry.ITEM_UPGRADE_BASE, Parent.GENERATED, itemLoc("upgrade/upgrade_base"));
 
 		for (UpgradeType type : UpgradeType.values()) {
 			layeredItem(ItemRegistry.ITEM_UPGRADES.get(type), Parent.GENERATED, itemLoc("upgrade/upgrade_" + type.toString().toLowerCase()));
 		}
+
 		for (TypeIsolinearCircuit circuit : TypeIsolinearCircuit.values()) {
 			layeredItem(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(circuit), Parent.GENERATED, itemLoc("isolinear_circuit/" + circuit.id()));
 		}

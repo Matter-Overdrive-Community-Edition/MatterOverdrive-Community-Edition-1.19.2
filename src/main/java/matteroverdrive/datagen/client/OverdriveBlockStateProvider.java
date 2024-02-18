@@ -116,6 +116,13 @@ public class OverdriveBlockStateProvider extends BlockStateProvider {
 			models().cubeAll("decorative.beams", blockLoc("beams")),
 			true);
 
+		bottomSlabBlock(BlockRegistry.BLOCK_STAR_MAP,
+			blockLoc("starmap_side"),
+			blockLoc("weapon_station_bottom"),
+			blockLoc("weapon_station_top"),
+			true
+		);
+
 		genMatterConduits();
 		genNetworkCables();
 

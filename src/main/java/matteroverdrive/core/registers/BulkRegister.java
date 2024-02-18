@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.function.Function;
 
+import matteroverdrive.common.item.ItemUpgrade;
 import net.minecraftforge.registries.RegistryObject;
 
 public class BulkRegister<T> {
@@ -13,6 +14,17 @@ public class BulkRegister<T> {
 
 	public BulkRegister(Function<IBulkRegistryObject, RegistryObject<T>> factory, IBulkRegistryObject[] bulkValues) {
 		for (IBulkRegistryObject val : bulkValues) {
+			objects.put(val, factory.apply(val));
+		}
+	}
+
+	public BulkRegister(Function<IBulkRegistryObject, RegistryObject<T>> factory, IBulkRegistryObject[] bulkValues,
+											ItemUpgrade.UpgradeType upgradeType) {
+		for (IBulkRegistryObject val : bulkValues) {
+			if (val == upgradeType) {
+				continue;
+			}
+
 			objects.put(val, factory.apply(val));
 		}
 	}
