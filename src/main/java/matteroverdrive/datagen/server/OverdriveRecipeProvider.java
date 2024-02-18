@@ -176,9 +176,9 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('D', Ingredient.of(OverdriveTags.Items.GEM_DILITHIUM))
 			.complete(References.ID, "hc_battery", consumer);
 
-		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_MATTER_CONDUITS.get(TypeMatterConduit.HEAVY).get().asItem(), 1)
+		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_MATTER_CONDUITS.get(TypeMatterConduit.HEAVY).get().asItem(), 8)
 			.addPattern("RMR")
-			.addPattern("TNT")
+			.addPattern("TMT")
 			.addPattern("RMR")
 			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
 			.addKey('T', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_PLATE.get()))
@@ -617,15 +617,14 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 				.addKey('T', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_PLATE.get()))
 				.addKey('D', Ingredient.of(entry.getKey().getTag()))
 				.complete(References.ID, "tritanium_crate_" + entry.getKey().getName(), consumer);
-
-//			OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_TRITANIUM_HELMET.get(), 1)
-//				.addPattern("XCX")
-//				.addPattern("X X")
-//				.addPattern("   ")uuuuuuuuuuuuuuuuuhhu
-//				.addKey('C', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER2).get()))
-//				.addKey('X', Ingredient.of(OverdriveTags.Items.INGOT_TRITANIUM))
-//				.complete(References.ID, "tritanium_helmet", consumer);
 		}
+		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_TRITANIUM_HELMET.get(), 1)
+			.addPattern("XCX")
+			.addPattern("X X")
+			.addPattern("   ")
+			.addKey('C', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER2).get()))
+			.addKey('X', Ingredient.of(OverdriveTags.Items.INGOT_TRITANIUM))
+			.complete(References.ID, "tritanium_helmet", consumer);
 
 		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_TRITANIUM_HOE.get(), 1)
 			.addPattern("XX ")
