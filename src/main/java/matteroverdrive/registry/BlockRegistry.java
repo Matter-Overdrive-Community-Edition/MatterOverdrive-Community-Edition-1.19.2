@@ -212,7 +212,7 @@ public class BlockRegistry {
 	public static final RegistryObject<Block> BLOCK_ANDROID_STATION = registerBlock("android_station",
 			() -> new BlockMachine<>(TileAndroidStation::new, TypeMachine.ANDROID_STATION,
 					TileRegistry.TILE_ANDROID_STATION),
-			false);
+			true);
 	
 	public static final RegistryObject<Block> BLOCK_DISC_MANIPULATOR = registerBlockNoItem(TypeMachine.DISC_MANIPULATOR.id(),
 			() -> new BlockMachine<>(TileDiscManipulator::new, TypeMachine.DISC_MANIPULATOR, TileRegistry.TILE_DISC_MANIPULATOR),
