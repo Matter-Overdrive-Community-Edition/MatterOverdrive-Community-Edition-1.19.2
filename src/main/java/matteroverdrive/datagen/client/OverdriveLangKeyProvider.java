@@ -239,20 +239,24 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			
 			addItem(ItemRegistry.ITEM_COMMUNICATOR, "Communicator");
 
+			addItem(ItemRegistry.ITEM_EARL_GRAY_TEA, "Tea. Earl Grey. Hot.");
 			addItem(ItemRegistry.ITEM_ROMULAN_ALE, "Romulan Ale");
-			addItemDescTooltip(ItemRegistry.ITEM_ROMULAN_ALE, "Highly intoxicating alcoholic beverage of Romulan origin");
+			addItemDescTooltip(ItemRegistry.ITEM_ROMULAN_ALE, "Highly intoxicating alcoholic beverage of Romulan origin.");
 
 			addItem(ItemRegistry.ITEM_EMERGENCY_RATION, "Emergency Ration");
 			addItemDescTooltip(ItemRegistry.ITEM_EMERGENCY_RATION, "Emergency Rations.");
 
 			addItem(ItemRegistry.ITEM_ME_CONVERSION_MATRIX, "ME Conversion Matrix");
-			addItem(ItemRegistry.ITEM_H_COMPENSATOR, "H Compensator");
+			addItem(ItemRegistry.ITEM_H_COMPENSATOR, "Heisenberg Compensator");
+			addItem(ItemRegistry.ITEM_INTEGRATION_MATRIX, "Integration Matrix");
 			addItem(ItemRegistry.ITEM_SUPERCONDUCTOR_MAGNET, "Superconductor Magnet");
 
+			addItem(ItemRegistry.ITEM_TRITANIUM_WRENCH, "Tritanium Wrench");
+			addItemDescTooltip(ItemRegistry.ITEM_TRITANIUM_WRENCH, "Safely disassembles and rotates machines.");
 			addItem(ItemRegistry.ITEM_DATAPAD, "Datapad");
 
 			addItem(ItemRegistry.ITEM_DILITHIUM_CRYSTAL, "Dilithium Crystal");
-
+			addItem(ItemRegistry.ITEM_FORCEFIELD_EMITTER, "Force Field Emitter");
 			addItem(ItemRegistry.ITEM_WEAPON_HANDLE, "Weapon Handle");
 			addItem(ItemRegistry.ITEM_WEAPON_RECEIVER, "Weapon Reciver");
 			addItem(ItemRegistry.ITEM_PLASMA_CORE, "Plasma Core");
@@ -293,6 +297,10 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 				}
 
 			}
+			addBlock(BlockRegistry.DEEPSLATE_TRITANIUM_ORE, "Deepslate Tritanium Ore");
+			addBlock(BlockRegistry.DEEPSLATE_DILITHIUM_ORE, "Deepslate Dilithium Ore");
+			addBlock(BlockRegistry.TRITANIUM_ORE, "Tritanium Ore");
+			addBlock(BlockRegistry.DILITHIUM_ORE, "Dilithium Ore");
 			addBlock(BlockRegistry.BLOCK_INDUSTRIAL_GLASS, "Industrial Glass");
 			addBlock(BlockRegistry.BLOCK_VENT_OPEN, "Vent");
 			addBlock(BlockRegistry.BLOCK_VENT_CLOSED, "Vent");
