@@ -78,10 +78,10 @@ public class OverdriveItemModelsProvider extends ItemModelProvider {
 		layeredItem(ItemRegistry.ITEM_TRITANIUM_SWORD, Parent.GENERATED, itemLoc("tritanium_sword"));
 		layeredItem(ItemRegistry.ITEM_TRITANIUM_HOE, Parent.GENERATED, itemLoc("tritanium_hoe"));
 		layeredItem(ItemRegistry.ITEM_TRITANIUM_SHOVEL, Parent.GENERATED, itemLoc("tritanium_shovel"));
-		layeredItem(ItemRegistry.ITEM_TRITANIUM_HELMET, Parent.GENERATED, itemLoc("tritanium_helmet"));
-		layeredItem(ItemRegistry.ITEM_TRITANIUM_CHESTPLATE, Parent.GENERATED, itemLoc("tritanium_chestplate"));
-		layeredItem(ItemRegistry.ITEM_TRITANIUM_LEGGINGS, Parent.GENERATED, itemLoc("tritanium_leggings"));
-		layeredItem(ItemRegistry.ITEM_TRITANIUM_BOOTS, Parent.GENERATED, itemLoc("tritanium_boots"));
+//		layeredItem(ItemRegistry.ITEM_TRITANIUM_HELMET, Parent.GENERATED, itemLoc("tritanium_helmet"));
+//		layeredItem(ItemRegistry.ITEM_TRITANIUM_CHESTPLATE, Parent.GENERATED, itemLoc("tritanium_chestplate"));
+//		layeredItem(ItemRegistry.ITEM_TRITANIUM_LEGGINGS, Parent.GENERATED, itemLoc("tritanium_leggings"));
+//		layeredItem(ItemRegistry.ITEM_TRITANIUM_BOOTS, Parent.GENERATED, itemLoc("tritanium_boots"));
 
 //   Android
 		layeredItem(ItemRegistry.ITEM_ROGUE_ANDROID_ARMS, Parent.GENERATED, itemLoc("rogue_android_arms"));

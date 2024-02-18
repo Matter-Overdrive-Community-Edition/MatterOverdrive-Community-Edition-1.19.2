@@ -24,6 +24,10 @@ import matteroverdrive.common.item.utils.OverdriveItem;
 import matteroverdrive.common.tile.matter_network.matter_replicator.TileMatterReplicator;
 import matteroverdrive.core.registers.BulkRegister;
 import matteroverdrive.core.registers.IBulkRegistryObject;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.Item;
@@ -35,20 +39,21 @@ import net.minecraft.world.item.Tiers;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 public class ItemRegistry {
 
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, References.ID);
 
 // Materials
 	public static final RegistryObject<Item> ITEM_DILITHIUM_CRYSTAL = ITEMS.register("dilithium_crystal",
-		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
+		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), false));
 	public static final RegistryObject<Item> ITEM_TRITANIUM_INGOT = ITEMS.register("tritanium_ingot",
-		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
+		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), false));
 	public static final RegistryObject<Item> ITEM_TRITANIUM_NUGGET = ITEMS.register("tritanium_nugget",
-		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
+		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), false));
 	public static final RegistryObject<Item> ITEM_TRITANIUM_DUST = ITEMS.register("tritanium_dust",
-		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
+		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), false));
 	// Is this base matter dust, and the next one refined?
 	public static final RegistryObject<Item> ITEM_RAW_MATTER_DUST = ITEMS.register("raw_matter_dust",
 		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
@@ -67,12 +72,22 @@ public class ItemRegistry {
 	public static final RegistryObject<Item> ITEM_ANDROID_PILL_YELLOW = ITEMS.register("android_pill_yellow",
 		() -> new ItemAndroidYellowPill(new Item.Properties().food(ItemAndroidPill.PILLS).tab(References.MAIN),
 			Colors.PILL_YELLOW, true));
+
 	public static final RegistryObject<Item> ITEM_EARL_GRAY_TEA = ITEMS.register("earl_gray_tea",
-		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
+            () -> new OverdriveItem(new Item.Properties().tab(References.MAIN).food(Foods.ITEM_EARL_GRAY_TEA), false));
 	public static final RegistryObject<Item> ITEM_ROMULAN_ALE = ITEMS.register("romulan_ale",
-		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
+            () -> new OverdriveItem(new Item.Properties().tab(References.MAIN).food(Foods.ITEM_ROMULAN_ALE), true));
 	public static final RegistryObject<Item> ITEM_EMERGENCY_RATION = ITEMS.register("emergency_ration",
-		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
+            () -> new OverdriveItem(new Item.Properties().tab(References.MAIN).food(Foods.ITEM_EMERGENCY_RATION), false));
+
+    public static class Foods {
+        public static final FoodProperties ITEM_EARL_GRAY_TEA = new FoodProperties.Builder()
+                .nutrition(6).saturationMod(0.8f).meat().fast().alwaysEat().effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 600, 3), 0.9f).build();
+        public static final FoodProperties ITEM_ROMULAN_ALE = new FoodProperties.Builder()
+                .nutrition(6).saturationMod(0.6f).meat().fast().alwaysEat().effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 600, 3), 0.9f).build();
+        public static final FoodProperties ITEM_EMERGENCY_RATION = new FoodProperties.Builder()
+                .nutrition(6).saturationMod(0.6f).meat().fast().effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 600, 3), 0.9f).build();
+    }
 
 //    Storage
 	public static final BulkRegister<Item> ITEM_BATTERIES = bulkItem(
@@ -84,13 +99,13 @@ public class ItemRegistry {
 
 //    Crafting
 	public static final RegistryObject<Item> ITEM_ME_CONVERSION_MATRIX = ITEMS.register("me_conversion_matrix",
-		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
+		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), false));
 	public static final RegistryObject<Item> ITEM_H_COMPENSATOR = ITEMS.register("h_compensator",
-		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
+		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), false));
 	public static final RegistryObject<Item> ITEM_INTEGRATION_MATRIX = ITEMS.register("integration_matrix",
-		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
+		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), false));
 	public static final RegistryObject<Item> ITEM_MACHINE_CASING = ITEMS.register("machine_casing",
-		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
+		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), false));
 	public static final BulkRegister<Item> ITEM_ISOLINEAR_CIRCUITS = bulkItem(
 		circuit -> ITEMS.register(((TypeIsolinearCircuit) circuit).id(),
 			() -> new Item(new Item.Properties().tab(References.MAIN))),
@@ -98,13 +113,13 @@ public class ItemRegistry {
 
 	// Matter. <-- Is this fluid matter plasma?
 	public static final RegistryObject<Item> ITEM_FORCEFIELD_EMITTER = ITEMS.register("forcefield_emitter",
-		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
+		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), false));
 	public static final RegistryObject<Item> ITEM_WEAPON_HANDLE = ITEMS.register("weapon_handle",
-		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
+		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), false));
 	public static final RegistryObject<Item> ITEM_WEAPON_RECEIVER = ITEMS.register("weapon_receiver",
-		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
+		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), false));
 	public static final RegistryObject<Item> ITEM_PLASMA_CORE = ITEMS.register("plasma_core",
-		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
+		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), false));
 
 //    Weapons
 	public static final RegistryObject<Item> ITEM_PHASER = ITEMS.register("phaser",
@@ -144,14 +159,16 @@ public class ItemRegistry {
 		() -> new HoeItem(Tiers.NETHERITE, 10, 5f, new Item.Properties().stacksTo(1).tab(References.MAIN)));
 	public static final RegistryObject<Item> ITEM_TRITANIUM_SHOVEL = ITEMS.register("tritanium_shovel",
 		() -> new ShovelItem(Tiers.NETHERITE, 10, 5f, new Item.Properties().stacksTo(1).tab(References.MAIN)));
-	public static final RegistryObject<Item> ITEM_TRITANIUM_HELMET = ITEMS.register("tritanium_helmet",
-		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
-	public static final RegistryObject<Item> ITEM_TRITANIUM_CHESTPLATE = ITEMS.register("tritanium_chetsplate",
-		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
-	public static final RegistryObject<Item> ITEM_TRITANIUM_LEGGINGS = ITEMS.register("tritanium_leggings",
-		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
-	public static final RegistryObject<Item> ITEM_TRITANIUM_BOOTS = ITEMS.register("tritanium_boots",
-		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
+	
+//  Armor - Not fully working!
+	public static final RegistryObject<ArmorItem> ITEM_TRITANIUM_HELMET = ITEMS.register("tritanium_helmet",
+		() -> new ArmorItem(ArmorMaterials.NETHERITE, EquipmentSlot.HEAD, new Item.Properties().stacksTo(1).tab(References.MAIN)));
+	public static final RegistryObject<ArmorItem> ITEM_TRITANIUM_CHESTPLATE = ITEMS.register("tritanium_chetsplate",
+		() -> new ArmorItem(ArmorMaterials.NETHERITE, EquipmentSlot.CHEST, new Item.Properties().stacksTo(1).tab(References.MAIN)));
+	public static final RegistryObject<ArmorItem> ITEM_TRITANIUM_LEGGINGS = ITEMS.register("tritanium_leggings",
+		() -> new ArmorItem(ArmorMaterials.NETHERITE, EquipmentSlot.LEGS, new Item.Properties().stacksTo(1).tab(References.MAIN)));
+	public static final RegistryObject<ArmorItem> ITEM_TRITANIUM_BOOTS = ITEMS.register("tritanium_boots",
+		() -> new ArmorItem(ArmorMaterials.NETHERITE, EquipmentSlot.FEET, new Item.Properties().stacksTo(1).tab(References.MAIN)));
 
 //    Android
 	public static final RegistryObject<Item> ITEM_ROGUE_ANDROID_ARMS = ITEMS.register("rogue_android_arms",
@@ -174,7 +191,7 @@ public class ItemRegistry {
 		ItemTransporterFlashdrive::new);
 	// energy_pack
 	public static final RegistryObject<Item> ITEM_DATAPAD = ITEMS.register("data_pad",
-		() -> new Item(new Item.Properties().tab(References.MAIN).stacksTo(1)));
+		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN).stacksTo(1), true));
 	// contract
 	// portable_decomposer
 	// security_protocol
@@ -182,34 +199,34 @@ public class ItemRegistry {
 	// record_transformation
 	// artifact
 	public static final RegistryObject<Item> ITEM_TRILITHIUM_CRYSTAL = ITEMS.register("trilithium_crystal",
-		() -> new Item(new Item.Properties().tab(References.MAIN).stacksTo(64)));
+		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN).stacksTo(64), false));
   // quantum_fold_manipulator
 	// Not sure where the following fit. They are new items compared to the 1.12.2 version.
 	public static final RegistryObject<Item> ITEM_SUPERCONDUCTOR_MAGNET = ITEMS.register("s_magnet",
-		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
+		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), false));
 	public static final RegistryObject<Item> ITEM_UPGRADE_BASE = ITEMS.register("upgrade_base",
 		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN).stacksTo(16), false));
 	public static final BulkRegister<Item> ITEM_UPGRADES = bulkItem(
 			upgrade -> ITEMS.register(((UpgradeType) upgrade).id(), () -> new ItemUpgrade((UpgradeType) upgrade)),
 			UpgradeType.values());
 	public static final RegistryObject<Item> ITEM_TRITANIUM_PLATE = ITEMS.register("tritanium_plate",
-			() -> new Item(new Item.Properties().tab(References.MAIN)));
+			() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), false));
 	public static final RegistryObject<Item> ITEM_LEAD_PLATE = ITEMS.register("lead_plate",
-			() -> new Item(new Item.Properties().tab(References.MAIN).stacksTo(TileMatterReplicator.NEEDED_PLATES)));
+			() -> new OverdriveItem(new Item.Properties().tab(References.MAIN).stacksTo(TileMatterReplicator.NEEDED_PLATES), false));
 	public static final RegistryObject<Item> ITEM_COMMUNICATOR = ITEMS.register("communicator",
 			() -> new ItemCommunicator(new Item.Properties().tab(References.MAIN).stacksTo(1)));
 
 	public static final RegistryObject<Item> ITEM_NETWORK_FLASH_DRIVE = ITEMS.register("network_flash_drive",
-		() -> new Item(new Item.Properties().tab(References.MAIN).stacksTo(4)));
+		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN).stacksTo(4), false));
 
 	public static final RegistryObject<Item> ITEM_PORTABLE_DECOMPOSER = ITEMS.register("portable_decomposer",
-		() -> new Item(new Item.Properties().tab(References.MAIN).stacksTo(1)));
+		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN).stacksTo(1), false));
 
 	public static final RegistryObject<Item> ITEM_SECURITY_PROTOCOL = ITEMS.register("security_protocol",
-		() -> new Item(new Item.Properties().tab(References.MAIN).stacksTo(1)));
+		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN).stacksTo(1), false));
 
 	public static final RegistryObject<Item> ITEM_SNIPER_SCOPE = ITEMS.register("sniper_scope",
-		() -> new Item(new Item.Properties().tab(References.MAIN).stacksTo(1)));
+		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN).stacksTo(1), false));
 
 //	public static final RegistryObject<Item> ITEM_SPACETIME_EQUALIZER = ITEMS.register("spacetime_equalizer",
 //		() -> new Item(new Item.Properties().tab(References.MAIN).stacksTo(1)));
