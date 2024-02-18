@@ -37,6 +37,19 @@ public class OverdriveLootTablesProvider extends AbstractLootTableProvider {
 		
 		addSimpleBlock(BlockRegistry.BLOCK_REGULAR_TRITANIUM_PLATING);
 		addSimpleBlock(BlockRegistry.TRITANIUM_ORE);
+		addSimpleBlock(BlockRegistry.DEEPSLATE_TRITANIUM_ORE);
+		addSimpleBlock(BlockRegistry.DILITHIUM_ORE);
+		addSimpleBlock(BlockRegistry.DEEPSLATE_DILITHIUM_ORE);
+		addSimpleBlock(BlockRegistry.BLOCK_MACHINE_HULL);
+		addSimpleBlock(BlockRegistry.BLOCK_TRITANIUM);
+		addSimpleBlock(BlockRegistry.BLOCK_DECORATIVE_BEAMS);
+		addSimpleBlock(BlockRegistry.BLOCK_DECORATIVE_CARBON_FIBER_PLATE);
+		addSimpleBlock(BlockRegistry.BLOCK_DECORATIVE_CLEAN);
+		addSimpleBlock(BlockRegistry.BLOCK_DECORATIVE_COILS);
+		addSimpleBlock(BlockRegistry.BLOCK_INSCRIBER);
+		addSimpleBlock(BlockRegistry.BLOCK_NETWORK_SWITCH);
+		addSimpleBlock(BlockRegistry.BLOCK_WEAPON_STATION);
+		addSimpleBlock(BlockRegistry.BLOCK_ANDROID_STATION);
 		
 		for (OverdriveBlockColors color : OverdriveBlockColors.values()) {
 			addSimpleBlock(BlockRegistry.BLOCK_COLORED_TRITANIUM_PLATING.get(color));
