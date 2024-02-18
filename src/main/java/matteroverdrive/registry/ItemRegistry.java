@@ -1,11 +1,6 @@
 package matteroverdrive.registry;
 
-import java.sql.Ref;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.function.Function;
-import java.util.stream.Collectors;
+import com.google.common.base.Function;
 
 import matteroverdrive.References;
 import matteroverdrive.client.ClientReferences.Colors;
@@ -29,12 +24,17 @@ import matteroverdrive.common.item.utils.OverdriveItem;
 import matteroverdrive.common.tile.matter_network.matter_replicator.TileMatterReplicator;
 import matteroverdrive.core.registers.BulkRegister;
 import matteroverdrive.core.registers.IBulkRegistryObject;
+import net.minecraft.world.item.AxeItem;
+import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.PickaxeItem;
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.ShovelItem;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.Tiers;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.minecraft.world.item.Rarity;
-import org.apache.commons.lang3.ArrayUtils;
 
 public class ItemRegistry {
 
@@ -135,15 +135,15 @@ public class ItemRegistry {
 	public static final RegistryObject<Item> ITEM_TRITANIUM_WRENCH = ITEMS.register("tritanium_wrench",
 		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
 	public static final RegistryObject<Item> ITEM_TRITANIUM_AXE = ITEMS.register("tritanium_axe",
-		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
+		() -> new AxeItem(Tiers.NETHERITE, 10, 5f, new Item.Properties().stacksTo(1).tab(References.MAIN)));
 	public static final RegistryObject<Item> ITEM_TRITANIUM_PICKAXE = ITEMS.register("tritanium_pickaxe",
-		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
+		() -> new PickaxeItem(Tiers.NETHERITE, 10, 5f, new Item.Properties().stacksTo(1).tab(References.MAIN)));
 	public static final RegistryObject<Item> ITEM_TRITANIUM_SWORD = ITEMS.register("tritanium_sword",
-		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
+		() -> new SwordItem(Tiers.NETHERITE, 10, 5f, new Item.Properties().stacksTo(1).tab(References.MAIN)));
 	public static final RegistryObject<Item> ITEM_TRITANIUM_HOE = ITEMS.register("tritanium_hoe",
-		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
+		() -> new HoeItem(Tiers.NETHERITE, 10, 5f, new Item.Properties().stacksTo(1).tab(References.MAIN)));
 	public static final RegistryObject<Item> ITEM_TRITANIUM_SHOVEL = ITEMS.register("tritanium_shovel",
-		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
+		() -> new ShovelItem(Tiers.NETHERITE, 10, 5f, new Item.Properties().stacksTo(1).tab(References.MAIN)));
 	public static final RegistryObject<Item> ITEM_TRITANIUM_HELMET = ITEMS.register("tritanium_helmet",
 		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
 	public static final RegistryObject<Item> ITEM_TRITANIUM_CHESTPLATE = ITEMS.register("tritanium_chetsplate",

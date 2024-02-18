@@ -2,22 +2,22 @@ package matteroverdrive;
 
 import java.util.Random;
 
-import matteroverdrive.common.block.OverdriveBlockStates;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 
 import matteroverdrive.client.ClientRegister;
+import matteroverdrive.common.block.OverdriveBlockStates;
 import matteroverdrive.common.event.ServerEventHandler;
 import matteroverdrive.common.recipe.RecipeInit;
 import matteroverdrive.common.tags.OverdriveTags;
-import matteroverdrive.core.world.ConfiguredFeatureInit;
-import matteroverdrive.core.world.PlacedFeatureInit;
 import matteroverdrive.core.block.OverdriveBlockProperties;
 import matteroverdrive.core.capability.MatterOverdriveCapabilities;
 import matteroverdrive.core.config.MatterOverdriveConfig;
 import matteroverdrive.core.matter.MatterRegister;
 import matteroverdrive.core.packet.NetworkHandler;
+import matteroverdrive.core.world.ConfiguredFeatureInit;
+import matteroverdrive.core.world.PlacedFeatureInit;
 import matteroverdrive.registry.BlockRegistry;
 import matteroverdrive.registry.EntityRegistry;
 import matteroverdrive.registry.FluidRegistry;
