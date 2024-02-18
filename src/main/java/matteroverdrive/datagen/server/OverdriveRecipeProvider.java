@@ -696,6 +696,8 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('Y', Ingredient.of(ItemTags.WOOL))
 			.complete(References.ID, "tritanium_wrench", consumer);
 
+		addUpgradeRecipes(consumer);
+
 		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADE_BASE.get(), 1)
 			.addPattern(" R ")
 			.addPattern(" C ")
@@ -704,89 +706,6 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('C', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER1).get()))
 			.addKey('T', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_PLATE.get()))
 			.complete(References.ID, "upgrade_base", consumer);
-
-		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.POWER).get(), 1)
-			.addPattern(" R ")
-			.addPattern("GUG")
-			.addPattern(" E ")
-			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
-			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADE_BASE.get()))
-			.addKey('E', Ingredient.of(Items.EMERALD))
-			.addKey('G', Ingredient.of(Tags.Items.DUSTS_GLOWSTONE))
-			.complete(References.ID, "upgrade_1", consumer);
-
-		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.FAIL_SAFE).get(), 1)
-			.addPattern(" B ")
-			.addPattern("RUR")
-			.addPattern(" C ")
-			.addKey('B', Ingredient.of(ItemRegistry.ITEM_BATTERIES.get(ItemBattery.BatteryType.REGULAR).get()))
-			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
-			.addKey('C', Ingredient.of(Items.QUARTZ))
-			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADE_BASE.get()))
-			.complete(References.ID, "upgrade_2", consumer);
-
-		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.RANGE).get(), 1)
-			.addPattern(" B ")
-			.addPattern("RUR")
-			.addPattern(" C ")
-			.addKey('B', Ingredient.of(ItemRegistry.ITEM_BATTERIES.get(ItemBattery.BatteryType.REGULAR).get()))
-			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
-			.addKey('C', Ingredient.of(Tags.Items.GEMS_QUARTZ))
-			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADE_BASE.get()))
-			.complete(References.ID, "upgrade_3", consumer);
-
-		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.POWER_STORAGE).get(), 1)
-			.addPattern(" E ")
-			.addPattern("RUR")
-			.addPattern(" G ")
-			.addKey('E', Ingredient.of(Items.ENDER_PEARL))
-			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
-			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADE_BASE.get()))
-			.addKey('G', Ingredient.of(Items.GOLD_INGOT))
-			.complete(References.ID, "upgrade_4", consumer);
-
-		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.POWER_STORAGE).get(), 1)
-			.addPattern(" G ")
-			.addPattern("RUR")
-			.addPattern(" B ")
-			.addKey('G', Ingredient.of(Items.GOLD_INGOT))
-			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
-			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADE_BASE.get()))
-			.addKey('B', Ingredient.of(ItemRegistry.ITEM_BATTERIES.get(ItemBattery.BatteryType.HIGHCAPACITY).get()))
-			.complete(References.ID, "upgrade_5", consumer);
-
-		OverdriveShapelessCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.HYPER_SPEED).get(), 1)
-			.addIngredient(Ingredient.of(OverdriveTags.Items.GEM_DILITHIUM))
-			.addIngredient(Ingredient.of(Items.NETHER_STAR))
-			.addIngredient(Ingredient.of(ItemRegistry.ITEM_UPGRADE_BASE.get()))
-			.complete(References.ID, "upgrade_6", consumer);
-
-		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.MATTER_STORAGE).get(), 1)
-			.addPattern(" R ")
-			.addPattern("MUM")
-			.addPattern(" R ")
-			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
-			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADE_BASE.get()))
-			.addKey('M', Ingredient.of(ItemRegistry.ITEM_SUPERCONDUCTOR_MAGNET.get()))
-			.complete(References.ID, "upgrade_7", consumer);
-
-		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.MUFFLER).get(), 1)
-			.addPattern(" R ")
-			.addPattern("WUW")
-			.addPattern(" R ")
-			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
-			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADE_BASE.get()))
-			.addKey('W', Ingredient.of(ItemTags.WOOL))
-			.complete(References.ID, "upgrade_8", consumer);
-
-		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.MUFFLER).get(), 1)
-			.addPattern(" T ")
-			.addPattern("I I")
-			.addPattern("I I")
-			.addKey('T', Ingredient.of(OverdriveTags.Items.INGOT_TRITANIUM))
-			.addKey('W', Ingredient.of(ItemTags.WOOL))
-			.addKey('I', Ingredient.of(Tags.Items.INGOTS_IRON))
-			.complete(References.ID, "weapon_handle", consumer);
 
 		// On hold until the Weapon Modules are worked out.
 //		OverdriveShapedCraftingRecipe.start(ItemRegistry.WEAPON_MODULE_BARREL, 1)
@@ -828,4 +747,79 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.name(RecipeCategory.ITEM_2_ITEM, References.ID, INSCRIBER_LOC + "/" + name);
 	}
 
+	private void addUpgradeRecipes(Consumer<FinishedRecipe> consumer) {
+		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.SPEED).get(), 1)
+			.addPattern(" R ")
+			.addPattern("GUG")
+			.addPattern(" E ")
+			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
+			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADE_BASE.get()))
+			.addKey('E', Ingredient.of(Tags.Items.GEMS_EMERALD))
+			.addKey('G', Ingredient.of(Tags.Items.DUSTS_GLOWSTONE))
+			.complete(References.ID, "upgrade_1", consumer);
+
+		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.POWER).get(), 1)
+			.addPattern(" B ")
+			.addPattern("RUR")
+			.addPattern(" C ")
+			.addKey('B', Ingredient.of(ItemRegistry.ITEM_BATTERIES.get(ItemBattery.BatteryType.REGULAR).get()))
+			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
+			.addKey('C', Ingredient.of(Tags.Items.GEMS_QUARTZ))
+			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADE_BASE.get()))
+			.complete(References.ID, "upgrade_2", consumer);
+
+		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.FAIL_SAFE).get(), 1)
+			.addPattern(" D ")
+			.addPattern("RUR")
+			.addPattern(" G ")
+			.addKey('D', Ingredient.of(OverdriveTags.Items.DIAMOND_GEM))
+			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
+			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADE_BASE.get()))
+			.addKey('G', Ingredient.of(Tags.Items.INGOTS_GOLD))
+			.complete(References.ID, "upgrade_3", consumer);
+
+		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.RANGE).get(), 1)
+			.addPattern(" E ")
+			.addPattern("RUR")
+			.addPattern(" G ")
+			.addKey('E', Ingredient.of(Tags.Items.ENDER_PEARLS))
+			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
+			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADE_BASE.get()))
+			.addKey('G', Ingredient.of(Tags.Items.INGOTS_GOLD))
+			.complete(References.ID, "upgrade_4", consumer);
+
+		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.POWER_STORAGE).get(), 1)
+			.addPattern(" G ")
+			.addPattern("RUR")
+			.addPattern(" B ")
+			.addKey('G', Ingredient.of(Tags.Items.INGOTS_GOLD))
+			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
+			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADE_BASE.get()))
+			.addKey('B', Ingredient.of(ItemRegistry.ITEM_BATTERIES.get(ItemBattery.BatteryType.HIGHCAPACITY).get()))
+			.complete(References.ID, "upgrade_5", consumer);
+
+		OverdriveShapelessCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.HYPER_SPEED).get(), 1)
+			.addIngredient(Ingredient.of(OverdriveTags.Items.GEM_DILITHIUM))
+			.addIngredient(Ingredient.of(Items.NETHER_STAR))
+			.addIngredient(Ingredient.of(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.SPEED).get()))
+			.complete(References.ID, "upgrade_6", consumer);
+
+		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.MATTER_STORAGE).get(), 1)
+			.addPattern(" R ")
+			.addPattern("MUM")
+			.addPattern(" R ")
+			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
+			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADE_BASE.get()))
+			.addKey('M', Ingredient.of(ItemRegistry.ITEM_SUPERCONDUCTOR_MAGNET.get()))
+			.complete(References.ID, "upgrade_7", consumer);
+
+		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.MUFFLER).get(), 1)
+			.addPattern(" R ")
+			.addPattern("WUW")
+			.addPattern(" R ")
+			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
+			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADE_BASE.get()))
+			.addKey('W', Ingredient.of(ItemTags.WOOL))
+			.complete(References.ID, "upgrade_8", consumer);
+	}
 }
