@@ -116,6 +116,28 @@ public class OverdriveBlockStateProvider extends BlockStateProvider {
 			models().cubeAll("decorative.beams", blockLoc("beams")),
 			true);
 
+		bottomSlabBlock(BlockRegistry.BLOCK_STAR_MAP,
+			blockLoc("starmap_side"),
+			blockLoc("weapon_station_bottom"),
+			blockLoc("weapon_station_top"),
+			true
+		);
+
+		bottomSlabBlock(BlockRegistry.BLOCK_WEAPON_STATION,
+			blockLoc("weapon_station_side"),
+			blockLoc("weapon_station_bottom"),
+			blockLoc("weapon_station_top"),
+			true
+		);
+
+		simpleBlock(BlockRegistry.BLOCK_NETWORK_SWITCH,
+			models().cubeAll("network_switch", blockLoc("network_switch")),
+		true);
+
+//		omniDirBlock(BlockRegistry.BLOCK_HOLO_SIGN,
+//			existingBlock(BlockRegistry.BLOCK_HOLO_SIGN),
+//		true);
+
 		genMatterConduits();
 		genNetworkCables();
 
@@ -250,7 +272,6 @@ public class OverdriveBlockStateProvider extends BlockStateProvider {
 				.modelForState().modelFile(on).rotationY(270).addModel();
 		if (registerItem)
 			simpleBlockItem(block.get(), off);
-
 	}
 
 	private void redstoneToggleBlock(RegistryObject<Block> block, ModelFile off, ModelFile on, boolean registerItem) {

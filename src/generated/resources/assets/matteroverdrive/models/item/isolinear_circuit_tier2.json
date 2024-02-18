@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "matteroverdrive:item/isolinear_circuit/isolinear_circuit_tier2"
-  }
-}

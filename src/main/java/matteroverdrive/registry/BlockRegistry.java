@@ -20,15 +20,7 @@ import matteroverdrive.common.block.type.TypeMatterConduit;
 import matteroverdrive.common.block.type.TypeMatterNetworkCable;
 import matteroverdrive.common.blockitem.BlockItemColored;
 import matteroverdrive.common.blockitem.OverdriveBlockItem;
-import matteroverdrive.common.tile.TileCharger;
-import matteroverdrive.common.tile.TileChunkloader;
-import matteroverdrive.common.tile.TileInscriber;
-import matteroverdrive.common.tile.TileMatterDecomposer;
-import matteroverdrive.common.tile.TileMatterRecycler;
-import matteroverdrive.common.tile.TileMicrowave;
-import matteroverdrive.common.tile.TileSpacetimeAccelerator;
-import matteroverdrive.common.tile.TileTritaniumCrate;
-import matteroverdrive.common.tile.TileSolarPanel;
+import matteroverdrive.common.tile.*;
 import matteroverdrive.common.tile.station.TileAndroidStation;
 import matteroverdrive.core.block.OverdriveBlockProperties;
 import matteroverdrive.core.registers.BulkRegister;
@@ -217,6 +209,27 @@ public class BlockRegistry {
 	public static final RegistryObject<Block> BLOCK_DECORATIVE_COILS = registerBlock("decorative.coils",
 		() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
 		false);
+
+//	public static final RegistryObject<Block> BLOCK_HOLO_SIGN = registerBlock("holo_sign",
+//		() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
+//		false);
+
+	// For crafting only now.
+	public static final RegistryObject<Block> BLOCK_NETWORK_SWITCH = registerBlock("network_switch",
+		() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
+		false);
+
+	public static final RegistryObject<Block> BLOCK_STAR_MAP = registerBlock(
+		TypeMachine.STAR_MAP.id(),
+		() -> new BlockMachine<>(TileStarMap::new,
+			TypeMachine.STAR_MAP, TileRegistry.TILE_STAR_MAP),
+		true);
+
+	public static final RegistryObject<Block> BLOCK_WEAPON_STATION = registerBlock(
+		TypeMachine.WEAPON_STATION.id(),
+		() -> new BlockMachine<>(TileStarMap::new,
+			TypeMachine.STAR_MAP, TileRegistry.TILE_STAR_MAP),
+		true);
 
 	// Functional Methods
 

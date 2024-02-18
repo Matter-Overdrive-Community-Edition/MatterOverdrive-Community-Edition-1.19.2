@@ -63,6 +63,10 @@ public class OverdriveItemModelsProvider extends ItemModelProvider {
 		layeredItem(ItemRegistry.ITEM_WEAPON_RECEIVER, Parent.GENERATED, itemLoc("weapon_receiver"));
 		layeredItem(ItemRegistry.ITEM_PLASMA_CORE, Parent.GENERATED, itemLoc("plasma_core"));
 		layeredItem(ItemRegistry.ITEM_SUPERCONDUCTOR_MAGNET, Parent.GENERATED, itemLoc("s_magnet"));
+		layeredItem(ItemRegistry.ITEM_SNIPER_SCOPE, Parent.GENERATED, itemLoc("sniper_scope"));
+		layeredItem(ItemRegistry.ITEM_SECURITY_PROTOCOL, Parent.GENERATED, itemLoc("security_protocol"));
+		layeredItem(ItemRegistry.ITEM_PORTABLE_DECOMPOSER, Parent.GENERATED, itemLoc("portable_decomposer"));
+		layeredItem(ItemRegistry.ITEM_NETWORK_FLASH_DRIVE, Parent.GENERATED, itemLoc("flash_drive"));
 
 //   Weapons
 		// Weapons registered below.
@@ -106,11 +110,12 @@ public class OverdriveItemModelsProvider extends ItemModelProvider {
 		layeredItem(ItemRegistry.ITEM_TRILITHIUM_CRYSTAL, Parent.GENERATED, itemLoc("trilithium_crystal"));
 		// quantum_fold_manipulator
 
-		layeredItem(ItemRegistry.ITEM_UPGRADE_BASE, Parent.GENERATED, itemLoc("upgrade_base"));
+		layeredItem(ItemRegistry.ITEM_UPGRADE_BASE, Parent.GENERATED, itemLoc("upgrade/upgrade_base"));
 
 		for (UpgradeType type : UpgradeType.values()) {
 			layeredItem(ItemRegistry.ITEM_UPGRADES.get(type), Parent.GENERATED, itemLoc("upgrade/upgrade_" + type.toString().toLowerCase()));
 		}
+
 		for (TypeIsolinearCircuit circuit : TypeIsolinearCircuit.values()) {
 			layeredItem(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(circuit), Parent.GENERATED, itemLoc("isolinear_circuit/" + circuit.id()));
 		}
