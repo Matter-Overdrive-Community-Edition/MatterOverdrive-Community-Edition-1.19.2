@@ -241,10 +241,8 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 
 			addItem(ItemRegistry.ITEM_EARL_GRAY_TEA, "Tea. Earl Grey. Hot.");
 			addItem(ItemRegistry.ITEM_ROMULAN_ALE, "Romulan Ale");
-			addItemDescTooltip(ItemRegistry.ITEM_ROMULAN_ALE, "Highly intoxicating alcoholic beverage of Romulan origin.");
 
 			addItem(ItemRegistry.ITEM_EMERGENCY_RATION, "Emergency Ration");
-			addItemDescTooltip(ItemRegistry.ITEM_EMERGENCY_RATION, "Emergency Rations.");
 
 			addItem(ItemRegistry.ITEM_ME_CONVERSION_MATRIX, "ME Conversion Matrix");
 			addItem(ItemRegistry.ITEM_H_COMPENSATOR, "Heisenberg Compensator");
@@ -252,7 +250,6 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			addItem(ItemRegistry.ITEM_SUPERCONDUCTOR_MAGNET, "Superconductor Magnet");
 
 			addItem(ItemRegistry.ITEM_TRITANIUM_WRENCH, "Tritanium Wrench");
-			addItemDescTooltip(ItemRegistry.ITEM_TRITANIUM_WRENCH, "Safely disassembles and rotates machines.");
 			addItem(ItemRegistry.ITEM_DATAPAD, "Datapad");
 
 			addItem(ItemRegistry.ITEM_DILITHIUM_CRYSTAL, "Dilithium Crystal");
@@ -406,6 +403,9 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			addItemDescTooltip(ItemRegistry.ITEM_ANDROID_PILL_BLUE, "Makes you an human for a price");
 			addItemDescTooltip(ItemRegistry.ITEM_ANDROID_PILL_YELLOW, "Resets all android abilities");
 			addItemDescTooltip(ItemRegistry.ITEM_COMMUNICATOR, "Link to a Transporter for on the go");
+			addItemDescTooltip(ItemRegistry.ITEM_TRITANIUM_WRENCH, "Safely disassembles and rotates machines.");
+			addItemDescTooltip(ItemRegistry.ITEM_ROMULAN_ALE, "Highly intoxicating alcoholic beverage of Romulan origin.");
+			addItemDescTooltip(ItemRegistry.ITEM_EMERGENCY_RATION, "Emergency Rations.");
 			
 			for (CrateColors color : TileTritaniumCrate.CrateColors.values()) {
 				addBlockItemDescTooltip(BlockRegistry.BLOCK_TRITANIUM_CRATES.get(color), "Retains items when broken");
@@ -416,6 +416,10 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			addBlockItemDescTooltip(BlockRegistry.BLOCK_CHARGER, "Wireless charging for androids");
 			addBlockItemDescTooltip(BlockRegistry.BLOCK_MICROWAVE, "A 24th century smoker");
 			addBlockItemDescTooltip(BlockRegistry.BLOCK_INSCRIBER, "Makes ciruits n' stuff");
+			addBlockItemDescTooltip(BlockRegistry.BLOCK_STAR_MAP, "A Galactic delight");
+			addBlockItemDescTooltip(BlockRegistry.BLOCK_ANDROID_STATION, "Android Development Kit");
+			addBlockItemDescTooltip(BlockRegistry.BLOCK_WEAPON_STATION, "Weapon Accessory Emporium");
+			
 			for(TypeMatterConduit conduit : TypeMatterConduit.values()) {
 				addBlockItemDescTooltip(BlockRegistry.BLOCK_MATTER_CONDUITS.get(conduit), "XFER Limit: " + conduit.capacity + "kM");
 			}
