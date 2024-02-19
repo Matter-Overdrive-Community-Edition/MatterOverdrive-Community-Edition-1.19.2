@@ -39,6 +39,8 @@ public class OverdriveBlockStateProvider extends BlockStateProvider {
 				.texture("down", "#all").texture("up", "#all").texture("north", "#all").texture("east", "#all")
 				.texture("south", "#all").texture("west", "#all");
 
+		BlockModelBuilder floorTileColorless = models().getBuilder("floor_tile_colorless").parent(cubeColoredAll)
+			.texture("all", blockLoc("decorative/floor_tile_colorless"));
 		BlockModelBuilder floorTilesColorless = models().getBuilder("floor_tiles_colorless").parent(cubeColoredAll)
 				.texture("all", blockLoc("decorative/floor_tiles_colorless"));
 		BlockModelBuilder tritaniumPlatingColorless = models().getBuilder("tritanium_plating_colorless")
@@ -51,8 +53,8 @@ public class OverdriveBlockStateProvider extends BlockStateProvider {
 				models().cubeAll("tritanium_plating", blockLoc("decorative/tritanium_plating")), true);
 		for (OverdriveBlockColors color : OverdriveBlockColors.values()) {
 			simpleBlock(BlockRegistry.BLOCK_COLORED_TRITANIUM_PLATING.get(color), tritaniumPlatingColorless, true);
-			simpleBlock(BlockRegistry.BLOCK_FLOOR_TILES.get(color), floorTilesColorless, true);
-		}
+			simpleBlock(BlockRegistry.BLOCK_FLOOR_TILE.get(color), floorTileColorless, true);
+			simpleBlock(BlockRegistry.BLOCK_FLOOR_TILES.get(color), floorTilesColorless, true);		}
 		for (CrateColors color : CrateColors.values()) {
 			String name = color.id();
 			horrRotatedBlock(BlockRegistry.BLOCK_TRITANIUM_CRATES.get(color),
@@ -133,10 +135,6 @@ public class OverdriveBlockStateProvider extends BlockStateProvider {
 		simpleBlock(BlockRegistry.BLOCK_NETWORK_SWITCH,
 			models().cubeAll("network_switch", blockLoc("network_switch")),
 		true);
-
-//		omniDirBlock(BlockRegistry.BLOCK_HOLO_SIGN,
-//			existingBlock(BlockRegistry.BLOCK_HOLO_SIGN),
-//		true);
 
 		genMatterConduits();
 		genNetworkCables();

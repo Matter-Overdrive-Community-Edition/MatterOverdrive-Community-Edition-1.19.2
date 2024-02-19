@@ -20,6 +20,7 @@ public class OverdriveBlockTagsProvider extends BlockTagsProvider {
 	protected void addTags() {
 		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(BlockRegistry.BLOCK_REGULAR_TRITANIUM_PLATING.get())
 				.add(BlockRegistry.BLOCK_COLORED_TRITANIUM_PLATING.<Block>getObjectsAsArray(new Block[0]))
+				.add(BlockRegistry.BLOCK_FLOOR_TILE.<Block>getObjectsAsArray(new Block[0]))
 				.add(BlockRegistry.BLOCK_FLOOR_TILES.<Block>getObjectsAsArray(new Block[0]))
 				.add(BlockRegistry.BLOCK_TRITANIUM_CRATES.<Block>getObjectsAsArray(new Block[0]))
 				.add(BlockRegistry.BLOCK_SOLAR_PANEL.get()).add(BlockRegistry.BLOCK_MATTER_DECOMPOSER.get())
@@ -41,6 +42,7 @@ public class OverdriveBlockTagsProvider extends BlockTagsProvider {
 
 		tag(BlockTags.NEEDS_STONE_TOOL).add(BlockRegistry.BLOCK_REGULAR_TRITANIUM_PLATING.get())
 				.add(BlockRegistry.BLOCK_COLORED_TRITANIUM_PLATING.<Block>getObjectsAsArray(new Block[0]))
+				.add(BlockRegistry.BLOCK_FLOOR_TILE.<Block>getObjectsAsArray(new Block[0]))
 				.add(BlockRegistry.BLOCK_FLOOR_TILES.<Block>getObjectsAsArray(new Block[0]))
 				.add(BlockRegistry.BLOCK_TRITANIUM_CRATES.<Block>getObjectsAsArray(new Block[0]))
 				.add(BlockRegistry.BLOCK_SOLAR_PANEL.get()).add(BlockRegistry.BLOCK_MATTER_DECOMPOSER.get())

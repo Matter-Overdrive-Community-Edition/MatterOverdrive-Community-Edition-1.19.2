@@ -281,6 +281,7 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			for (OverdriveBlockColors color : OverdriveBlockColors.values()) {
 				String name = getNameFromEnum(color.toString());
 				addBlock(BlockRegistry.BLOCK_COLORED_TRITANIUM_PLATING.get(color), name + " Tritanium Plating");
+				addBlock(BlockRegistry.BLOCK_FLOOR_TILE.get(color), name + " Floor Tile");
 				addBlock(BlockRegistry.BLOCK_FLOOR_TILES.get(color), name + " Floor Tiles");
 			}
 			addBlock(BlockRegistry.BLOCK_REGULAR_TRITANIUM_PLATING, "Tritanium Plating");
@@ -329,9 +330,9 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			addBlock(BlockRegistry.BLOCK_STAR_MAP, "Star Map");
 			addBlock(BlockRegistry.BLOCK_WEAPON_STATION, "Weapon Station");
 			addBlock(BlockRegistry.BLOCK_NETWORK_SWITCH, "Network Switch");
-//			addBlock(BlockRegistry.BLOCK_HOLO_SIGN, "Holo Sign");
 			addBlock(BlockRegistry.BLOCK_VENT_CLOSED, "Closed Vents");
 			addBlock(BlockRegistry.BLOCK_VENT_OPEN, "Open Vents");
+			addBlock(BlockRegistry.BLOCK_HOLO_SIGN, "Holo Sign");
 
 			addTooltip("energystored", "%1$s / %2$s %3$sFE");
 			addTooltip("creativeenergystored", "INFINITE");
@@ -433,7 +434,6 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			addBlockItemDescTooltip(BlockRegistry.BLOCK_PATTERN_MONITOR, "Queues Replication tasks");
 			addBlockItemDescTooltip(BlockRegistry.BLOCK_MATTER_REPLICATOR, "Makes ordered items from matter");
 			addBlockItemDescTooltip(BlockRegistry.BLOCK_DISC_MANIPULATOR, "Wipe patterns and more");
-			
 
 			addGuiLabel("redstonelow", "Low");
 			addGuiLabel("redstonehigh", "High");

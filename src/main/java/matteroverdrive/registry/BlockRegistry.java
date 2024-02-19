@@ -92,13 +92,20 @@ public class BlockRegistry {
 							((OverdriveBlockColors) color).color),
 					false, ((OverdriveBlockColors) color).color),
 			OverdriveBlockColors.values());
-	public static final BulkRegister<Block> BLOCK_FLOOR_TILES = bulkBlock(
-			color -> registerColoredBlock(((OverdriveBlockColors) color).id("floor_tiles_"),
+	public static final BulkRegister<Block> BLOCK_FLOOR_TILE = bulkBlock(
+			color -> registerColoredBlock(((OverdriveBlockColors) color).id("floor_tile_"),
 					() -> new BlockColored(
 							Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F),
 							((OverdriveBlockColors) color).color),
 					false, ((OverdriveBlockColors) color).color),
 			OverdriveBlockColors.values());
+	public static final BulkRegister<Block> BLOCK_FLOOR_TILES = bulkBlock(
+		color -> registerColoredBlock(((OverdriveBlockColors) color).id("floor_tiles_"),
+			() -> new BlockColored(
+				Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F),
+				((OverdriveBlockColors) color).color),
+			false, ((OverdriveBlockColors) color).color),
+		OverdriveBlockColors.values());
 
 	public static final RegistryObject<Block> BLOCK_INDUSTRIAL_GLASS = registerBlock("industrial_glass",
 			() -> new BlockCustomGlass(0.3F, 0.3F), false);
@@ -227,9 +234,9 @@ public class BlockRegistry {
 		() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
 		false);
 
-//	public static final RegistryObject<Block> BLOCK_HOLO_SIGN = registerBlock("holo_sign",
-//		() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
-//		false);
+	public static final RegistryObject<Block> BLOCK_HOLO_SIGN = registerBlock("holo_sign",
+		() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
+		false);
 
 	// For crafting only now.
 	public static final RegistryObject<Block> BLOCK_NETWORK_SWITCH = registerBlock("network_switch",

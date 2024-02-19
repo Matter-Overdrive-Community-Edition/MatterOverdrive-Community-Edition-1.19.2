@@ -757,8 +757,7 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('M', Ingredient.of(ItemRegistry.ITEM_MACHINE_CASING.get()))
 			.complete(References.ID, "weapon_station", consumer);
 
-
-
+		addDecorativeFloorTile(consumer);
 		addDecorativeFloorTiles(consumer);
 	}
 
@@ -787,6 +786,32 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 		}
 	}
 
+	private void addDecorativeFloorTile(Consumer<FinishedRecipe> consumer) {
+		for (DyeColor color: DyeColor.values()) {
+			String useColor = color.getName().toUpperCase();
+
+			if (useColor.equals("LIME")) {
+				useColor = "LIME_GREEN";
+			}
+
+			if (useColor.equals("GRAY")) {
+				useColor = "LIGHT_GRAY";
+			}
+
+			Block block = BlockRegistry.BLOCK_FLOOR_TILE
+				.get(OverdriveBlockColors.valueOf(useColor)).get();
+
+			OverdriveShapedCraftingRecipe.start(block.asItem(), 1)
+				.addPattern("#P#")
+				.addPattern("#D#")
+				.addPattern("#P#")
+				.addKey('#', Ingredient.of(Items.CLAY))
+				.addKey('D', Ingredient.of(color.getTag()))
+				.addKey('P', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_INGOT.get()))
+				.complete(References.ID, "decorative_floor_tile_" + color.getName(), consumer);
+		}
+	}
+
 	private void addDecorativeFloorTiles(Consumer<FinishedRecipe> consumer) {
 		for (DyeColor color: DyeColor.values()) {
 			String useColor = color.getName().toUpperCase();
@@ -805,11 +830,11 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			OverdriveShapedCraftingRecipe.start(block.asItem(), 1)
 				.addPattern("#P#")
 				.addPattern("#D#")
-				.addPattern("#P#")
+				.addPattern("###")
 				.addKey('#', Ingredient.of(Items.CLAY))
 				.addKey('D', Ingredient.of(color.getTag()))
 				.addKey('P', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_INGOT.get()))
-				.complete(References.ID, "decorative_floor_tile_" + color.getName(), consumer);
+				.complete(References.ID, "decorative_floor_tiles_" + color.getName(), consumer);
 		}
 	}
 

@@ -1,19 +1,10 @@
 package matteroverdrive.registry;
 
+import matteroverdrive.common.tile.*;
 import org.apache.commons.compress.utils.Sets;
 
 import matteroverdrive.References;
 import matteroverdrive.common.block.type.TypeMachine;
-import matteroverdrive.common.tile.TileCharger;
-import matteroverdrive.common.tile.TileChunkloader;
-import matteroverdrive.common.tile.TileInscriber;
-import matteroverdrive.common.tile.TileMatterConduit;
-import matteroverdrive.common.tile.TileMatterDecomposer;
-import matteroverdrive.common.tile.TileMatterRecycler;
-import matteroverdrive.common.tile.TileMicrowave;
-import matteroverdrive.common.tile.TileSolarPanel;
-import matteroverdrive.common.tile.TileSpacetimeAccelerator;
-import matteroverdrive.common.tile.TileTritaniumCrate;
 import matteroverdrive.common.tile.matter_network.TileDiscManipulator;
 import matteroverdrive.common.tile.matter_network.TileMatterAnalyzer;
 import matteroverdrive.common.tile.matter_network.TileMatterNetworkCable;
@@ -80,6 +71,9 @@ public class TileRegistry {
 	public static final RegistryObject<BlockEntityType<TilePatternMonitor>> TILE_PATTERN_MONITOR = TILES
 			.register(TypeMachine.PATTERN_MONITOR.id(), () -> new BlockEntityType<>(TilePatternMonitor::new,
 					Sets.newHashSet(BlockRegistry.BLOCK_PATTERN_MONITOR.get()), null));
+	public static final RegistryObject<BlockEntityType<TileHoloSign>> TILE_HOLO_SIGN = TILES
+		.register(TypeMachine.HOLO_SIGN.id(), () -> new BlockEntityType<>(TileHoloSign::new,
+			Sets.newHashSet(BlockRegistry.BLOCK_HOLO_SIGN.get()), null));
 	public static final RegistryObject<BlockEntityType<TileMatterReplicator>> TILE_MATTER_REPLICATOR = TILES
 			.register(TypeMachine.MATTER_REPLICATOR.id(), () -> new BlockEntityType<>(TileMatterReplicator::new,
 					Sets.newHashSet(BlockRegistry.BLOCK_MATTER_REPLICATOR.get()), null));
