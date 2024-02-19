@@ -1,6 +1,6 @@
 ![alt tag](https://bitbucket.org/hrznstudio/mo-legacy-edition/raw/1.12.2/Banner.png)
 
-[![Discord](https://img.shields.io/discord/703124643149643818.svg?style=for-the-badge)](https://discord.gg/hQyAEZV)
+![Discord](https://img.shields.io/discord/703124643149643818?logo=discord&link=https%3A%2F%2Fdiscord.gg%2FhQyAEZV) ![CurseForge Downloads](https://img.shields.io/curseforge/dt/557428?logo=curseforge&link=https%3A%2F%2Fwww.curseforge.com%2Fminecraft%2Fmc-mods%2Fmatter-overdrive-community-edition) ![Modrinth Downloads](https://img.shields.io/modrinth/dt/xNn9ASDj?logo=modrinth&link=https%3A%2F%2Fmodrinth.com%2Fmod%2Fmoce)
 
 ## Table of Contents
 * [About](#about)
@@ -30,4 +30,4 @@ Although it may seem overpowered, Matter Overdrive takes a more realistic approa
 ![Matter Overdrive Blocks and Items](https://mo.simeonradivoev.com/wp-content/uploads/2015/05/main_screenshot.png)
 
 ## Issues:
-https://github.com/infiniteblock/MatterOverdrive-1.16.5/issues
+https://github.com/Matter-Overdrive-Community-Edition/MatterOverdrive-Community-Edition-1.19.2/issues
