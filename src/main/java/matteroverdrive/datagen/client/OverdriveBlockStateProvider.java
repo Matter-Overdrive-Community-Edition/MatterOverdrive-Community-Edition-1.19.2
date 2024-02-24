@@ -136,9 +136,13 @@ public class OverdriveBlockStateProvider extends BlockStateProvider {
 			models().cubeAll("network_switch", blockLoc("network_switch")),
 		true);
 
+		// Moved to external file.
+//		horrRotatedBlock(BlockRegistry.BLOCK_HOLO_SIGN,
+//			existingBlock(blockLoc("holo_sign")),
+//		true);
+
 		genMatterConduits();
 		genNetworkCables();
-
 	}
 
 	private void genMatterConduits() {

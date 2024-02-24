@@ -1,13 +1,12 @@
 package matteroverdrive.core.block;
 
-import java.util.function.Function;
-
-import javax.annotation.Nonnull;
-
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
+
+import javax.annotation.Nonnull;
+import java.util.function.Function;
 
 public class OverdriveBlockProperties extends BlockBehaviour.Properties {
 
@@ -20,6 +19,8 @@ public class OverdriveBlockProperties extends BlockBehaviour.Properties {
 	// if true, can face up and down
 	private boolean omniDir = false;
 	private boolean canConnectToRedstone = false;
+	// Used for the holo sign.
+	private boolean hasHoloSides = false;
 
 	protected OverdriveBlockProperties(Material material, MaterialColor color) {
 		super(material, color);
@@ -39,6 +40,7 @@ public class OverdriveBlockProperties extends BlockBehaviour.Properties {
 		omniDir = properties.omniDir;
 		alwaysLit = properties.alwaysLit;
 		canConnectToRedstone = properties.canConnectToRedstone;
+		hasHoloSides = properties.hasHoloSides;
 	}
 
 	private OverdriveBlockProperties(@Nonnull BlockBehaviour.Properties properties) {
@@ -81,6 +83,11 @@ public class OverdriveBlockProperties extends BlockBehaviour.Properties {
 		return this;
 	}
 
+	public OverdriveBlockProperties setHasHoloSides(boolean hasHoloSides) {
+		this.hasHoloSides = true;
+		return this;
+	}
+
 	public OverdriveBlockProperties redstoneConnectivity() {
 		canConnectToRedstone = true;
 		return this;
@@ -113,6 +120,8 @@ public class OverdriveBlockProperties extends BlockBehaviour.Properties {
 	public boolean canConnectToRedstone() {
 		return canConnectToRedstone;
 	}
+
+	public boolean hasHoloSides() { return hasHoloSides; }
 
 	public static OverdriveBlockProperties from(@Nonnull OverdriveBlockProperties properties) {
 		return new OverdriveBlockProperties(properties);

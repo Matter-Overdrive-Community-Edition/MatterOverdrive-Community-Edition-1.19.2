@@ -20,16 +20,8 @@ import matteroverdrive.common.block.type.TypeMatterConduit;
 import matteroverdrive.common.block.type.TypeMatterNetworkCable;
 import matteroverdrive.common.blockitem.BlockItemColored;
 import matteroverdrive.common.blockitem.OverdriveBlockItem;
-import matteroverdrive.common.tile.TileCharger;
-import matteroverdrive.common.tile.TileChunkloader;
-import matteroverdrive.common.tile.TileInscriber;
-import matteroverdrive.common.tile.TileMatterDecomposer;
-import matteroverdrive.common.tile.TileMatterRecycler;
-import matteroverdrive.common.tile.TileMicrowave;
-import matteroverdrive.common.tile.TileSolarPanel;
-import matteroverdrive.common.tile.TileSpacetimeAccelerator;
-import matteroverdrive.common.tile.TileStarMap;
-import matteroverdrive.common.tile.TileTritaniumCrate;
+import matteroverdrive.common.block.BlockHoloSign;
+import matteroverdrive.common.tile.*;
 import matteroverdrive.common.tile.TileTritaniumCrate.CrateColors;
 import matteroverdrive.common.tile.matter_network.TileDiscManipulator;
 import matteroverdrive.common.tile.matter_network.TileMatterAnalyzer;
@@ -234,9 +226,16 @@ public class BlockRegistry {
 		() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
 		false);
 
-	public static final RegistryObject<Block> BLOCK_HOLO_SIGN = registerBlock("holo_sign",
-		() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
-		false);
+//	public static final RegistryObject<Block> BLOCK_HOLO_SIGN = registerBlock("holo_sign",
+//		() -> new BlockHoloSign(OverdriveBlockProperties
+//			.from(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F).noOcclusion())
+//			.setCanBeWaterlogged().setHasFacing(false)),
+//		true);
+
+	public static final RegistryObject<Block> BLOCK_HOLO_SIGN = registerBlock(TypeMachine.HOLO_SIGN.id(),
+		() -> new BlockMachine<>(TileHoloSign::new, TypeMachine.HOLO_SIGN,
+			TileRegistry.TILE_HOLO_SIGN),
+		true);
 
 	// For crafting only now.
 	public static final RegistryObject<Block> BLOCK_NETWORK_SWITCH = registerBlock("network_switch",
@@ -252,7 +251,7 @@ public class BlockRegistry {
 	public static final RegistryObject<Block> BLOCK_WEAPON_STATION = registerBlock(
 		TypeMachine.WEAPON_STATION.id(),
 		() -> new BlockMachine<>(TileStarMap::new,
-			TypeMachine.STAR_MAP, TileRegistry.TILE_STAR_MAP),
+			TypeMachine.WEAPON_STATION, TileRegistry.TILE_WEAPON_STATION),
 		true);
 
 	// Functional Methods

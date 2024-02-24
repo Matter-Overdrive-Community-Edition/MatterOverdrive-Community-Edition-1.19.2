@@ -5,6 +5,7 @@ import org.jetbrains.annotations.NotNull;
 
 import matteroverdrive.common.block.OverdriveBlockStates;
 import matteroverdrive.common.block.OverdriveBlockStates.VerticalFacing;
+import matteroverdrive.common.block.OverdriveBlockStates.HoloSignSides;
 import matteroverdrive.core.tile.GenericTile;
 import matteroverdrive.core.tile.utils.ITickableTile;
 import net.minecraft.core.BlockPos;
@@ -51,6 +52,10 @@ public abstract class GenericEntityBlock extends BaseEntityBlock {
 		if (stateProperties.isOmniDirectional()) {
 			defaultState.setValue(OverdriveBlockStates.VERTICAL_FACING, VerticalFacing.NONE);
 		}
+		if (stateProperties.hasHoloSides()) {
+			defaultState.setValue(OverdriveBlockStates.HOLO_SIGN_SIDES, HoloSignSides.NORMAL);
+		}
+
 		registerDefaultState(defaultState);
 	}
 
@@ -69,6 +74,10 @@ public abstract class GenericEntityBlock extends BaseEntityBlock {
 		}
 		if (stateProperties.isOmniDirectional()) {
 			builder.add(OverdriveBlockStates.VERTICAL_FACING);
+		}
+
+		if (stateProperties.hasHoloSides()) {
+			builder.add(OverdriveBlockStates.HOLO_SIGN_SIDES);
 		}
 	}
 
@@ -209,7 +218,5 @@ public abstract class GenericEntityBlock extends BaseEntityBlock {
 		if(block != null && block instanceof GenericTile tile) {
 			tile.onTilePlaced(state, oldState, isMoving);
 		}
-
 	}
-
 }

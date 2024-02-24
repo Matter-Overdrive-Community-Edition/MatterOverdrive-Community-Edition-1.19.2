@@ -84,6 +84,8 @@ public class TileRegistry {
 			.register(TypeMachine.DISC_MANIPULATOR.id(), () -> new BlockEntityType<>(TileDiscManipulator::new, Sets.newHashSet(BlockRegistry.BLOCK_DISC_MANIPULATOR.get()), null));
 	public static final RegistryObject<BlockEntityType<TileDiscManipulator>> TILE_STAR_MAP = TILES
 		.register(TypeMachine.STAR_MAP.id(), () -> new BlockEntityType<>(TileDiscManipulator::new, Sets.newHashSet(BlockRegistry.BLOCK_STAR_MAP.get()), null));
+	public static final RegistryObject<BlockEntityType<TileWeaponStation>> TILE_WEAPON_STATION = TILES
+		.register(TypeMachine.WEAPON_STATION.id(), () -> new BlockEntityType<>(TileWeaponStation::new, Sets.newHashSet(BlockRegistry.BLOCK_WEAPON_STATION.get()), null));
 //	public static final RegistryObject<BlockEntityType<TileSpacetimeEqualizer>> TILE_SPACETIME_EQUALIZER = TILES
 //		.register(TypeMachine.SPACETIME_EQUALIZER.id(), () -> new ItemEntityType<>(TileSpacetimeEqualizer::new, Sets.newHashSet(ItemRegistry.ITEM_SPACETIME_EQUALIZER.get()), null));
 }

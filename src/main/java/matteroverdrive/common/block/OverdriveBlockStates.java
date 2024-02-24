@@ -1,11 +1,11 @@
 package matteroverdrive.common.block;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import net.minecraft.core.Direction;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class OverdriveBlockStates {
 
@@ -39,8 +39,10 @@ public class OverdriveBlockStates {
 	public static final EnumProperty<VerticalFacing> VERTICAL_FACING = EnumProperty.create("vertical_facing",
 			VerticalFacing.class);
 
-	public enum CableConnectionType implements StringRepresentable {
+	public static final EnumProperty<HoloSignSides> HOLO_SIGN_SIDES = EnumProperty.create("holo_sign_sides",
+			HoloSignSides.class);
 
+	public enum CableConnectionType implements StringRepresentable {
 		NONE, NONE_SEAMLESS, CABLE, INVENTORY, IGNORED;
 
 		@Override
@@ -80,7 +82,27 @@ public class OverdriveBlockStates {
 			}
 			return NONE;
 		}
-
 	}
 
+	public enum HoloSignSides implements StringRepresentable {
+		NORMAL("normal"),
+		NO_LEFT("no_left"),
+		NO_RIGHT("no_right"),
+		NO_LEFT_OR_RIGHT("no_left_or_right");
+
+		private final String value;
+
+		HoloSignSides(String str) {
+			this.value = str;
+		}
+
+		String getHoloSignSide() {
+			return value;
+		}
+
+		@Override
+		public String getSerializedName() {
+			return name().toLowerCase();
+		}
+	}
 }
