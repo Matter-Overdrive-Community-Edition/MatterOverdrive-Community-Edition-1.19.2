@@ -2,7 +2,6 @@ package matteroverdrive.common.tile;
 
 import matteroverdrive.common.block.OverdriveBlockStates;
 import matteroverdrive.common.block.OverdriveBlockStates.HoloSignSides;
-import matteroverdrive.core.block.GenericEntityBlock;
 import matteroverdrive.core.tile.types.GenericMachineTile;
 import matteroverdrive.registry.BlockRegistry;
 import matteroverdrive.registry.TileRegistry;
@@ -17,6 +16,8 @@ import java.util.List;
 import java.util.Set;
 
 public class TileHoloSign extends GenericMachineTile {
+	private Direction previousFacing = null;
+
 	public TileHoloSign(BlockPos pos, BlockState state) {
 		super(TileRegistry.TILE_HOLO_SIGN.get(), pos, state);
 	}
@@ -29,8 +30,6 @@ public class TileHoloSign extends GenericMachineTile {
 		if (getLevel().getBlockEntity(toCheck) instanceof TileHoloSign holoSign) {
 			Direction otherFacing = holoSign.getFacing();
 
-//			System.out.printf("Checking %s vs. %s.\n", otherFacing, original);
-
 			return original == otherFacing;
 		}
 
@@ -42,6 +41,37 @@ public class TileHoloSign extends GenericMachineTile {
 
 		if (getLevel() != null) {
 			updateState(getLevel(), this.getBlockPos(), visited, this.getFacing());
+		}
+	}
+
+	public void updateSides(Level level, Direction facing, BlockPos pos) {
+		Set<BlockPos> visited = new HashSet<>();
+
+		System.out.println("Facing is: " + facing);
+
+		switch (facing) {
+			case NORTH, SOUTH:
+				System.out.println("Updating west side.");
+
+				updateState(level, pos.west(), visited, facing);
+
+				visited.clear();
+
+				System.out.println("Updating east side.");
+
+				updateState(level, pos.east(), visited, facing);
+			break;
+			case EAST, WEST:
+				System.out.println("Updating north side.");
+
+				updateState(level, pos.north(), visited, facing);
+
+				visited.clear();
+
+				System.out.println("Updating south side.");
+
+				updateState(level, pos.south(), visited, facing);
+			break;
 		}
 	}
 
@@ -117,18 +147,16 @@ public class TileHoloSign extends GenericMachineTile {
 
 		level.setBlock(pos, state, 2);
 
+		setChanged();
+
 		List<BlockPos> neighbours = new ArrayList<>();
 
 		if (facing == Direction.NORTH || facing == Direction.SOUTH) {
-			System.out.println("Checking east and west only.");
-
 			neighbours.add(pos.east());
 			neighbours.add(pos.west());
 		}
 
 		if (facing == Direction.EAST || facing == Direction.WEST) {
-			System.out.println("Checking north and south only.");
-
 			neighbours.add(pos.north());
 			neighbours.add(pos.south());
 		}
@@ -148,6 +176,11 @@ public class TileHoloSign extends GenericMachineTile {
 			return;
 		}
 
+		System.out.println("In onNeighbourChange.");
+
+		System.out.println("Location: " + this.worldPosition);
+		System.out.println("State:    " + getLevel().getBlockEntity(this.worldPosition));
+
 		// This keeps from infinite recursion happening.
 		if (!beenThere.contains(this.worldPosition)) {
 			updateState();
@@ -164,6 +197,16 @@ public class TileHoloSign extends GenericMachineTile {
 			return;
 		}
 
+		System.out.println("Facing is: " + getFacing());
+
+		previousFacing = ((TileHoloSign) getLevel().getBlockEntity(this.worldPosition)).getFacing();
+
+		System.out.println("In Tile Placed.");
+
+		System.out.println("Location: " + this.worldPosition);
+
+		System.out.println("Facing: " + ((TileHoloSign) getLevel().getBlockEntity(this.worldPosition)).getFacing());
+
 		// This keeps from infinite recursion happening.
 		if (!beenThere.contains(this.worldPosition)) {
 			updateState();
@@ -174,8 +217,14 @@ public class TileHoloSign extends GenericMachineTile {
 
 	@Override
 	public void setRemoved() {
-		super.setRemoved();
+		if (getLevel() != null && !getLevel().isClientSide()) {
+			return;
+		}
 
-		beenThere.remove(this.worldPosition);
+		System.out.println("Location: " + this.worldPosition);
+
+		System.out.println("Previous facing: " + previousFacing);
+
+		updateSides(getLevel(), previousFacing, this.worldPosition);
 	}
 }
