@@ -129,6 +129,7 @@ public class TileInscriber extends GenericMachineTile {
 		} else {
 			setShouldSaveData(setRunning(false), updateTickable(false));
 		}
+		cachedRecipe = null;
 	}
 
 	@Override
