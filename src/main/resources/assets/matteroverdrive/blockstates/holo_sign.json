@@ -1,66 +1,18 @@
 {
   "variants": {
-    "facing=east,holo_sign_sides=normal": {
+    "facing=east": {
       "model": "matteroverdrive:block/holo_sign",
       "y": 90
     },
-    "facing=north,holo_sign_sides=normal": {
+    "facing=north": {
       "model": "matteroverdrive:block/holo_sign"
     },
-    "facing=south,holo_sign_sides=normal": {
+    "facing=south": {
       "model": "matteroverdrive:block/holo_sign",
       "y": 180
     },
-    "facing=west,holo_sign_sides=normal": {
+    "facing=west": {
       "model": "matteroverdrive:block/holo_sign",
-      "y": 270
-    },
-
-    "facing=east,holo_sign_sides=no_left": {
-      "model": "matteroverdrive:block/holo_sign_no_left",
-      "y": 90
-    },
-    "facing=north,holo_sign_sides=no_left": {
-      "model": "matteroverdrive:block/holo_sign_no_left"
-    },
-    "facing=south,holo_sign_sides=no_left": {
-      "model": "matteroverdrive:block/holo_sign_no_left",
-      "y": 180
-    },
-    "facing=west,holo_sign_sides=no_left": {
-      "model": "matteroverdrive:block/holo_sign_no_left",
-      "y": 270
-    },
-
-    "facing=east,holo_sign_sides=no_right": {
-      "model": "matteroverdrive:block/holo_sign_no_right",
-      "y": 90
-    },
-    "facing=north,holo_sign_sides=no_right": {
-      "model": "matteroverdrive:block/holo_sign_no_right"
-    },
-    "facing=south,holo_sign_sides=no_right": {
-      "model": "matteroverdrive:block/holo_sign_no_right",
-      "y": 180
-    },
-    "facing=west,holo_sign_sides=no_right": {
-      "model": "matteroverdrive:block/holo_sign_no_right",
-      "y": 270
-    },
-
-    "facing=east,holo_sign_sides=no_left_or_right": {
-      "model": "matteroverdrive:block/holo_sign_no_sides",
-      "y": 90
-    },
-    "facing=north,holo_sign_sides=no_left_or_right": {
-      "model": "matteroverdrive:block/holo_sign_no_sides"
-    },
-    "facing=south,holo_sign_sides=no_left_or_right": {
-      "model": "matteroverdrive:block/holo_sign_no_sides",
-      "y": 180
-    },
-    "facing=west,holo_sign_sides=no_left_or_right": {
-      "model": "matteroverdrive:block/holo_sign_no_sides",
       "y": 270
     }
   }

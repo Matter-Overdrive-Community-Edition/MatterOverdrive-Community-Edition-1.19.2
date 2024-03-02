@@ -1,11 +1,7 @@
 package matteroverdrive.core.block;
 
-import org.checkerframework.checker.nullness.qual.NonNull;
-import org.jetbrains.annotations.NotNull;
-
 import matteroverdrive.common.block.OverdriveBlockStates;
 import matteroverdrive.common.block.OverdriveBlockStates.VerticalFacing;
-import matteroverdrive.common.block.OverdriveBlockStates.HoloSignSides;
 import matteroverdrive.core.tile.GenericTile;
 import matteroverdrive.core.tile.utils.ITickableTile;
 import net.minecraft.core.BlockPos;
@@ -16,11 +12,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.BaseEntityBlock;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Mirror;
-import net.minecraft.world.level.block.RenderShape;
-import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -30,6 +22,8 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import org.checkerframework.checker.nullness.qual.NonNull;
+import org.jetbrains.annotations.NotNull;
 
 public abstract class GenericEntityBlock extends BaseEntityBlock {
 
@@ -52,9 +46,6 @@ public abstract class GenericEntityBlock extends BaseEntityBlock {
 		if (stateProperties.isOmniDirectional()) {
 			defaultState.setValue(OverdriveBlockStates.VERTICAL_FACING, VerticalFacing.NONE);
 		}
-		if (stateProperties.hasHoloSides()) {
-			defaultState.setValue(OverdriveBlockStates.HOLO_SIGN_SIDES, HoloSignSides.NORMAL);
-		}
 
 		registerDefaultState(defaultState);
 	}
@@ -74,10 +65,6 @@ public abstract class GenericEntityBlock extends BaseEntityBlock {
 		}
 		if (stateProperties.isOmniDirectional()) {
 			builder.add(OverdriveBlockStates.VERTICAL_FACING);
-		}
-
-		if (stateProperties.hasHoloSides()) {
-			builder.add(OverdriveBlockStates.HOLO_SIGN_SIDES);
 		}
 	}
 
