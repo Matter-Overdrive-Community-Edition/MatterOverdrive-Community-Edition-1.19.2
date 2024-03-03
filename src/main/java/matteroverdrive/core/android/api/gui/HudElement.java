@@ -17,13 +17,16 @@ public abstract class HudElement implements IHudElement{
   protected int height;
   protected Colors baseColor;
   protected float backgroundAlpha;
+  protected HudPosition defaultPosition;
+  protected HudPosition hudPosition;
 
-  public HudElement(String name, int width, int height) {
+  public HudElement(HudPosition defaultPosition, String name, int width, int height) {
     this.name = name;
     this.width = width;
     this.height = height;
     mc = Minecraft.getInstance();
     baseColor = ClientReferences.Colors.HOLO;
+    hudPosition = this.defaultPosition = defaultPosition;
   }
 
   @Override
@@ -57,6 +60,14 @@ public abstract class HudElement implements IHudElement{
   }
 
   public abstract HudPosition getPosition();
+
+  public void setHudPosition(HudPosition position) {
+    this.hudPosition = position;
+  }
+
+  public HudPosition getDefaultPosition() {
+    return defaultPosition;
+  }
 
   public void setBackgroundAlpha(float alpha) {
     this.backgroundAlpha = alpha;
