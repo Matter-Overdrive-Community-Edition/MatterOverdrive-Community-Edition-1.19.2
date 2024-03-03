@@ -211,8 +211,6 @@ public class ItemRegistry {
 			UpgradeType.values());
 	public static final RegistryObject<Item> ITEM_TRITANIUM_PLATE = ITEMS.register("tritanium_plate",
 			() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), false));
-	public static final RegistryObject<Item> ITEM_LEAD_PLATE = ITEMS.register("lead_plate",
-			() -> new OverdriveItem(new Item.Properties().tab(References.MAIN).stacksTo(TileMatterReplicator.NEEDED_PLATES), false));
 	public static final RegistryObject<Item> ITEM_COMMUNICATOR = ITEMS.register("communicator",
 			() -> new ItemCommunicator(new Item.Properties().tab(References.MAIN).stacksTo(1)));
 

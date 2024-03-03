@@ -231,7 +231,6 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			addItem(ItemRegistry.ITEM_TRITANIUM_INGOT, "Tritanium Ingot");
 			addItem(ItemRegistry.ITEM_TRITANIUM_NUGGET, "Tritanium Nugget");
 			addItem(ItemRegistry.ITEM_TRITANIUM_DUST, "Tritanium Dust");
-			addItem(ItemRegistry.ITEM_LEAD_PLATE, "Lead Plating");
 			
 			addItem(ItemRegistry.ITEM_ANDROID_PILL_BLUE, "Blue Pill");
 			addItem(ItemRegistry.ITEM_ANDROID_PILL_RED, "Red Pill");
