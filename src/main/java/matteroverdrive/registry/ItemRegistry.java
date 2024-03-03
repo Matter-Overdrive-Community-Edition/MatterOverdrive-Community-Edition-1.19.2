@@ -25,6 +25,7 @@ import matteroverdrive.common.tile.matter_network.matter_replicator.TileMatterRe
 import matteroverdrive.core.armor.MOArmorMaterial;
 import matteroverdrive.core.registers.BulkRegister;
 import matteroverdrive.core.registers.IBulkRegistryObject;
+import matteroverdrive.core.tools.MOToolTiers;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ArmorItem;
@@ -46,7 +47,7 @@ public class ItemRegistry {
 
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, References.ID);
 
-// Materials
+//  Materials
 	public static final RegistryObject<Item> ITEM_DILITHIUM_CRYSTAL = ITEMS.register("dilithium_crystal",
 		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), false));
 	public static final RegistryObject<Item> ITEM_TRITANIUM_INGOT = ITEMS.register("tritanium_ingot",
@@ -63,7 +64,7 @@ public class ItemRegistry {
 //	public static final RegistryObject<Item> ITEM_MATTER_DUST_REFINED = ITEMS.register("matter_dust_refined",
 //		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
 
-//   Food
+//  Food
 	public static final RegistryObject<Item> ITEM_ANDROID_PILL_RED = ITEMS.register("android_pill_red",
 		() -> new ItemAndroidRedPill(new Item.Properties().food(ItemAndroidPill.PILLS).tab(References.MAIN),
 		Colors.PILL_RED, true));
@@ -90,7 +91,7 @@ public class ItemRegistry {
                 .nutrition(6).saturationMod(0.6f).meat().fast().effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 600, 3), 0.9f).build();
     }
 
-//    Storage
+//  Storage
 	public static final BulkRegister<Item> ITEM_BATTERIES = bulkItem(
 		battery -> ITEMS.register(((BatteryType) battery).id(), () -> new ItemBattery((BatteryType) battery)),
 		BatteryType.values());
@@ -98,7 +99,7 @@ public class ItemRegistry {
 		container -> ITEMS.register(container.id(), () -> new ItemMatterContainer((ContainerType) container)),
 		ContainerType.values());
 
-//    Crafting
+//  Crafting
 	public static final RegistryObject<Item> ITEM_ME_CONVERSION_MATRIX = ITEMS.register("me_conversion_matrix",
 		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), false));
 	public static final RegistryObject<Item> ITEM_H_COMPENSATOR = ITEMS.register("h_compensator",
@@ -112,7 +113,7 @@ public class ItemRegistry {
 			() -> new Item(new Item.Properties().tab(References.MAIN))),
 		TypeIsolinearCircuit.values());
 
-	// Matter. <-- Is this fluid matter plasma?
+//  Matter. <-- Is this fluid matter plasma?
 	public static final RegistryObject<Item> ITEM_FORCEFIELD_EMITTER = ITEMS.register("forcefield_emitter",
 		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), false));
 	public static final RegistryObject<Item> ITEM_WEAPON_HANDLE = ITEMS.register("weapon_handle",
@@ -122,7 +123,7 @@ public class ItemRegistry {
 	public static final RegistryObject<Item> ITEM_PLASMA_CORE = ITEMS.register("plasma_core",
 		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), false));
 
-//    Weapons
+//  Weapons
 	public static final RegistryObject<Item> ITEM_PHASER = ITEMS.register("phaser",
 		() -> new ItemEnergyWeapon(new Item.Properties().tab(References.MAIN).rarity(Rarity.UNCOMMON), true, 10000,
 			true, true, 1000));
@@ -139,7 +140,7 @@ public class ItemRegistry {
 		() -> new ItemEnergyWeapon(new Item.Properties().tab(References.MAIN).rarity(Rarity.UNCOMMON), true, 10000,
 			true, true, 1000));
 
-//    Weapon Modules
+//  Weapon Modules
 	// weapon_module_color <-- This needs reworked.
 	// weapon_module_barrel <-- This needs reworked, too.
 	// sniper_scope <-- Same here.
@@ -147,19 +148,19 @@ public class ItemRegistry {
 	// weapon_module_holo_sights <-- Same here.
 	// holo_sights_base <-- Same here.
 
-//    Tools
+//  Tools
 	public static final RegistryObject<Item> ITEM_TRITANIUM_WRENCH = ITEMS.register("tritanium_wrench",
 		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
 	public static final RegistryObject<Item> ITEM_TRITANIUM_AXE = ITEMS.register("tritanium_axe",
-		() -> new AxeItem(Tiers.NETHERITE, 10, 5f, new Item.Properties().stacksTo(1).tab(References.MAIN)));
+		() -> new AxeItem(MOToolTiers.TRITANIUM, 6, -3.1f, new Item.Properties().stacksTo(1).tab(References.MAIN)));
 	public static final RegistryObject<Item> ITEM_TRITANIUM_PICKAXE = ITEMS.register("tritanium_pickaxe",
-		() -> new PickaxeItem(Tiers.NETHERITE, 10, 5f, new Item.Properties().stacksTo(1).tab(References.MAIN)));
+		() -> new PickaxeItem(MOToolTiers.TRITANIUM, 1, -2.8f, new Item.Properties().stacksTo(1).tab(References.MAIN)));
 	public static final RegistryObject<Item> ITEM_TRITANIUM_SWORD = ITEMS.register("tritanium_sword",
-		() -> new SwordItem(Tiers.NETHERITE, 10, 5f, new Item.Properties().stacksTo(1).tab(References.MAIN)));
+		() -> new SwordItem(MOToolTiers.TRITANIUM, 3, -2.4f, new Item.Properties().stacksTo(1).tab(References.MAIN)));
 	public static final RegistryObject<Item> ITEM_TRITANIUM_HOE = ITEMS.register("tritanium_hoe",
-		() -> new HoeItem(Tiers.NETHERITE, 10, 5f, new Item.Properties().stacksTo(1).tab(References.MAIN)));
+		() -> new HoeItem(MOToolTiers.TRITANIUM, -2, -1, new Item.Properties().stacksTo(1).tab(References.MAIN)));
 	public static final RegistryObject<Item> ITEM_TRITANIUM_SHOVEL = ITEMS.register("tritanium_shovel",
-		() -> new ShovelItem(Tiers.NETHERITE, 10, 5f, new Item.Properties().stacksTo(1).tab(References.MAIN)));
+		() -> new ShovelItem(MOToolTiers.TRITANIUM, 1.5f, -3, new Item.Properties().stacksTo(1).tab(References.MAIN)));
 	
 //  Armor - Missing Cool armor look...
 	public static final RegistryObject<ArmorItem> ITEM_TRITANIUM_HELMET = ITEMS.register("tritanium_helmet",
@@ -171,7 +172,7 @@ public class ItemRegistry {
 	public static final RegistryObject<ArmorItem> ITEM_TRITANIUM_BOOTS = ITEMS.register("tritanium_boots",
 		() -> new ArmorItem(MOArmorMaterial.TRITANIUM, EquipmentSlot.FEET, new Item.Properties().stacksTo(1).tab(References.MAIN)));
 
-//    Android
+//  Android
 	public static final RegistryObject<Item> ITEM_ROGUE_ANDROID_ARMS = ITEMS.register("rogue_android_arms",
 		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
 	public static final RegistryObject<Item> ITEM_ROGUE_ANDROID_CHEST = ITEMS.register("rogue_android_chest",
@@ -183,14 +184,14 @@ public class ItemRegistry {
 	public static final RegistryObject<Item> ITEM_TRITANIUM_SPINE = ITEMS.register("tritanium_spine",
 		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
 
-//    Misc
+//  Misc
 	public static final RegistryObject<Item> ITEM_MATTER_SCANNER = ITEMS.register("matter_scanner",
 		ItemMatterScanner::new);
 	public static final RegistryObject<Item> ITEM_PATTERN_DRIVE = ITEMS.register("pattern_drive",
 		ItemPatternDrive::new);
 	public static final RegistryObject<Item> ITEM_TRANSPORTER_FLASHDRIVE = ITEMS.register("transporter_flashdrive",
 		ItemTransporterFlashdrive::new);
-	// energy_pack
+//  energy_pack
 	public static final RegistryObject<Item> ITEM_DATAPAD = ITEMS.register("data_pad",
 		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN).stacksTo(1), true));
 	// contract
