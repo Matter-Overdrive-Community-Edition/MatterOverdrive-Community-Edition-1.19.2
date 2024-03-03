@@ -74,9 +74,6 @@ public class OverdriveMatterValueGenerator implements DataProvider {
 		json.addProperty("minecraft:crimson_roots", 1);
 		json.addProperty("minecraft:crying_obsidian", 16);
 		json.addProperty("minecraft:dead_bush", 1);
-		json.addProperty("#" + OverdriveTags.Items.DIAMOND_GEM, 64);
-		json.addProperty("#" + OverdriveTags.Items.BLOCK_TRITANIUM, 90);
-		json.addProperty("#" + OverdriveTags.Items.INGOT_TRITANIUM, 10);
 		json.addProperty("#" + ItemTags.DIAMOND_ORES.location().toString(), 512);
 		json.addProperty("minecraft:diamond_horse_armor", 1280);
 		json.addProperty("#" + ItemTags.DIRT.location().toString(), 1);
@@ -180,6 +177,20 @@ public class OverdriveMatterValueGenerator implements DataProvider {
 		json.addProperty("#forge:seeds", 1);
 		json.addProperty("#forge:slimeballs", 2);
 		json.addProperty("#forge:weather_copper_blocks", 144);
+		
+		// OverdriveTags matter providers.
+		json.addProperty("#" + OverdriveTags.Items.CIRCUITS_BASIC, 10);
+		json.addProperty("#" + OverdriveTags.Items.CIRCUITS_ADVANCED, 20);
+		json.addProperty("#" + OverdriveTags.Items.CIRCUITS_ELITE, 40);
+		json.addProperty("#" + OverdriveTags.Items.CIRCUITS_ULTIMATE, 80);
+		json.addProperty("#" + OverdriveTags.Items.RAW_FOOD, 5);
+		json.addProperty("#" + OverdriveTags.Items.AMETHYST_BUDS, 10);
+		json.addProperty("#" + OverdriveTags.Items.WEATHER_COPPER_BLOCKS, 20);
+		json.addProperty("#" + OverdriveTags.Items.CORAL, 10);
+		json.addProperty("#" + OverdriveTags.Items.NUGGET_TRITANIUM, 1);
+		json.addProperty("#" + OverdriveTags.Items.INGOT_TRITANIUM, 10);
+		json.addProperty("#" + OverdriveTags.Items.BLOCK_TRITANIUM, 90);
+		json.addProperty("#" + OverdriveTags.Items.DIAMOND_GEM, 64);
 	}
 
 	@Override
