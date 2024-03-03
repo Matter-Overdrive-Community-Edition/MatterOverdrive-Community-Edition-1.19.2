@@ -22,6 +22,7 @@ import matteroverdrive.common.item.tools.electric.ItemMatterScanner;
 import matteroverdrive.common.item.type.TypeIsolinearCircuit;
 import matteroverdrive.common.item.utils.OverdriveItem;
 import matteroverdrive.common.tile.matter_network.matter_replicator.TileMatterReplicator;
+import matteroverdrive.core.armor.MOArmorMaterial;
 import matteroverdrive.core.registers.BulkRegister;
 import matteroverdrive.core.registers.IBulkRegistryObject;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -160,15 +161,15 @@ public class ItemRegistry {
 	public static final RegistryObject<Item> ITEM_TRITANIUM_SHOVEL = ITEMS.register("tritanium_shovel",
 		() -> new ShovelItem(Tiers.NETHERITE, 10, 5f, new Item.Properties().stacksTo(1).tab(References.MAIN)));
 	
-//  Armor - Not fully working!
+//  Armor - Missing Cool armor look...
 	public static final RegistryObject<ArmorItem> ITEM_TRITANIUM_HELMET = ITEMS.register("tritanium_helmet",
-		() -> new ArmorItem(ArmorMaterials.NETHERITE, EquipmentSlot.HEAD, new Item.Properties().stacksTo(1).tab(References.MAIN)));
+		() -> new ArmorItem(MOArmorMaterial.TRITANIUM, EquipmentSlot.HEAD, new Item.Properties().stacksTo(1).tab(References.MAIN)));
 	public static final RegistryObject<ArmorItem> ITEM_TRITANIUM_CHESTPLATE = ITEMS.register("tritanium_chetsplate",
-		() -> new ArmorItem(ArmorMaterials.NETHERITE, EquipmentSlot.CHEST, new Item.Properties().stacksTo(1).tab(References.MAIN)));
+		() -> new ArmorItem(MOArmorMaterial.TRITANIUM, EquipmentSlot.CHEST, new Item.Properties().stacksTo(1).tab(References.MAIN)));
 	public static final RegistryObject<ArmorItem> ITEM_TRITANIUM_LEGGINGS = ITEMS.register("tritanium_leggings",
-		() -> new ArmorItem(ArmorMaterials.NETHERITE, EquipmentSlot.LEGS, new Item.Properties().stacksTo(1).tab(References.MAIN)));
+		() -> new ArmorItem(MOArmorMaterial.TRITANIUM, EquipmentSlot.LEGS, new Item.Properties().stacksTo(1).tab(References.MAIN)));
 	public static final RegistryObject<ArmorItem> ITEM_TRITANIUM_BOOTS = ITEMS.register("tritanium_boots",
-		() -> new ArmorItem(ArmorMaterials.NETHERITE, EquipmentSlot.FEET, new Item.Properties().stacksTo(1).tab(References.MAIN)));
+		() -> new ArmorItem(MOArmorMaterial.TRITANIUM, EquipmentSlot.FEET, new Item.Properties().stacksTo(1).tab(References.MAIN)));
 
 //    Android
 	public static final RegistryObject<Item> ITEM_ROGUE_ANDROID_ARMS = ITEMS.register("rogue_android_arms",
