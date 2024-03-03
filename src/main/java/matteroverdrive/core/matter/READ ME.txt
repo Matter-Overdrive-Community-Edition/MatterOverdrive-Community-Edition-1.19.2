@@ -44,7 +44,7 @@ your item values will be assigned if another mod already assigns a tag and its f
 provided command to generate values for you. Instead of coding every single value by hand, you 
 simply have to code values that don't have a recipe and then run the command in-game:
 
-    /matteroverdrive genmattervalues
+    /matteroverdrive genmatterfile
 
 By default, the generator ships with support for Crafting Table, Furnace, and Smithing Table
 recipes. Upon running the command, the generator will produce a JSON file and save it under 
