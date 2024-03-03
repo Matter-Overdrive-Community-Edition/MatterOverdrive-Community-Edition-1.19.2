@@ -368,15 +368,15 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('M', Ingredient.of(ItemRegistry.ITEM_MACHINE_CASING.get()))
 			.complete(References.ID, "pattern_drive", consumer);
 
-//		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_PATTERN_MONITOR.get().asItem(), 1)
-//			.addPattern(" H ")
-//			.addPattern("1N1")
-//			.addPattern(" F ")
-//			.addKey('1', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER1).get()))
-//			.addKey('F', Ingredient.of(ItemRegistry.ITEM_NETWORK_FLASH_DRIVE.get()))
-//			.addKey('H', Ingredient.of(BlockRegistry.BLOCK_HOLO_SIGN.get()))
-//			.addKey('N', Ingredient.of(BlockRegistry.BLOCK_NETWORK_SWITCH.get()))
-//			.complete(References.ID, "pattern_monitor", consumer);
+		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_PATTERN_MONITOR.get().asItem(), 1)
+			.addPattern(" H ")
+			.addPattern("1N1")
+			.addPattern(" F ")
+			.addKey('1', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER1).get()))
+			.addKey('F', Ingredient.of(ItemRegistry.ITEM_NETWORK_FLASH_DRIVE.get()))
+			.addKey('H', Ingredient.of(BlockRegistry.BLOCK_HOLO_SIGN.get()))
+			.addKey('N', Ingredient.of(BlockRegistry.BLOCK_NETWORK_SWITCH.get()))
+			.complete(References.ID, "pattern_monitor", consumer);
 
 		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_PATTERN_STORAGE.get().asItem(), 1)
 			.addPattern("B3B")
@@ -663,15 +663,13 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('#', Ingredient.of(OverdriveTags.Items.NUGGET_TRITANIUM))
 			.complete(References.ID, "tritanium_ingot", consumer);
 
-//		ShapelessRecipeBuilder.shapeless(ItemRegistry.ITEM_TRITANIUM_INGOT.get(), 9)
-//			.requires(OverdriveTags.Items.BLOCK_TRITANIUM)
-////			.unlockedBy("has_item", InventoryTrigger.Instance.hasItems(OverdriveTags.Items.BLOCK_TRITANIUM))
-//			.save(consumer);
-
-//		ShapelessRecipeBuilder.shapeless(ItemRegistry.ITEM_TRITANIUM_NUGGET.get(), 9)
-//			.requires(OverdriveTags.Items.INGOT_TRITANIUM)
-////			.unlockedBy("has_item", InventoryTrigger.Instance.hasItems(OverdriveTags.Items.BLOCK_TRITANIUM))
-//			.save(consumer);
+		OverdriveShapelessCraftingRecipe.start(ItemRegistry.ITEM_TRITANIUM_NUGGET.get(), 9)
+			.addIngredient(Ingredient.of(OverdriveTags.Items.INGOT_TRITANIUM))
+			.complete(References.ID, "tritanium_nugget_from_ingot", consumer);
+		
+		OverdriveShapelessCraftingRecipe.start(ItemRegistry.ITEM_TRITANIUM_INGOT.get(),9)
+			.addIngredient(Ingredient.of(BlockRegistry.BLOCK_TRITANIUM.get().asItem()))
+			.complete(References.ID, "tritanium_ingot_from_block", consumer);
 
 		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_TRITANIUM_LEGGINGS.get(), 1)
 			.addPattern("XCX")
@@ -680,11 +678,6 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('C', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER2).get()))
 			.addKey('X', Ingredient.of(OverdriveTags.Items.INGOT_TRITANIUM))
 			.complete(References.ID, "tritanium_leggings", consumer);
-
-//		ShapelessRecipeBuilder.shapeless(ItemRegistry.ITEM_TRITANIUM_NUGGET.get(), 9)
-//			.requires(OverdriveTags.Items.INGOT_TRITANIUM)
-////			.unlockedBy("has_item", InventoryTrigger.Instance.hasItems(OverdriveTags.Items.INGOT_TRITANIUM))
-//			.save(consumer);
 
 		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_TRITANIUM_PICKAXE.get(), 1)
 			.addPattern("XXX")
