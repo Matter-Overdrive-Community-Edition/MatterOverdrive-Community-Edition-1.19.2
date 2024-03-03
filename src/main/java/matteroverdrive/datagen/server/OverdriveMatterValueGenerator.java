@@ -18,6 +18,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.GsonHelper;
+import net.minecraft.world.item.Items;
 
 public class OverdriveMatterValueGenerator implements DataProvider {
 
@@ -179,18 +180,19 @@ public class OverdriveMatterValueGenerator implements DataProvider {
 		json.addProperty("#forge:weather_copper_blocks", 144);
 		
 		// OverdriveTags matter providers.
-		json.addProperty("#" + OverdriveTags.Items.CIRCUITS_BASIC, 10);
-		json.addProperty("#" + OverdriveTags.Items.CIRCUITS_ADVANCED, 20);
-		json.addProperty("#" + OverdriveTags.Items.CIRCUITS_ELITE, 40);
-		json.addProperty("#" + OverdriveTags.Items.CIRCUITS_ULTIMATE, 80);
-		json.addProperty("#" + OverdriveTags.Items.RAW_FOOD, 5);
-		json.addProperty("#" + OverdriveTags.Items.AMETHYST_BUDS, 10);
-		json.addProperty("#" + OverdriveTags.Items.WEATHER_COPPER_BLOCKS, 20);
-		json.addProperty("#" + OverdriveTags.Items.CORAL, 10);
-		json.addProperty("#" + OverdriveTags.Items.NUGGET_TRITANIUM, 1);
-		json.addProperty("#" + OverdriveTags.Items.INGOT_TRITANIUM, 10);
-		json.addProperty("#" + OverdriveTags.Items.BLOCK_TRITANIUM, 90);
-		json.addProperty("#" + OverdriveTags.Items.DIAMOND_GEM, 64);
+		json.addProperty("#" + OverdriveTags.Items.CIRCUITS_BASIC.location(), 10);
+		json.addProperty("#" + OverdriveTags.Items.CIRCUITS_ADVANCED.location(), 20);
+		json.addProperty("#" + OverdriveTags.Items.CIRCUITS_ELITE.location(), 40);
+		json.addProperty("#" + OverdriveTags.Items.CIRCUITS_ULTIMATE.location(), 80);
+		json.addProperty("#" + OverdriveTags.Items.RAW_FOOD.location(), 5);
+		json.addProperty("#" + OverdriveTags.Items.AMETHYST_BUDS.location(), 10);
+		json.addProperty("#" + OverdriveTags.Items.WEATHER_COPPER_BLOCKS.location(), 144);
+		json.addProperty("#" + OverdriveTags.Items.CORAL.location(), 10);
+		json.addProperty("#" + OverdriveTags.Items.INGOT_TRITANIUM.location(), 1);
+		json.addProperty("#" + OverdriveTags.Items.BLOCK_TRITANIUM.location(), 9);
+		json.addProperty("#" + OverdriveTags.Items.DIAMOND_GEM.location(), 64);
+
+		json.addProperty("#" + ItemTags.ANVIL.location(), 31);
 	}
 
 	@Override
