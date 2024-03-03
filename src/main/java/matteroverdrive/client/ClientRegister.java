@@ -1,34 +1,12 @@
 package matteroverdrive.client;
 
-import java.util.HashMap;
-
 import matteroverdrive.References;
 import matteroverdrive.client.ClientReferences.AtlasTextures;
 import matteroverdrive.client.particle.replicator.ParticleReplicator;
 import matteroverdrive.client.particle.shockwave.ParticleShockwave;
 import matteroverdrive.client.particle.vent.ParticleVent;
-import matteroverdrive.client.render.tile.RendererCharger;
-import matteroverdrive.client.render.tile.RendererInscriber;
-import matteroverdrive.client.render.tile.RendererMatterAnalyzer;
-import matteroverdrive.client.render.tile.RendererMatterReplicator;
-import matteroverdrive.client.render.tile.RendererPatternMonitor;
-import matteroverdrive.client.render.tile.RendererStationAndroid;
-import matteroverdrive.client.screen.ScreenAndroidStation;
-import matteroverdrive.client.screen.ScreenCharger;
-import matteroverdrive.client.screen.ScreenChunkloader;
-import matteroverdrive.client.screen.ScreenDiscManipulator;
-import matteroverdrive.client.screen.ScreenInscriber;
-import matteroverdrive.client.screen.ScreenMatterAnalyzer;
-import matteroverdrive.client.screen.ScreenMatterDecomposer;
-import matteroverdrive.client.screen.ScreenMatterRecycler;
-import matteroverdrive.client.screen.ScreenMatterReplicator;
-import matteroverdrive.client.screen.ScreenMicrowave;
-import matteroverdrive.client.screen.ScreenPatternMonitor;
-import matteroverdrive.client.screen.ScreenPatternStorage;
-import matteroverdrive.client.screen.ScreenSolarPanel;
-import matteroverdrive.client.screen.ScreenSpacetimeAccelerator;
-import matteroverdrive.client.screen.ScreenTransporter;
-import matteroverdrive.client.screen.ScreenTritaniumCrate;
+import matteroverdrive.client.render.tile.*;
+import matteroverdrive.client.screen.*;
 import matteroverdrive.common.item.tools.ItemMatterContainer.ContainerType;
 import matteroverdrive.common.item.tools.electric.ItemBattery.BatteryType;
 import matteroverdrive.core.capability.MatterOverdriveCapabilities;
@@ -52,6 +30,8 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
+
+import java.util.HashMap;
 
 @EventBusSubscriber(modid = References.ID, bus = Bus.MOD, value = Dist.CLIENT)
 public class ClientRegister {
@@ -176,7 +156,7 @@ public class ClientRegister {
 		event.registerBlockEntityRenderer(TileRegistry.TILE_MATTER_REPLICATOR.get(), RendererMatterReplicator::new);
 		event.registerBlockEntityRenderer(TileRegistry.TILE_ANDROID_STATION.get(), RendererStationAndroid::new);
 		event.registerBlockEntityRenderer(TileRegistry.TILE_MATTER_ANALYZER.get(), RendererMatterAnalyzer::new);
-		
+		event.registerBlockEntityRenderer(TileRegistry.TILE_HOLO_SIGN.get(), RendererHoloSign::new);
 	}
 
 	@SubscribeEvent

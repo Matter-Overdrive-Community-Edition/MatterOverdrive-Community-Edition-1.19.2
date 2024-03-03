@@ -298,8 +298,6 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			addBlock(BlockRegistry.TRITANIUM_ORE, "Tritanium Ore");
 			addBlock(BlockRegistry.DILITHIUM_ORE, "Dilithium Ore");
 			addBlock(BlockRegistry.BLOCK_INDUSTRIAL_GLASS, "Industrial Glass");
-			addBlock(BlockRegistry.BLOCK_VENT_OPEN, "Vent");
-			addBlock(BlockRegistry.BLOCK_VENT_CLOSED, "Vent");
 			addBlock(BlockRegistry.BLOCK_SOLAR_PANEL, "Solar Panel");
 			addBlock(BlockRegistry.BLOCK_MATTER_DECOMPOSER, "Matter Decomposer");
 			addBlock(BlockRegistry.BLOCK_MATTER_RECYCLER, "Matter Recycler");
@@ -331,7 +329,9 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			addBlock(BlockRegistry.BLOCK_STAR_MAP, "Star Map");
 			addBlock(BlockRegistry.BLOCK_WEAPON_STATION, "Weapon Station");
 			addBlock(BlockRegistry.BLOCK_NETWORK_SWITCH, "Network Switch");
-//			addBlock(BlockRegistry.BLOCK_HOLO_SIGN, "Holo Sign");
+			addBlock(BlockRegistry.BLOCK_VENT_CLOSED, "Closed Vents");
+			addBlock(BlockRegistry.BLOCK_VENT_OPEN, "Open Vents");
+			addBlock(BlockRegistry.BLOCK_HOLO_SIGN, "Holo Sign");
 
 			addTooltip("energystored", "%1$s / %2$s %3$sFE");
 			addTooltip("creativeenergystored", "INFINITE");
@@ -433,7 +433,6 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			addBlockItemDescTooltip(BlockRegistry.BLOCK_PATTERN_MONITOR, "Queues Replication tasks");
 			addBlockItemDescTooltip(BlockRegistry.BLOCK_MATTER_REPLICATOR, "Makes ordered items from matter");
 			addBlockItemDescTooltip(BlockRegistry.BLOCK_DISC_MANIPULATOR, "Wipe patterns and more");
-			
 
 			addGuiLabel("redstonelow", "Low");
 			addGuiLabel("redstonehigh", "High");

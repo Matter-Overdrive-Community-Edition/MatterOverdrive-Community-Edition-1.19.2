@@ -13,6 +13,7 @@ import matteroverdrive.common.item.pill.types.ItemAndroidRedPill;
 import matteroverdrive.common.item.pill.types.ItemAndroidYellowPill;
 import matteroverdrive.common.item.tools.ItemMatterContainer;
 import matteroverdrive.common.item.tools.ItemMatterContainer.ContainerType;
+import matteroverdrive.common.item.tools.ItemSecurityProtocol;
 import matteroverdrive.common.item.tools.ItemTransporterFlashdrive;
 import matteroverdrive.common.item.tools.electric.ItemBattery;
 import matteroverdrive.common.item.tools.electric.ItemBattery.BatteryType;
@@ -223,7 +224,7 @@ public class ItemRegistry {
 		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN).stacksTo(1), false));
 
 	public static final RegistryObject<Item> ITEM_SECURITY_PROTOCOL = ITEMS.register("security_protocol",
-		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN).stacksTo(1), false));
+		() -> new ItemSecurityProtocol(new Item.Properties().tab(References.MAIN).stacksTo(1), false));
 
 	public static final RegistryObject<Item> ITEM_SNIPER_SCOPE = ITEMS.register("sniper_scope",
 		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN).stacksTo(1), false));

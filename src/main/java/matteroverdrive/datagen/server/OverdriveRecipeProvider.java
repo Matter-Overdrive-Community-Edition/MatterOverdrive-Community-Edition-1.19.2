@@ -1,10 +1,7 @@
 package matteroverdrive.datagen.server;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.function.Consumer;
-
 import matteroverdrive.References;
+import matteroverdrive.common.block.OverdriveBlockColors;
 import matteroverdrive.common.block.type.TypeMatterConduit;
 import matteroverdrive.common.block.type.TypeMatterNetworkCable;
 import matteroverdrive.common.item.ItemUpgrade;
@@ -30,7 +27,12 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Consumer;
 
 public class OverdriveRecipeProvider extends RecipeProvider {
 
@@ -74,15 +76,6 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('D', Ingredient.of(OverdriveTags.Items.GEM_DILITHIUM))
 			.addKey('G', Ingredient.of(Tags.Items.INGOTS_GOLD))
 			.complete(References.ID, "battery_regular", consumer);
-
-		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_BATTERIES.get(ItemBattery.BatteryType.HIGHCAPACITY).get(), 1)
-			.addPattern(" P ")
-			.addPattern("CBC")
-			.addPattern(" P ")
-			.addKey('B', Ingredient.of(ItemRegistry.ITEM_BATTERIES.get(ItemBattery.BatteryType.REGULAR).get()))
-			.addKey('P', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_PLATE.get()))
-			.addKey('C', Ingredient.of(ItemRegistry.ITEM_DILITHIUM_CRYSTAL.get()))
-			.complete(References.ID, "battery_highcapacity", consumer);
 
 		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_CHARGER.get().asItem(), 1)
 			.addPattern(" F ")
@@ -145,6 +138,8 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('C', Ingredient.of(ItemRegistry.ITEM_SUPERCONDUCTOR_MAGNET.get()))
 			.complete(References.ID, "decorative.coils", consumer);
 
+		addDecorativeRecipes(consumer);
+
 		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_FORCEFIELD_EMITTER.get(), 1)
 			.addPattern("CGC")
 			.addPattern("CDC")
@@ -185,6 +180,17 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('M', Ingredient.of(ItemRegistry.ITEM_SUPERCONDUCTOR_MAGNET.get()))
 			.complete(References.ID, "heavy_matter_pipe", consumer);
 
+		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_MICROWAVE.get().asItem(), 1)
+			.addPattern("PMP")
+			.addPattern("SGS")
+			.addPattern("PCP")
+			.addKey('P', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_PLATE.get()))
+			.addKey('M', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER1).get()))
+			.addKey('C', Ingredient.of(ItemRegistry.ITEM_MACHINE_CASING.get()))
+			.addKey('G', Ingredient.of(Tags.Items.GLASS))
+			.addKey('S', Ingredient.of(ItemRegistry.ITEM_SUPERCONDUCTOR_MAGNET.get()))
+			.complete(References.ID, "microwave", consumer);
+
 		// Not yet implemented.
 //		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_HOLO_SIGHTS_BASE.get(TypeMatterConduit.HEAVY).get().asItem(), 1)
 //			.addPattern("   ")
@@ -210,7 +216,6 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('M', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_PLATE.get()))
 			.addKey('T', Ingredient.of(Tags.Items.GLASS_COLORLESS)) // Assuming BLOCKGLASS refers to colorless glass
 			.complete(References.ID, "industrial_glass", consumer);
-
 
 		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_INSCRIBER.get().asItem(), 1)
 			.addPattern("IDI")
@@ -264,18 +269,6 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('T', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_PLATE.get()))
 			.complete(References.ID, "machine_hull", consumer);
 
-		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_MATTER_ANALYZER.get().asItem(), 1)
-			.addPattern(" C ")
-			.addPattern("PMF")
-			.addPattern("ONO")
-			.addKey('P', Ingredient.of(ItemRegistry.ITEM_PATTERN_DRIVE.get()))
-			.addKey('C', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER3).get()))
-			.addKey('F', Ingredient.of(ItemRegistry.ITEM_TRANSPORTER_FLASHDRIVE.get()))
-			.addKey('M', Ingredient.of(ItemRegistry.ITEM_ME_CONVERSION_MATRIX.get()))
-			.addKey('N', Ingredient.of(ItemRegistry.ITEM_INTEGRATION_MATRIX.get()))
-			.addKey('O', Ingredient.of(Tags.Items.STORAGE_BLOCKS_IRON))
-			.complete(References.ID, "matter_analyzer", consumer);
-
 		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_MATTER_CONTAINERS.get(ItemMatterContainer.ContainerType.REGULAR).get(), 4)
 			.addPattern("TMT")
 			.addPattern(" T ")
@@ -292,7 +285,7 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('M', Ingredient.of(ItemRegistry.ITEM_SUPERCONDUCTOR_MAGNET.get()))
 			.complete(References.ID, "matter_pipe", consumer);
 
-		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_MATTER_ANALYZER.get().asItem(), 1)
+		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_MATTER_RECYCLER.get().asItem(), 1)
 			.addPattern("T T")
 			.addPattern("1P2")
 			.addPattern("NTM")
@@ -303,6 +296,18 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('M', Ingredient.of(ItemRegistry.ITEM_ME_CONVERSION_MATRIX.get()))
 			.addKey('N', Ingredient.of(ItemRegistry.ITEM_INTEGRATION_MATRIX.get()))
 			.complete(References.ID, "matter_recycler", consumer);
+
+		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_MATTER_ANALYZER.get().asItem(), 1)
+			.addPattern(" C ")
+			.addPattern("PMF")
+			.addPattern("ONO")
+			.addKey('P', Ingredient.of(ItemRegistry.ITEM_PATTERN_DRIVE.get()))
+			.addKey('C', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER3).get()))
+			.addKey('F', Ingredient.of(ItemRegistry.ITEM_NETWORK_FLASH_DRIVE.get()))
+			.addKey('M', Ingredient.of(ItemRegistry.ITEM_ME_CONVERSION_MATRIX.get()))
+			.addKey('N', Ingredient.of(ItemRegistry.ITEM_INTEGRATION_MATRIX.get()))
+			.addKey('O', Ingredient.of(Tags.Items.STORAGE_BLOCKS_IRON))
+			.complete(References.ID, "matter_analyzer", consumer);
 
 		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_MATTER_SCANNER.get(), 1)
 			.addPattern("III")
@@ -576,6 +581,22 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('X', Ingredient.of(OverdriveTags.Items.INGOT_TRITANIUM))
 			.complete(References.ID, "tritanium_chestplate", consumer);
 
+		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_VENT_CLOSED.get().asItem(), 1)
+			.addPattern("###")
+			.addPattern("T T")
+			.addPattern("###")
+			.addKey('#', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_PLATE.get()))
+			.addKey('T', Ingredient.of(OverdriveTags.Items.INGOT_TRITANIUM))
+			.complete(References.ID, "decorative_vent_closed", consumer);
+
+		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_VENT_OPEN.get().asItem(), 1)
+			.addPattern(" # ")
+			.addPattern("T T")
+			.addPattern(" # ")
+			.addKey('#', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_PLATE.get()))
+			.addKey('T', Ingredient.of(OverdriveTags.Items.INGOT_TRITANIUM))
+			.complete(References.ID, "decorative_vent_open", consumer);
+
 		// Define a mapping of dye colors to their appropriate tags
 		Map<DyeColor, TagKey<Item>> dyeColorTags = new HashMap<>();
 
@@ -618,6 +639,7 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 				.addKey('D', Ingredient.of(entry.getKey().getTag()))
 				.complete(References.ID, "tritanium_crate_" + entry.getKey().getName(), consumer);
 		}
+
 		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_TRITANIUM_HELMET.get(), 1)
 			.addPattern("XCX")
 			.addPattern("X X")
@@ -696,6 +718,8 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('Y', Ingredient.of(ItemTags.WOOL))
 			.complete(References.ID, "tritanium_wrench", consumer);
 
+		addUpgradeRecipes(consumer);
+
 		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADE_BASE.get(), 1)
 			.addPattern(" R ")
 			.addPattern(" C ")
@@ -705,27 +729,143 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('T', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_PLATE.get()))
 			.complete(References.ID, "upgrade_base", consumer);
 
-		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.POWER).get(), 1)
+		// On hold until the Weapon Modules are worked out.
+//		OverdriveShapedCraftingRecipe.start(ItemRegistry.WEAPON_MODULE_BARREL, 1)
+//			.addPattern(" G ")
+//			.addPattern("RDR")
+//			.addPattern(" T ")
+//			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
+//			.addKey('T', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_PLATE.get()))
+//			.addKey('D', Ingredient.of(OverdriveTags.Items.GEM_DILITHIUM))
+//			.addKey('G', Ingredient.of(Tags.Items.GLASS))
+//			.complete(References.ID, "weapon_module_barrel", consumer);
+
+		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_TRITANIUM_PLATE.get(), 1)
+			.addPattern("TT")
+			.addKey('T', Ingredient.of(OverdriveTags.Items.INGOT_TRITANIUM))
+			.complete(References.ID, "tritanium_plate", consumer);
+
+		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_WEAPON_STATION.get().asItem(), 1)
+			.addPattern("   ")
+			.addPattern("GFR")
+			.addPattern("CMB")
+			.addKey('B', Ingredient.of(ItemRegistry.ITEM_BATTERIES.get(ItemBattery.BatteryType.REGULAR).get()))
+			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
+			.addKey('C', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER3).get()))
+			.addKey('F', Ingredient.of(ItemRegistry.ITEM_FORCEFIELD_EMITTER.get()))
+			.addKey('G', Ingredient.of(Tags.Items.DUSTS_GLOWSTONE))
+			.addKey('M', Ingredient.of(ItemRegistry.ITEM_MACHINE_CASING.get()))
+			.complete(References.ID, "weapon_station", consumer);
+
+		addDecorativeFloorTile(consumer);
+		addDecorativeFloorTiles(consumer);
+	}
+
+	private void addDecorativeRecipes(Consumer<FinishedRecipe> consumer) {
+		for (DyeColor color: DyeColor.values()) {
+			String useColor = color.getName().toUpperCase();
+
+			if (useColor.equals("LIME")) {
+				useColor = "LIME_GREEN";
+			}
+
+			if (useColor.equals("GRAY")) {
+				useColor = "LIGHT_GRAY";
+			}
+
+			Block block = BlockRegistry.BLOCK_COLORED_TRITANIUM_PLATING
+				.get(OverdriveBlockColors.valueOf(useColor)).get();
+
+			OverdriveShapedCraftingRecipe.start(block.asItem(), 1)
+				.addPattern("###")
+				.addPattern("#D#")
+				.addPattern("###")
+				.addKey('#', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_PLATE.get()))
+				.addKey('D', Ingredient.of(color.getTag()))
+				.complete(References.ID, "tritanium_plating_" + color.getName(), consumer);
+		}
+	}
+
+	private void addDecorativeFloorTile(Consumer<FinishedRecipe> consumer) {
+		for (DyeColor color: DyeColor.values()) {
+			String useColor = color.getName().toUpperCase();
+
+			if (useColor.equals("LIME")) {
+				useColor = "LIME_GREEN";
+			}
+
+			if (useColor.equals("GRAY")) {
+				useColor = "LIGHT_GRAY";
+			}
+
+			Block block = BlockRegistry.BLOCK_FLOOR_TILE
+				.get(OverdriveBlockColors.valueOf(useColor)).get();
+
+			OverdriveShapedCraftingRecipe.start(block.asItem(), 1)
+				.addPattern("#P#")
+				.addPattern("#D#")
+				.addPattern("#P#")
+				.addKey('#', Ingredient.of(Items.CLAY))
+				.addKey('D', Ingredient.of(color.getTag()))
+				.addKey('P', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_INGOT.get()))
+				.complete(References.ID, "decorative_floor_tile_" + color.getName(), consumer);
+		}
+	}
+
+	private void addDecorativeFloorTiles(Consumer<FinishedRecipe> consumer) {
+		for (DyeColor color: DyeColor.values()) {
+			String useColor = color.getName().toUpperCase();
+
+			if (useColor.equals("LIME")) {
+				useColor = "LIME_GREEN";
+			}
+
+			if (useColor.equals("GRAY")) {
+				useColor = "LIGHT_GRAY";
+			}
+
+			Block block = BlockRegistry.BLOCK_FLOOR_TILES
+				.get(OverdriveBlockColors.valueOf(useColor)).get();
+
+			OverdriveShapedCraftingRecipe.start(block.asItem(), 1)
+				.addPattern("#P#")
+				.addPattern("#D#")
+				.addPattern("###")
+				.addKey('#', Ingredient.of(Items.CLAY))
+				.addKey('D', Ingredient.of(color.getTag()))
+				.addKey('P', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_INGOT.get()))
+				.complete(References.ID, "decorative_floor_tiles_" + color.getName(), consumer);
+		}
+	}
+
+	private void addInscriberRecipes(Consumer<FinishedRecipe> consumer) {
+
+		inscriberRecipe(new ItemStack(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER2).get()), "isolinear_circuit_tier2", 250, 250)
+			.addItemTagInput(OverdriveTags.Items.CIRCUITS_BASIC, 1).addItemTagInput(OverdriveTags.Items.GOLD_INGOT, 1).complete(consumer);
+		inscriberRecipe(new ItemStack(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER3).get()), "isolinear_circuit_tier3", 300, 300)
+			.addItemTagInput(OverdriveTags.Items.CIRCUITS_ADVANCED, 1).addItemTagInput(OverdriveTags.Items.DIAMOND_GEM, 1).complete(consumer);
+		inscriberRecipe(new ItemStack(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER4).get()), "isolinear_circuit_tier4", 350, 350)
+			.addItemTagInput(OverdriveTags.Items.CIRCUITS_ELITE, 1).addItemTagInput(OverdriveTags.Items.EMERALD_GEM, 1).complete(consumer);
+
+	}
+
+	private FinishedRecipeItemOutput inscriberRecipe(ItemStack output, String name, double processTime, double usage) {
+		return FinishedRecipeItemOutput.of(RecipeInit.INSCRIBER_SERIALIZER.get(), output, 0.0, processTime, usage)
+			.name(RecipeCategory.ITEM_2_ITEM, References.ID, INSCRIBER_LOC + "/" + name);
+	}
+
+	private void addUpgradeRecipes(Consumer<FinishedRecipe> consumer) {
+		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.SPEED).get(), 1)
 			.addPattern(" R ")
 			.addPattern("GUG")
 			.addPattern(" E ")
 			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
 			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADE_BASE.get()))
-			.addKey('E', Ingredient.of(Items.EMERALD))
+			.addKey('E', Ingredient.of(Tags.Items.GEMS_EMERALD))
 			.addKey('G', Ingredient.of(Tags.Items.DUSTS_GLOWSTONE))
 			.complete(References.ID, "upgrade_1", consumer);
 
-		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.FAIL_SAFE).get(), 1)
-			.addPattern(" B ")
-			.addPattern("RUR")
-			.addPattern(" C ")
-			.addKey('B', Ingredient.of(ItemRegistry.ITEM_BATTERIES.get(ItemBattery.BatteryType.REGULAR).get()))
-			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
-			.addKey('C', Ingredient.of(Items.QUARTZ))
-			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADE_BASE.get()))
-			.complete(References.ID, "upgrade_2", consumer);
-
-		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.RANGE).get(), 1)
+		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.POWER).get(), 1)
 			.addPattern(" B ")
 			.addPattern("RUR")
 			.addPattern(" C ")
@@ -733,23 +873,33 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
 			.addKey('C', Ingredient.of(Tags.Items.GEMS_QUARTZ))
 			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADE_BASE.get()))
+			.complete(References.ID, "upgrade_2", consumer);
+
+		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.FAIL_SAFE).get(), 1)
+			.addPattern(" D ")
+			.addPattern("RUR")
+			.addPattern(" G ")
+			.addKey('D', Ingredient.of(OverdriveTags.Items.DIAMOND_GEM))
+			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
+			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADE_BASE.get()))
+			.addKey('G', Ingredient.of(Tags.Items.INGOTS_GOLD))
 			.complete(References.ID, "upgrade_3", consumer);
 
-		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.POWER_STORAGE).get(), 1)
+		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.RANGE).get(), 1)
 			.addPattern(" E ")
 			.addPattern("RUR")
 			.addPattern(" G ")
-			.addKey('E', Ingredient.of(Items.ENDER_PEARL))
+			.addKey('E', Ingredient.of(Tags.Items.ENDER_PEARLS))
 			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
 			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADE_BASE.get()))
-			.addKey('G', Ingredient.of(Items.GOLD_INGOT))
+			.addKey('G', Ingredient.of(Tags.Items.INGOTS_GOLD))
 			.complete(References.ID, "upgrade_4", consumer);
 
 		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.POWER_STORAGE).get(), 1)
 			.addPattern(" G ")
 			.addPattern("RUR")
 			.addPattern(" B ")
-			.addKey('G', Ingredient.of(Items.GOLD_INGOT))
+			.addKey('G', Ingredient.of(Tags.Items.INGOTS_GOLD))
 			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
 			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADE_BASE.get()))
 			.addKey('B', Ingredient.of(ItemRegistry.ITEM_BATTERIES.get(ItemBattery.BatteryType.HIGHCAPACITY).get()))
@@ -758,7 +908,7 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 		OverdriveShapelessCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.HYPER_SPEED).get(), 1)
 			.addIngredient(Ingredient.of(OverdriveTags.Items.GEM_DILITHIUM))
 			.addIngredient(Ingredient.of(Items.NETHER_STAR))
-			.addIngredient(Ingredient.of(ItemRegistry.ITEM_UPGRADE_BASE.get()))
+			.addIngredient(Ingredient.of(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.SPEED).get()))
 			.complete(References.ID, "upgrade_6", consumer);
 
 		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.MATTER_STORAGE).get(), 1)
@@ -778,54 +928,5 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADE_BASE.get()))
 			.addKey('W', Ingredient.of(ItemTags.WOOL))
 			.complete(References.ID, "upgrade_8", consumer);
-
-		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADES.get(ItemUpgrade.UpgradeType.MUFFLER).get(), 1)
-			.addPattern(" T ")
-			.addPattern("I I")
-			.addPattern("I I")
-			.addKey('T', Ingredient.of(OverdriveTags.Items.INGOT_TRITANIUM))
-			.addKey('W', Ingredient.of(ItemTags.WOOL))
-			.addKey('I', Ingredient.of(Tags.Items.INGOTS_IRON))
-			.complete(References.ID, "weapon_handle", consumer);
-
-		// On hold until the Weapon Modules are worked out.
-//		OverdriveShapedCraftingRecipe.start(ItemRegistry.WEAPON_MODULE_BARREL, 1)
-//			.addPattern(" G ")
-//			.addPattern("RDR")
-//			.addPattern(" T ")
-//			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
-//			.addKey('T', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_PLATE.get()))
-//			.addKey('D', Ingredient.of(OverdriveTags.Items.GEM_DILITHIUM))
-//			.addKey('G', Ingredient.of(Tags.Items.GLASS))
-//			.complete(References.ID, "weapon_module_barrel", consumer);
-
-		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_WEAPON_STATION.get().asItem(), 1)
-			.addPattern("   ")
-			.addPattern("GFR")
-			.addPattern("CMB")
-			.addKey('B', Ingredient.of(ItemRegistry.ITEM_BATTERIES.get(ItemBattery.BatteryType.REGULAR).get()))
-			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
-			.addKey('C', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER3).get()))
-			.addKey('F', Ingredient.of(ItemRegistry.ITEM_FORCEFIELD_EMITTER.get()))
-			.addKey('G', Ingredient.of(Tags.Items.DUSTS_GLOWSTONE))
-			.addKey('M', Ingredient.of(ItemRegistry.ITEM_MACHINE_CASING.get()))
-			.complete(References.ID, "weapon_station", consumer);
 	}
-
-	private void addInscriberRecipes(Consumer<FinishedRecipe> consumer) {
-
-		inscriberRecipe(new ItemStack(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER2).get()), "isolinear_circuit_tier2", 250, 250)
-			.addItemTagInput(OverdriveTags.Items.CIRCUITS_BASIC, 1).addItemTagInput(OverdriveTags.Items.GOLD_INGOT, 1).complete(consumer);
-		inscriberRecipe(new ItemStack(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER3).get()), "isolinear_circuit_tier3", 300, 300)
-			.addItemTagInput(OverdriveTags.Items.CIRCUITS_ADVANCED, 1).addItemTagInput(OverdriveTags.Items.DIAMOND_GEM, 1).complete(consumer);
-		inscriberRecipe(new ItemStack(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER4).get()), "isolinear_circuit_tier4", 350, 350)
-			.addItemTagInput(OverdriveTags.Items.CIRCUITS_ELITE, 1).addItemTagInput(OverdriveTags.Items.EMERALD_GEM, 1).complete(consumer);
-
-	}
-
-	private FinishedRecipeItemOutput inscriberRecipe(ItemStack output, String name, double processTime, double usage) {
-		return FinishedRecipeItemOutput.of(RecipeInit.INSCRIBER_SERIALIZER.get(), output, 0.0, processTime, usage)
-			.name(RecipeCategory.ITEM_2_ITEM, References.ID, INSCRIBER_LOC + "/" + name);
-	}
-
 }

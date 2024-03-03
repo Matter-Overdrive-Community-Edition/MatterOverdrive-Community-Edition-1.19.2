@@ -1,11 +1,11 @@
 package matteroverdrive.common.block;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import net.minecraft.core.Direction;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class OverdriveBlockStates {
 
@@ -40,7 +40,6 @@ public class OverdriveBlockStates {
 			VerticalFacing.class);
 
 	public enum CableConnectionType implements StringRepresentable {
-
 		NONE, NONE_SEAMLESS, CABLE, INVENTORY, IGNORED;
 
 		@Override
@@ -80,7 +79,5 @@ public class OverdriveBlockStates {
 			}
 			return NONE;
 		}
-
 	}
-
 }

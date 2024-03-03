@@ -40,7 +40,7 @@ public class OverdriveBlockStateProvider extends BlockStateProvider {
 				.texture("south", "#all").texture("west", "#all");
 
 		BlockModelBuilder floorTileColorless = models().getBuilder("floor_tile_colorless").parent(cubeColoredAll)
-				.texture("all", blockLoc("decorative/floor_tile_colorless"));
+			.texture("all", blockLoc("decorative/floor_tile_colorless"));
 		BlockModelBuilder floorTilesColorless = models().getBuilder("floor_tiles_colorless").parent(cubeColoredAll)
 				.texture("all", blockLoc("decorative/floor_tiles_colorless"));
 		BlockModelBuilder tritaniumPlatingColorless = models().getBuilder("tritanium_plating_colorless")
@@ -54,8 +54,7 @@ public class OverdriveBlockStateProvider extends BlockStateProvider {
 		for (OverdriveBlockColors color : OverdriveBlockColors.values()) {
 			simpleBlock(BlockRegistry.BLOCK_COLORED_TRITANIUM_PLATING.get(color), tritaniumPlatingColorless, true);
 			simpleBlock(BlockRegistry.BLOCK_FLOOR_TILE.get(color), floorTileColorless, true);
-			simpleBlock(BlockRegistry.BLOCK_FLOOR_TILES.get(color), floorTilesColorless, true);
-		}
+			simpleBlock(BlockRegistry.BLOCK_FLOOR_TILES.get(color), floorTilesColorless, true);		}
 		for (CrateColors color : CrateColors.values()) {
 			String name = color.id();
 			horrRotatedBlock(BlockRegistry.BLOCK_TRITANIUM_CRATES.get(color),
@@ -137,13 +136,13 @@ public class OverdriveBlockStateProvider extends BlockStateProvider {
 			models().cubeAll("network_switch", blockLoc("network_switch")),
 		true);
 
-//		omniDirBlock(BlockRegistry.BLOCK_HOLO_SIGN,
-//			existingBlock(BlockRegistry.BLOCK_HOLO_SIGN),
+		// Moved to external file.
+//		horrRotatedBlock(BlockRegistry.BLOCK_HOLO_SIGN,
+//			existingBlock(blockLoc("holo_sign")),
 //		true);
 
 		genMatterConduits();
 		genNetworkCables();
-
 	}
 
 	private void genMatterConduits() {

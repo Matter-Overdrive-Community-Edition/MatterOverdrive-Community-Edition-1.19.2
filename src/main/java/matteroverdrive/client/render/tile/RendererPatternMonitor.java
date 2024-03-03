@@ -26,7 +26,6 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.phys.AABB;
 
 public class RendererPatternMonitor extends AbstractTileRenderer<TilePatternMonitor> {
-
 	// DUNSEW
 	private static final float[][] GRID_COORDS = new float[][]{
 		UtilsRendering.getCoordsFromAABB(new AABB(0.0D, 0.685D, 0.0D, 1.0D, 1.0D, 1.0D)),
@@ -73,6 +72,7 @@ public class RendererPatternMonitor extends AbstractTileRenderer<TilePatternMoni
 			float propAlpha = (float) Math.abs(Math.cos((double) (getGameTime() % 80) / 80.0D * Math.PI));
 			if (propAlpha < 0.1F)
 				propAlpha = 0.1F;
+
 			float[] glowColor = Colors.HOLO.getFloatArrModAlpha(propAlpha);
 
 			TextureAtlasSprite holoBars = ClientRegister.CACHED_TEXTUREATLASSPRITES.get(AtlasTextures.HOLO_PATTERN_MONITOR);
