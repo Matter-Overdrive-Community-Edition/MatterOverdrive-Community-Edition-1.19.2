@@ -640,6 +640,14 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 				.complete(References.ID, "tritanium_crate_" + entry.getKey().getName(), consumer);
 		}
 
+		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_TRITANIUM_CRATES.get(TileTritaniumCrate.CrateColors.REG).get().asItem(), 1)
+			 .addPattern("   ")
+	  	  	 .addPattern("TCT")
+		  	 .addPattern(" T ")
+		  	 .addKey('C', Ingredient.of(Items.CHEST))
+		  	 .addKey('T', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_PLATE.get()))
+		  	 .complete(References.ID, "tritanium_crate_reg", consumer);
+
 		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_TRITANIUM_HELMET.get(), 1)
 			.addPattern("XCX")
 			.addPattern("X X")
