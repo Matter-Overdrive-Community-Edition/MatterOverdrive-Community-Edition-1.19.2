@@ -791,6 +791,7 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 				.addPattern("#P#")
 				.addKey('#', Ingredient.of(Items.CLAY))
 				.addKey('D', Ingredient.of(color.getTag()))
+				.addKey('P', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_PLATE.get()))
 				.complete(References.ID, "decorative_floor_tile_" + color.getName(), consumer);
 		}
 	}
