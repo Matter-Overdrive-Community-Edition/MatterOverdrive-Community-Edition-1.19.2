@@ -740,6 +740,24 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 //			.addKey('G', Ingredient.of(Tags.Items.GLASS))
 //			.complete(References.ID, "weapon_module_barrel", consumer);
 
+		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_WEAPON_HANDLE.get(), 1)
+			.addPattern("TWT")
+			.addPattern("I I")
+			.addPattern("I I")
+			.addKey('W', Ingredient.of(ItemTags.WOOL))
+			.addKey('I', Ingredient.of(Tags.Items.INGOTS_IRON))
+			.addKey('T', Ingredient.of(OverdriveTags.Items.INGOT_TRITANIUM))
+			.complete(References.ID, "weapon_handle", consumer);
+
+		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_WEAPON_RECEIVER.get(), 1)
+			.addPattern("IRT")
+			.addPattern("   ")
+			.addPattern("IIT")
+			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
+			.addKey('I', Ingredient.of(Tags.Items.INGOTS_IRON))
+			.addKey('T', Ingredient.of(OverdriveTags.Items.INGOT_TRITANIUM))
+			.complete(References.ID, "weapon_receiver", consumer);
+
 		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_TRITANIUM_PLATE.get(), 1)
 			.addPattern("TT")
 			.addKey('T', Ingredient.of(OverdriveTags.Items.INGOT_TRITANIUM))
