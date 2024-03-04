@@ -32,6 +32,7 @@ public class OverdriveTags {
 		public static final TagKey<Item> GEM_DILITHIUM = forgeTag("gems/dilithium");
 		public static final TagKey<Item> NUGGET_TRITANIUM = forgeTag("nuggets/tritanium");
 		public static final TagKey<Item> BLOCK_TRITANIUM = forgeTag("blocks/tritanium");
+		public static final TagKey<Item> COLORED_PLATING = forgeTag("blocks/colored_plating");
 
 		private static void init() {}
 		

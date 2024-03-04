@@ -791,7 +791,7 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 				.addPattern("###")
 				.addPattern("#D#")
 				.addPattern("###")
-				.addKey('#', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_PLATE.get()))
+				.addKey('#', Ingredient.of(OverdriveTags.Items.COLORED_PLATING))
 				.addKey('D', Ingredient.of(color.getTag()))
 				.complete(References.ID, "tritanium_plating_" + color.getName(), consumer);
 		}
