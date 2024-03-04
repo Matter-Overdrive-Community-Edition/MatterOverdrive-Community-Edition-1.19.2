@@ -51,18 +51,25 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 	private void addShapedCraftingRecipes(Consumer<FinishedRecipe> consumer) {
 
 		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER1).get(), 1)
-			.addPattern("I").addPattern("R").addPattern("G").addKey('I', "forge", "ingots/iron").addKey('R', "forge", "dusts/redstone")
-			.addKey('G', "forge", "glass").complete(References.ID, "isolinear_circuit_tier1", consumer);
+			.addPattern("I")
+			.addPattern("R")
+			.addPattern("G")
+			.addKey('I', Ingredient.of(Tags.Items.INGOTS_IRON))
+			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
+			.addKey('G', Ingredient.of(Tags.Items.GLASS))
+			.complete(References.ID, "isolinear_circuit_tier1", consumer);
 
 		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_ANDROID_STATION.get().asItem(), 1)
-			.addPattern("THA").addPattern("2F3").addPattern("GMR")
+			.addPattern("THA")
+			.addPattern("2F3")
+			.addPattern("GMR")
 			.addKey('A', Ingredient.of(ItemRegistry.ITEM_ROGUE_ANDROID_ARMS.get()))
 			.addKey('2', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER1).get()))
-			.addKey('R', Ingredient.of(Items.REDSTONE))
+			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
 			.addKey('3', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER2).get()))
 			.addKey('T', Ingredient.of(ItemRegistry.ITEM_ROGUE_ANDROID_CHEST.get()))
 			.addKey('F', Ingredient.of(ItemRegistry.ITEM_FORCEFIELD_EMITTER.get()))
-			.addKey('G', Ingredient.of(Items.GLOWSTONE))
+			.addKey('G', Ingredient.of(Tags.Items.DUSTS_GLOWSTONE))
 			.addKey('H', Ingredient.of(ItemRegistry.ITEM_ROGUE_ANDROID_HEAD.get()))
 			.addKey('M', Ingredient.of(ItemRegistry.ITEM_MACHINE_CASING.get()))
 			.complete(References.ID, "android_station", consumer);
@@ -386,7 +393,7 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('B', Ingredient.of(ItemTags.WOOL))
 			.addKey('2', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER2).get()))
 			.addKey('3', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER3).get()))
-			.addKey('C', Ingredient.of(Items.CHEST))
+			.addKey('C', Ingredient.of(Tags.Items.CHESTS_WOODEN))
 			.addKey('T', Ingredient.of(OverdriveTags.Items.INGOT_TRITANIUM))
 			.addKey('M', Ingredient.of(ItemRegistry.ITEM_MACHINE_CASING.get()))
 			.complete(References.ID, "pattern_storage", consumer);
@@ -468,7 +475,7 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addPattern("RRR")
 			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
 			.addKey('T', Ingredient.of(OverdriveTags.Items.INGOT_TRITANIUM))
-			.addKey('E', Ingredient.of(Items.ENDER_PEARL))
+			.addKey('E', Ingredient.of(Tags.Items.ENDER_PEARLS))
 			.complete(References.ID, "s_magnet", consumer);
 
 		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_SECURITY_PROTOCOL.get(), 1)
@@ -626,7 +633,7 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			 .addPattern(" D ")
 			 .addPattern("TCT")
 			 .addPattern(" T ")
-			 .addKey('C', Ingredient.of(Items.CHEST))
+			 .addKey('C', Ingredient.of(Tags.Items.CHESTS_WOODEN))
 			 .addKey('T', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_PLATE.get()))
 			 .addKey('D', Ingredient.of(entry.getKey().getTag()))
 			 .complete(References.ID, "tritanium_crate_" + entry.getKey().getName(), consumer);
@@ -636,7 +643,7 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			 .addPattern("   ")
 	  	  	 .addPattern("TCT")
 		  	 .addPattern(" T ")
-		  	 .addKey('C', Ingredient.of(Items.CHEST))
+		  	 .addKey('C', Ingredient.of(Tags.Items.CHESTS_WOODEN))
 		  	 .addKey('T', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_PLATE.get()))
 		  	 .complete(References.ID, "tritanium_crate_reg", consumer);
 
@@ -652,7 +659,7 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addPattern("XX ")
 			.addPattern(" # ")
 			.addPattern(" # ")
-			.addKey('#', Ingredient.of(Items.STICK))
+			.addKey('#', Ingredient.of(Tags.Items.RODS_WOODEN))
 			.addKey('X', Ingredient.of(OverdriveTags.Items.INGOT_TRITANIUM))
 			.complete(References.ID, "tritanium_hoe", consumer);
 
@@ -683,7 +690,7 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addPattern("XXX")
 			.addPattern(" # ")
 			.addPattern(" # ")
-			.addKey('#', Ingredient.of(Items.STICK))
+			.addKey('#', Ingredient.of(Tags.Items.RODS_WOODEN))
 			.addKey('X', Ingredient.of(OverdriveTags.Items.INGOT_TRITANIUM))
 			.complete(References.ID, "tritanium_pickaxe", consumer);
 
@@ -691,7 +698,7 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addPattern(" X ")
 			.addPattern(" # ")
 			.addPattern(" # ")
-			.addKey('#', Ingredient.of(Items.STICK))
+			.addKey('#', Ingredient.of(Tags.Items.RODS_WOODEN))
 			.addKey('X', Ingredient.of(OverdriveTags.Items.INGOT_TRITANIUM))
 			.complete(References.ID, "tritanium_shovel", consumer);
 
@@ -699,7 +706,7 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addPattern(" X ")
 			.addPattern(" X ")
 			.addPattern(" # ")
-			.addKey('#', Ingredient.of(Items.STICK))
+			.addKey('#', Ingredient.of(Tags.Items.RODS_WOODEN))
 			.addKey('X', Ingredient.of(OverdriveTags.Items.INGOT_TRITANIUM))
 			.complete(References.ID, "tritanium_sword", consumer);
 
@@ -847,7 +854,7 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addPattern(" D ")
 			.addPattern("RUR")
 			.addPattern(" G ")
-			.addKey('D', Ingredient.of(OverdriveTags.Items.DIAMOND_GEM))
+			.addKey('D', Ingredient.of(Tags.Items.GEMS_DIAMOND))
 			.addKey('R', Ingredient.of(Tags.Items.DUSTS_REDSTONE))
 			.addKey('U', Ingredient.of(ItemRegistry.ITEM_UPGRADE_BASE.get()))
 			.addKey('G', Ingredient.of(Tags.Items.INGOTS_GOLD))
