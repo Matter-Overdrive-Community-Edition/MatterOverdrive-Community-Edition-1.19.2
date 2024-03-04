@@ -622,22 +622,14 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 		for (Map.Entry<DyeColor, TagKey<Item>> entry: dyeColorTags.entrySet()) {
 			String color = entry.getKey().getName().toUpperCase();
 
-			if (entry.getKey().getName().equals("lime")) {
-				color = "LIME_GREEN";
-			}
-
-			if (entry.getKey().getName().equals("gray")) {
-				color = "DARK_GRAY";
-			}
-
-			OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_TRITANIUM_CRATES.get(TileTritaniumCrate.CrateColors.valueOf(color)).get().asItem(), 1)
-				.addPattern(" D ")
-				.addPattern("TCT")
-				.addPattern(" T ")
-				.addKey('C', Ingredient.of(Items.CHEST))
-				.addKey('T', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_PLATE.get()))
-				.addKey('D', Ingredient.of(entry.getKey().getTag()))
-				.complete(References.ID, "tritanium_crate_" + entry.getKey().getName(), consumer);
+		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_TRITANIUM_CRATES.get(TileTritaniumCrate.CrateColors.valueOf(color)).get().asItem(), 1)
+			 .addPattern(" D ")
+			 .addPattern("TCT")
+			 .addPattern(" T ")
+			 .addKey('C', Ingredient.of(Items.CHEST))
+			 .addKey('T', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_PLATE.get()))
+			 .addKey('D', Ingredient.of(entry.getKey().getTag()))
+			 .complete(References.ID, "tritanium_crate_" + entry.getKey().getName(), consumer);
 		}
 
 		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_TRITANIUM_CRATES.get(TileTritaniumCrate.CrateColors.REG).get().asItem(), 1)
@@ -758,6 +750,8 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('M', Ingredient.of(ItemRegistry.ITEM_MACHINE_CASING.get()))
 			.complete(References.ID, "weapon_station", consumer);
 
+
+		
 		addDecorativeFloorTile(consumer);
 		addDecorativeFloorTiles(consumer);
 	}
@@ -765,15 +759,6 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 	private void addDecorativeRecipes(Consumer<FinishedRecipe> consumer) {
 		for (DyeColor color: DyeColor.values()) {
 			String useColor = color.getName().toUpperCase();
-
-			if (useColor.equals("LIME")) {
-				useColor = "LIME_GREEN";
-			}
-
-			if (useColor.equals("GRAY")) {
-				useColor = "LIGHT_GRAY";
-			}
-
 			Block block = BlockRegistry.BLOCK_COLORED_TRITANIUM_PLATING
 				.get(OverdriveBlockColors.valueOf(useColor)).get();
 
@@ -790,15 +775,6 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 	private void addDecorativeFloorTile(Consumer<FinishedRecipe> consumer) {
 		for (DyeColor color: DyeColor.values()) {
 			String useColor = color.getName().toUpperCase();
-
-			if (useColor.equals("LIME")) {
-				useColor = "LIME_GREEN";
-			}
-
-			if (useColor.equals("GRAY")) {
-				useColor = "LIGHT_GRAY";
-			}
-
 			Block block = BlockRegistry.BLOCK_FLOOR_TILE
 				.get(OverdriveBlockColors.valueOf(useColor)).get();
 
@@ -816,15 +792,6 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 	private void addDecorativeFloorTiles(Consumer<FinishedRecipe> consumer) {
 		for (DyeColor color: DyeColor.values()) {
 			String useColor = color.getName().toUpperCase();
-
-			if (useColor.equals("LIME")) {
-				useColor = "LIME_GREEN";
-			}
-
-			if (useColor.equals("GRAY")) {
-				useColor = "LIGHT_GRAY";
-			}
-
 			Block block = BlockRegistry.BLOCK_FLOOR_TILES
 				.get(OverdriveBlockColors.valueOf(useColor)).get();
 
