@@ -769,7 +769,7 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			Block block = BlockRegistry.BLOCK_COLORED_TRITANIUM_PLATING
 				.get(OverdriveBlockColors.valueOf(useColor)).get();
 
-			OverdriveShapedCraftingRecipe.start(block.asItem(), 1)
+			OverdriveShapedCraftingRecipe.start(block.asItem(), 8)
 				.addPattern("###")
 				.addPattern("#D#")
 				.addPattern("###")
@@ -785,13 +785,12 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			Block block = BlockRegistry.BLOCK_FLOOR_TILE
 				.get(OverdriveBlockColors.valueOf(useColor)).get();
 
-			OverdriveShapedCraftingRecipe.start(block.asItem(), 1)
+			OverdriveShapedCraftingRecipe.start(block.asItem(), 32)
 				.addPattern("#P#")
 				.addPattern("#D#")
 				.addPattern("#P#")
 				.addKey('#', Ingredient.of(Items.CLAY))
 				.addKey('D', Ingredient.of(color.getTag()))
-				.addKey('P', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_INGOT.get()))
 				.complete(References.ID, "decorative_floor_tile_" + color.getName(), consumer);
 		}
 	}
@@ -802,13 +801,13 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			Block block = BlockRegistry.BLOCK_FLOOR_TILES
 				.get(OverdriveBlockColors.valueOf(useColor)).get();
 
-			OverdriveShapedCraftingRecipe.start(block.asItem(), 1)
+			OverdriveShapedCraftingRecipe.start(block.asItem(), 32)
 				.addPattern("#P#")
 				.addPattern("#D#")
 				.addPattern("###")
 				.addKey('#', Ingredient.of(Items.CLAY))
 				.addKey('D', Ingredient.of(color.getTag()))
-				.addKey('P', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_INGOT.get()))
+				.addKey('P', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_PLATE.get()))
 				.complete(References.ID, "decorative_floor_tiles_" + color.getName(), consumer);
 		}
 	}
