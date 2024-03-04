@@ -188,8 +188,6 @@ public class OverdriveMatterValueGenerator implements DataProvider {
 		json.addProperty("#" + OverdriveTags.Items.AMETHYST_BUDS.location(), 10);
 		json.addProperty("#" + OverdriveTags.Items.WEATHER_COPPER_BLOCKS.location(), 144);
 		json.addProperty("#" + OverdriveTags.Items.CORAL.location(), 10);
-		json.addProperty("#" + OverdriveTags.Items.INGOT_TRITANIUM.location(), 1);
-		json.addProperty("#" + OverdriveTags.Items.BLOCK_TRITANIUM.location(), 9);
 		json.addProperty("#" + OverdriveTags.Items.DIAMOND_GEM.location(), 64);
 
 		json.addProperty("#" + ItemTags.ANVIL.location(), 31);
