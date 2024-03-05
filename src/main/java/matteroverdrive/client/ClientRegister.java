@@ -136,6 +136,13 @@ public class ClientRegister {
 					}
 					return 0;
 				});
+		ItemProperties.register(ItemRegistry.ITEM_NETWORK_FLASH_DRIVE.get(), CHARGE,
+				(stack, world, entity, call) -> {
+					if (stack.hasTag() && stack.getTag().contains(UtilsNbt.BLOCK_POS)) {
+						return 1;
+					}
+					return 0;
+				});
 		ItemProperties.register(ItemRegistry.ITEM_MATTER_SCANNER.get(), CHARGE, (stack, world, entity, call) -> {
 			if (stack.hasTag() && stack.getTag().getBoolean("on")) {
 				return 1;
