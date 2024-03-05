@@ -190,6 +190,12 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			default:
 
 			add("itemGroup.itemgroup" + References.ID + "main", "Matter Overdrive");
+			add("itemGroup.itemgroup" + References.ID + "modules", "Matter Overdrive: Modules");
+			add("itemGroup.itemgroup" + References.ID + "main", "Matter Overdrive: Upgrades");
+			add("itemGroup.itemgroup" + References.ID + "main", "Matter Overdrive: Food");
+			add("itemGroup.itemgroup" + References.ID + "main", "Matter Overdrive: Ships");
+			add("itemGroup.itemgroup" + References.ID + "main", "Matter Overdrive: Buildings");
+			add("itemGroup.itemgroup" + References.ID + "main", "Matter Overdrive: Decorative");
 
 			addItem(ItemRegistry.ITEM_RAW_MATTER_DUST, "Raw Matter Dust");
 			addItem(ItemRegistry.ITEM_MATTER_DUST, "Matter Dust");
@@ -208,6 +214,16 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			addItem(ItemRegistry.ITEM_PHASER, "Phaser");
 			addItem(ItemRegistry.ITEM_PLASMA_SHOTGUN, "Plasma Shotgun");
 			addItem(ItemRegistry.ITEM_OMNI_TOOL, "Omni Tool");
+			
+			addItem(ItemRegistry.SHIP_FACTORY, "Ship Factory");
+			addItem(ItemRegistry.BUILDING_BASE, "Base");
+			addItem(ItemRegistry.BUILDING_MATTER_EXTRACTOR, "Matter Extractor");
+			addItem(ItemRegistry.BUILDING_RESIDENTIAL, "Residential Buildings");
+			addItem(ItemRegistry.BUILDING_SHIP_HANGAR, "Ship Hangar");
+			addItem(ItemRegistry.BUILDING_POWER_GENERATOR, "Power Generator");
+			
+			addItem(ItemRegistry.SCOUT_SHIP, "Scout Ship");
+			addItem(ItemRegistry.SHIP_COLONIZER, "Colonizer Ship");
 
 			addItem(ItemRegistry.ITEM_BATTERIES.get(BatteryType.REGULAR), "Battery");
 			addItem(ItemRegistry.ITEM_BATTERIES.get(BatteryType.HIGHCAPACITY), "High-Capacity Battery");
@@ -405,7 +421,11 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			addItemDescTooltip(ItemRegistry.ITEM_TRITANIUM_WRENCH, "Safely disassembles and rotates machines.");
 			addItemDescTooltip(ItemRegistry.ITEM_ROMULAN_ALE, "Highly intoxicating alcoholic beverage of Romulan origin.");
 			addItemDescTooltip(ItemRegistry.ITEM_EMERGENCY_RATION, "Emergency Rations.");
-			
+			addItemDescTooltip(ItemRegistry.SHIP_FACTORY, "Allows the building of ships");
+			addItemDescTooltip(ItemRegistry.BUILDING_BASE, "Main building, needed for everything");
+			addItemDescTooltip(ItemRegistry.SCOUT_SHIP, "A fast ship, used for scouting");
+			addItemDescTooltip(ItemRegistry.SHIP_COLONIZER, "Used to claim planets by building a Base building on arrival");
+
 			for (CrateColors color : TileTritaniumCrate.CrateColors.values()) {
 				addBlockItemDescTooltip(BlockRegistry.BLOCK_TRITANIUM_CRATES.get(color), "Retains items when broken");
 			}
