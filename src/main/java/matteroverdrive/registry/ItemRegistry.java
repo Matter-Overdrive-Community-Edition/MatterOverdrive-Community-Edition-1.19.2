@@ -17,6 +17,7 @@ import matteroverdrive.common.item.pill.types.ItemAndroidRedPill;
 import matteroverdrive.common.item.pill.types.ItemAndroidYellowPill;
 import matteroverdrive.common.item.tools.ItemMatterContainer;
 import matteroverdrive.common.item.tools.ItemMatterContainer.ContainerType;
+import matteroverdrive.common.item.tools.ItemNetworkFlashDrive;
 import matteroverdrive.common.item.tools.ItemSecurityProtocol;
 import matteroverdrive.common.item.tools.ItemTransporterFlashdrive;
 import matteroverdrive.common.item.tools.electric.ItemBattery;
@@ -250,7 +251,7 @@ public class ItemRegistry {
 			() -> new ItemCommunicator(new Item.Properties().tab(References.MAIN).stacksTo(1)));
 
 	public static final RegistryObject<Item> ITEM_NETWORK_FLASH_DRIVE = ITEMS.register("network_flash_drive",
-		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN).stacksTo(4), false));
+			ItemNetworkFlashDrive::new);
 
 	public static final RegistryObject<Item> ITEM_PORTABLE_DECOMPOSER = ITEMS.register("portable_decomposer",
 		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN).stacksTo(1), false));

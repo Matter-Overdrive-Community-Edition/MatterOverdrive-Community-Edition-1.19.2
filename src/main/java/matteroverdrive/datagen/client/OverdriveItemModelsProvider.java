@@ -68,7 +68,13 @@ public class OverdriveItemModelsProvider extends ItemModelProvider {
 //		layeredItem(ItemRegistry.ITEM_SECURITY_PROTOCOL, Parent.GENERATED, itemLoc("security_protocol"));
 		generateSecurityProtocols();
 		layeredItem(ItemRegistry.ITEM_PORTABLE_DECOMPOSER, Parent.GENERATED, itemLoc("portable_decomposer"));
-		layeredItem(ItemRegistry.ITEM_NETWORK_FLASH_DRIVE, Parent.GENERATED, itemLoc("flash_drive"));
+//		layeredItem(ItemRegistry.ITEM_NETWORK_FLASH_DRIVE, Parent.GENERATED, itemLoc("flash_drive"));
+
+		toggleableItem(ItemRegistry.ITEM_NETWORK_FLASH_DRIVE, "_stored", Parent.GENERATED, Parent.GENERATED, new ResourceLocation[] {
+				itemLoc("flashdrive/network_flash_drive_empty")
+		}, new ResourceLocation[] {
+				itemLoc("flashdrive/network_flash_drive_stored")
+		});
 
 //   Weapons
 		// Weapons registered below.
