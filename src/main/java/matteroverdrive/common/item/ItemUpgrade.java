@@ -19,7 +19,7 @@ public class ItemUpgrade extends OverdriveItem {
 	public UpgradeType type;
 
 	public ItemUpgrade(UpgradeType type) {
-		super(new Item.Properties().tab(References.MAIN).stacksTo(16), false);
+		super(new Item.Properties().tab(References.UPGRADES).stacksTo(16), false);
 		this.type = type;
 	}
 
