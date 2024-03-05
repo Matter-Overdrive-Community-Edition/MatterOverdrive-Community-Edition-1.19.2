@@ -20,7 +20,6 @@ import matteroverdrive.common.block.type.TypeMatterConduit;
 import matteroverdrive.common.block.type.TypeMatterNetworkCable;
 import matteroverdrive.common.blockitem.BlockItemColored;
 import matteroverdrive.common.blockitem.OverdriveBlockItem;
-import matteroverdrive.common.block.BlockHoloSign;
 import matteroverdrive.common.tile.*;
 import matteroverdrive.common.tile.TileTritaniumCrate.CrateColors;
 import matteroverdrive.common.tile.matter_network.TileDiscManipulator;

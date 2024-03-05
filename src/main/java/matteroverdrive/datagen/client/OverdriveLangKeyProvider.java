@@ -191,11 +191,11 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 
 			add("itemGroup.itemgroup" + References.ID + "main", "Matter Overdrive");
 			add("itemGroup.itemgroup" + References.ID + "modules", "Matter Overdrive: Modules");
-			add("itemGroup.itemgroup" + References.ID + "main", "Matter Overdrive: Upgrades");
-			add("itemGroup.itemgroup" + References.ID + "main", "Matter Overdrive: Food");
-			add("itemGroup.itemgroup" + References.ID + "main", "Matter Overdrive: Ships");
-			add("itemGroup.itemgroup" + References.ID + "main", "Matter Overdrive: Buildings");
-			add("itemGroup.itemgroup" + References.ID + "main", "Matter Overdrive: Decorative");
+			add("itemGroup.itemgroup" + References.ID + "upgrades", "Matter Overdrive: Upgrades");
+			add("itemGroup.itemgroup" + References.ID + "food", "Matter Overdrive: Food");
+			add("itemGroup.itemgroup" + References.ID + "ships", "Matter Overdrive: Ships");
+			add("itemGroup.itemgroup" + References.ID + "buildings", "Matter Overdrive: Buildings");
+			add("itemGroup.itemgroup" + References.ID + "decorative", "Matter Overdrive: Decorative");
 
 			addItem(ItemRegistry.ITEM_RAW_MATTER_DUST, "Raw Matter Dust");
 			addItem(ItemRegistry.ITEM_MATTER_DUST, "Matter Dust");

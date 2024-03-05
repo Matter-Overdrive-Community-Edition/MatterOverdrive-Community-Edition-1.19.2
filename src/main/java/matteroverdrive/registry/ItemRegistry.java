@@ -4,6 +4,10 @@ import com.google.common.base.Function;
 
 import matteroverdrive.References;
 import matteroverdrive.client.ClientReferences.Colors;
+import matteroverdrive.common.item.BarrelUpgrade;
+import matteroverdrive.common.item.BarrelUpgrade.UpgradeBarrel;
+import matteroverdrive.common.item.ColorUpgrade;
+import matteroverdrive.common.item.ColorUpgrade.UpgradeColor;
 import matteroverdrive.common.item.ItemPatternDrive;
 import matteroverdrive.common.item.ItemUpgrade;
 import matteroverdrive.common.item.ItemUpgrade.UpgradeType;
@@ -232,6 +236,14 @@ public class ItemRegistry {
 	public static final BulkRegister<Item> ITEM_UPGRADES = bulkItem(
 			upgrade -> ITEMS.register(((UpgradeType) upgrade).id(), () -> new ItemUpgrade((UpgradeType) upgrade)),
 			UpgradeType.values());
+	/*
+	public static final BulkRegister<Item> WEAPON_MODULE_COLOR = bulkItem(
+			upgrade -> ITEMS.register(((UpgradeColor) upgrade).id(), () -> new ColorUpgrade((UpgradeColor) upgrade)),
+			UpgradeColor.values());
+	public static final BulkRegister<Item> WEAPON_MODULE_BARREL = bulkItem(
+			upgrade -> ITEMS.register(((UpgradeBarrel) upgrade).id(), () -> new BarrelUpgrade((UpgradeBarrel) upgrade)),
+			UpgradeBarrel.values());
+	*/
 	public static final RegistryObject<Item> ITEM_TRITANIUM_PLATE = ITEMS.register("tritanium_plate",
 			() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), false));
 	public static final RegistryObject<Item> ITEM_COMMUNICATOR = ITEMS.register("communicator",
