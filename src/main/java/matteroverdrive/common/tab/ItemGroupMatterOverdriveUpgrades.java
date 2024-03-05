@@ -4,15 +4,15 @@ import matteroverdrive.registry.ItemRegistry;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 
-public class ItemGroupMatterOverdriveMain extends CreativeModeTab {
+public class ItemGroupMatterOverdriveUpgrades extends CreativeModeTab {
 
-	public ItemGroupMatterOverdriveMain(String langKey) {
+	public ItemGroupMatterOverdriveUpgrades(String langKey) {
 		super(langKey);
 	}
 
 	@Override
 	public ItemStack makeIcon() {
-		return new ItemStack(ItemRegistry.ITEM_MATTER_SCANNER.get());
+		return new ItemStack(ItemRegistry.ITEM_UPGRADE_BASE.get());
 	}
 
 }

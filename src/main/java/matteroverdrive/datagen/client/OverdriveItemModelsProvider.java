@@ -73,6 +73,18 @@ public class OverdriveItemModelsProvider extends ItemModelProvider {
 //   Weapons
 		// Weapons registered below.
 
+//   Buildings
+		layeredItem(ItemRegistry.SHIP_FACTORY, Parent.GENERATED, itemLoc("ship_factory"));
+		layeredItem(ItemRegistry.BUILDING_BASE, Parent.GENERATED, itemLoc("building_base"));
+		layeredItem(ItemRegistry.BUILDING_MATTER_EXTRACTOR, Parent.GENERATED, itemLoc("building_matter_extractor"));
+		layeredItem(ItemRegistry.BUILDING_RESIDENTIAL, Parent.GENERATED, itemLoc("building_residential"));
+		layeredItem(ItemRegistry.BUILDING_SHIP_HANGAR, Parent.GENERATED, itemLoc("building_ship_hangar"));
+		layeredItem(ItemRegistry.BUILDING_POWER_GENERATOR, Parent.GENERATED, itemLoc("building_power_generator"));
+
+//   Ships
+		layeredItem(ItemRegistry.SCOUT_SHIP, Parent.GENERATED, itemLoc("scout_ship"));
+		layeredItem(ItemRegistry.SHIP_COLONIZER, Parent.GENERATED, itemLoc("ship_colonizer"));
+
 //   Tools
 		layeredItem(ItemRegistry.ITEM_TRITANIUM_WRENCH, Parent.GENERATED, itemLoc("tritanium_wrench"));
 		layeredItem(ItemRegistry.ITEM_TRITANIUM_AXE, Parent.GENERATED, itemLoc("tritanium_axe"));

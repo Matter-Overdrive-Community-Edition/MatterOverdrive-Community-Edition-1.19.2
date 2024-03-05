@@ -775,8 +775,26 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('M', Ingredient.of(ItemRegistry.ITEM_MACHINE_CASING.get()))
 			.complete(References.ID, "weapon_station", consumer);
 
+		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_NETWORK_SWITCH.get().asItem(), 1)
+			.addPattern(" G ")
+			.addPattern("CDC")
+			.addPattern(" M ")
+			.addKey('C', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER1).get()))
+			.addKey('D', Ingredient.of(ItemRegistry.ITEM_NETWORK_FLASH_DRIVE.get()))
+			.addKey('G', Ingredient.of(Tags.Items.GLASS))
+			.addKey('M', Ingredient.of(ItemRegistry.ITEM_MACHINE_CASING.get()))
+			.complete(References.ID, "network_switch", consumer);
 
-		
+		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_HOLO_SIGN.get().asItem(), 1)
+			.addPattern("GGG")
+			.addPattern("DCD")
+			.addPattern(" P ")
+			.addKey('C', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER1).get()))
+			.addKey('P', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_PLATE.get()))
+			.addKey('D', Ingredient.of(Tags.Items.DUSTS_GLOWSTONE))
+			.addKey('G', Ingredient.of(Tags.Items.GLASS))
+			.complete(References.ID, "holo_sign", consumer);
+
 		addDecorativeFloorTile(consumer);
 		addDecorativeFloorTiles(consumer);
 	}
