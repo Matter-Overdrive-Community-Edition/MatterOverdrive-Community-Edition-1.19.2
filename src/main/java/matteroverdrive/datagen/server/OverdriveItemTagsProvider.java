@@ -40,6 +40,8 @@ public class OverdriveItemTagsProvider extends ItemTagsProvider {
 		tag(OverdriveTags.Items.GEM_DILITHIUM).add(ItemRegistry.ITEM_DILITHIUM_CRYSTAL.get()).replace(false);
 		tag(OverdriveTags.Items.NUGGET_TRITANIUM).add(ItemRegistry.ITEM_TRITANIUM_NUGGET.get()).replace(false);
 
+		tag(OverdriveTags.Items.COLORED_PLATING).add(BlockRegistry.BLOCK_REGULAR_TRITANIUM_PLATING.get().asItem()).replace(false);
+
 		for (OverdriveBlockColors color: OverdriveBlockColors.values()) {
 			tag(OverdriveTags.Items.COLORED_PLATING).add(BlockRegistry.BLOCK_COLORED_TRITANIUM_PLATING.get(color).get().asItem()).replace(false);
 		}

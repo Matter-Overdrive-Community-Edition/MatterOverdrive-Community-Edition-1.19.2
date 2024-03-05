@@ -1,9 +1,8 @@
 package matteroverdrive.client.render.tile;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.math.Quaternion;
+import com.mojang.math.Matrix3f;
 import com.mojang.math.Vector3f;
-import matteroverdrive.client.ClientReferences;
 import matteroverdrive.client.ClientReferences;
 import matteroverdrive.client.render.tile.utils.AbstractTileRenderer;
 import matteroverdrive.common.tile.TileHoloSign;
@@ -15,13 +14,14 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-import java.awt.font.FontRenderContext;
-import java.util.*;
+import java.nio.FloatBuffer;
+import java.util.Map;
 
 public class RendererHoloSign extends AbstractTileRenderer<TileHoloSign> {
 	// Line 1 and line 2.
@@ -71,31 +71,22 @@ public class RendererHoloSign extends AbstractTileRenderer<TileHoloSign> {
 
 		matrix.pushPose();
 
-		Minecraft instance = Minecraft.getInstance();
+		Font font = Minecraft.getInstance().font;
 
 		Direction facing = tile.getBlockState().getValue(GenericEntityBlock.FACING);
 
 		String text = "A";
 
-//		List<String> lines = new ArrayList<>();
-//
-//		StringBuilder temp = new StringBuilder();
+		BlockState state = tile.getBlockState();
 
-//		for (int i=0; i<text.length(); i++) {
-//			temp.append(text.charAt(i));
-//
-//			if (font.width(temp.toString()) > getBlockWidthInPixels(tile.getLevel(), tile.getBlockPos())) {
-//				lines.add(temp.toString().trim());
-//
-//				temp = new StringBuilder();
-//			}
-//		}
-//
-//		if (!temp.isEmpty()) {
-//			lines.add(temp.toString());
-//		}
+		VoxelShape shape = state.getCollisionShape(tile.getLevel(), tile.getBlockPos());
 
-//		String[] results = lines.toArray(new String[]{});
+//		System.out.println("MinX: " + shape.bounds().minX);
+//		System.out.println("MaxX: " + shape.bounds().maxX);
+//		System.out.println("MinY: " + shape.bounds().minY);
+//		System.out.println("MaxY: " + shape.bounds().maxY);
+//		System.out.println("MinZ: " + shape.bounds().minZ);
+//		System.out.println("MaxZ: " + shape.bounds().maxZ);
 
 		final Map<Float, float[]> fontToLocation = Map.of(
 			0.01f, new float[]{ -95.0f, -95.0f, 55f },
@@ -115,33 +106,26 @@ public class RendererHoloSign extends AbstractTileRenderer<TileHoloSign> {
 					fontToLocation.get(startScale)[1],
 					fontToLocation.get(startScale)[2]
 				);
-			break;
+				break;
 			case SOUTH:
 				matrix.translate(TEXT_COORDS[1].x, TEXT_COORDS[1].y, TEXT_COORDS[1].z);
 
 				matrix.mulPose(Vector3f.YP.rotationDegrees(180));
-			break;
+				break;
 			case EAST:
 				matrix.translate(TEXT_COORDS[2].x, TEXT_COORDS[2].y, TEXT_COORDS[2].z);
 
 				matrix.mulPose(Vector3f.YP.rotationDegrees(90));
-			break;
+				break;
 			case WEST:
 				matrix.translate(TEXT_COORDS[3].x, TEXT_COORDS[3].y, TEXT_COORDS[3].z);
 
 				matrix.mulPose(Vector3f.YP.rotationDegrees(270));
-			break;
+				break;
 		}
 
-//		for (String line: results) {
-//			instance.font.draw(matrix, Component.literal(line), 0f, 0f,
-//							ClientReferences.Colors.HOLO.getColor());
-
-			instance.font.draw(matrix, Component.literal(text), 0f, 0f,
-					ClientReferences.Colors.HOLO.getColor());
-
-//			matrix.translate(0.0f, 10.0f, 0.0f);
-//		}
+		font.draw(matrix, Component.literal(text), 0f, 0f,
+			ClientReferences.Colors.HOLO.getColor());
 
 		matrix.popPose();
 	}
