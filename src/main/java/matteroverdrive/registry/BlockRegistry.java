@@ -226,12 +226,6 @@ public class BlockRegistry {
 		() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
 		false);
 
-//	public static final RegistryObject<Block> BLOCK_HOLO_SIGN = registerBlock("holo_sign",
-//		() -> new BlockHoloSign(OverdriveBlockProperties
-//			.from(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F).noOcclusion())
-//			.setCanBeWaterlogged().setHasFacing(false)),
-//		true);
-
 	public static final RegistryObject<Block> BLOCK_HOLO_SIGN = registerBlock(TypeMachine.HOLO_SIGN.id(),
 		() -> new BlockMachine<>(TileHoloSign::new, TypeMachine.HOLO_SIGN,
 			TileRegistry.TILE_HOLO_SIGN),
@@ -264,8 +258,7 @@ public class BlockRegistry {
 		return registerBlock(name, supplier, new Item.Properties(), shiftTip);
 	}
 
-	private static RegistryObject<Block> registerBlock(String name, Supplier<Block> supplier,
-			net.minecraft.world.item.Item.Properties properties, boolean shiftTip) {
+	private static RegistryObject<Block> registerBlock(String name, Supplier<Block> supplier, Item.Properties properties, boolean shiftTip) {
 		RegistryObject<Block> block = BLOCKS.register(name, supplier);
 		ItemRegistry.ITEMS.register(name, () -> new OverdriveBlockItem(block.get(), properties, shiftTip));
 		return block;
@@ -273,11 +266,10 @@ public class BlockRegistry {
 
 	private static RegistryObject<Block> registerColoredBlock(String name, Supplier<Block> supplier, boolean shiftTip,
 			int color) {
-		return registerColoredBlock(name, supplier, new Item.Properties().tab(References.MAIN), shiftTip, color);
+		return registerColoredBlock(name, supplier, new Item.Properties().tab(References.DECORATIVE), shiftTip, color);
 	}
 
-	private static RegistryObject<Block> registerColoredBlock(String name, Supplier<Block> supplier,
-			net.minecraft.world.item.Item.Properties properties, boolean shiftTip, int color) {
+	private static RegistryObject<Block> registerColoredBlock(String name, Supplier<Block> supplier,Item.Properties properties, boolean shiftTip, int color) {
 		RegistryObject<Block> block = BLOCKS.register(name, supplier);
 		ItemRegistry.ITEMS.register(name, () -> new BlockItemColored(block.get(), properties, shiftTip, color));
 		return block;

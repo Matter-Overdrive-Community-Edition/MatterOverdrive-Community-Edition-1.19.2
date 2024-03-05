@@ -67,21 +67,21 @@ public class ItemRegistry {
 
 //  Food
 	public static final RegistryObject<Item> ITEM_ANDROID_PILL_RED = ITEMS.register("android_pill_red",
-		() -> new ItemAndroidRedPill(new Item.Properties().food(ItemAndroidPill.PILLS).tab(References.MAIN),
+		() -> new ItemAndroidRedPill(new Item.Properties().food(ItemAndroidPill.PILLS).tab(References.FOOD),
 		Colors.PILL_RED, true));
 	public static final RegistryObject<Item> ITEM_ANDROID_PILL_BLUE = ITEMS.register("android_pill_blue",
-		() -> new ItemAndroidBluePill(new Item.Properties().food(ItemAndroidPill.PILLS).tab(References.MAIN),
+		() -> new ItemAndroidBluePill(new Item.Properties().food(ItemAndroidPill.PILLS).tab(References.FOOD),
 			Colors.PILL_BLUE, true));
 	public static final RegistryObject<Item> ITEM_ANDROID_PILL_YELLOW = ITEMS.register("android_pill_yellow",
-		() -> new ItemAndroidYellowPill(new Item.Properties().food(ItemAndroidPill.PILLS).tab(References.MAIN),
+		() -> new ItemAndroidYellowPill(new Item.Properties().food(ItemAndroidPill.PILLS).tab(References.FOOD),
 			Colors.PILL_YELLOW, true));
 
 	public static final RegistryObject<Item> ITEM_EARL_GRAY_TEA = ITEMS.register("earl_gray_tea",
-            () -> new OverdriveItem(new Item.Properties().tab(References.MAIN).food(Foods.ITEM_EARL_GRAY_TEA), false));
+            () -> new OverdriveItem(new Item.Properties().tab(References.FOOD).food(Foods.ITEM_EARL_GRAY_TEA), false));
 	public static final RegistryObject<Item> ITEM_ROMULAN_ALE = ITEMS.register("romulan_ale",
-            () -> new OverdriveItem(new Item.Properties().tab(References.MAIN).food(Foods.ITEM_ROMULAN_ALE), true));
+            () -> new OverdriveItem(new Item.Properties().tab(References.FOOD).food(Foods.ITEM_ROMULAN_ALE), true));
 	public static final RegistryObject<Item> ITEM_EMERGENCY_RATION = ITEMS.register("emergency_ration",
-            () -> new OverdriveItem(new Item.Properties().tab(References.MAIN).food(Foods.ITEM_EMERGENCY_RATION), false));
+            () -> new OverdriveItem(new Item.Properties().tab(References.FOOD).food(Foods.ITEM_EMERGENCY_RATION), false));
 
     public static class Foods {
         public static final FoodProperties ITEM_EARL_GRAY_TEA = new FoodProperties.Builder()
@@ -149,6 +149,26 @@ public class ItemRegistry {
 	// weapon_module_holo_sights <-- Same here.
 	// holo_sights_base <-- Same here.
 
+//  Buildings
+	public static final RegistryObject<Item> SHIP_FACTORY = ITEMS.register("ship_factory",
+			() -> new OverdriveItem(new Item.Properties().tab(References.BUILDINGS), true));
+	public static final RegistryObject<Item> BUILDING_BASE = ITEMS.register("building_base",
+			() -> new OverdriveItem(new Item.Properties().tab(References.BUILDINGS), true));
+	public static final RegistryObject<Item> BUILDING_MATTER_EXTRACTOR = ITEMS.register("building_matter_extractor",
+			() -> new OverdriveItem(new Item.Properties().tab(References.BUILDINGS), true));
+	public static final RegistryObject<Item> BUILDING_RESIDENTIAL = ITEMS.register("building_residential",
+			() -> new OverdriveItem(new Item.Properties().tab(References.BUILDINGS), true));
+	public static final RegistryObject<Item> BUILDING_SHIP_HANGAR = ITEMS.register("building_ship_hangar",
+			() -> new OverdriveItem(new Item.Properties().tab(References.BUILDINGS), true));
+	public static final RegistryObject<Item> BUILDING_POWER_GENERATOR = ITEMS.register("building_power_generator",
+			() -> new OverdriveItem(new Item.Properties().tab(References.BUILDINGS), true));
+
+//  Ships
+	public static final RegistryObject<Item> SCOUT_SHIP = ITEMS.register("scout_ship",
+			() -> new OverdriveItem(new Item.Properties().tab(References.SHIPS), true));
+	public static final RegistryObject<Item> SHIP_COLONIZER = ITEMS.register("ship_colonizer",
+			() -> new OverdriveItem(new Item.Properties().tab(References.SHIPS), true));
+
 //  Tools
 	public static final RegistryObject<Item> ITEM_TRITANIUM_WRENCH = ITEMS.register("tritanium_wrench",
 		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), true));
@@ -208,7 +228,7 @@ public class ItemRegistry {
 	public static final RegistryObject<Item> ITEM_SUPERCONDUCTOR_MAGNET = ITEMS.register("s_magnet",
 		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), false));
 	public static final RegistryObject<Item> ITEM_UPGRADE_BASE = ITEMS.register("upgrade_base",
-		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN).stacksTo(16), false));
+		() -> new OverdriveItem(new Item.Properties().tab(References.UPGRADES).stacksTo(16), false));
 	public static final BulkRegister<Item> ITEM_UPGRADES = bulkItem(
 			upgrade -> ITEMS.register(((UpgradeType) upgrade).id(), () -> new ItemUpgrade((UpgradeType) upgrade)),
 			UpgradeType.values());
