@@ -150,34 +150,34 @@ public class OverdriveMatterValueGenerator implements DataProvider {
 // 		Barrels
 		json.addProperty("#forge:barrels/wooden", 2);
 //      Chests
-		json.addProperty("forge:chests/ender", 1);
-		json.addProperty("forge:chests/trapped", 1);
-		json.addProperty("forge:chests/wooden", 1);
+		json.addProperty("#forge:chests/ender", 1);
+		json.addProperty("#forge:chests/trapped", 1);
+		json.addProperty("#forge:chests/wooden", 1);
 //		Cobblestones
-		json.addProperty("forge:cobblestone/normal", 1);
-		json.addProperty("forge:cobblestone/infested", 1);
-		json.addProperty("forge:cobblestone/mossy", 1);
-		json.addProperty("forge:cobblestone/deepslate", 1);
+		json.addProperty("#forge:cobblestone/normal", 1);
+		json.addProperty("#forge:cobblestone/infested", 1);
+		json.addProperty("#forge:cobblestone/mossy", 1);
+		json.addProperty("#forge:cobblestone/deepslate", 1);
 //		End stones
-		json.addProperty("forge:end_stones", 1);
+		json.addProperty("#forge:end_stones", 1);
 //		Fence gates
-		json.addProperty("forge:fence_gates", 1);
+		json.addProperty("#forge:fence_gates", 1);
 //		Nether brick fences
-		json.addProperty("forge:fences/nether_brick", 1);
+		json.addProperty("#forge:fences/nether_brick", 1);
 //		Wooden fences
-		json.addProperty("forge:fences/wooden", 1);
+		json.addProperty("#forge:fences/wooden", 1);
 //		Glass
-		json.addProperty("forge:glass", 1);
+		json.addProperty("#forge:glass", 1);
 //		Tinted Glass
-		json.addProperty("forge:glass/tinted", 1);
+		json.addProperty("#forge:glass/tinted", 1);
 //		Normal glass panes
-		json.addProperty("forge:glass_panes", 1);
+		json.addProperty("#forge:glass_panes", 1);
 //		Gravel
-		json.addProperty("forge:gravel",1);
+		json.addProperty("#forge:gravel",1);
 //		Netherrack
-		json.addProperty("forge:netherrack", 1);
+		json.addProperty("#forge:netherrack", 1);
 //		Obsidian
-		json.addProperty("forge:obsidian", 16);
+		json.addProperty("#forge:obsidian", 16);
 //		Ores
 		json.addProperty("#forge:ores/coal", 1);
 		json.addProperty("#forge:ores/copper", 1);
@@ -190,17 +190,17 @@ public class OverdriveMatterValueGenerator implements DataProvider {
 		json.addProperty("#forge:ores/quartz", 1);
 		json.addProperty("#forge:ores/netherite_scrap", 1);
 //		Normal Sand
-		json.addProperty("forge:sand/colorless", 1);
+		json.addProperty("#forge:sand/colorless", 1);
 //		Red Sand
-		json.addProperty("forge:sand/red", 1);
+		json.addProperty("#forge:sand/red", 1);
 //		Sandstone
-		json.addProperty("forge:sandstone", 1);
+		json.addProperty("#forge:sandstone", 1);
 //		Stained glass
-		json.addProperty("forge:stained_glass", 1);
+		json.addProperty("#forge:stained_glass", 1);
 //		Stained glass panes
-		json.addProperty("forge:stained_glass_panes", 1);
+		json.addProperty("#forge:stained_glass_panes", 1);
 //		Stone
-		json.addProperty("forge:stone", 1);
+		json.addProperty("#forge:stone", 1);
 // 		Storage Blocks
 		json.addProperty("#forge:storage_blocks/amethyst", 1);
 		json.addProperty("#forge:storage_blocks/coal", 1);
@@ -219,39 +219,39 @@ public class OverdriveMatterValueGenerator implements DataProvider {
 
 // Forge Items Tags - json.addProperty("", 1);
 //		Barrels
-		json.addProperty("forge:barrels/wooden", 2);
+		json.addProperty("#forge:barrels/wooden", 2);
 //		Bones
 		json.addProperty("#forge:bones", 2);
 //		Bookshelves
-		json.addProperty("forge:bookshelves", 1);
+		json.addProperty("#forge:bookshelves", 1);
 //		Normal cobblestones
-		json.addProperty("forge:cobblestone/normal", 1);
+		json.addProperty("#forge:cobblestone/normal", 1);
 //		Infested cobblestones
-		json.addProperty("forge:cobblestone/infested", 1);
+		json.addProperty("#forge:cobblestone/infested", 1);
 //		Mossy cobblestones
-		json.addProperty("forge:cobblestone/mossy", 1);
+		json.addProperty("#forge:cobblestone/mossy", 1);
 //		Deepslate cobblestones
-		json.addProperty("forge:cobblestone/deepslate", 1);
+		json.addProperty("#forge:cobblestone/deepslate", 1);
 //		Beetroot crops
-		json.addProperty("forge:crops/beetroot", 1);
+		json.addProperty("#forge:crops/beetroot", 1);
 //		Carrot crops
-		json.addProperty("forge:crops/carrot", 1);
+		json.addProperty("#forge:crops/carrot", 1);
 //		Nether wart crops
-		json.addProperty("forge:crops/nether_wart", 1);
+		json.addProperty("#forge:crops/nether_wart", 1);
 //		Potato crops
-		json.addProperty("forge:crops/potato", 1);
+		json.addProperty("#forge:crops/potato", 1);
 //		Wheat crops
-		json.addProperty("forge:crops/wheat", 1);
+		json.addProperty("#forge:crops/wheat", 1);
 // 		Dusts Blocks
 		json.addProperty("#forge:dusts/prismarine", 4);
 		json.addProperty("#forge:dusts/glowstone", 2);
 		json.addProperty("#forge:dusts/redstone", 4);
 //		Dyes
-		json.addProperty("forge:dyes", 1);
+		json.addProperty("#forge:dyes", 1);
 //		Eggs
-		json.addProperty("forge:eggs", 1);
+		json.addProperty("#forge:eggs", 1);
 //		End Stones
-		json.addProperty("forge:end_stones", 1);
+		json.addProperty("#forge:end_stones", 1);
 //		Ender pearls
 		json.addProperty("#forge:ender_pearls", 8);
 //		Feathers
@@ -259,15 +259,15 @@ public class OverdriveMatterValueGenerator implements DataProvider {
 //		Amethyst gems
 		json.addProperty("#forge:gems/amethyst", 4);
 //		Diamond gems
-		json.addProperty("forge:gems/diamond", 1);
+		json.addProperty("#forge:gems/diamond", 1);
 //		Emerald gems
-		json.addProperty("forge:gems/emerald", 1);
+		json.addProperty("#forge:gems/emerald", 1);
 //		Lapis gems
-		json.addProperty("forge:gems/lapis", 1);
+		json.addProperty("#forge:gems/lapis", 1);
 //		Prismarine gems
 		json.addProperty("#forge:gems/prismarine", 4);
 //		Quartz gems
-		json.addProperty("forge:gems/quartz", 4);
+		json.addProperty("#forge:gems/quartz", 4);
 //		Gravel
 		json.addProperty("#forge:gravel", 2);
 //		Gunpowder		
@@ -275,17 +275,17 @@ public class OverdriveMatterValueGenerator implements DataProvider {
 //		Heads
 		json.addProperty("#forge:heads", 12);
 //		Brick ingots
-		json.addProperty("forge:ingots/brick", 1);
+		json.addProperty("#forge:ingots/brick", 1);
 //		Copper ingots
-		json.addProperty("forge:ingots/copper", 1);
+		json.addProperty("#forge:ingots/copper", 1);
 //		Gold ingots
-		json.addProperty("forge:ingots/gold", 1);
+		json.addProperty("#forge:ingots/gold", 1);
 //		Iron ingots
-		json.addProperty("forge:ingots/iron", 1);
+		json.addProperty("#forge:ingots/iron", 1);
 //		Netherite ingots
-		json.addProperty("forge:ingots/netherite", 1);
+		json.addProperty("#forge:ingots/netherite", 1);
 //		Nether brick ingots
-		json.addProperty("forge:ingots/nether_brick", 1);		
+		json.addProperty("#forge:ingots/nether_brick", 1);		
 //		Leather
 		json.addProperty("#forge:leather", 3);
 //		Mushrooms
@@ -293,11 +293,11 @@ public class OverdriveMatterValueGenerator implements DataProvider {
 //		Nether Stars
 		json.addProperty("#forge:nether_stars", 1012);
 //		Netherrack
-		json.addProperty("forge:netherrack", 1);
+		json.addProperty("#forge:netherrack", 1);
 //		Gold nuggets
-		json.addProperty("forge:nuggets/gold", 1);
+		json.addProperty("#forge:nuggets/gold", 1);
 //		Iron nuggets
-		json.addProperty("forge:nuggets/iron", 1);
+		json.addProperty("#forge:nuggets/iron", 1);
 //		Rods
 		json.addProperty("#forge:rods/blaze", 4);
 		json.addProperty("#forge:rods/wooden", 1);
