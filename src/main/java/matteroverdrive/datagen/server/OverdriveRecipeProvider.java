@@ -141,7 +141,7 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addPattern("###")
 			.addPattern("#C#")
 			.addPattern("###")
-			.addKey('#', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_PLATE.get()))
+			.addKey('#', Ingredient.of(BlockRegistry.BLOCK_REGULAR_TRITANIUM_PLATING.get().asItem()))
 			.addKey('C', Ingredient.of(ItemRegistry.ITEM_SUPERCONDUCTOR_MAGNET.get()))
 			.complete(References.ID, "decorative.coils", consumer);
 
