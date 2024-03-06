@@ -118,7 +118,7 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addPattern("#T#")
 			.addPattern("#T#")
 			.addPattern("#T#")
-			.addKey('#', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_PLATE.get()))
+			.addKey('#', Ingredient.of(BlockRegistry.BLOCK_REGULAR_TRITANIUM_PLATING.get().asItem()))
 			.addKey('T', Ingredient.of(OverdriveTags.Items.NUGGET_TRITANIUM))
 			.complete(References.ID, "decorative.beams", consumer);
 
@@ -126,7 +126,7 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addPattern("###")
 			.addPattern("#C#")
 			.addPattern("###")
-			.addKey('#', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_PLATE.get()))
+			.addKey('#', Ingredient.of(BlockRegistry.BLOCK_REGULAR_TRITANIUM_PLATING.get().asItem()))
 			.addKey('C', Ingredient.of(Items.COAL))
 			.complete(References.ID, "decorative.carbon_fiber_plate", consumer);
 
@@ -144,8 +144,6 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('#', Ingredient.of(BlockRegistry.BLOCK_REGULAR_TRITANIUM_PLATING.get().asItem()))
 			.addKey('C', Ingredient.of(ItemRegistry.ITEM_SUPERCONDUCTOR_MAGNET.get()))
 			.complete(References.ID, "decorative.coils", consumer);
-
-		addDecorativeRecipes(consumer);
 
 		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_FORCEFIELD_EMITTER.get(), 1)
 			.addPattern("CGC")
@@ -359,7 +357,7 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('P', Ingredient.of(ItemRegistry.ITEM_PLASMA_CORE.get()))
 			.addKey('B', Ingredient.of(ItemRegistry.ITEM_BATTERIES.get(ItemBattery.BatteryType.REGULAR).get()))
 			.addKey('S', Ingredient.of(ItemRegistry.ITEM_WEAPON_RECEIVER.get()))
-			.addKey('C', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER2).get()))
+			.addKey('C', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER3).get()))
 			.addKey('F', Ingredient.of(ItemRegistry.ITEM_FORCEFIELD_EMITTER.get()))
 			.addKey('H', Ingredient.of(ItemRegistry.ITEM_WEAPON_HANDLE.get()))
 			.addKey('I', Ingredient.of(Tags.Items.INGOTS_IRON))
@@ -403,7 +401,7 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addPattern("IPH")
 			.addPattern("WCW")
 			.addKey('P', Ingredient.of(ItemRegistry.ITEM_PLASMA_CORE.get()))
-			.addKey('C', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER2).get()))
+			.addKey('C', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER3).get()))
 			.addKey('G', Ingredient.of(Tags.Items.GLASS_COLORLESS))
 			.addKey('W', Ingredient.of(ItemTags.WOOL))
 			.addKey('H', Ingredient.of(ItemRegistry.ITEM_WEAPON_HANDLE.get()))
@@ -416,7 +414,7 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addPattern("WHB")
 			.addKey('P', Ingredient.of(ItemRegistry.ITEM_PLASMA_CORE.get()))
 			.addKey('B', Ingredient.of(ItemRegistry.ITEM_BATTERIES.get(ItemBattery.BatteryType.REGULAR).get()))
-			.addKey('C', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER2).get()))
+			.addKey('C', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER3).get()))
 			.addKey('S', Ingredient.of(ItemRegistry.ITEM_WEAPON_RECEIVER.get()))
 			.addKey('W', Ingredient.of(ItemTags.WOOL))
 			.addKey('H', Ingredient.of(ItemRegistry.ITEM_WEAPON_HANDLE.get()))
@@ -440,7 +438,7 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('P', Ingredient.of(ItemRegistry.ITEM_PLASMA_CORE.get()))
 			.addKey('B', Ingredient.of(ItemRegistry.ITEM_BATTERIES.get(ItemBattery.BatteryType.REGULAR).get()))
 			.addKey('S', Ingredient.of(ItemRegistry.ITEM_WEAPON_RECEIVER.get()))
-			.addKey('C', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER2).get()))
+			.addKey('C', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER3).get()))
 			.addKey('H', Ingredient.of(ItemRegistry.ITEM_WEAPON_HANDLE.get()))
 			.addKey('I', Ingredient.of(Tags.Items.INGOTS_IRON))
 			.complete(References.ID, "plasma_shotgun", consumer);
@@ -588,21 +586,62 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('X', Ingredient.of(OverdriveTags.Items.INGOT_TRITANIUM))
 			.complete(References.ID, "tritanium_chestplate", consumer);
 
-		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_VENT_CLOSED.get().asItem(), 1)
-			.addPattern("###")
+		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_VENT_CLOSED.get().asItem(), 6)
+			.addPattern(" # ")
 			.addPattern("T T")
-			.addPattern("###")
+			.addPattern(" # ")
 			.addKey('#', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_PLATE.get()))
 			.addKey('T', Ingredient.of(OverdriveTags.Items.INGOT_TRITANIUM))
 			.complete(References.ID, "decorative_vent_closed", consumer);
 
-		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_VENT_OPEN.get().asItem(), 1)
-			.addPattern(" # ")
-			.addPattern("T T")
-			.addPattern(" # ")
-			.addKey('#', Ingredient.of(ItemRegistry.ITEM_TRITANIUM_PLATE.get()))
-			.addKey('T', Ingredient.of(OverdriveTags.Items.INGOT_TRITANIUM))
+		OverdriveShapedCraftingRecipe.start(BlockRegistry.BLOCK_VENT_OPEN.get().asItem(), 8)
+			.addPattern("###")
+			.addPattern("#D#")
+			.addPattern("###")
+			.addKey('#', Ingredient.of(BlockRegistry.BLOCK_VENT_CLOSED.get().asItem()))
+			.addKey('D', Ingredient.of(Tags.Items.DYES_BLACK))
 			.complete(References.ID, "decorative_vent_open", consumer);
+		
+		OverdriveShapedCraftingRecipe.start(BlockRegistry.SOFT_WALL_PLATES.get().asItem(), 8)
+			.addPattern("PWP")
+			.addPattern("PPP")
+			.addPattern("PWP")
+			.addKey('P', Ingredient.of(BlockRegistry.BLOCK_REGULAR_TRITANIUM_PLATING.get().asItem()))
+			.addKey('W', Ingredient.of(ItemTags.WOOL))
+			.complete(References.ID, "decorative_soft_wall_plates", consumer);
+
+		OverdriveShapedCraftingRecipe.start(BlockRegistry.TRITANIUM_RAIL.get().asItem(), 8)
+			.addPattern("###")
+			.addPattern("#N#")
+			.addPattern("###")
+			.addKey('#', Ingredient.of(BlockRegistry.BLOCK_REGULAR_TRITANIUM_PLATING.get().asItem()))
+			.addKey('N', Ingredient.of(OverdriveTags.Items.NUGGET_TRITANIUM))
+			.complete(References.ID, "decorative_tritanium_rail", consumer);
+
+		OverdriveShapedCraftingRecipe.start(BlockRegistry.TRITANIUM_PLATE_STRIPE.get().asItem(), 8)
+			.addPattern("###")
+			.addPattern("###")
+			.addPattern("#D#")
+			.addKey('D', Ingredient.of(Tags.Items.DYES_YELLOW))
+			.addKey('#', Ingredient.of(BlockRegistry.BLOCK_REGULAR_TRITANIUM_PLATING.get().asItem()))
+			.complete(References.ID, "decorative_tritanium_plate_stripe", consumer);
+
+		OverdriveShapedCraftingRecipe.start(BlockRegistry.HOLO_MATRIX.get().asItem(), 8)
+			.addPattern("###")
+			.addPattern("#C#")
+			.addPattern("###")
+			.addKey('C', Ingredient.of(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER1).get()))
+			.addKey('#', Ingredient.of(BlockRegistry.BLOCK_REGULAR_TRITANIUM_PLATING.get().asItem()))
+			.complete(References.ID, "decorative_holo_matrix", consumer);
+
+		OverdriveShapedCraftingRecipe.start(BlockRegistry.YELLOW_STRIPES.get().asItem(), 8)
+			.addPattern("#I#")
+			.addPattern("###")
+			.addPattern("#D#")
+			.addKey('D', Ingredient.of(Tags.Items.DYES_YELLOW))
+			.addKey('I', Ingredient.of(Tags.Items.DYES_BLACK))
+			.addKey('#', Ingredient.of(BlockRegistry.BLOCK_REGULAR_TRITANIUM_PLATING.get().asItem()))
+			.complete(References.ID, "decorative_yellow_stripes", consumer);
 
 		// Define a mapping of dye colors to their appropriate tags
 		Map<DyeColor, TagKey<Item>> dyeColorTags = new HashMap<>();
@@ -718,8 +757,6 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('Y', Ingredient.of(ItemTags.WOOL))
 			.complete(References.ID, "tritanium_wrench", consumer);
 
-		addUpgradeRecipes(consumer);
-
 		OverdriveShapedCraftingRecipe.start(ItemRegistry.ITEM_UPGRADE_BASE.get(), 1)
 			.addPattern(" R ")
 			.addPattern(" C ")
@@ -744,7 +781,7 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addPattern("TWT")
 			.addPattern("I I")
 			.addPattern("I I")
-			.addKey('W', Ingredient.of(ItemTags.WOOL))
+			.addKey('W', Ingredient.of(Items.BLACK_WOOL))
 			.addKey('I', Ingredient.of(Tags.Items.INGOTS_IRON))
 			.addKey('T', Ingredient.of(OverdriveTags.Items.INGOT_TRITANIUM))
 			.complete(References.ID, "weapon_handle", consumer);
@@ -797,6 +834,8 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 
 		addDecorativeFloorTile(consumer);
 		addDecorativeFloorTiles(consumer);
+		addDecorativeRecipes(consumer);
+		addUpgradeRecipes(consumer);
 	}
 
 	private void addDecorativeRecipes(Consumer<FinishedRecipe> consumer) {

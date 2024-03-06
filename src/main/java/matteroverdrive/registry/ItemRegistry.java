@@ -249,16 +249,12 @@ public class ItemRegistry {
 			() -> new OverdriveItem(new Item.Properties().tab(References.MAIN), false));
 	public static final RegistryObject<Item> ITEM_COMMUNICATOR = ITEMS.register("communicator",
 			() -> new ItemCommunicator(new Item.Properties().tab(References.MAIN).stacksTo(1)));
-
 	public static final RegistryObject<Item> ITEM_NETWORK_FLASH_DRIVE = ITEMS.register("network_flash_drive",
 			ItemNetworkFlashDrive::new);
-
 	public static final RegistryObject<Item> ITEM_PORTABLE_DECOMPOSER = ITEMS.register("portable_decomposer",
 		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN).stacksTo(1), false));
-
 	public static final RegistryObject<Item> ITEM_SECURITY_PROTOCOL = ITEMS.register("security_protocol",
 		() -> new ItemSecurityProtocol(new Item.Properties().tab(References.MAIN).stacksTo(1), false));
-
 	public static final RegistryObject<Item> ITEM_SNIPER_SCOPE = ITEMS.register("sniper_scope",
 		() -> new OverdriveItem(new Item.Properties().tab(References.MAIN).stacksTo(1), false));
 

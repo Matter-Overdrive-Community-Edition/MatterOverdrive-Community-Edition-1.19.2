@@ -208,65 +208,49 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			addItem(ItemRegistry.ITEM_UPGRADES.get(UpgradeType.HYPER_SPEED), "Hyper Speed Upgrade");
 			addItem(ItemRegistry.ITEM_UPGRADES.get(UpgradeType.RANGE), "Range Upgrade");
 			addItem(ItemRegistry.ITEM_UPGRADES.get(UpgradeType.MUFFLER), "Muffler Upgrade");
-
 			addItem(ItemRegistry.ITEM_ION_SNIPER, "Ion Sniper");
 			addItem(ItemRegistry.ITEM_PHASER_RIFLE, "Phaser Rifle");
 			addItem(ItemRegistry.ITEM_PHASER, "Phaser");
 			addItem(ItemRegistry.ITEM_PLASMA_SHOTGUN, "Plasma Shotgun");
 			addItem(ItemRegistry.ITEM_OMNI_TOOL, "Omni Tool");
-			
 			addItem(ItemRegistry.SHIP_FACTORY, "Ship Factory");
 			addItem(ItemRegistry.BUILDING_BASE, "Base");
 			addItem(ItemRegistry.BUILDING_MATTER_EXTRACTOR, "Matter Extractor");
 			addItem(ItemRegistry.BUILDING_RESIDENTIAL, "Residential Buildings");
 			addItem(ItemRegistry.BUILDING_SHIP_HANGAR, "Ship Hangar");
 			addItem(ItemRegistry.BUILDING_POWER_GENERATOR, "Power Generator");
-			
 			addItem(ItemRegistry.SCOUT_SHIP, "Scout Ship");
 			addItem(ItemRegistry.SHIP_COLONIZER, "Colonizer Ship");
-
 			addItem(ItemRegistry.ITEM_BATTERIES.get(BatteryType.REGULAR), "Battery");
 			addItem(ItemRegistry.ITEM_BATTERIES.get(BatteryType.HIGHCAPACITY), "High-Capacity Battery");
 			addItem(ItemRegistry.ITEM_BATTERIES.get(BatteryType.CREATIVE), "Creative Battery");
-
 			addItem(ItemRegistry.ITEM_MATTER_CONTAINERS.get(ContainerType.REGULAR), "Matter Container");
 			addItem(ItemRegistry.ITEM_MATTER_CONTAINERS.get(ContainerType.CREATIVE), "Creative Matter Container");
-
 			addItem(ItemRegistry.ITEM_MACHINE_CASING, "Machine Casing");
-
 			addItem(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER1), "Isolinear Circuit Mk1");
 			addItem(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER2), "Isolinear Circuit Mk2");
 			addItem(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER3), "Isolinear Circuit Mk3");
 			addItem(ItemRegistry.ITEM_ISOLINEAR_CIRCUITS.get(TypeIsolinearCircuit.TIER4), "Isolinear Circuit Mk4");
-
 			addItem(ItemRegistry.ITEM_TRANSPORTER_FLASHDRIVE, "Location Flashdrive");
 			addItem(ItemRegistry.ITEM_PATTERN_DRIVE, "Pattern Drive");
 			addItem(ItemRegistry.ITEM_MATTER_SCANNER, "Matter Scanner");
-
 			addItem(ItemRegistry.ITEM_TRITANIUM_PLATE, "Tritanium Plate");
 			addItem(ItemRegistry.ITEM_TRITANIUM_INGOT, "Tritanium Ingot");
 			addItem(ItemRegistry.ITEM_TRITANIUM_NUGGET, "Tritanium Nugget");
 			addItem(ItemRegistry.ITEM_TRITANIUM_DUST, "Tritanium Dust");
-			
 			addItem(ItemRegistry.ITEM_ANDROID_PILL_BLUE, "Blue Pill");
 			addItem(ItemRegistry.ITEM_ANDROID_PILL_RED, "Red Pill");
 			addItem(ItemRegistry.ITEM_ANDROID_PILL_YELLOW, "Yellow Pill");
-			
 			addItem(ItemRegistry.ITEM_COMMUNICATOR, "Communicator");
-
 			addItem(ItemRegistry.ITEM_EARL_GRAY_TEA, "Tea. Earl Grey. Hot.");
 			addItem(ItemRegistry.ITEM_ROMULAN_ALE, "Romulan Ale");
-
 			addItem(ItemRegistry.ITEM_EMERGENCY_RATION, "Emergency Ration");
-
 			addItem(ItemRegistry.ITEM_ME_CONVERSION_MATRIX, "ME Conversion Matrix");
 			addItem(ItemRegistry.ITEM_H_COMPENSATOR, "Heisenberg Compensator");
 			addItem(ItemRegistry.ITEM_INTEGRATION_MATRIX, "Integration Matrix");
 			addItem(ItemRegistry.ITEM_SUPERCONDUCTOR_MAGNET, "Superconductor Magnet");
-
 			addItem(ItemRegistry.ITEM_TRITANIUM_WRENCH, "Tritanium Wrench");
 			addItem(ItemRegistry.ITEM_DATAPAD, "Datapad");
-
 			addItem(ItemRegistry.ITEM_DILITHIUM_CRYSTAL, "Dilithium Crystal");
 			addItem(ItemRegistry.ITEM_FORCEFIELD_EMITTER, "Force Field Emitter");
 			addItem(ItemRegistry.ITEM_WEAPON_HANDLE, "Weapon Handle");
@@ -329,19 +313,23 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			addBlock(BlockRegistry.BLOCK_PATTERN_MONITOR, "Pattern Monitor");
 			addBlock(BlockRegistry.BLOCK_MATTER_REPLICATOR, "Matter Replicator");
 			addBlock(BlockRegistry.BLOCK_MACHINE_HULL, "Machine Hull");
-
 			addBlock(BlockRegistry.BLOCK_MATTER_CONDUITS.get(TypeMatterConduit.REGULAR), "Matter Conduit");
 			addBlock(BlockRegistry.BLOCK_MATTER_CONDUITS.get(TypeMatterConduit.HEAVY), "Heavy Matter Conduit");
 			addBlock(BlockRegistry.BLOCK_MATTER_NETWORK_CABLES.get(TypeMatterNetworkCable.REGULAR), "Network Cable");
-
 			addBlock(BlockRegistry.BLOCK_TRITANIUM, "Tritanium Block");
-
 			addBlock(BlockRegistry.BLOCK_ANDROID_STATION, "Android Station");
 //			addBlock(BlockRegistry.BLOCK_DISC_MANIPULATOR, "Disc Manipulator");
 			addBlock(BlockRegistry.BLOCK_DECORATIVE_BEAMS, "Decorative Beams");
 			addBlock(BlockRegistry.BLOCK_DECORATIVE_CARBON_FIBER_PLATE, "Carbon Fiber Plate");
 			addBlock(BlockRegistry.BLOCK_DECORATIVE_CLEAN, "Tritanium Smooth Plate");
 			addBlock(BlockRegistry.BLOCK_DECORATIVE_COILS, "Decorative Coils");
+			addBlock(BlockRegistry.HOLO_MATRIX, "Holographic Matrix");
+			addBlock(BlockRegistry.YELLOW_STRIPES, "Yellow Stripes");
+			addBlock(BlockRegistry.EXHAUST_PLASMA, "Engine Exhaust Plasma");
+			addBlock(BlockRegistry.SOFT_WALL_PLATES, "Soft Wall Plates");
+			addBlock(BlockRegistry.TRITANIUM_RAIL, "Tritanium Rail");
+			addBlock(BlockRegistry.TRITANIUM_PLATE_STRIPE, "Tritanium Plate Guided");
+			addBlock(BlockRegistry.MATTER_TUBE, "Matter Tube");
 			addBlock(BlockRegistry.BLOCK_STAR_MAP, "Star Map");
 			addBlock(BlockRegistry.BLOCK_WEAPON_STATION, "Weapon Station");
 			addBlock(BlockRegistry.BLOCK_NETWORK_SWITCH, "Network Switch");

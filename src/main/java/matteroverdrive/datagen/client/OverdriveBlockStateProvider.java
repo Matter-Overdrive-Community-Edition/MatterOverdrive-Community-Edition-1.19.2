@@ -49,6 +49,17 @@ public class OverdriveBlockStateProvider extends BlockStateProvider {
 		simpleBlock(BlockRegistry.TRITANIUM_ORE, true);
 		simpleBlock(BlockRegistry.DEEPSLATE_DILITHIUM_ORE, true);
 		simpleBlock(BlockRegistry.DEEPSLATE_TRITANIUM_ORE, true);
+		simpleBlock(BlockRegistry.HOLO_MATRIX, models().cubeAll("weapon_station_top", blockLoc("weapon_station_top")), true);
+		simpleBlock(BlockRegistry.EXHAUST_PLASMA, true);
+		simpleBlock(BlockRegistry.YELLOW_STRIPES, models().cubeAll("base_stripes", blockLoc("base_stripes")), true);
+		simpleBlock(BlockRegistry.TRITANIUM_PLATE_STRIPE,
+				blockTopBottom(BlockRegistry.TRITANIUM_PLATE_STRIPE, "block/tritanium_plate",
+				"block/tritanium_plate", "block/tritanium_plate_yellow_stripe"), 
+				true);
+		simpleBlock(BlockRegistry.TRITANIUM_RAIL, models().cubeAll("separator", blockLoc("separator")), true);
+		simpleBlock(BlockRegistry.MATTER_TUBE, true);
+		simpleBlock(BlockRegistry.SOFT_WALL_PLATES, models().cubeAll("white_plate", blockLoc("white_plate")), true);
+		
 		simpleBlock(BlockRegistry.BLOCK_REGULAR_TRITANIUM_PLATING,
 				models().cubeAll("tritanium_plating", blockLoc("decorative/tritanium_plating")), true);
 		for (OverdriveBlockColors color : OverdriveBlockColors.values()) {
