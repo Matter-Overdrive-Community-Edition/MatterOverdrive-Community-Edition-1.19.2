@@ -330,6 +330,7 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			addBlock(BlockRegistry.TRITANIUM_RAIL, "Tritanium Rail");
 			addBlock(BlockRegistry.TRITANIUM_PLATE_STRIPE, "Tritanium Plate Guided");
 			addBlock(BlockRegistry.MATTER_TUBE, "Matter Tube");
+			addBlock(BlockRegistry.TRITANIUM_LAMP, "Tritanium Lamp");
 			addBlock(BlockRegistry.BLOCK_STAR_MAP, "Star Map");
 			addBlock(BlockRegistry.BLOCK_WEAPON_STATION, "Weapon Station");
 			addBlock(BlockRegistry.BLOCK_NETWORK_SWITCH, "Network Switch");

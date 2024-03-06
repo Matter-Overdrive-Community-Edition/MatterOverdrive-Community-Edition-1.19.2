@@ -618,6 +618,14 @@ public class OverdriveRecipeProvider extends RecipeProvider {
 			.addKey('N', Ingredient.of(OverdriveTags.Items.NUGGET_TRITANIUM))
 			.complete(References.ID, "decorative_tritanium_rail", consumer);
 
+		OverdriveShapedCraftingRecipe.start(BlockRegistry.TRITANIUM_LAMP.get().asItem(), 2)
+			.addPattern("###")
+			.addPattern("#D#")
+			.addPattern("DDD")
+			.addKey('D', Ingredient.of(Tags.Items.DUSTS_GLOWSTONE))
+			.addKey('#', Ingredient.of(BlockRegistry.BLOCK_REGULAR_TRITANIUM_PLATING.get().asItem()))
+			.complete(References.ID, "decorative_tritanium_lamp", consumer);
+
 		OverdriveShapedCraftingRecipe.start(BlockRegistry.TRITANIUM_PLATE_STRIPE.get().asItem(), 8)
 			.addPattern("###")
 			.addPattern("###")
