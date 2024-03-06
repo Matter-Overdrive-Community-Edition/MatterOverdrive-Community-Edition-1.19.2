@@ -97,6 +97,9 @@ public class BlockRegistry {
 	public static final RegistryObject<Block> SOFT_WALL_PLATES = registerBlock("white_plate",
 			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)), new Item.Properties().tab(References.DECORATIVE), 
 			false);
+	public static final RegistryObject<Block> TRITANIUM_LAMP = registerBlock("tritanium_lamp",
+			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F).lightLevel((state) -> 15)), new Item.Properties().tab(References.DECORATIVE), 
+			false);
 
 	public static final BulkRegister<Block> BLOCK_COLORED_TRITANIUM_PLATING = bulkBlock(
 			color -> registerColoredBlock(color.id("tritanium_plating_"),
@@ -149,9 +152,9 @@ public class BlockRegistry {
 					TileRegistry.TILE_SOLAR_PANEL),
 			true);
 
-	public static final RegistryObject<Block> BLOCK_MATTER_DECOMPOSER = registerBlock(
-			TypeMachine.MATTER_DECOMPOSER.id(), () -> new BlockMachine<>(TileMatterDecomposer::new,
-					TypeMachine.MATTER_DECOMPOSER, TileRegistry.TILE_MATTER_DECOMPOSER),
+	public static final RegistryObject<Block> BLOCK_MATTER_DECOMPOSER = registerBlock(TypeMachine.MATTER_DECOMPOSER.id(),
+			() -> new BlockMachine<>(TileMatterDecomposer::new,	TypeMachine.MATTER_DECOMPOSER,
+					TileRegistry.TILE_MATTER_DECOMPOSER),
 			true);
 
 	public static final RegistryObject<Block> BLOCK_MATTER_RECYCLER = registerBlock(TypeMachine.MATTER_RECYCLER.id(),
