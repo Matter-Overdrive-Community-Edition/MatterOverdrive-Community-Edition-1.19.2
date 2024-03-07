@@ -2,12 +2,12 @@
   "structures": [
     {
       "structure": "matteroverdrive:cargo_ship",
-      "weight": 1
+      "weight": 5
     }
   ],
   "placement": {
     // Make sure this is unique and does not match any other structure set's salt
-    "salt": 2321023231,
+    "salt": 321023231,
 
     // The average distance apart in chunks for spawn attempts
     "spacing": 30,
