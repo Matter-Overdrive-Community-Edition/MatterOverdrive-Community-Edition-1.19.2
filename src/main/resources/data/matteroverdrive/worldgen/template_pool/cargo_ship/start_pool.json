@@ -1,0 +1,15 @@
+{
+  "name": "matteroverdrive:cargo_ship/start_pool",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "matteroverdrive:cargo_ship",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}
