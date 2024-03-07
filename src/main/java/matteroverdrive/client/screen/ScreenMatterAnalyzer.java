@@ -40,6 +40,7 @@ public class ScreenMatterAnalyzer extends GenericMachineScreen<InventoryMatterAn
 	@Override
 	protected void init() {
 		super.init();
+
 		close = getCloseButton(207, 6);
 		menu = new ButtonMenuBar(this, 212, 33, 143, EXTENDED, button -> {
 			toggleBarOpen();

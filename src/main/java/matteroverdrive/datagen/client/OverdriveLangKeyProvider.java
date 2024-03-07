@@ -487,7 +487,7 @@ public class OverdriveLangKeyProvider extends LanguageProvider {
 			addContainer(TypeMachine.MATTER_ANALYZER.id(), "Matter Analyzer");
 			addContainer(TypeMachine.MATTER_REPLICATOR.id(), "Matter Replicator");
 			addContainer(TypeMachine.DISC_MANIPULATOR.id(), "Disc Manipulator");
-			
+			addContainer(TypeMachine.HOLO_SIGN.id(), "Holo Sign");
 
 			addCommand("startmattercalc", "Starting Matter calculations...");
 			addCommand("endmattercalc", "Finshed Matter calculations. Saved under \"Matter Overdrive/generated.json\"");

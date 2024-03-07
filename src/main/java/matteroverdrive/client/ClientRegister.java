@@ -63,6 +63,7 @@ public class ClientRegister {
 		MenuScreens.register(MenuRegistry.MENU_MATTER_ANALYZER.get(), ScreenMatterAnalyzer::new);
 		MenuScreens.register(MenuRegistry.MENU_ANDROID_STATION.get(), ScreenAndroidStation::new);
 		MenuScreens.register(MenuRegistry.MENU_DISC_MANIPULATOR.get(), ScreenDiscManipulator::new);
+		MenuScreens.register(MenuRegistry.MENU_HOLO_SIGN.get(), ScreenHoloSign::new);
 
 		ItemProperties.register(ItemRegistry.ITEM_BATTERIES.get(BatteryType.REGULAR).get(), CHARGE,
 				(stack, world, entity, call) -> {
