@@ -31,8 +31,10 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.fml.loading.FMLEnvironment;
 
 public abstract class GenericTile extends BlockEntity implements Nameable, IPropertyManaged {
 
@@ -130,7 +132,7 @@ public abstract class GenericTile extends BlockEntity implements Nameable, IProp
 
 	@Override
 	public CompoundTag getUpdateTag() {
-		if (!level.isClientSide()) {
+		if (FMLEnvironment.dist == Dist.DEDICATED_SERVER) {
 			// call me a butcher, because I'm hacking this game
 			this.propertyManager.sendBlockEntityChanges(this.getBlockPos());
 		}
@@ -146,10 +148,10 @@ public abstract class GenericTile extends BlockEntity implements Nameable, IProp
 	@Override
 	public void setChanged() {
 		super.setChanged();
-		if (!level.isClientSide()) {
+		if (FMLEnvironment.dist == Dist.DEDICATED_SERVER) {
 			this.propertyManager.sendBlockEntityChanges(this.getBlockPos());
+		
 		}
-
 	}
 
 	public MutableComponent getContainerName(String name) {
