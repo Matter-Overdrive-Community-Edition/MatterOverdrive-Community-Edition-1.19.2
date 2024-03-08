@@ -71,21 +71,24 @@ public class TileRegistry {
 	public static final RegistryObject<BlockEntityType<TilePatternMonitor>> TILE_PATTERN_MONITOR = TILES
 			.register(TypeMachine.PATTERN_MONITOR.id(), () -> new BlockEntityType<>(TilePatternMonitor::new,
 					Sets.newHashSet(BlockRegistry.BLOCK_PATTERN_MONITOR.get()), null));
-	public static final RegistryObject<BlockEntityType<TileHoloSign>> TILE_HOLO_SIGN = TILES
-		.register(TypeMachine.HOLO_SIGN.id(), () -> new BlockEntityType<>(TileHoloSign::new,
-			Sets.newHashSet(BlockRegistry.BLOCK_HOLO_SIGN.get()), null));
+	public static final RegistryObject<BlockEntityType<TileHoloSign>> TILE_HOLO_SIGN = TILES.register(
+			TypeMachine.HOLO_SIGN.id(),
+			() -> new BlockEntityType<>(TileHoloSign::new, Sets.newHashSet(BlockRegistry.BLOCK_HOLO_SIGN.get()), null));
 	public static final RegistryObject<BlockEntityType<TileMatterReplicator>> TILE_MATTER_REPLICATOR = TILES
 			.register(TypeMachine.MATTER_REPLICATOR.id(), () -> new BlockEntityType<>(TileMatterReplicator::new,
 					Sets.newHashSet(BlockRegistry.BLOCK_MATTER_REPLICATOR.get()), null));
 	public static final RegistryObject<BlockEntityType<TileAndroidStation>> TILE_ANDROID_STATION = TILES
-					.register(TypeMachine.ANDROID_STATION.id(), () -> new BlockEntityType<>(TileAndroidStation::new,
-									Sets.newHashSet(BlockRegistry.BLOCK_ANDROID_STATION.get()), null));
+			.register(TypeMachine.ANDROID_STATION.id(), () -> new BlockEntityType<>(TileAndroidStation::new,
+					Sets.newHashSet(BlockRegistry.BLOCK_ANDROID_STATION.get()), null));
 	public static final RegistryObject<BlockEntityType<TileDiscManipulator>> TILE_DISC_MANIPULATOR = TILES
-			.register(TypeMachine.DISC_MANIPULATOR.id(), () -> new BlockEntityType<>(TileDiscManipulator::new, Sets.newHashSet(BlockRegistry.BLOCK_DISC_MANIPULATOR.get()), null));
-	public static final RegistryObject<BlockEntityType<TileStarMap>> TILE_STAR_MAP = TILES
-		.register(TypeMachine.STAR_MAP.id(), () -> new BlockEntityType<>(TileStarMap::new, Sets.newHashSet(BlockRegistry.BLOCK_STAR_MAP.get()), null));
+			.register(TypeMachine.DISC_MANIPULATOR.id(), () -> new BlockEntityType<>(TileDiscManipulator::new,
+					Sets.newHashSet(BlockRegistry.BLOCK_DISC_MANIPULATOR.get()), null));
+	public static final RegistryObject<BlockEntityType<TileStarMap>> TILE_STAR_MAP = TILES.register(
+			TypeMachine.STAR_MAP.id(),
+			() -> new BlockEntityType<>(TileStarMap::new, Sets.newHashSet(BlockRegistry.BLOCK_STAR_MAP.get()), null));
 	public static final RegistryObject<BlockEntityType<TileWeaponStation>> TILE_WEAPON_STATION = TILES
-		.register(TypeMachine.WEAPON_STATION.id(), () -> new BlockEntityType<>(TileWeaponStation::new, Sets.newHashSet(BlockRegistry.BLOCK_WEAPON_STATION.get()), null));
+			.register(TypeMachine.WEAPON_STATION.id(), () -> new BlockEntityType<>(TileWeaponStation::new,
+					Sets.newHashSet(BlockRegistry.BLOCK_WEAPON_STATION.get()), null));
 //	public static final RegistryObject<BlockEntityType<TileSpacetimeEqualizer>> TILE_SPACETIME_EQUALIZER = TILES
 //		.register(TypeMachine.SPACETIME_EQUALIZER.id(), () -> new ItemEntityType<>(TileSpacetimeEqualizer::new, Sets.newHashSet(ItemRegistry.ITEM_SPACETIME_EQUALIZER.get()), null));
 }

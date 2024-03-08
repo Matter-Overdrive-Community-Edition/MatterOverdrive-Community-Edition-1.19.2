@@ -57,7 +57,7 @@ public class BlockRegistry {
 			false);
 
 	public static final RegistryObject<Block> TRITANIUM_ORE = registerBlock("tritanium_ore",
-    		() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
+			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
 			false);
 
 	public static final RegistryObject<Block> DEEPSLATE_DILITHIUM_ORE = registerBlock("deepslate_dilithium_ore",
@@ -65,7 +65,7 @@ public class BlockRegistry {
 			false);
 
 	public static final RegistryObject<Block> DEEPSLATE_TRITANIUM_ORE = registerBlock("deepslate_tritanium_ore",
-    		() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
+			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
 			false);
 
 	public static final RegistryObject<Block> BLOCK_TRITANIUM = registerBlock("tritanium_block",
@@ -75,70 +75,75 @@ public class BlockRegistry {
 	// Decoration Blocks
 
 	public static final RegistryObject<Block> BLOCK_REGULAR_TRITANIUM_PLATING = registerBlock("tritanium_plating",
-			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)), new Item.Properties().tab(References.DECORATIVE), 
-			false);
+			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
+			new Item.Properties().tab(References.DECORATIVE), false);
 
 	public static final RegistryObject<Block> BLOCK_MACHINE_HULL = registerBlock("machine_hull",
-			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)), new Item.Properties().tab(References.DECORATIVE), 
-			false);
+			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
+			new Item.Properties().tab(References.DECORATIVE), false);
 
 	public static final RegistryObject<Block> HOLO_MATRIX = registerBlock("holo_matrix",
-			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)), new Item.Properties().tab(References.DECORATIVE), 
-			false);
+			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
+			new Item.Properties().tab(References.DECORATIVE), false);
 
 	public static final RegistryObject<Block> EXHAUST_PLASMA = registerBlock("engine_exhaust_plasma",
-			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)), new Item.Properties().tab(References.DECORATIVE), 
-			false);
+			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
+			new Item.Properties().tab(References.DECORATIVE), false);
 
 	public static final RegistryObject<Block> YELLOW_STRIPES = registerBlock("stripes",
-			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)), new Item.Properties().tab(References.DECORATIVE), 
-			false);
+			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
+			new Item.Properties().tab(References.DECORATIVE), false);
 
 	public static final RegistryObject<Block> TRITANIUM_PLATE_STRIPE = registerBlock("tritanium_plate_stripe",
-			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)), new Item.Properties().tab(References.DECORATIVE), 
-			false);
+			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
+			new Item.Properties().tab(References.DECORATIVE), false);
 
 	public static final RegistryObject<Block> TRITANIUM_RAIL = registerBlock("tritanium_rail",
-			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)), new Item.Properties().tab(References.DECORATIVE), 
-			false);
+			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
+			new Item.Properties().tab(References.DECORATIVE), false);
 
 	public static final RegistryObject<Block> MATTER_TUBE = registerBlock("matter_tube",
-			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)), new Item.Properties().tab(References.DECORATIVE), 
-			false);
+			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
+			new Item.Properties().tab(References.DECORATIVE), false);
 
 	public static final RegistryObject<Block> SOFT_WALL_PLATES = registerBlock("white_plate",
-			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)), new Item.Properties().tab(References.DECORATIVE), 
-			false);
+			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
+			new Item.Properties().tab(References.DECORATIVE), false);
 
 	public static final RegistryObject<Block> BLOCK_DECORATIVE_BEAMS = registerBlock("decorative.beams",
-			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)), new Item.Properties().tab(References.DECORATIVE), 
-			false);
+			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
+			new Item.Properties().tab(References.DECORATIVE), false);
 
-	public static final RegistryObject<Block> BLOCK_DECORATIVE_CARBON_FIBER_PLATE = registerBlock("decorative.carbon_fiber_plate",
-			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)), new Item.Properties().tab(References.DECORATIVE), 
-			false);
+	public static final RegistryObject<Block> BLOCK_DECORATIVE_CARBON_FIBER_PLATE = registerBlock(
+			"decorative.carbon_fiber_plate",
+			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
+			new Item.Properties().tab(References.DECORATIVE), false);
 
 	public static final RegistryObject<Block> BLOCK_DECORATIVE_CLEAN = registerBlock("decorative.clean",
-			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)), new Item.Properties().tab(References.DECORATIVE), 
-			false);
+			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
+			new Item.Properties().tab(References.DECORATIVE), false);
 
 	public static final RegistryObject<Block> BLOCK_DECORATIVE_COILS = registerBlock("decorative.coils",
-			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)), new Item.Properties().tab(References.DECORATIVE), 
-			false);
+			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
+			new Item.Properties().tab(References.DECORATIVE), false);
 
 	public static final RegistryObject<Block> BLOCK_VENT_OPEN = registerBlock("vent_open",
-			() -> new BlockRedstoneToggle(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)), new Item.Properties().tab(References.DECORATIVE), 
-			false);
+			() -> new BlockRedstoneToggle(
+					Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
+			new Item.Properties().tab(References.DECORATIVE), false);
 
 	public static final RegistryObject<Block> BLOCK_VENT_CLOSED = registerBlock("vent_closed",
-			() -> new BlockRedstoneToggle(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)), new Item.Properties().tab(References.DECORATIVE), 
-			false);
+			() -> new BlockRedstoneToggle(
+					Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
+			new Item.Properties().tab(References.DECORATIVE), false);
 
-	public static final RegistryObject<Block> BLOCK_INDUSTRIAL_GLASS = registerBlock("industrial_glass", () -> new BlockCustomGlass(0.3F, 0.3F), false);
+	public static final RegistryObject<Block> BLOCK_INDUSTRIAL_GLASS = registerBlock("industrial_glass",
+			() -> new BlockCustomGlass(0.3F, 0.3F), false);
 
-	public static final RegistryObject<Block> TRITANIUM_LAMP = registerBlock("tritanium_lamp",
-			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F).lightLevel((state) -> 15)), new Item.Properties().tab(References.DECORATIVE), 
-			false);
+	public static final RegistryObject<Block> TRITANIUM_LAMP = registerBlock(
+			"tritanium_lamp", () -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops()
+					.strength(1F, 100F).lightLevel((state) -> 15)),
+			new Item.Properties().tab(References.DECORATIVE), false);
 
 	public static final BulkRegister<Block> BLOCK_COLORED_TRITANIUM_PLATING = bulkBlock(
 			color -> registerColoredBlock(color.id("tritanium_plating_"),
@@ -155,11 +160,11 @@ public class BlockRegistry {
 					false, ((OverdriveBlockColors) color).color),
 			OverdriveBlockColors.values());
 	public static final BulkRegister<Block> BLOCK_FLOOR_TILES = bulkBlock(
-		color -> registerColoredBlock(((OverdriveBlockColors) color).id("floor_tiles_"),
-				() -> new BlockColored(
-						Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F),
-						((OverdriveBlockColors) color).color),
-				false, ((OverdriveBlockColors) color).color),
+			color -> registerColoredBlock(((OverdriveBlockColors) color).id("floor_tiles_"),
+					() -> new BlockColored(
+							Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F),
+							((OverdriveBlockColors) color).color),
+					false, ((OverdriveBlockColors) color).color),
 			OverdriveBlockColors.values());
 
 	// Crates
@@ -174,17 +179,17 @@ public class BlockRegistry {
 	// Machines
 
 	public static final RegistryObject<Block> BLOCK_SOLAR_PANEL = registerBlock(TypeMachine.SOLAR_PANEL.id(),
-			() -> new BlockMachine<>(TileSolarPanel::new, TypeMachine.SOLAR_PANEL,
-					TileRegistry.TILE_SOLAR_PANEL),
+			() -> new BlockMachine<>(TileSolarPanel::new, TypeMachine.SOLAR_PANEL, TileRegistry.TILE_SOLAR_PANEL),
 			true);
 
-	public static final RegistryObject<Block> BLOCK_MATTER_DECOMPOSER = registerBlock(TypeMachine.MATTER_DECOMPOSER.id(),
-			() -> new BlockMachine<>(TileMatterDecomposer::new,	TypeMachine.MATTER_DECOMPOSER,
-					TileRegistry.TILE_MATTER_DECOMPOSER),
+	public static final RegistryObject<Block> BLOCK_MATTER_DECOMPOSER = registerBlock(
+			TypeMachine.MATTER_DECOMPOSER.id(), () -> new BlockMachine<>(TileMatterDecomposer::new,
+					TypeMachine.MATTER_DECOMPOSER, TileRegistry.TILE_MATTER_DECOMPOSER),
 			true);
 
-	public static final RegistryObject<Block> BLOCK_DISC_MANIPULATOR = registerBlockNoItem(TypeMachine.DISC_MANIPULATOR.id(),
-			() -> new BlockMachine<>(TileDiscManipulator::new, TypeMachine.DISC_MANIPULATOR, TileRegistry.TILE_DISC_MANIPULATOR),
+	public static final RegistryObject<Block> BLOCK_DISC_MANIPULATOR = registerBlockNoItem(
+			TypeMachine.DISC_MANIPULATOR.id(), () -> new BlockMachine<>(TileDiscManipulator::new,
+					TypeMachine.DISC_MANIPULATOR, TileRegistry.TILE_DISC_MANIPULATOR),
 			true);
 
 	public static final RegistryObject<Block> BLOCK_MATTER_RECYCLER = registerBlock(TypeMachine.MATTER_RECYCLER.id(),
@@ -196,19 +201,14 @@ public class BlockRegistry {
 			() -> new BlockAndroidChargerChild(), true);
 
 	public static final RegistryObject<Block> BLOCK_CHARGER = registerBlock(TypeMachine.CHARGER.id(),
-			() -> new BlockAndroidChargerParent<>(TileCharger::new, TypeMachine.CHARGER,
-					TileRegistry.TILE_CHARGER),
+			() -> new BlockAndroidChargerParent<>(TileCharger::new, TypeMachine.CHARGER, TileRegistry.TILE_CHARGER),
 			true);
 
 	public static final RegistryObject<Block> BLOCK_MICROWAVE = registerBlock(TypeMachine.MICROWAVE.id(),
-			() -> new BlockMachine<>(TileMicrowave::new, TypeMachine.MICROWAVE,
-					TileRegistry.TILE_MICROWAVE),
-			true);
+			() -> new BlockMachine<>(TileMicrowave::new, TypeMachine.MICROWAVE, TileRegistry.TILE_MICROWAVE), true);
 
 	public static final RegistryObject<Block> BLOCK_INSCRIBER = registerBlock(TypeMachine.INSCRIBER.id(),
-			() -> new BlockMachine<>(TileInscriber::new, TypeMachine.INSCRIBER,
-					TileRegistry.TILE_INSCRIBER),
-			true);
+			() -> new BlockMachine<>(TileInscriber::new, TypeMachine.INSCRIBER, TileRegistry.TILE_INSCRIBER), true);
 
 	public static final BulkRegister<Block> BLOCK_MATTER_CONDUITS = bulkBlock(
 			conduit -> registerBlock(((TypeMatterConduit) conduit).id(),
@@ -216,13 +216,11 @@ public class BlockRegistry {
 			TypeMatterConduit.values());
 
 	public static final RegistryObject<Block> BLOCK_TRANSPORTER = registerBlock(TypeMachine.TRANSPORTER.id(),
-			() -> new BlockMachine<>(TileTransporter::new, TypeMachine.TRANSPORTER,
-					TileRegistry.TILE_TRANSPORTER),
+			() -> new BlockMachine<>(TileTransporter::new, TypeMachine.TRANSPORTER, TileRegistry.TILE_TRANSPORTER),
 			true);
 
 	public static final RegistryObject<Block> BLOCK_SPACETIME_ACCELERATOR = registerBlock(
-			TypeMachine.SPACETIME_ACCELERATOR.id(),
-			() -> new BlockMachine<>(TileSpacetimeAccelerator::new,
+			TypeMachine.SPACETIME_ACCELERATOR.id(), () -> new BlockMachine<>(TileSpacetimeAccelerator::new,
 					TypeMachine.SPACETIME_ACCELERATOR, TileRegistry.TILE_SPACETIME_ACCELERATOR),
 			true);
 
@@ -231,8 +229,7 @@ public class BlockRegistry {
 			TypeMatterNetworkCable.values());
 
 	public static final RegistryObject<Block> BLOCK_CHUNKLOADER = registerBlock(TypeMachine.CHUNKLOADER.id(),
-			() -> new BlockMachine<>(TileChunkloader::new, TypeMachine.CHUNKLOADER,
-					TileRegistry.TILE_CHUNKLOADER),
+			() -> new BlockMachine<>(TileChunkloader::new, TypeMachine.CHUNKLOADER, TileRegistry.TILE_CHUNKLOADER),
 			true);
 
 	public static final RegistryObject<Block> BLOCK_MATTER_ANALYZER = registerBlock(TypeMachine.MATTER_ANALYZER.id(),
@@ -259,27 +256,22 @@ public class BlockRegistry {
 			() -> new BlockMachine<>(TileAndroidStation::new, TypeMachine.ANDROID_STATION,
 					TileRegistry.TILE_ANDROID_STATION),
 			true);
+
 	public static final RegistryObject<Block> BLOCK_HOLO_SIGN = registerBlock(TypeMachine.HOLO_SIGN.id(),
-		() -> new BlockMachine<>(TileHoloSign::new, TypeMachine.HOLO_SIGN,
-			TileRegistry.TILE_HOLO_SIGN),
-		true);
+			() -> new BlockMachine<>(TileHoloSign::new, TypeMachine.HOLO_SIGN, TileRegistry.TILE_HOLO_SIGN), true);
 
 	// For crafting only now.
 	public static final RegistryObject<Block> BLOCK_NETWORK_SWITCH = registerBlock("network_switch",
-		() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
-		false);
+			() -> new BlockOverdrive(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(1F, 100F)),
+			false);
 
-	public static final RegistryObject<Block> BLOCK_STAR_MAP = registerBlock(
-		TypeMachine.STAR_MAP.id(),
-		() -> new BlockMachine<>(TileStarMap::new,
-			TypeMachine.STAR_MAP, TileRegistry.TILE_STAR_MAP),
-		true);
+	public static final RegistryObject<Block> BLOCK_STAR_MAP = registerBlock(TypeMachine.STAR_MAP.id(),
+			() -> new BlockMachine<>(TileStarMap::new, TypeMachine.STAR_MAP, TileRegistry.TILE_STAR_MAP), true);
 
-	public static final RegistryObject<Block> BLOCK_WEAPON_STATION = registerBlock(
-		TypeMachine.WEAPON_STATION.id(),
-		() -> new BlockMachine<>(TileStarMap::new,
-			TypeMachine.WEAPON_STATION, TileRegistry.TILE_WEAPON_STATION),
-		true);
+	public static final RegistryObject<Block> BLOCK_WEAPON_STATION = registerBlock(TypeMachine.WEAPON_STATION.id(),
+			() -> new BlockMachine<>(TileWeaponStation::new, TypeMachine.WEAPON_STATION,
+					TileRegistry.TILE_WEAPON_STATION),
+			true);
 
 	// Functional Methods
 
@@ -291,7 +283,8 @@ public class BlockRegistry {
 		return registerBlock(name, supplier, new Item.Properties(), shiftTip);
 	}
 
-	private static RegistryObject<Block> registerBlock(String name, Supplier<Block> supplier, Item.Properties properties, boolean shiftTip) {
+	private static RegistryObject<Block> registerBlock(String name, Supplier<Block> supplier,
+			Item.Properties properties, boolean shiftTip) {
 		RegistryObject<Block> block = BLOCKS.register(name, supplier);
 		ItemRegistry.ITEMS.register(name, () -> new OverdriveBlockItem(block.get(), properties, shiftTip));
 		return block;
@@ -302,7 +295,8 @@ public class BlockRegistry {
 		return registerColoredBlock(name, supplier, new Item.Properties().tab(References.DECORATIVE), shiftTip, color);
 	}
 
-	private static RegistryObject<Block> registerColoredBlock(String name, Supplier<Block> supplier,Item.Properties properties, boolean shiftTip, int color) {
+	private static RegistryObject<Block> registerColoredBlock(String name, Supplier<Block> supplier,
+			Item.Properties properties, boolean shiftTip, int color) {
 		RegistryObject<Block> block = BLOCKS.register(name, supplier);
 		ItemRegistry.ITEMS.register(name, () -> new BlockItemColored(block.get(), properties, shiftTip, color));
 		return block;
