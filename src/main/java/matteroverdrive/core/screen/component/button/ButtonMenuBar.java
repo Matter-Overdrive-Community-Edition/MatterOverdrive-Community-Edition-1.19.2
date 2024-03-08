@@ -54,11 +54,11 @@ public class ButtonMenuBar extends AbstractOverdriveButton {
 		UtilsRendering.setShaderColor(Colors.WHITE.getColor());
 		UtilsRendering.bindTexture(ButtonTextures.MENU_BAR.getTexture());
 
-//		renderButton(stack);
-//
-//		if (isExtended) {
-//			renderBar(stack);
-//		}
+		renderButton(stack);
+
+		if (isExtended) {
+			renderBar(stack);
+		}
 	}
 
 	private void renderButton(PoseStack stack) {

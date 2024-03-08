@@ -24,6 +24,7 @@ public abstract class GenericOverdriveScreen<T extends GenericInventory> extends
 
 	public GenericOverdriveScreen(T menu, Inventory playerinventory, Component title, GuiTextures texture, int guiWidth, int guiHeight) {
 		super(menu, playerinventory, title, texture, guiWidth, guiHeight);
+
 		if(guiWidth < MIN_WIDTH) {
 			throw new UnsupportedOperationException("Gui width must be a minumum of " + MIN_WIDTH);
 		}
@@ -31,9 +32,13 @@ public abstract class GenericOverdriveScreen<T extends GenericInventory> extends
 			throw new UnsupportedOperationException("Gui height must be a minumum of " + MIN_HEIGHT);
 		}
 	}
-	
+
 	public GenericOverdriveScreen(T menu, Inventory playerinventory, Component title, int guiWidth, int guiHeight) {
 		this(menu, playerinventory, title, GuiTextures.OVERDRIVE_MENU, guiWidth, guiHeight);
+	}
+
+	public GenericOverdriveScreen(T menu, Inventory playerinventory, Component title, int guiWidth, int guiHeight, boolean noMenu) {
+		this(menu, playerinventory, title, GuiTextures.OVERDRIVE_NO_MENU, guiWidth, guiHeight);
 	}
 
 	@Override

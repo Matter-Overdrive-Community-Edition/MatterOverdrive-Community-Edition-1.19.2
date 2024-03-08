@@ -1,7 +1,6 @@
 package matteroverdrive.client.render.tile;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.math.Matrix3f;
 import com.mojang.math.Vector3f;
 import matteroverdrive.client.ClientReferences;
 import matteroverdrive.client.render.tile.utils.AbstractTileRenderer;
@@ -14,13 +13,11 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-import java.nio.FloatBuffer;
 import java.util.Map;
 
 public class RendererHoloSign extends AbstractTileRenderer<TileHoloSign> {
