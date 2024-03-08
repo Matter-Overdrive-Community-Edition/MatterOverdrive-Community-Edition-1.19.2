@@ -2,22 +2,7 @@ package matteroverdrive.registry;
 
 import matteroverdrive.References;
 import matteroverdrive.common.block.type.TypeMachine;
-import matteroverdrive.common.inventory.InventoryAndroidStation;
-import matteroverdrive.common.inventory.InventoryCharger;
-import matteroverdrive.common.inventory.InventoryChunkloader;
-import matteroverdrive.common.inventory.InventoryDiscManipulator;
-import matteroverdrive.common.inventory.InventoryInscriber;
-import matteroverdrive.common.inventory.InventoryMatterAnalyzer;
-import matteroverdrive.common.inventory.InventoryMatterDecomposer;
-import matteroverdrive.common.inventory.InventoryMatterRecycler;
-import matteroverdrive.common.inventory.InventoryMatterReplicator;
-import matteroverdrive.common.inventory.InventoryMicrowave;
-import matteroverdrive.common.inventory.InventoryPatternMonitor;
-import matteroverdrive.common.inventory.InventoryPatternStorage;
-import matteroverdrive.common.inventory.InventorySolarPanel;
-import matteroverdrive.common.inventory.InventorySpacetimeAccelerator;
-import matteroverdrive.common.inventory.InventoryTransporter;
-import matteroverdrive.common.inventory.InventoryTritaniumCrate;
+import matteroverdrive.common.inventory.*;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -60,4 +45,6 @@ public class MenuRegistry {
 			.register(TypeMachine.ANDROID_STATION.id(), () -> new MenuType<>(InventoryAndroidStation::new));
 	public static final RegistryObject<MenuType<InventoryDiscManipulator>> MENU_DISC_MANIPULATOR = MENUS
 			.register(TypeMachine.DISC_MANIPULATOR.id(), () -> new MenuType<>(InventoryDiscManipulator::new));
+	public static final RegistryObject<MenuType<InventoryHoloSign>> MENU_HOLO_SIGN = MENUS
+			.register(TypeMachine.HOLO_SIGN.id(), () -> new MenuType<>(InventoryHoloSign::new));
 }

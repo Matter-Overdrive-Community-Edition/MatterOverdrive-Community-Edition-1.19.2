@@ -22,6 +22,10 @@ public abstract class AbstractOverdriveButton extends OverdriveScreenComponent {
 	protected final OnPress onPress;
 	protected final OnTooltip onTooltip;
 
+	public AbstractOverdriveButton(GenericScreen<?> gui, int x, int y, int width, int height, Supplier<Component> component) {
+		this(gui, x, y, width, height, component, (button) -> {}, NO_TOOLTIP);
+	}
+
 	public AbstractOverdriveButton(GenericScreen<?> gui, int x, int y, int width, int height, Supplier<Component> component,
 			OnPress onPress) {
 		this(gui, x, y, width, height, component, onPress, NO_TOOLTIP);

@@ -3,19 +3,7 @@ package matteroverdrive.compatibility.jei;
 import java.util.Objects;
 
 import matteroverdrive.References;
-import matteroverdrive.client.screen.ScreenCharger;
-import matteroverdrive.client.screen.ScreenDiscManipulator;
-import matteroverdrive.client.screen.ScreenInscriber;
-import matteroverdrive.client.screen.ScreenMatterAnalyzer;
-import matteroverdrive.client.screen.ScreenMatterDecomposer;
-import matteroverdrive.client.screen.ScreenMatterRecycler;
-import matteroverdrive.client.screen.ScreenMatterReplicator;
-import matteroverdrive.client.screen.ScreenMicrowave;
-import matteroverdrive.client.screen.ScreenPatternMonitor;
-import matteroverdrive.client.screen.ScreenPatternStorage;
-import matteroverdrive.client.screen.ScreenSolarPanel;
-import matteroverdrive.client.screen.ScreenSpacetimeAccelerator;
-import matteroverdrive.client.screen.ScreenTransporter;
+import matteroverdrive.client.screen.*;
 import matteroverdrive.common.recipe.RecipeInit;
 import matteroverdrive.compatibility.jei.categories.item2item.specificmachines.RecipeCategoryInscriber;
 import matteroverdrive.compatibility.jei.categories.pseudo.RecipeCategoryMatterDecomposer;
@@ -108,7 +96,7 @@ public class MatterOverdriveJEIPlugin implements IModPlugin {
 		registry.addGuiContainerHandler(ScreenMatterReplicator.class, new ScreenHandlerMatterReplicator());
 		registry.addGuiContainerHandler(ScreenMatterAnalyzer.class, new ScreenHandlerMatterAnalyzer());
 		registry.addGuiContainerHandler(ScreenDiscManipulator.class, new ScreenHandlerDiscManipulator());
-		
+
 		registry.addRecipeClickArea(ScreenInscriber.class, 33, 48, 22, 15, RecipeCategoryInscriber.RECIPE_TYPE);
 		registry.addRecipeClickArea(ScreenMicrowave.class, 33, 48, 22, 15, RecipeCategoryMicrowave.RECIPE_TYPE);
 		registry.addRecipeClickArea(ScreenMatterRecycler.class, 33, 48, 22, 15, RecipeCategoryMatterRecycler.RECIPE_TYPE);

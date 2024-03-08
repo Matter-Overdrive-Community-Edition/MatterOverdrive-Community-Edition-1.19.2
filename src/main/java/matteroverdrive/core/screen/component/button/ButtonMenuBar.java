@@ -39,7 +39,13 @@ public class ButtonMenuBar extends AbstractOverdriveButton {
 		if (isExtended) {
 			this.x += EXTEND_DISTANCE;
 		}
-		this.height = height; 
+		this.height = height;
+	}
+
+	public ButtonMenuBar(GenericScreen<?> gui, int x, int y, int height) {
+		super(gui, x, y, 16, 143, NO_TEXT);
+
+		this.height = height;
 	}
 
 	@Override
@@ -47,14 +53,14 @@ public class ButtonMenuBar extends AbstractOverdriveButton {
 		RenderSystem.setShader(GameRenderer::getPositionShader);
 		UtilsRendering.setShaderColor(Colors.WHITE.getColor());
 		UtilsRendering.bindTexture(ButtonTextures.MENU_BAR.getTexture());
-		
-		renderButton(stack);
-		
-		if (isExtended) {
-			renderBar(stack);
-		}
+
+//		renderButton(stack);
+//
+//		if (isExtended) {
+//			renderBar(stack);
+//		}
 	}
-	
+
 	private void renderButton(PoseStack stack) {
 		
 		int tcWidth = 16;
