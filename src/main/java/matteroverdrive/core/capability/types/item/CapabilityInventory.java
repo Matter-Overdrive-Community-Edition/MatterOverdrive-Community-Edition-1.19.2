@@ -329,6 +329,9 @@ public class CapabilityInventory extends ItemStackHandler implements IOverdriveC
 		hasInput = nbt.getBoolean("hasInput");
 		hasOutput = nbt.getBoolean("hasOutput");
 		int[] vals = nbt.getIntArray("sizes");
+		if(vals.length < 1) {
+			return;
+		}
 		inputs = vals[0];
 		outputs = vals[1];
 		byproducts = vals[2];
