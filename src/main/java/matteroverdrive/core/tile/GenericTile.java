@@ -91,7 +91,7 @@ public abstract class GenericTile extends BlockEntity implements Nameable, IProp
 	@Override
 	public void onLoad() {
 		super.onLoad();
-		if (FMLEnvironment.dist == Dist.DEDICATED_SERVER) {
+		if (!level.isClientSide()) {
 			for (IOverdriveCapability cap : capabilities.values()) {
 				cap.onLoad(this);
 			}
@@ -132,7 +132,7 @@ public abstract class GenericTile extends BlockEntity implements Nameable, IProp
 
 	@Override
 	public CompoundTag getUpdateTag() {
-		if (FMLEnvironment.dist == Dist.DEDICATED_SERVER) {
+		if (!level.isClientSide()) {
 			// call me a butcher, because I'm hacking this game
 			this.propertyManager.sendBlockEntityChanges(this.getBlockPos());
 		}
@@ -148,9 +148,8 @@ public abstract class GenericTile extends BlockEntity implements Nameable, IProp
 	@Override
 	public void setChanged() {
 		super.setChanged();
-		if (FMLEnvironment.dist == Dist.DEDICATED_SERVER) {
+		if (this.level != null) {
 			this.propertyManager.sendBlockEntityChanges(this.getBlockPos());
-		
 		}
 	}
 
@@ -220,7 +219,7 @@ public abstract class GenericTile extends BlockEntity implements Nameable, IProp
 	}
 
 	public void onBlockStateChange(BlockState oldState, BlockState newState, boolean moving) {
-		if (FMLEnvironment.dist == Dist.CLIENT) {
+		if (level.isClientSide()) {
 			return;
 		}
 		if (newState.hasProperty(GenericEntityBlock.FACING)
