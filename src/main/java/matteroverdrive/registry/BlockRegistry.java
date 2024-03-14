@@ -223,7 +223,8 @@ public class BlockRegistry {
 			TypeMatterNetworkCable.values());
 
 	public static final RegistryObject<Block> BLOCK_CHUNKLOADER = registerBlock(TypeMachine.CHUNKLOADER.id(),
-			() -> new BlockMachine<>(TileChunkloader::new, TypeMachine.CHUNKLOADER, TileRegistry.TILE_CHUNKLOADER),
+			() -> new BlockMachine<>(TileChunkloader::new, TypeMachine.CHUNKLOADER, 
+					TileRegistry.TILE_CHUNKLOADER),
 			true);
 
 	public static final RegistryObject<Block> BLOCK_MATTER_ANALYZER = registerBlock(TypeMachine.MATTER_ANALYZER.id(),
@@ -241,12 +242,12 @@ public class BlockRegistry {
 					TileRegistry.TILE_PATTERN_MONITOR),
 			true);
 
-	public static final RegistryObject<Block> BLOCK_MATTER_REPLICATOR = registerBlock(
-			TypeMachine.MATTER_REPLICATOR.id(), () -> new BlockMachine<>(TileMatterReplicator::new,
-					TypeMachine.MATTER_REPLICATOR, TileRegistry.TILE_MATTER_REPLICATOR),
+	public static final RegistryObject<Block> BLOCK_MATTER_REPLICATOR = registerBlock(TypeMachine.MATTER_REPLICATOR.id(),
+			() -> new BlockMachine<>(TileMatterReplicator::new,	TypeMachine.MATTER_REPLICATOR,
+					TileRegistry.TILE_MATTER_REPLICATOR),
 			true);
 
-	public static final RegistryObject<Block> BLOCK_ANDROID_STATION = registerBlock("android_station",
+	public static final RegistryObject<Block> BLOCK_ANDROID_STATION = registerBlock(TypeMachine.ANDROID_STATION.id(),
 			() -> new BlockMachine<>(TileAndroidStation::new, TypeMachine.ANDROID_STATION,
 					TileRegistry.TILE_ANDROID_STATION),
 			true);
