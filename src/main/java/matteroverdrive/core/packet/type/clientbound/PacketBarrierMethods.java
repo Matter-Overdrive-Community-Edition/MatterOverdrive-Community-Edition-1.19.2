@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
+import matteroverdrive.common.tile.TileHoloSign;
 import org.apache.commons.lang3.tuple.Triple;
 
 import matteroverdrive.MatterOverdrive;

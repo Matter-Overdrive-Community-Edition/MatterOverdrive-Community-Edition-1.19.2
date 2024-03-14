@@ -9,20 +9,13 @@ import matteroverdrive.core.packet.type.AbstractOverdrivePacket;
 import matteroverdrive.core.packet.type.clientbound.android.PacketAndroidEnergySync;
 import matteroverdrive.core.packet.type.clientbound.android.PacketAndroidSyncAll;
 import matteroverdrive.core.packet.type.clientbound.android.PacketAndroidTurningTimeSync;
-import matteroverdrive.core.packet.type.clientbound.misc.PacketClientMNData;
-import matteroverdrive.core.packet.type.clientbound.misc.PacketClientMatterValues;
-import matteroverdrive.core.packet.type.clientbound.misc.PacketClientUpdateMNScreen;
-import matteroverdrive.core.packet.type.clientbound.misc.PacketPlayMatterScannerSound;
-import matteroverdrive.core.packet.type.clientbound.misc.PacketSyncClientEntityCapability;
+import matteroverdrive.core.packet.type.clientbound.misc.*;
 import matteroverdrive.core.packet.type.clientbound.property.PacketUpdateClientContainerProperty;
 import matteroverdrive.core.packet.type.clientbound.property.PacketUpdateClientEntityProperty;
 import matteroverdrive.core.packet.type.clientbound.property.PacketUpdateClientTileProperty;
 import matteroverdrive.core.packet.type.serverbound.android.PacketAndroidPerkAttemptBuy;
 import matteroverdrive.core.packet.type.serverbound.android.PacketAndroidPerkToggle;
-import matteroverdrive.core.packet.type.serverbound.misc.PacketCancelReplication;
-import matteroverdrive.core.packet.type.serverbound.misc.PacketQueueReplication;
-import matteroverdrive.core.packet.type.serverbound.misc.PacketToggleMatterScanner;
-import matteroverdrive.core.packet.type.serverbound.misc.PacketUpdateCapabilitySides;
+import matteroverdrive.core.packet.type.serverbound.misc.*;
 import matteroverdrive.core.packet.type.serverbound.property.PacketUpdateServerContainerProperty;
 import matteroverdrive.core.packet.type.serverbound.property.PacketUpdateServerEntityProperty;
 import matteroverdrive.core.packet.type.serverbound.property.PacketUpdateServerTileProperty;
@@ -82,6 +75,9 @@ public class NetworkHandler {
 		serverMessage(PacketAndroidPerkToggle.class, PacketAndroidPerkToggle::encode,
 				PacketAndroidPerkToggle::decode, PacketAndroidPerkToggle::handle);
 
+//		serverMessage(PacketUpdateServerHoloSign.class, PacketUpdateServerHoloSign::encode,
+//				PacketUpdateServerHoloSign::decode, PacketUpdateServerHoloSign::handle);
+
 		/* CLIENT-BOUND */
 
 		clientMessage(PacketClientMatterValues.class, PacketClientMatterValues::encode,
@@ -116,6 +112,9 @@ public class NetworkHandler {
 
 		clientMessage(PacketClientUpdateMNScreen.class, PacketClientUpdateMNScreen::encode,
 			PacketClientUpdateMNScreen::decode,	PacketClientUpdateMNScreen::handle);
+
+		clientMessage(PacketUpdateClientHoloSign.class, PacketUpdateClientHoloSign::encode,
+			PacketUpdateClientHoloSign::decode, PacketUpdateClientHoloSign::handle);
 	}
 	
 	public static void sendToClientPlayer(ServerPlayer player, AbstractOverdrivePacket<?> packet) {

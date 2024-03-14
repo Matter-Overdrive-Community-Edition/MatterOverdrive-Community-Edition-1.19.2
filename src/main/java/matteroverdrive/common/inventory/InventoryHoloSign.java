@@ -5,10 +5,7 @@ import matteroverdrive.core.capability.types.item.CapabilityInventory;
 import matteroverdrive.core.capability.types.item.PlayerSlotDataWrapper;
 import matteroverdrive.core.inventory.GenericInventoryTile;
 import matteroverdrive.core.screen.component.ScreenComponentSlot.SlotType;
-import matteroverdrive.core.tile.GenericTile;
 import matteroverdrive.registry.MenuRegistry;
-import matteroverdrive.registry.SoundRegistry;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ContainerData;
@@ -55,5 +52,4 @@ public class InventoryHoloSign extends GenericInventoryTile<TileHoloSign> {
 			new int[] { 0, 1, 2 }, new int[] { 0, 1, 2 }
 		);
 	}
-
 }
