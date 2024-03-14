@@ -1,19 +1,15 @@
 package matteroverdrive.client.screen;
 
 import com.mojang.blaze3d.platform.InputConstants;
-import com.mojang.blaze3d.vertex.PoseStack;
 import matteroverdrive.client.ClientReferences;
 import matteroverdrive.common.inventory.InventoryHoloSign;
 import matteroverdrive.common.tile.TileHoloSign;
 import matteroverdrive.core.screen.component.button.ButtonGeneric;
 import matteroverdrive.core.screen.component.edit_box.EditBoxOverdrive;
 import matteroverdrive.core.screen.types.GenericOverdriveScreen;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.components.events.GuiEventListener;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
-import org.jetbrains.annotations.Nullable;
 
 public class ScreenHoloSign extends GenericOverdriveScreen<InventoryHoloSign> {
 	private EditBoxOverdrive textArea;
