@@ -125,7 +125,6 @@ public abstract class GenericTile extends BlockEntity implements Nameable, IProp
 		for (IOverdriveCapability cap : capabilities.values()) {
 			cap.deserializeNBT(tag.getCompound(cap.getSaveKey()));
 		}
-
 	}
 
 	@Override

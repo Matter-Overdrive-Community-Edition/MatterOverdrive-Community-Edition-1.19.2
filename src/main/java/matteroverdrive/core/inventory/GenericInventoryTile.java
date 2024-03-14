@@ -4,6 +4,7 @@ import javax.annotation.Nullable;
 
 import matteroverdrive.core.capability.types.item.CapabilityInventory;
 import matteroverdrive.core.tile.GenericTile;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.ContainerData;

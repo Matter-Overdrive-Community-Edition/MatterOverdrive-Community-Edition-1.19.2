@@ -62,6 +62,12 @@ public class RendererHoloSign extends AbstractTileRenderer<TileHoloSign> {
 	@Override
 	public void render(TileHoloSign tile, float ticks, PoseStack matrix, MultiBufferSource buffer, int light,
 										 int overlay) {
+		if (!tile.shouldRender()) {
+			return;
+		}
+
+		String text = tile.getText().getString("text");
+
 		if (tile.getLevel() != null && !tile.getLevel().isClientSide()) {
 			return;
 		}
@@ -71,8 +77,6 @@ public class RendererHoloSign extends AbstractTileRenderer<TileHoloSign> {
 		Font font = Minecraft.getInstance().font;
 
 		Direction facing = tile.getBlockState().getValue(GenericEntityBlock.FACING);
-
-		String text = "A";
 
 		BlockState state = tile.getBlockState();
 

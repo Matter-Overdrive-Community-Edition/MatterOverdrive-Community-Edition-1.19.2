@@ -51,6 +51,9 @@ public class PropertyTypes {
 	public static PropertyType<ItemStack> ITEM_STACK = addType("itemstack", ItemStack.class, FriendlyByteBuf::readItem,
 			FriendlyByteBuf::writeItem, ItemStack::matches);
 
+	public static PropertyType<String> STRING = addType("string", String.class, FriendlyByteBuf::readUtf,
+			FriendlyByteBuf::writeUtf, String::equals);
+
 	/**
 	 * Add type method.
 	 *

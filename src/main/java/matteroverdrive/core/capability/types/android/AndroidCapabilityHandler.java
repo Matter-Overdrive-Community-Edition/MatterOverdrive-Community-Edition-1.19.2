@@ -82,5 +82,7 @@ public class AndroidCapabilityHandler {
     if (event.getEntity() instanceof ServerPlayer serverPlayer)
       AndroidEnergy.syncEnergy(serverPlayer);
   }
+  
+  
 
 }
