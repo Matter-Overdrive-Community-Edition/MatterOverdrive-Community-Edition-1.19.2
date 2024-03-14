@@ -43,13 +43,6 @@ public class ScreenHoloSign extends GenericOverdriveScreen<InventoryHoloSign> {
 	}
 
 	@Override
-	public void render(PoseStack matrixStack, int mouseX, int mouseY, float partialTicks) {
-		super.render(matrixStack, mouseX, mouseY, partialTicks);
-
-		textArea.setValue(getMenu().getTile().getText().getString("text"));
-	}
-
-	@Override
 	public boolean keyPressed(int pKeyCode, int pScanCode, int pModifiers) {
 		InputConstants.Key mouseKey = InputConstants.getKey(pKeyCode, pScanCode);
 
