@@ -71,9 +71,9 @@ public class TileRegistry {
 	public static final RegistryObject<BlockEntityType<TilePatternMonitor>> TILE_PATTERN_MONITOR = TILES
 			.register(TypeMachine.PATTERN_MONITOR.id(), () -> new BlockEntityType<>(TilePatternMonitor::new,
 					Sets.newHashSet(BlockRegistry.BLOCK_PATTERN_MONITOR.get()), null));
-	public static final RegistryObject<BlockEntityType<TileHoloSign>> TILE_HOLO_SIGN = TILES.register(
-			TypeMachine.HOLO_SIGN.id(),
-			() -> new BlockEntityType<>(TileHoloSign::new, Sets.newHashSet(BlockRegistry.BLOCK_HOLO_SIGN.get()), null));
+	public static final RegistryObject<BlockEntityType<TileHoloSign>> TILE_HOLO_SIGN = TILES
+			.register(TypeMachine.HOLO_SIGN.id(), () -> new BlockEntityType<>(TileHoloSign::new, 
+					Sets.newHashSet(BlockRegistry.BLOCK_HOLO_SIGN.get()), null));
 	public static final RegistryObject<BlockEntityType<TileMatterReplicator>> TILE_MATTER_REPLICATOR = TILES
 			.register(TypeMachine.MATTER_REPLICATOR.id(), () -> new BlockEntityType<>(TileMatterReplicator::new,
 					Sets.newHashSet(BlockRegistry.BLOCK_MATTER_REPLICATOR.get()), null));
