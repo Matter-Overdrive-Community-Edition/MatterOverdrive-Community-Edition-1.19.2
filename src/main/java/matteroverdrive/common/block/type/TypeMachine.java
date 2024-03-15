@@ -31,6 +31,8 @@ public enum TypeMachine {
 	INSCRIBER(Shapes.box(0.015625D, 0.0D, 0.015625D, 0.984375D, 0.96875D, 0.984375D),
 			OverdriveBlockProperties.from(GenericMachineBlock.DEFAULT_MACHINE_PROPERTIES).redstoneConnectivity()
 					.setHasFacing(false)),
+	NETWORK_SWITCH(OverdriveBlockProperties.from(GenericMachineBlock.DEFAULT_MACHINE_PROPERTIES).redstoneConnectivity()
+			.setAlwaysLit().setHasFacing(false)),
 	TRANSPORTER(OverdriveBlockProperties.from(GenericMachineBlock.DEFAULT_MACHINE_PROPERTIES).redstoneConnectivity()
 			.setAlwaysLit().setHasFacing(false)),
 	SPACETIME_ACCELERATOR(Block.box(4.0D, 0.0D, 4.0D, 12.0D, 16.0D, 12.0D),
