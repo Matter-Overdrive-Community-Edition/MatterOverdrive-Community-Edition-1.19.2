@@ -253,9 +253,9 @@ public class BlockRegistry {
 			true);
 
 	public static final RegistryObject<Block> BLOCK_HOLO_SIGN = registerBlock(TypeMachine.HOLO_SIGN.id(),
-			() -> new BlockHoloSign(OverdriveBlockProperties.from(Properties.of(Material.STONE).requiresCorrectToolForDrops()
-							.strength(1F, 100F).noOcclusion())
-							.setHasFacing(false)),true);
+			() -> new BlockMachine<>(TileHoloSign::new, TypeMachine.HOLO_SIGN,
+					TileRegistry.TILE_HOLO_SIGN),
+			true);
 
 	// For crafting only now.
 	public static final RegistryObject<Block> BLOCK_NETWORK_SWITCH = registerBlock("network_switch",
