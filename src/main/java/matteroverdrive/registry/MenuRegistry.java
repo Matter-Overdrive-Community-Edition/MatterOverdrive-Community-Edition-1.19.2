@@ -1,7 +1,6 @@
 package matteroverdrive.registry;
 
 import matteroverdrive.References;
-import matteroverdrive.common.block.BlockHoloSign;
 import matteroverdrive.common.block.type.TypeMachine;
 import matteroverdrive.common.inventory.*;
 import net.minecraft.world.inventory.MenuType;
@@ -17,7 +16,7 @@ public class MenuRegistry {
 	public static final RegistryObject<MenuType<InventoryTritaniumCrate>> MENU_TRITANIUM_CRATE = MENUS
 			.register("tritanium_crate", () -> new MenuType<>(InventoryTritaniumCrate::new));
 	public static final RegistryObject<MenuType<InventoryHoloSign>> MENU_HOLO_SIGN = MENUS
-			.register("holo_sign", () -> new MenuType<>(InventoryHoloSign::new));
+			.register(TypeMachine.HOLO_SIGN.id(), () -> new MenuType<>(InventoryHoloSign::new));
 	public static final RegistryObject<MenuType<InventorySolarPanel>> MENU_SOLAR_PANEL = MENUS
 			.register(TypeMachine.SOLAR_PANEL.id(), () -> new MenuType<>(InventorySolarPanel::new));
 	public static final RegistryObject<MenuType<InventoryMatterDecomposer>> MENU_MATTER_DECOMPOSER = MENUS
