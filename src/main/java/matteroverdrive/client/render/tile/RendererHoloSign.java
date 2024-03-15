@@ -66,7 +66,7 @@ public class RendererHoloSign extends AbstractTileRenderer<TileHoloSign> {
 			return;
 		}
 
-		String text = tile.getText().getString("text");
+		String text = tile.holoSignTextProp.get().toString();
 
 		if (tile.getLevel() != null && !tile.getLevel().isClientSide()) {
 			return;
