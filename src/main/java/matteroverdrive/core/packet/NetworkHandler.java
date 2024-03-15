@@ -75,9 +75,6 @@ public class NetworkHandler {
 		serverMessage(PacketAndroidPerkToggle.class, PacketAndroidPerkToggle::encode,
 				PacketAndroidPerkToggle::decode, PacketAndroidPerkToggle::handle);
 
-//		serverMessage(PacketUpdateServerHoloSign.class, PacketUpdateServerHoloSign::encode,
-//				PacketUpdateServerHoloSign::decode, PacketUpdateServerHoloSign::handle);
-
 		/* CLIENT-BOUND */
 
 		clientMessage(PacketClientMatterValues.class, PacketClientMatterValues::encode,
@@ -113,8 +110,6 @@ public class NetworkHandler {
 		clientMessage(PacketClientUpdateMNScreen.class, PacketClientUpdateMNScreen::encode,
 			PacketClientUpdateMNScreen::decode,	PacketClientUpdateMNScreen::handle);
 
-		clientMessage(PacketUpdateClientHoloSign.class, PacketUpdateClientHoloSign::encode,
-			PacketUpdateClientHoloSign::decode, PacketUpdateClientHoloSign::handle);
 	}
 	
 	public static void sendToClientPlayer(ServerPlayer player, AbstractOverdrivePacket<?> packet) {
