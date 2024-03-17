@@ -18,27 +18,10 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RendererHoloSign extends AbstractTileRenderer<TileHoloSign> {
-	// Line 1 and line 2.
-	Vec3[] TEXT_COORDS = new Vec3[] {
-		// One block.
-		new Vec3(-49.0f, -20.5f, 30.0f),
-		new Vec3(-4.0f, -10.0f, 6.5f),
-		new Vec3(-4.0f, -10.0f, 6.5f),
-		new Vec3(-4.0f, -10.0f, 6.5f),
-	};
-
-	// Offset for line 2.
-	// North, South, East, West.
-	Vec3[] OFFSET = new Vec3[] {
-		new Vec3(-11.5f, 10.0f, 0.0f),
-		new Vec3(-11.5f, 10.0f, 0.0f),
-		new Vec3(-11.5f, 10.0f, 0.0f),
-		new Vec3(-11.5f, 10.0f, 0.0f)
-	};
-
 	public RendererHoloSign(BlockEntityRendererProvider.Context context) {
 		super(context);
 	}
@@ -62,37 +45,48 @@ public class RendererHoloSign extends AbstractTileRenderer<TileHoloSign> {
 	@Override
 	public void render(TileHoloSign tile, float ticks, PoseStack matrix, MultiBufferSource buffer, int light,
 										 int overlay) {
+		// These should be final offsets and coordinates.
+
+		// First line.
+		// North, South, East, West.
+		final Vec3[] TEXT_COORDS = new Vec3[] {
+			new Vec3(-60.0f, -69.0f, 27.0f),  // North
+			new Vec3(10.0f, -69.0f, 25.0f),   // South
+			new Vec3(-23.0f, -69.0f, 61.0f),  // East
+			new Vec3(-27.0f, -69.0f, -10.0f), // West
+		};
+
+		final Vec3[] OFFSETS = new Vec3[] {
+			new Vec3(0.0f, 20.0f, 0.0f),
+			new Vec3(0.0f, 15.0f, 0.0f),
+			new Vec3(0.0f, 10.0f, 0.0f),
+			new Vec3(0.0f, 5.0f, 0.0f),
+			new Vec3(0.0f, 0.0f, 0.0f),
+		};
+
 		if (!tile.shouldRender()) {
 			return;
 		}
 
-		String text = tile.holoSignTextProp.get().toString();
-
 		if (tile.getLevel() != null && !tile.getLevel().isClientSide()) {
 			return;
 		}
+
+		String text = tile.holoSignTextProp.getOrElse("");
+
+		// Not sure why this happens, but every second time, the text comes through as blank.
+		if (text.isEmpty()) {
+			return;
+		}
+
+//		System.out.println("Rendering at location: " + TEXT_COORDS[0]);
+//		System.out.println("Rendering text: " + text);
 
 		matrix.pushPose();
 
 		Font font = Minecraft.getInstance().font;
 
 		Direction facing = tile.getBlockState().getValue(GenericEntityBlock.FACING);
-
-		BlockState state = tile.getBlockState();
-
-		VoxelShape shape = state.getCollisionShape(tile.getLevel(), tile.getBlockPos());
-
-//		System.out.println("MinX: " + shape.bounds().minX);
-//		System.out.println("MaxX: " + shape.bounds().maxX);
-//		System.out.println("MinY: " + shape.bounds().minY);
-//		System.out.println("MaxY: " + shape.bounds().maxY);
-//		System.out.println("MinZ: " + shape.bounds().minZ);
-//		System.out.println("MaxZ: " + shape.bounds().maxZ);
-
-		final Map<Float, float[]> fontToLocation = Map.of(
-			0.01f, new float[]{ -95.0f, -95.0f, 55f },
-			0.02f, new float[]{ -47.0f, -48.0f, 30f }
-		);
 
 		final float startScale = 0.02f;
 
@@ -102,31 +96,55 @@ public class RendererHoloSign extends AbstractTileRenderer<TileHoloSign> {
 
 		switch (facing) {
 			case NORTH:
-				matrix.translate(
-					fontToLocation.get(startScale)[0],
-					fontToLocation.get(startScale)[1],
-					fontToLocation.get(startScale)[2]
-				);
-				break;
+				matrix.translate(TEXT_COORDS[0].x, TEXT_COORDS[0].y, TEXT_COORDS[0].z);
+			break;
 			case SOUTH:
 				matrix.translate(TEXT_COORDS[1].x, TEXT_COORDS[1].y, TEXT_COORDS[1].z);
 
 				matrix.mulPose(Vector3f.YP.rotationDegrees(180));
-				break;
+			break;
 			case EAST:
 				matrix.translate(TEXT_COORDS[2].x, TEXT_COORDS[2].y, TEXT_COORDS[2].z);
 
 				matrix.mulPose(Vector3f.YP.rotationDegrees(90));
-				break;
+			break;
 			case WEST:
 				matrix.translate(TEXT_COORDS[3].x, TEXT_COORDS[3].y, TEXT_COORDS[3].z);
 
 				matrix.mulPose(Vector3f.YP.rotationDegrees(270));
-				break;
+			break;
 		}
 
-		font.draw(matrix, Component.literal(text), 0f, 0f,
-			ClientReferences.Colors.HOLO.getColor());
+		// Limit to 5 lines, or 60 characters (12 chars per line).
+		text = text.substring(0, Math.min(60, text.length()));
+
+		List<String> lines = new ArrayList<>();
+
+		int index = 0;
+
+		while (!text.isEmpty()) {
+			while (font.width(text.substring(0, index)) < 72 && index < text.length()) {
+				index++;
+			}
+
+			lines.add(text.substring(0, index));
+
+			text = text.substring(index);
+
+			index = 0;
+		}
+
+		int offsetIndex = lines.size() - 1;
+
+//		System.out.println("Offsets: " + OFFSETS[offsetIndex].y);
+
+		matrix.translate(0.0f, OFFSETS[offsetIndex].y, 0.0f);
+
+		for (String line: lines) {
+			font.draw(matrix, Component.literal(line), 0f, 0f, ClientReferences.Colors.HOLO.getColor());
+
+			matrix.translate(0.0f, 10.0f, 0.0f);
+		}
 
 		matrix.popPose();
 	}
