@@ -40,21 +40,11 @@ public class TileHoloSign extends GenericMachineTile {
 		setTickable();
 	}
 
-	private CompoundTag createStringTag(String text) {
-		CompoundTag tag = new CompoundTag();
-
-		tag.putString("text", text == null ? "" : text);
-
-		return tag;
-	}
-
 	@Override
 	public void saveAdditional(CompoundTag tag) {
 		super.saveAdditional(tag);
 
 		tag.putString("text", this.holoSignTextProp.getOrElse(""));
-
-		setChanged();
 	}
 
 	@Override
@@ -63,7 +53,7 @@ public class TileHoloSign extends GenericMachineTile {
 
 		this.holoText = tag.getString("text");
 	}
-	
+
 	@Override
 	public void onInventoryChange(int slot, CapabilityInventory inv) {
 		setChanged();
@@ -82,7 +72,15 @@ public class TileHoloSign extends GenericMachineTile {
 		return this.saveWithFullMetadata();
 	}
 
+	// Server side ONLY.
 	public void setText(String tag) {
 		holoSignTextProp.set(tag);
+
+		setChanged();
+	}
+
+	// Client side ONLY.
+	public void setClientText(String msg) {
+		holoSignTextProp.set(msg);
 	}
 }

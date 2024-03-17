@@ -55,9 +55,6 @@ public class ItemNetworkFlashDrive extends OverdriveItem {
 //			if (blockEntity instanceof IMatterNetworkMember) {
 				CompoundTag tag = stack.getOrCreateTag();
 
-				System.out.println("Position is: " + pos);
-				System.out.println("Dimension is: " + world.dimension());
-
 				tag.remove(UtilsNbt.BLOCK_POS);
 				tag.remove(UtilsNbt.DIMENSION);
 				tag.put(UtilsNbt.BLOCK_POS, NbtUtils.writeBlockPos(pos));

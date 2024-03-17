@@ -223,8 +223,6 @@ public class RendererPatternMonitor extends AbstractTileRenderer<TilePatternMoni
 
 			instance.font.draw(matrix, orderString, 0f, 0f, Colors.HOLO.getColor());
 
-	//		System.out.println("At the end of the font draw " + tile);
-
 			matrix.popPose();
 		}
 	}

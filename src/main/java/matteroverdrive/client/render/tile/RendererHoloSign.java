@@ -22,6 +22,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RendererHoloSign extends AbstractTileRenderer<TileHoloSign> {
+	boolean showOnce = false;
+
 	public RendererHoloSign(BlockEntityRendererProvider.Context context) {
 		super(context);
 	}
@@ -43,30 +45,24 @@ public class RendererHoloSign extends AbstractTileRenderer<TileHoloSign> {
 	}
 
 	@Override
-	public void render(TileHoloSign tile, float ticks, PoseStack matrix, MultiBufferSource buffer, int light,
-										 int overlay) {
+	public void render(TileHoloSign tile, float ticks, PoseStack matrix,
+					   MultiBufferSource buffer, int light, int overlay) {
 		// These should be final offsets and coordinates.
 
 		// First line.
 		// North, South, East, West.
 		final Vec3[] TEXT_COORDS = new Vec3[] {
-			new Vec3(-60.0f, -69.0f, 27.0f),  // North
-			new Vec3(10.0f, -69.0f, 25.0f),   // South
-			new Vec3(-23.0f, -69.0f, 61.0f),  // East
-			new Vec3(-27.0f, -69.0f, -10.0f), // West
-		};
-
-		final Vec3[] OFFSETS = new Vec3[] {
-			new Vec3(0.0f, 20.0f, 0.0f),
-			new Vec3(0.0f, 15.0f, 0.0f),
-			new Vec3(0.0f, 10.0f, 0.0f),
-			new Vec3(0.0f, 5.0f, 0.0f),
-			new Vec3(0.0f, 0.0f, 0.0f),
+			new Vec3(-60.0f, -50.0f, 25.0f),  // North
+			new Vec3(10.0f, -50.0f, 25.0f),   // South
+			new Vec3(-23.0f, -50.0f, 61.0f),  // East
+			new Vec3(-23.0f, -50.0f, -10.0f), // West
 		};
 
 		if (!tile.shouldRender()) {
 			return;
 		}
+
+//		System.out.println("Client Side? " + tile.getLevel().isClientSide());
 
 		if (tile.getLevel() != null && !tile.getLevel().isClientSide()) {
 			return;
@@ -74,13 +70,12 @@ public class RendererHoloSign extends AbstractTileRenderer<TileHoloSign> {
 
 		String text = tile.holoSignTextProp.getOrElse("");
 
+//		System.out.println("Text is: " + text);
+
 		// Not sure why this happens, but every second time, the text comes through as blank.
 		if (text.isEmpty()) {
 			return;
 		}
-
-//		System.out.println("Rendering at location: " + TEXT_COORDS[0]);
-//		System.out.println("Rendering text: " + text);
 
 		matrix.pushPose();
 
@@ -136,9 +131,24 @@ public class RendererHoloSign extends AbstractTileRenderer<TileHoloSign> {
 
 		int offsetIndex = lines.size() - 1;
 
-//		System.out.println("Offsets: " + OFFSETS[offsetIndex].y);
+//		BlockPos pos = tile.getBlockPos();
 
-		matrix.translate(0.0f, OFFSETS[offsetIndex].y, 0.0f);
+//		if (pos.getX() == -5 && pos.getY() == -31 && pos.getZ() == 9) {
+//			System.out.println("Position: " + pos + ", text: " + lines.size());
+//		}
+
+		List<Float> yOffsets = List.of(20.0f, 15.0f, 10.0f, 5.0f, 0.0f);
+
+		if (!showOnce) {
+			System.out.println("Lines are: " + lines);
+
+			System.out.println("Offset Index: " + offsetIndex);
+			System.out.println("Offset to use: " + yOffsets.get(offsetIndex));
+
+			showOnce = true;
+		}
+
+		matrix.translate(0.0f, yOffsets.get(offsetIndex), 0.0f);
 
 		for (String line: lines) {
 			font.draw(matrix, Component.literal(line), 0f, 0f, ClientReferences.Colors.HOLO.getColor());

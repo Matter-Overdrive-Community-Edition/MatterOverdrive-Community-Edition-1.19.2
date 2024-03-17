@@ -16,6 +16,7 @@ import matteroverdrive.core.packet.type.clientbound.property.PacketUpdateClientT
 import matteroverdrive.core.packet.type.serverbound.android.PacketAndroidPerkAttemptBuy;
 import matteroverdrive.core.packet.type.serverbound.android.PacketAndroidPerkToggle;
 import matteroverdrive.core.packet.type.serverbound.misc.*;
+import matteroverdrive.core.packet.type.serverbound.property.PacketUpdateHoloSignServerSide;
 import matteroverdrive.core.packet.type.serverbound.property.PacketUpdateServerContainerProperty;
 import matteroverdrive.core.packet.type.serverbound.property.PacketUpdateServerEntityProperty;
 import matteroverdrive.core.packet.type.serverbound.property.PacketUpdateServerTileProperty;
@@ -75,6 +76,9 @@ public class NetworkHandler {
 		serverMessage(PacketAndroidPerkToggle.class, PacketAndroidPerkToggle::encode,
 				PacketAndroidPerkToggle::decode, PacketAndroidPerkToggle::handle);
 
+		serverMessage(PacketUpdateHoloSignServerSide.class, PacketUpdateHoloSignServerSide::encode,
+				PacketUpdateHoloSignServerSide::decode, PacketUpdateHoloSignServerSide::handle);
+
 		/* CLIENT-BOUND */
 
 		clientMessage(PacketClientMatterValues.class, PacketClientMatterValues::encode,
@@ -110,6 +114,8 @@ public class NetworkHandler {
 		clientMessage(PacketClientUpdateMNScreen.class, PacketClientUpdateMNScreen::encode,
 			PacketClientUpdateMNScreen::decode,	PacketClientUpdateMNScreen::handle);
 
+		clientMessage(PacketUpdateHoloSignText.class, PacketUpdateHoloSignText::encode,
+			PacketUpdateHoloSignText::decode, PacketUpdateHoloSignText::handle);
 	}
 	
 	public static void sendToClientPlayer(ServerPlayer player, AbstractOverdrivePacket<?> packet) {

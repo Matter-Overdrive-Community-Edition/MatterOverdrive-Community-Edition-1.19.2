@@ -6,6 +6,8 @@ import matteroverdrive.client.ClientReferences;
 import matteroverdrive.client.ClientReferences.Colors;
 import matteroverdrive.common.inventory.InventoryHoloSign;
 import matteroverdrive.common.tile.TileHoloSign;
+import matteroverdrive.core.packet.NetworkHandler;
+import matteroverdrive.core.packet.type.serverbound.property.PacketUpdateHoloSignServerSide;
 import matteroverdrive.core.screen.component.ScreenComponentLabel;
 import matteroverdrive.core.screen.component.button.ButtonGeneric;
 import matteroverdrive.core.screen.component.button.ButtonMenuBar;
@@ -15,6 +17,7 @@ import matteroverdrive.core.screen.component.button.ButtonOverdrive;
 import matteroverdrive.core.screen.component.edit_box.EditBoxOverdrive;
 import matteroverdrive.core.screen.types.GenericMachineScreen;
 import matteroverdrive.core.utils.UtilsText;
+import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 
@@ -51,19 +54,24 @@ public class ScreenHoloSign extends GenericMachineScreen<InventoryHoloSign> {
 		alreadyOpened = false;
 
 		minecraft.keyboardHandler.setSendRepeatsToGui(true);
+
 		super.init();
+
 		close = getCloseButton(207, 6);
+
 		menu = new ButtonMenuBar(this, 212, 33, 143, EXTENDED, button -> {
 			toggleBarOpen();
 			home.visible = !home.visible;
 			settings.visible = !settings.visible;
 		});
+
 		home = new ButtonMenuOption(this, 217, FIRST_HEIGHT, button -> {
 			updateScreen(0);
 			settings.isActivated = false;
 			textArea.visible = true;
 			redstone.visible = false;
 			}, MenuButtonType.HOME, menu, true);
+
 		settings = new ButtonMenuOption(this, 217, FIRST_HEIGHT + BETWEEN_MENUS, button -> {
 			updateScreen(1);
 			home.isActivated = false;
@@ -80,6 +88,13 @@ public class ScreenHoloSign extends GenericMachineScreen<InventoryHoloSign> {
 		
 		redstone.visible = false;
 
+		// Initialize once on init.
+		String incoming = "";
+
+		if (getMenu().getTile() != null) {
+			incoming = getMenu().getTile().getText();
+		}
+
 		textArea = new EditBoxOverdrive(EditBoxOverdrive.EditBoxTextures.OVERDRIVE_EDIT_BOX, this, this.getXPos() + 45 , this.getYPos() + 30, 150, 135);
 		textArea.setTextColor(ClientReferences.Colors.WHITE.getColor());
 		textArea.setFocus(true);
@@ -88,7 +103,10 @@ public class ScreenHoloSign extends GenericMachineScreen<InventoryHoloSign> {
 		textArea.setTextColorUneditable(ClientReferences.Colors.WHITE.getColor());
 		textArea.setMaxLength(60);
 		textArea.setResponder(string -> textArea.setFocus(true));
+		textArea.setValue(Objects.requireNonNull(incoming));
+
 		addEditBox(textArea);
+
 		addScreenComponent(new ScreenComponentLabel(this, 110, 37, new int[] { 1 }, UtilsText.gui("redstone"),
 				Colors.HOLO.getColor()));
 	}
@@ -109,7 +127,11 @@ public class ScreenHoloSign extends GenericMachineScreen<InventoryHoloSign> {
 
 		TileHoloSign holoSign = getMenu().getTile();
 
-		holoSign.setText(textArea.getValue());
+		BlockPos pos = holoSign.getBlockPos();
+
+		NetworkHandler.sendToServer(new PacketUpdateHoloSignServerSide(
+			pos, textArea.getValue()
+		));
 	}
 
 	@Override
@@ -125,8 +147,8 @@ public class ScreenHoloSign extends GenericMachineScreen<InventoryHoloSign> {
 
 		String incoming = Objects.requireNonNull(getMenu().getTile()).getText();
 
-		if (!alreadyOpened) {
-			textArea.setValue(Objects.requireNonNull(incoming));
+		if (!alreadyOpened && textArea != null) {
+			textArea.setValue(incoming);
 
 			alreadyOpened = true;
 		}
