@@ -93,68 +93,74 @@ public class EditBoxOverdrive extends EditBox {
 
 	@Override
 	public void renderButton(PoseStack stack, int mouseX, int mouseY, float partialTick) {
-		if (this.isVisible()) {
-			Font font = gui.getFontRenderer();
+		if (!this.isVisible()) {
+			return;
+		}
 
-			RenderSystem.setShader(GameRenderer::getPositionTexShader);
-			RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-			UtilsRendering.bindTexture(texture.getTexture());
-			ButtonOverdrive.drawButton(stack, this.x, this.y, this.width, this.height);
+		Font font = gui.getFontRenderer();
 
-			int i2 = this.isEditable ? this.textColor : this.textColorUneditable;
-			int j = this.cursorPos - this.displayPos;
-			int k = this.highlightPos - this.displayPos;
-			String s = font.plainSubstrByWidth(this.value.substring(this.displayPos), this.getInnerWidth());
-			boolean flag = j >= 0 && j <= s.length();
-			boolean flag1 = this.isFocused() && this.frame / 6 % 2 == 0 && flag;
-			int l = this.x + 4;
-			int i1 = this.y + (this.height - 8) / 2;
-			int j1 = l;
-			if (k > s.length()) {
-				k = s.length();
+		RenderSystem.setShader(GameRenderer::getPositionTexShader);
+		RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
+		UtilsRendering.bindTexture(texture.getTexture());
+		ButtonOverdrive.drawButton(stack, this.x, this.y, this.width, this.height);
+
+//		System.out.println("CursorPos: " + this.cursorPos);
+//		System.out.println("DisplayPos: " + this.displayPos);
+
+		// CursorPos = character in string.
+		// DisplayPos = first charcter displayed.
+
+		int i2 = this.isEditable ? this.textColor : this.textColorUneditable;
+		int j = this.cursorPos - this.displayPos;
+		int k = this.highlightPos - this.displayPos;
+		String s = font.plainSubstrByWidth(this.value.substring(this.displayPos), this.getInnerWidth());
+		boolean flag = j >= 0 && j <= s.length();
+		boolean flag1 = this.isFocused() && this.frame / 6 % 2 == 0 && flag;
+		int l = this.x + 4;
+		int i1 = this.y + (this.height - 8) / 2;
+		int j1 = l;
+		if (k > s.length()) {
+			k = s.length();
+		}
+
+		if (!s.isEmpty()) {
+			String s1 = flag ? s.substring(0, j) : s;
+			j1 = font.drawShadow(stack, this.formatter.apply(s1, this.displayPos), (float) l, (float) i1, i2);
+		}
+
+		boolean flag2 = this.cursorPos < this.value.length() || this.value.length() >= this.getMaxLength();
+		int k1 = j1;
+		if (!flag) {
+			k1 = j > 0 ? l + this.width : l;
+		} else if (flag2) {
+			k1 = j1 - 1;
+			--j1;
+		}
+
+		if (!s.isEmpty() && flag && j < s.length()) {
+			font.drawShadow(stack, this.formatter.apply(s.substring(j), this.cursorPos), (float) j1, (float) i1,
+					i2);
+		}
+
+		if (!flag2 && this.suggestion != null) {
+			font.drawShadow(stack, this.suggestion, (float) (k1 - 1), (float) i1, -8355712);
+		}
+
+		if (flag1) {
+			if (flag2) {
+				GuiComponent.fill(stack, k1, i1 - 1, k1 + 1, i1 + 1 + 9, -3092272);
+			} else {
+				font.drawShadow(stack, "_", (float) k1, (float) i1, i2);
 			}
+		}
 
-			if (!s.isEmpty()) {
-				String s1 = flag ? s.substring(0, j) : s;
-				j1 = font.drawShadow(stack, this.formatter.apply(s1, this.displayPos), (float) l, (float) i1, i2);
-			}
-
-			boolean flag2 = this.cursorPos < this.value.length() || this.value.length() >= this.getMaxLength();
-			int k1 = j1;
-			if (!flag) {
-				k1 = j > 0 ? l + this.width : l;
-			} else if (flag2) {
-				k1 = j1 - 1;
-				--j1;
-			}
-
-			if (!s.isEmpty() && flag && j < s.length()) {
-				font.drawShadow(stack, this.formatter.apply(s.substring(j), this.cursorPos), (float) j1, (float) i1,
-						i2);
-			}
-
-			if (!flag2 && this.suggestion != null) {
-				font.drawShadow(stack, this.suggestion, (float) (k1 - 1), (float) i1, -8355712);
-			}
-
-			if (flag1) {
-				if (flag2) {
-					GuiComponent.fill(stack, k1, i1 - 1, k1 + 1, i1 + 1 + 9, -3092272);
-				} else {
-					font.drawShadow(stack, "_", (float) k1, (float) i1, i2);
-				}
-			}
-
-			if (k != j) {
-				int l1 = l + font.width(s.substring(0, k));
-				this.renderHighlight(k1, i1 - 1, l1 - 1, i1 + 1 + 9);
-			}
-
+		if (k != j) {
+			int l1 = l + font.width(s.substring(0, k));
+			this.renderHighlight(k1, i1 - 1, l1 - 1, i1 + 1 + 9);
 		}
 	}
 	
-public static enum EditBoxTextures implements ITexture {
-		
+	public static enum EditBoxTextures implements ITexture {
 		OVERDRIVE_EDIT_BOX(new ResourceLocation(References.ID, "textures/gui/button/edit_box.png"), 18, 18),
 		SEARCH_BAR(new ResourceLocation(References.ID, "textures/gui/guidebook/search_field.png"), 166, 14);
 		

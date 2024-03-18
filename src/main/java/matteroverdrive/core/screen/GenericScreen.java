@@ -12,6 +12,7 @@ import matteroverdrive.core.inventory.slot.SlotUpgrade;
 import matteroverdrive.core.screen.component.ScreenComponentSlot;
 import matteroverdrive.core.screen.component.ScreenComponentSlot.SlotType;
 import matteroverdrive.core.screen.component.edit_box.EditBoxOverdrive;
+import matteroverdrive.core.screen.component.edit_box.EditBoxOverdriveMultiline;
 import matteroverdrive.core.screen.component.utils.AbstractOverdriveButton;
 import matteroverdrive.core.screen.component.utils.ITexture;
 import matteroverdrive.core.screen.component.utils.OverdriveScreenComponent;
@@ -111,6 +112,10 @@ public abstract class GenericScreen<T extends GenericInventory> extends Abstract
 	}
 
 	public void addEditBox(EditBoxOverdrive box) {
+		addRenderableWidget(box);
+	}
+
+	public void addEditBox(EditBoxOverdriveMultiline box) {
 		addRenderableWidget(box);
 	}
 

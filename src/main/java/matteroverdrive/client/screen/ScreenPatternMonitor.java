@@ -106,7 +106,6 @@ public class ScreenPatternMonitor extends GenericOverdriveScreen<InventoryPatter
 		ordersSlider.setClickConsumer(ordersWrapper.getSliderClickedConsumer());
 		ordersSlider.setDragConsumer(ordersWrapper.getSliderDraggedConsumer());
 		addScreenComponent(ordersSlider);
-
 	}
 
 	private void toggleBarOpen() {

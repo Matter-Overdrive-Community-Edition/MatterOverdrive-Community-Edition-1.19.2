@@ -22,8 +22,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RendererHoloSign extends AbstractTileRenderer<TileHoloSign> {
-	boolean showOnce = false;
-
 	public RendererHoloSign(BlockEntityRendererProvider.Context context) {
 		super(context);
 	}
@@ -131,22 +129,7 @@ public class RendererHoloSign extends AbstractTileRenderer<TileHoloSign> {
 
 		int offsetIndex = lines.size() - 1;
 
-//		BlockPos pos = tile.getBlockPos();
-
-//		if (pos.getX() == -5 && pos.getY() == -31 && pos.getZ() == 9) {
-//			System.out.println("Position: " + pos + ", text: " + lines.size());
-//		}
-
 		List<Float> yOffsets = List.of(20.0f, 15.0f, 10.0f, 5.0f, 0.0f);
-
-		if (!showOnce) {
-			System.out.println("Lines are: " + lines);
-
-			System.out.println("Offset Index: " + offsetIndex);
-			System.out.println("Offset to use: " + yOffsets.get(offsetIndex));
-
-			showOnce = true;
-		}
 
 		matrix.translate(0.0f, yOffsets.get(offsetIndex), 0.0f);
 

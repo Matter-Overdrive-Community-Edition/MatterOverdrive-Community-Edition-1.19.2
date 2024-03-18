@@ -13,12 +13,20 @@ import net.minecraft.world.inventory.SimpleContainerData;
 
 public class InventoryHoloSign extends GenericInventoryTile<TileHoloSign> {
 
+//	public InventoryHoloSign(int id, Inventory playerinv) {
+//		this(id, playerinv, new CapabilityInventory(TileHoloSign.SIZE, false, false), new SimpleContainerData(3));
+//	}
+//
+//	public InventoryHoloSign(int id, Inventory playerinv, CapabilityInventory invcap, ContainerData coords) {
+//		super(MenuRegistry.MENU_HOLO_SIGN.get(), id, playerinv, invcap, coords);
+//	}
+
 	public InventoryHoloSign(int id, Inventory playerinv) {
-		this(id, playerinv, new CapabilityInventory(TileHoloSign.SIZE, false, false), new SimpleContainerData(3));
+		this(id, playerinv, new CapabilityInventory(0, false, false), new SimpleContainerData(3));
 	}
 
-	public InventoryHoloSign(int id, Inventory playerinv, CapabilityInventory invcap, ContainerData coords) {
-		super(MenuRegistry.MENU_HOLO_SIGN.get(), id, playerinv, invcap, coords);
+	public InventoryHoloSign(int id, Inventory playerinv, CapabilityInventory invcap, ContainerData tilecoords) {
+		super(MenuRegistry.MENU_HOLO_SIGN.get(), id, playerinv, invcap, tilecoords);
 	}
 
 	@Override
@@ -30,11 +38,11 @@ public class InventoryHoloSign extends GenericInventoryTile<TileHoloSign> {
 
 	@Override
 	public PlayerSlotDataWrapper getDataWrapper(Player player) {
-		return defaultOverdriveScreen(new int[] { 0, 1, 2, 3, 4 }, new int[] {});
+		return null;
 	}
 
 	@Override
 	public void addInvSlots(CapabilityInventory invcap, Inventory playerinv) {
-		
+		// unused
 	}
 }
