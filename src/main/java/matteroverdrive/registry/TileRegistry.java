@@ -1,7 +1,7 @@
 package matteroverdrive.registry;
 
+import com.google.common.collect.Sets;
 import matteroverdrive.common.tile.*;
-import org.apache.commons.compress.utils.Sets;
 
 import matteroverdrive.References;
 import matteroverdrive.common.block.type.TypeMachine;

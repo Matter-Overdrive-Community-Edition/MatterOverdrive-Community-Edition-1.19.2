@@ -14,6 +14,7 @@ import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -25,6 +26,33 @@ public class EditBoxOverdriveMultiline extends EditBox {
 		super(gui.getFontRenderer(), x, y, width, height, Component.empty());
 		this.gui = gui;
 		this.texture = texture;
+	}
+
+	private List<String> calculateLines(Font font, String input) {
+		// Calculate all the lines.
+		List<String> lines = new ArrayList<>();
+
+		lines.add("");
+
+		int lineNo = 0;
+
+		for (int index=0; index<input.length(); index++) {
+			String curLine = lines.get(lineNo);
+			char curChar = input.charAt(index);
+
+			if (font.width(curLine + curChar)
+					> getInnerWidth()) {
+				lineNo += 1;
+
+				lines.add("");
+
+				curLine = lines.get(lineNo);
+			}
+
+			lines.set(lineNo, curLine + curChar);
+		}
+
+		return lines;
 	}
 
 	@Override
@@ -40,80 +68,33 @@ public class EditBoxOverdriveMultiline extends EditBox {
 		UtilsRendering.bindTexture(texture.getTexture());
 		ButtonOverdrive.drawButton(stack, this.x, this.y, this.width, this.height);
 
-		List<String> lines = List.of(this.value.split("(?<=\\G.{12})"));
+		if (this.cursorPos > 59) {
+			this.cursorPos = 59;
+		}
+
+		List<String> lines = calculateLines(font, this.value);
 
 		int lineNo = 0;
 
-		String s = "";
-		int j = 0;
-		int k = 0;
-		int l = 0;
-		int k1 = 0;
-		int i1 = 0;
-		int i2 = 0;
-		int j1;
-		boolean flag;
-		boolean flag1 = false;
-		boolean flag2 = false;
+		int xpos = this.x + 4;
 
 		for (String line : lines) {
-			s = font.plainSubstrByWidth(line, this.getInnerWidth());
+			int ypos = this.y + 4 + (10 * lineNo);
 
-			i2 = this.isEditable ? this.textColor : this.textColorUneditable;
+			textColor = this.isEditable ? this.textColor : this.textColorUneditable;
 
-			j = this.cursorPos - this.displayPos;
-			k = this.highlightPos - this.displayPos;
+			font.drawShadow(stack, this.formatter.apply(line, this.cursorPos),
+						(float) xpos, (float) ypos, textColor);
 
-			flag = j >= 0 && j <= s.length();
-			flag1 = this.isFocused() && this.frame / 6 % 2 == 0 && flag;
-
-			l = this.x + 4;
-			i1 = this.y + 4 + (10 * lineNo++);
-
-			j1 = l;
-
-			if (k > s.length()) {
-				k = s.length();
-			}
-
-			if (!s.isEmpty()) {
-				String s1 = flag ? s.substring(0, j) : s;
-
-				j1 = font.drawShadow(stack, this.formatter.apply(s1, this.displayPos), (float) l, (float) i1, i2);
-			}
-
-			flag2 = this.cursorPos < this.value.length() || this.value.length() >= this.getMaxLength();
-
-			k1 = j1;
-
-			if (!flag) {
-				k1 = j > 0 ? l + this.width : l;
-			} else if (flag2) {
-				k1 = j1 - 1;
-				--j1;
-			}
-
-			if (!s.isEmpty() && flag && j < s.length()) {
-				font.drawShadow(stack, this.formatter.apply(s.substring(j), this.cursorPos), (float) j1, (float) i1, i2);
-			}
-
-			if (!flag2 && this.suggestion != null) {
-				font.drawShadow(stack, this.suggestion, (float) (k1 - 1), (float) i1, -8355712);
-			}
+			lineNo++;
 		}
 
-		if (flag1) {
-			if (flag2) {
-				GuiComponent.fill(stack, k1, i1 - 1, k1 + 1, i1 + 1 + 9, -3092272);
-			} else {
-				font.drawShadow(stack, "_", (float) k1, (float) i1, i2);
-			}
-		}
+		int charWidth = font.width(this.value);
 
-		if (k != j) {
-			int l1 = l + font.width(s.substring(0, k));
+		int x1 = this.x + 4 + font.width(lines.get(lineNo-1)) + 1;
 
-			this.renderHighlight(k1, i1 - 1, l1 - 1, i1 + 1 + 9);
-		}
+		int y1 = this.y + 4 + (((charWidth-1) / getInnerWidth()) * 10);
+
+		GuiComponent.fill(stack, x1 - 1, y1, x1, y1 + 8, -3092272);
 	}
 }
