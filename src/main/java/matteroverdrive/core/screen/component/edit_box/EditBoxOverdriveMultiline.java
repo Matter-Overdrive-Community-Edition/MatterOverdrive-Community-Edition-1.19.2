@@ -68,6 +68,8 @@ public class EditBoxOverdriveMultiline extends EditBox {
 		UtilsRendering.bindTexture(texture.getTexture());
 		ButtonOverdrive.drawButton(stack, this.x, this.y, this.width, this.height);
 
+//		System.out.println("Position: " + this.cursorPos);
+
 		if (this.cursorPos > 59) {
 			this.cursorPos = 59;
 		}
@@ -89,12 +91,22 @@ public class EditBoxOverdriveMultiline extends EditBox {
 			lineNo++;
 		}
 
-		int charWidth = font.width(this.value);
-
-		int x1 = this.x + 4 + font.width(lines.get(lineNo-1)) + 1;
-
-		int y1 = this.y + 4 + (((charWidth-1) / getInnerWidth()) * 10);
-
-		GuiComponent.fill(stack, x1 - 1, y1, x1, y1 + 8, -3092272);
+//		System.out.println(cursorPos);
+//
+//		int charWidth = font.width(lines.get(0));
+//
+//		int x1 = this.x + 4 + charWidth;
+//		int y1 = this.y + 4;
+//
+//		if (this.x + 4 + charWidth > getInnerWidth()) {
+//			x1 = this.x + 4 + font.width(lines.get(1));
+//			y1 = this.y + 4 + 10;
+//		}
+//
+////		int x1 = this.x + 4 + font.width(lines.get(lineNo-1)) + 1;
+////
+////		int y1 = this.y + 4 + (((charWidth-1) / getInnerWidth()) * 10);
+//
+//		GuiComponent.fill(stack, x1 - 1, y1, x1, y1 + 8, -3092272);
 	}
 }
